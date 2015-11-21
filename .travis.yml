@@ -1,6 +1,6 @@
 language: python
 
-sudo: false
+#sudo: false
 
 python:
   #- "2.6"
