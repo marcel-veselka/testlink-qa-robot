@@ -44,9 +44,9 @@ DEMOAPP = os.path.join(ROOT, 'demoapp', 'server.py')
 
 
 def run_tests(args):
-    start_demo_application()
+    #start_demo_application()
     call(['pybot'] + args, shell=(os.sep == '\\'))
-    stop_demo_application()
+    #stop_demo_application()
 
 def start_demo_application():
     Popen(['python', DEMOAPP, 'start'], stdout=TemporaryFile(), stderr=STDOUT)
