@@ -31,3 +31,7 @@ env:
   - BROWSER=firefox
   #- BROWSER=ie # will be added later
   #- BROWSER=safari # will be added later
+
+addons:
+  artifacts: true
+  s3_region: "us-west-1" # defaults to "us-east-1"
