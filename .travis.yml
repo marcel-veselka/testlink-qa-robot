@@ -34,4 +34,5 @@ env:
 
 addons:
   artifacts: true
+  endpoint: "tesena-s3.s3-website-us-west-2.amazonaws.com"
   s3_region: "us-west-2" # defaults to "us-east-1"
