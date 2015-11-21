@@ -1,6 +1,6 @@
 language: python
 
-#sudo: false
+sudo: false
 
 python:
   #- "2.6"
@@ -40,8 +40,6 @@ env:
 
 deploy:
   provider: s3
-  edge: true
   bucket: "tesena-s3"
-  skip_cleanup: true
   endpoint: "tesena-s3.s3-website-us-west-2.amazonaws.com"
   region: eu-west-2
