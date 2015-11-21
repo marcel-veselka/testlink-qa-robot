@@ -9,12 +9,12 @@ Library        Selenium2Library
 
 *** Variables ***
 
-${SERVER}        localhost:7272
+${SERVER}        accounts.google.com
 ${BROWSER}       firefox
 ${DELAY}         0
 ${VALID USER}    demo
 ${VALID PASSWD}  mode
-${LOGIN URL}     http://${SERVER}/html/
+${LOGIN URL}     https://${SERVER}/ServiceLogin?hl=en#identifier
 ${WELCOME URL}   http://${SERVER}/html/welcome.html
 ${ERROR URL}     http://${SERVER}/html/error.html
 
@@ -25,7 +25,7 @@ Open Browser To Login Page
     Open Browser  ${LOGIN URL}  ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed  ${DELAY}
-    Title Should Be  Login Page
+    Title Should Be  Sign in - Google Accounts
 
 Go To Login Page
     Go To  ${LOGIN URL}
