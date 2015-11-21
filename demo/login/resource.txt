@@ -31,6 +31,9 @@ Go To Login Page
     Go To  ${LOGIN URL}
     Title Should Be  Login Page
 
+Input Email     [Arguments]  ${email}
+    Input Text  Email  ${email}
+
 Input Username  [Arguments]  ${username}
     Input Text  username_field  ${username}
 

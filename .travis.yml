@@ -23,7 +23,8 @@ script:
   - "firefox --version"
   #- "python test/run_tests.py python $BROWSER --noncritical known_issue_-_travisci"
   #- "python demo/rundemo.py python $BROWSER --noncritical known_issue_-_travisci"
-  - pybot demo/login/valid_login.txt
+  #- pybot demo/login/valid_login.txt
+  - pybot demo/login
 
 env:
   matrix:
