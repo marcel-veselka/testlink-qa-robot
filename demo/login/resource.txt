@@ -31,14 +31,11 @@ Go To Login Page
     Go To  ${LOGIN URL}
     Title Should Be  TestLink
 
-Input Email     [Arguments]  ${email}
-    Input Text  Email  ${email}
-
 Input Username  [Arguments]  ${username}
-    Input Text  username_field  ${username}
+    Input Text  login  ${username}
 
 Input Password  [Arguments]  ${password}
-    Input Text  password_field  ${password}
+    Input Text  tl_password  ${password}
 
 Submit Credentials
     Click Button  login_submit
