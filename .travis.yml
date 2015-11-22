@@ -15,6 +15,7 @@ install:
   - pip install docutils
   #- "if [[ ${BROWSER} == 'ie' ]]; then pip install ie_only_pkg; fi"
   - gem install dpl
+  - gem install pry
 
 before_script:
   - "export DISPLAY=:99.0"
