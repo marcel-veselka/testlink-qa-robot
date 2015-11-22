@@ -13,6 +13,7 @@ install:
   - pip install robotframework-selenium2library
   - pip install decorator
   - pip install docutils
+  - gem install s3
   #- "if [[ ${BROWSER} == 'ie' ]]; then pip install ie_only_pkg; fi"
 
 
@@ -34,9 +35,10 @@ env:
   #- BROWSER=safari # will be added later
 
 addons:
-  artifacts: true
-  endpoint: "tesena-s3.s3-website-us-west-2.amazonaws.com"
-  s3_region: "us-west-2" # defaults to "us-east-1"
+  artifacts:
+    bucket: "tesena-s3"
+    endpoint: "tesena-s3.s3-website-us-west-2.amazonaws.com"
+    s3_region: "us-west-2" # defaults to "us-east-1"
 
 #deploy:
 #  provider: s3
