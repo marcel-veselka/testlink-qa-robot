@@ -34,7 +34,7 @@ env:
   #- BROWSER=ie # will be added later
   #- BROWSER=safari # will be added later
 
-after_script: zip -r /home/travis/build/marcel-veselka/testlink-qa-robot/
+after_script: zip -r /home/travis/build/marcel-veselka/testlink-qa-robot/*
 # todo: upload instead of individual files info s3 bucket
 
 addons:
