@@ -34,14 +34,11 @@ env:
   #- BROWSER=ie # will be added later
   #- BROWSER=safari # will be added later
 
+after_script: zip -r ~/*
+
+
 addons:
   artifacts:
     bucket: "tesena-s3"
     endpoint: "tesena-s3.s3-website-us-west-2.amazonaws.com"
     s3_region: "us-west-2" # defaults to "us-east-1"
-
-#deploy:
-#  provider: s3
-#  bucket: "tesena-s3"
-#  endpoint: "tesena-s3.s3-website-us-west-2.amazonaws.com"
-#  region: eu-west-2
