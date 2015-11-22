@@ -1,27 +1,22 @@
 #! /usr/bin/env python
 
-"""Runner Script for Robot Framework SeleniumLibrary Demo
+"""Runner Script for Robot Framework SeleniumLibrary
 
 Tests are run by giving a path to the tests to be executed as an argument to
 this script. Possible Robot Framework options are given before the path.
 
 Examples:
-  rundemo.py login_tests                        # Run all tests in a directory
-  rundemo.py login_tests/valid_login.text       # Run tests in a specific file
-  rundemo.py --variable BROWSER:IE login_tests  # Override variable
-  rundemo.py -v BROWSER:IE -v DELAY:0.25 login_tests
+  test.py login_tests                        # Run all tests in a directory
+  test.py login_tests/valid_login.text       # Run tests in a specific file
+  test.py --variable BROWSER:IE login_tests  # Override variable
+  test.py -v BROWSER:IE -v DELAY:0.25 login_tests
 
 By default tests are executed with Firefox browser, but this can be changed
 by overriding the `BROWSER` variable as illustrated above. Similarly it is
 possible to slow down the test execution by overriding the `DELAY` variable
 with a non-zero value.
 
-When tests are run, the demo application is started and stopped automatically.
-It is also possible to start and stop the application separately
-by using `demoapp` options. This allows running tests with the
-normal `pybot` start-up script, as well as investigating the demo application.
-
-Running the demo requires that Robot Framework, Selenium2Library, Python, and
+Running the tests requires that Robot Framework, Selenium2Library, Python, and
 Java to be installed.
 """
 
@@ -58,9 +53,9 @@ def print_help():
     print __doc__
 
 def print_usage():
-    print 'Usage: rundemo.py [options] datasource'
-    print '   or: rundemo.py demoapp start|stop'
-    print '   or: rundemo.py help'
+    print 'Usage: test.py [options] datasource'
+    print '   or: test.py demoapp start|stop'
+    print '   or: test.py help'
 
 
 if __name__ == '__main__':
