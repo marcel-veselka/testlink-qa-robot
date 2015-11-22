@@ -25,6 +25,7 @@ Open Browser To Login Page
     Open Browser  ${LOGIN URL}  ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed  ${DELAY}
+    Capture Page Screenshot
     Title Should Be  TestLink
 
 Go To Login Page
