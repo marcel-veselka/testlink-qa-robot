@@ -20,3 +20,7 @@ By default tests are executed with Firefox browser, but this can be changed
 by overriding the `BROWSER` variable as illustrated above. Similarly it is
 possible to slow down the test execution by overriding the `DELAY` variable
 with a non-zero value.
+
+
+## ToDos / Ideas 
+- Include deployment as a part of test execution
