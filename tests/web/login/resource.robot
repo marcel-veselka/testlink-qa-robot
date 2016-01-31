@@ -44,6 +44,7 @@ Submit Credentials
 
 Welcome Page Should Be Open
     Location Should Be  ${WELCOME URL}
+    Page Should Contain Link link=Desktop
     Title Should Be  TestLink 1.9.11(The Robots of Dawn)
 
 Login Should Have Failed
