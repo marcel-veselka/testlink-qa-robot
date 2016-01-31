@@ -23,7 +23,7 @@ script:
   #- "python test/run_tests.py python $BROWSER --noncritical known_issue_-_travisci"
   #- "python demo/rundemo.py python $BROWSER --noncritical known_issue_-_travisci"
   #- pybot demo/login/valid_login.txt
-  - pybot -v BROWSER:$BROWSER tests/web/login/ "VALID USER":$TL_USER
+  - pybot -v BROWSER:$BROWSER "VALID USER":$TL_USER tests/web/login/
 
 env:
   matrix:
