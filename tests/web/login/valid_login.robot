@@ -9,8 +9,9 @@ Resource       resource.robot
 
 Valid Login
     Open Browser To Login Page
-    Input Username    demo
-    Input Password    demo
+    Input Username    ${VALID USER}
+    Input Password    ${VALID PASSWD}
     Submit Credentials
     Welcome Page Should Be Open
     [Teardown]  Close Browser
+
