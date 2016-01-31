@@ -9,14 +9,15 @@ Library        Selenium2Library
 
 *** Variables ***
 
-${SERVER}        p747.phpnet.org
+# ${SERVER}        p747.phpnet.org/testlink-demo
+${SERVER}        testlab.tesena.com/testlink
 ${BROWSER}       firefox
 ${DELAY}         0
 ${VALID USER}    demo
 ${VALID PASSWD}  demo123
-${LOGIN URL}     http://${SERVER}/testlink-demo/login.php
-${WELCOME URL}   http://${SERVER}/testlink-demo/index.php
-${ERROR URL}     http://${SERVER}/testlink-demo/login.php
+${LOGIN URL}     http://${SERVER}/login.php
+${WELCOME URL}   http://${SERVER}/index.php
+${ERROR URL}     http://${SERVER}/login.php
 
 
 *** Keywords ***
