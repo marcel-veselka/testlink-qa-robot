@@ -44,7 +44,7 @@ Submit Credentials
 
 Welcome Page Should Be Open
     Location Should Be  ${WELCOME URL}
-    Title Should Be  TestLink 1.8.2
+    Title Should Be  TestLink 1.9.11(The Robots of Dawn)
 
 Login Should Have Failed
     Location Should Be  ${ERROR URL}
