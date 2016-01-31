@@ -19,11 +19,10 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
 
 script:
-  - "firefox --version"
+  #- "firefox --version"
   #- "python test/run_tests.py python $BROWSER --noncritical known_issue_-_travisci"
   #- "python demo/rundemo.py python $BROWSER --noncritical known_issue_-_travisci"
-  #- pybot demo/login/valid_login.txt
-  - pybot -v BROWSER:$BROWSER "VALID USER":$TL_USER tests/web/login/
+  - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER tests/web/login/
 
 env:
   matrix:
