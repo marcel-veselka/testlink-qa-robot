@@ -9,12 +9,8 @@ Library        Selenium2Library
 
 *** Variables ***
 
-# ${SERVER}        p747.phpnet.org/testlink-demo
 ${SERVER}        testlab.tesena.com/testlink
-${BROWSER}       firefox
-${DELAY}         0
-#${VALID USER}    demo
-#${VALID PASSWD}  demo123
+${DELAY}         2 # in seconds
 ${LOGIN URL}     http://${SERVER}/login.php
 ${WELCOME URL}   http://${SERVER}/index.php?caller=login
 ${ERROR URL}     http://${SERVER}/login.php
@@ -44,9 +40,6 @@ Submit Credentials
 
 Welcome Page Should Be Open
     Location Should Be  ${WELCOME URL}
-    Click Element  link=Desktop
-    # Wait Until Element Contains  html  Desktop
-    # Page Should Contain Link  Desktop
     Title Should Be  TestLink 1.9.11(The Robots of Dawn)
 
 Login Should Have Failed
