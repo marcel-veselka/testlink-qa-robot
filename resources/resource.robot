@@ -40,6 +40,7 @@ Submit Credentials
 
 Welcome Page Should Be Open
     Location Should Be  ${WELCOME URL}
+    # ToDo  Improve assertion - this is version dependent, e.g. link to desktop is visible
     Title Should Be  TestLink 1.9.11(The Robots of Dawn)
 
 Login Should Have Failed
