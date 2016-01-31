@@ -19,7 +19,6 @@ before_script:
 
 script:
   #- "firefox --version"
-  - "chrome --version"
   #- "python test/run_tests.py python $BROWSER --noncritical known_issue_-_travisci"
   #- "python demo/rundemo.py python $BROWSER --noncritical known_issue_-_travisci"
   - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/login/
