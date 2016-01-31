@@ -13,8 +13,8 @@ Library        Selenium2Library
 ${SERVER}        testlab.tesena.com/testlink
 ${BROWSER}       firefox
 ${DELAY}         0
-${VALID USER}    demo
-${VALID PASSWD}  demo123
+#${VALID USER}    demo
+#${VALID PASSWD}  demo123
 ${LOGIN URL}     http://${SERVER}/login.php
 ${WELCOME URL}   http://${SERVER}/index.php
 ${ERROR URL}     http://${SERVER}/login.php
