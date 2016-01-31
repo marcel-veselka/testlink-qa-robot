@@ -8,7 +8,7 @@ Suite Setup     Open Browser To Login Page
 Test Setup      Go To Login Page
 Test Template   Login With Invalid Credentials Should Fail
 Suite Teardown  Close Browser
-Resource        /resources/resource.robot
+Resource        ~/resources/resource.robot
 
 
 *** Test Cases ***              User Name      Password
