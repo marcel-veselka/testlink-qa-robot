@@ -44,7 +44,7 @@ Submit Credentials
 
 Welcome Page Should Be Open
     Location Should Be  ${WELCOME URL}
-    Wait Until Element Contains  link=Desktop
+    Wait Until Element Contains  tag=a  Desktop
     # Page Should Contain Link  Desktop
     Title Should Be  TestLink 1.9.11(The Robots of Dawn)
 
