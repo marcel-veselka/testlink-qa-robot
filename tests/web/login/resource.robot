@@ -16,7 +16,7 @@ ${DELAY}         0
 #${VALID USER}    demo
 #${VALID PASSWD}  demo123
 ${LOGIN URL}     http://${SERVER}/login.php
-${WELCOME URL}   http://${SERVER}/index.php
+${WELCOME URL}   http://${SERVER}/index.php?caller=login
 ${ERROR URL}     http://${SERVER}/login.php
 
 
