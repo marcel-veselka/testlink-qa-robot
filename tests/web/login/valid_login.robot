@@ -2,7 +2,7 @@
 
 Documentation  A test suite with a single test for valid login. This test has
 ...            a workflow that is created using keywords from the resource file.
-Resource       ../../../resource.robot
+Resource       ../../../resources/resource.robot
 
 
 *** Test Cases ***
