@@ -24,4 +24,5 @@ zkuska
     wait until page contains  tester
     sleep  5
     close browser
+
 #pybot -d ownersManual/Results  ownersManual/tests
