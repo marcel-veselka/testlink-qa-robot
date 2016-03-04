@@ -12,7 +12,7 @@ Create new Custom Field
     Login as Admin
     Wait a little
     #Select desired frame
-    [Teardown]  select frame  name=mainframe
+    select frame  name=mainframe
     Select Define Custom Fields
     Create new custom field
     Input the name of the Custom Field
