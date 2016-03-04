@@ -1,9 +1,7 @@
 *** Settings ***
-
+Documentation  A test suite with a single test for creating a new Custom Field. This test has
+...            a workflow that is created using keywords from the resource file.
 Resource       ../../../resources/resourcesCField.robot
-
-*** Variables ***
-#${BROWSER} =  ff
 
 *** Test Cases ***
 Create new Custom Field
@@ -19,5 +17,3 @@ Create new Custom Field
     Add new Custom Field
     Check id new Custom Field is created
     [Teardown]  close browser
-
-#pybot -d ownersManual/Results  ownersManual/tests
