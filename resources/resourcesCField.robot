@@ -31,7 +31,7 @@ Wait a little
     Sleep  5
 
 Select desired frame
-    select frame  link=lib/general/mainPage.php
+    select frame  name=mainframe
 
 
 Select Define Custom Fields
