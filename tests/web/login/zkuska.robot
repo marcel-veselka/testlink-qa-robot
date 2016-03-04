@@ -1,28 +1,24 @@
 *** Settings ***
 
-Library  Selenium2Library
+Resource       ../../../resources/resourcesCField.robot
 
 *** Variables ***
 #${BROWSER} =  ff
 
 *** Test Cases ***
-zkuska
-    open browser  http://testlab.tesena.com/testlink  ff
-    #input text  login  automation.tester
-    #input text  tl_password  autoTest!@#
-    input text  login  renat.kulalov
-    input text  tl_password  renat123
-    Click Button  login_submit
-    sleep  5
-    Execute Javascript    setTimeout(function(){window.open('lib/cfields/cfieldsView.php')},200);
-    sleep  5
-    select window  new
-    Click Button  create_cfield
-    input text  cf_name  tester
-    input text  cf_label  testEngineer
-    Click Button  do_update
-    wait until page contains  tester
-    sleep  5
-    close browser
+Create new Custom Field
+
+    Open Browser To Login Page
+    Login as Admin
+    Wait a little
+    Select desired frame
+    Select Define Custom Fields
+    Create new custom field
+    Input the name of the Custom Field
+    Input the label of the Custom Field
+    Add new Custom Field
+    Check id new Custom Field is created
+    Wait a little
+    [Teardown]  close browser
 
 #pybot -d ownersManual/Results  ownersManual/tests

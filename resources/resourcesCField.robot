@@ -8,17 +8,14 @@ Library        Selenium2Library
 #zkuska
 
 *** Variables ***
-
+${LINKTOBLOCK}   lib/cfields/cfieldsView.php
 ${SERVER}        testlab.tesena.com/testlink
 ${DELAY}         0
 ${LOGIN URL}     http://${SERVER}/login.php
 ${WELCOME URL}   http://${SERVER}/index.php?caller=login
 ${ERROR URL}     http://${SERVER}/login.php
 
-
-
 *** Keywords ***
-
 Open Browser To Login Page
     Open Browser  ${LOGIN URL}  ${BROWSER}
     Maximize Browser Window
@@ -26,24 +23,32 @@ Open Browser To Login Page
     Capture Page Screenshot
     Title Should Be  TestLink
 
-Go To Login Page
-    Go To  ${LOGIN URL}
-    Title Should Be  TestLink
+Login as Admin
+    input text  login  renat.kulalov
+    input text  tl_password  renat123
 
-Input Username  [Arguments]  ${username}
-    Input Text  login  ${username}
+Wait a little
+    Sleep  5
 
-Input Password  [Arguments]  ${password}
-    Input Text  tl_password  ${password}
+Select desired frame
+    select frame  name=mainframe
 
-Submit Credentials
-    Click Button  login_submit
 
-Welcome Page Should Be Open
-    Location Should Be  ${WELCOME URL}
-    # ToDo  Improve assertion - this is version dependent, e.g. link to desktop is visible
-    Title Should Be  TestLink 1.9.14 (Padawan)
+Select Define Custom Fields
+    click link   Define Custom Fields
 
-Login Should Have Failed
-    Location Should Be  ${ERROR URL}
-    Title Should Be  TestLink
+Create new custom field
+    Click Button  create_cfield
+
+Input the name of the Custom Field
+    input text  cf_name  tester
+
+Input the label of the Custom Field
+    input text  cf_label  testEngineer
+
+Add new Custom Field
+    Click Button  do_update
+
+Check id new Custom Field is created
+    Add new Custom Field
+
