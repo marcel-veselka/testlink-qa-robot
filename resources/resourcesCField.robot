@@ -27,6 +27,9 @@ Login as Admin
     input text  login  renat.kulalov
     input text  tl_password  renat123
 
+Submit Credentials
+    Click Button  login_submit
+
 Wait a little
     Sleep  5
 
