@@ -11,7 +11,7 @@ Create new Custom Field
     Open Browser To Login Page
     Login as Admin
     Wait a little
-    Select desired frame
+    #Select desired frame
     Select Define Custom Fields
     Create new custom field
     Input the name of the Custom Field
