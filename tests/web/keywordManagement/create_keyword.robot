@@ -16,5 +16,5 @@ Create Keyword
     Enter the name for a keyword1
     Save Keyword
     Wait a little
-    Check if Keyword1 is created
+    #Check if Keyword1 is created
     [Teardown]  close browser

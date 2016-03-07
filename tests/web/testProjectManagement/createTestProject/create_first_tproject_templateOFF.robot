@@ -4,7 +4,7 @@ Documentation  A test suite with a single test for creating a new Test Project. 
 Resource       ../../../../resources/resourcesTestProjectManagement.robot
 
 *** Test Cases ***
-Create new Custom Field
+Create new Test Project
 
     Open Browser To Login Page
     Login as Admin
