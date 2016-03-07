@@ -16,15 +16,22 @@ Create Keyword
     Create Keyword
     Enter the name for a keyword1
     Save Keyword
+    Wait a little
+    Create Keyword
+    Wait a little
+    Enter the name for a keyword2
+    Wait a little
+    Save Keyword
+    Wait a little
+    Create Keyword
+    Wait a little
+    Enter the name for a keyword3
+    Wait a little
+    Save Keyword
+    Wait a little
     Check if Keyword1 is created
     Wait a little
-    Create Keyword
-    Enter the name for a keyword2
-    Save Keyword
     Check if Keyword2 is created
     Wait a little
-    Create Keyword
-    Enter the name for a keyword3
-    Save Keyword
     Check if Keyword3 is created
     [Teardown]  close browser
