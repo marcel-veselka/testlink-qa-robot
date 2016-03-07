@@ -34,4 +34,4 @@ Create Keyword
     Check if Keyword2 is created
     Wait a little
     Check if Keyword3 is created
-    [Teardown]  close browser
+    #[Teardown]  close browser
