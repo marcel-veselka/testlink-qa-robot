@@ -14,6 +14,7 @@ ${DELAY}         0
 ${LOGIN URL}     http://${SERVER}/login.php
 ${WELCOME URL}   http://${SERVER}/index.php?caller=login
 ${ERROR URL}     http://${SERVER}/login.php
+${BROWSER}      ff
 
 *** Keywords ***
 Open Browser To Login Page
@@ -53,5 +54,5 @@ Add new Custom Field
     Click Button  do_update
 
 Check id new Custom Field is created
-    Add new Custom Field
+    WAIT UNTIL PAGE CONTAINS  tester
 

@@ -10,10 +10,11 @@ Create Keyword
     Login as Admin
     Submit Credentials
     Select desired frame
+    Wait a little
     Choose Keyword Management
     Create Keyword
     Enter the name for a keyword1
     Save Keyword
     Wait a little
     Check if Keyword1 is created
-    [Teardown]  close browser
+    #[Teardown]  close browser
