@@ -45,7 +45,7 @@ Create new custom field
     Click Button  create_cfield
 
 Input the name of the Custom Field
-    input text  cf_name  tester
+    input text  cf_name  TESTER
 
 Input the label of the Custom Field
     input text  cf_label  testEngineer
@@ -54,5 +54,5 @@ Add new Custom Field
     Click Button  do_update
 
 Check id new Custom Field is created
-    wait until page contains  testEngineer
+    wait until page contains  TESTER
 

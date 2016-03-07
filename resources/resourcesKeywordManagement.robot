@@ -43,7 +43,7 @@ Create Keyword
     click button  create_keyword
 
 Enter the name for a keyword1
-    input text  keyword  qwerty
+    input text  keyword  QWERTY
 
 Enter the name for a keyword2
     input text  keyword  qwerty2
@@ -58,7 +58,7 @@ Check
     page should contain  Keyword Management
 
 Check if Keyword1 is created
-    wait until page contains  qwerty
+    wait until page contains  QWERTY
 
 Check if Keyword2 is created
     page should contain  qwerty2
