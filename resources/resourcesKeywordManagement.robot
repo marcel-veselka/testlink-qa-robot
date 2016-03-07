@@ -40,7 +40,7 @@ Choose Keyword Management
     click link  Keyword Management
 
 Create Keyword
-    click button  id=create_keyword
+    click button  create_keyword
 
 Enter the name for a keyword1
     input text  keyword  qwerty1
@@ -58,7 +58,7 @@ Check
     page should contain  Keyword Management
 
 Check if Keyword1 is created
-    page should contain  qwerty1
+    wait until page contains  qwerty1
 
 Check if Keyword2 is created
     page should contain  qwerty2
