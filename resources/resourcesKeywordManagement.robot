@@ -37,7 +37,7 @@ Choose Keyword Management
     click link  Keyword Management
 
 Create Keyword
-    click button  create_keyword
+    click button  Create keyword
 
 Enter the name for a keyword1
     input text  keyword  qwerty1
