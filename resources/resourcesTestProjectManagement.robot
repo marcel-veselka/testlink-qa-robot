@@ -49,7 +49,7 @@ Create Test Project
     click button  create
 
 Save Test Project
-    click button  submit
+    click button  doActionButton
 
 Check if Test Project is created
     wait until page contains  NTP

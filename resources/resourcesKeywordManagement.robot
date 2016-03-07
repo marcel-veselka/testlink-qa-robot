@@ -51,6 +51,9 @@ Enter the name for a keyword3
 Save Keyword
     click button  create_req
 
+Check
+    page should contain  Keyword Management
+
 Check if Keyword1 is created
     wait until page contains  qwerty1
 

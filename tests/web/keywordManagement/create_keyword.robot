@@ -11,12 +11,15 @@ Create Keyword
     Submit Credentials
     Select desired frame
     Choose Keyword Management
+    Check
     Create Keyword
     Enter the name for a keyword1
     Save Keyword
+    Check
     Create Keyword
     Enter the name for a keyword2
     Save Keyword
+    Check
     Create Keyword
     Enter the name for a keyword3
     Save Keyword
