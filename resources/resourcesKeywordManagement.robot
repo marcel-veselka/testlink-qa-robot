@@ -61,7 +61,7 @@ Check if Keyword1 is created
     page should contain  qwerty1
 
 Check if Keyword2 is created
-    wait until page contains  qwerty2
+    page should contain  qwerty2
 
 Check if Keyword3 is created
-    wait until page contains  qwerty3
+    page should contain  qwerty3
