@@ -54,5 +54,5 @@ Add new Custom Field
     Click Button  do_update
 
 Check id new Custom Field is created
-    wait until page contains  tester
+    wait until page contains  testEngineer
 
