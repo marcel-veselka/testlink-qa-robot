@@ -58,7 +58,7 @@ Check
     page should contain  Keyword Management
 
 Check if Keyword1 is created
-    wait until page contains  qwerty1
+    page should contain  qwerty1
 
 Check if Keyword2 is created
     wait until page contains  qwerty2
