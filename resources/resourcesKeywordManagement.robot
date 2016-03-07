@@ -14,7 +14,7 @@ ${DELAY}         0
 ${LOGIN URL}     http://${SERVER}/login.php
 ${WELCOME URL}   http://${SERVER}/index.php?caller=login
 ${ERROR URL}     http://${SERVER}/login.php
-
+${BROWSER}       ff
 *** Keywords ***
 Open Browser To Login Page
     Open Browser  ${LOGIN URL}  ${BROWSER}
@@ -33,11 +33,14 @@ Submit Credentials
 Select desired frame
     select frame  name=mainframe
 
+Wait a little
+    Sleep  5
+
 Choose Keyword Management
     click link  Keyword Management
 
 Create Keyword
-    click button  Create keyword
+    click element  create_keyword
 
 Enter the name for a keyword1
     input text  keyword  qwerty1
