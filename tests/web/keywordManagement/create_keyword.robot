@@ -25,7 +25,6 @@ Create Keyword
     #Create Keyword
     #Enter the name for a keyword3
     #Save Keyword
-    Wait a little
     Check if Keyword1 is created
     #Check if Keyword2 is created
     #Check if Keyword3 is created
