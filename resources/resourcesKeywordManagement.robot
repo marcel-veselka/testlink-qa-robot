@@ -34,7 +34,7 @@ Select desired frame
     select frame  name=mainframe
 
 Wait a little
-    Sleep  6
+    Sleep  10
 
 Choose Keyword Management
     click link  Keyword Management

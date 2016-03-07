@@ -14,7 +14,9 @@ Create Keyword
     Choose Keyword Management
     Wait a little
     Create Keyword
+    Wait a little
     Enter the name for a keyword1
+    Wait a little
     Save Keyword
     Wait a little
     Create Keyword
