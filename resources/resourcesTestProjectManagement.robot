@@ -100,6 +100,7 @@ Delete row with Test Project
     click element  xpath=//tr[td//text()[contains(., '${testprojectname}')]]/td[last()]
     sleep  1
     click button  Yes
+    sleep  2
 
 Delete Test Project
 
