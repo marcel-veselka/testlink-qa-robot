@@ -102,14 +102,7 @@ Delete row with Test Project
 
 Delete Test Project
 
-    Open Browser  ${LOGIN URL}  ${BROWSER}
-    Maximize Browser Window
-    Set Selenium Speed  ${DELAY}
-    Capture Page Screenshot
-    Title Should Be  TestLink
-    input text  login  renat.kulalov
-    input text  tl_password  renat123
-    Click Button  login_submit
+    go to  ${WELCOME URL}
     select frame  name=mainframe
     wait until page contains  Test Plan Management
     click link  Test Plan Management
@@ -121,8 +114,8 @@ Delete Test Project
     click element  xpath=//tr[td//text()[contains(., '${testprojectname}')]]/td[last()]
     sleep  1
     click button  Yes
-    element should not contain  id=item_view_wrapper  ${testprojectname}
-    element should not contain  id=item_view_wrapper  ${testprojectprefix}
+    page should not contain  ${testprojectname}
+    page should not contain  ${testprojectprefix}
     close browser
 
 
