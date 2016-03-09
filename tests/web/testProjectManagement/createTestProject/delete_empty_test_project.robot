@@ -16,6 +16,7 @@ Delete Test Project
     Select desired frame
     Click Test Project Management
     Delete row with Test Project
+    Unique prefix or name check
     #Create Test Project
     #Select Create From Existing Projects = yes
     #Add Test Project Name

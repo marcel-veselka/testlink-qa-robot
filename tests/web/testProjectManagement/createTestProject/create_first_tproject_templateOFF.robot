@@ -2,6 +2,7 @@
 Documentation  A test suite with a single test for creating a new Test Project. This test has
 ...            a workflow that is created using keywords from the resource file.
 Resource       ../../../../resources/resourcesTestProjectManagement.robot
+Test Teardown  Delete Test Project
 
 *** Test Cases ***
 Create new Test Project
@@ -17,7 +18,6 @@ Create new Test Project
     Add Prefix
     Save Test Project
     Check if Test Project is created
-    [Teardown]  close browser
 
 
 
