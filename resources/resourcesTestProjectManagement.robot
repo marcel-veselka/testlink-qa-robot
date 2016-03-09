@@ -119,6 +119,26 @@ Delete Test Project
     page should not contain  ${testprojectprefix}
     close browser
 
+Create Empty Test Project
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed  ${DELAY}
+    Capture Page Screenshot
+    Title Should Be  TestLink
+    input text  login  renat.kulalov
+    input text  tl_password  renat123
+    Click Button  login_submit
+    select frame  name=mainframe
+    wait until page contains  Test Project Management
+    click link  Test Project Management
+    click button  create
+    select from list  copy_from_tproject_id  0
+    input text  tprojectName  ${testprojectname}
+    input text  tcasePrefix  ${testprojectprefix}
+    click button  name=doActionButton
+    sleep  5
+    wait until page contains  ${testprojectname}
+
 
 
 
