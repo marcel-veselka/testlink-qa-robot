@@ -96,7 +96,8 @@ Go to desktop
 
 Delete row with Test Project
     #click element  xpath=//tr[td//text()[contains(., '${testprojectname}')]]/td[last()]
-    click element  xpath=//tr[td//text()[contains(., '${testprojectname}')]]/td[last()]/img[last()]
+    sleep  2
+    click element  xpath=//tr[td//text()[contains(., '${testprojectname}')]]/td[last()]
     sleep  1
     click button  Yes
 
