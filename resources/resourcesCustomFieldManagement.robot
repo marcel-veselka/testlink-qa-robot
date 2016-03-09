@@ -15,6 +15,8 @@ ${LOGIN URL}     http://${SERVER}/login.php
 ${WELCOME URL}   http://${SERVER}/index.php?caller=login
 ${ERROR URL}     http://${SERVER}/login.php
 ${BROWSER}      ff
+${CFNAME}       CFName
+${CFLABEL}      CFLabel
 
 *** Keywords ***
 Open Browser To Login Page
@@ -45,14 +47,14 @@ Create new custom field
     Click Button  create_cfield
 
 Input the name of the Custom Field
-    input text  cf_name  TESTER
+    input text  cf_name  ${CFNAME}
 
 Input the label of the Custom Field
-    input text  cf_label  testEngineer
+    input text  cf_label  ${CFLABEL}
 
 Add new Custom Field
     Click Button  do_update
 
 Check id new Custom Field is created
-    wait until page contains  TESTER
+    wait until page contains  ${CFNAME}
 

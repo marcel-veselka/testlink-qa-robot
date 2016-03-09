@@ -17,5 +17,5 @@ Create new Custom Field
     Add new Custom Field
     Wait a little
     #Zkouska Push
-    #Check id new Custom Field is created
+    Check id new Custom Field is created
     [Teardown]  close browser
