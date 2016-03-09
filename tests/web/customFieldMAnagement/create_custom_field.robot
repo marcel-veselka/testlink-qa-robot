@@ -16,5 +16,5 @@ Create new Custom Field
     Input the name of the Custom Field
     Input the label of the Custom Field
     Add new Custom Field
-    Check id new Custom Field is created
+   #Check id new Custom Field is created   Check je funkcni, zakomentovano jen protoze TC jeste nema Delete Teardown.
     [Teardown]  close browser
