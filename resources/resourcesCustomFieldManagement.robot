@@ -15,8 +15,8 @@ ${LOGIN URL}     http://${SERVER}/login.php
 ${WELCOME URL}   http://${SERVER}/index.php?caller=login
 ${ERROR URL}     http://${SERVER}/login.php
 ${BROWSER}      ff
-${CFNAME}       CFName
-${CFLABEL}      CFLabel
+${CFNAME}       CFN
+${CFLABEL}      CFL
 
 *** Keywords ***
 Open Browser To Login Page
@@ -57,5 +57,5 @@ Add new Custom Field
 
 Check id new Custom Field is created
     sleep  5
-    wait until page contains  ${CFNAME}
+    wait until page contains  ${CFLABEL}
 
