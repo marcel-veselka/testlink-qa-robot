@@ -14,6 +14,9 @@ ${DELAY}         0
 ${LOGIN URL}     http://${SERVER}/login.php
 ${WELCOME URL}   http://${SERVER}/index.php?caller=login
 ${ERROR URL}     http://${SERVER}/login.php
+${testprojectname}  testproject32
+${testprojectprefix}  testprefix32
+#${BROWSER}  chrome
 
 *** Keywords ***
 Open Browser To Login Page
@@ -33,26 +36,76 @@ Submit Credentials
 Select desired frame
     select frame  name=mainframe
 
-Click User Management
+Click Test Plan Management
+    wait until page contains  Test Plan Management
+    click link  Test Plan Management
+
+Click Test Project Management
+    wait until page contains  Test Project Management
     click link  Test Project Management
 
+Click Test Specification
+    wait until page contains  Test Specification
+    click link  Test Specification
+
 Add Test Project Name
-    input text  tprojectName  NTP
+    input text  tprojectName  ${testprojectname}
 
 Add Prefix
-    input text  tcasePrefix  NewPrefix
+    input text  tcasePrefix  ${testprojectprefix}
 
 Select Create From Existing Projects = No
     select from list  copy_from_tproject_id  0
+
+Select Create From Existing Projects = Yes
+    select from list  copy_from_tproject_id  681
 
 Create Test Project
     click button  create
 
 Save Test Project
-    click button  doActionButton
+    click button  name=doActionButton
+    sleep  4
+
 
 Check if Test Project is created
-    wait until page contains  NTP
+    wait until page contains  ${testprojectname}
+
+#Check if Test Project is created
+    #wait until element contains  id=item_view_wrapper  ${testprojectname}  2
+
+No warnings
+    page should not contain element  css=div.error
+
+Unique prefix or name check
+    element should not contain  id=item_view_wrapper  ${testprojectname}
+    element should not contain  id=item_view_wrapper  ${testprojectprefix}
+
+Unselect all features
+    unselect checkbox  optReq
+    unselect checkbox  optPriority
+    unselect checkbox  optAutomation
+    unselect checkbox  optInventory
+
+Test plan set for project = no
+    page should contain  There are no Test Plans defined!
+
+Go to desktop
+    go to  ${WELCOME URL}
+
+Delete row with Test Project
+    #click element  xpath=//tr[td//text()[contains(., '${testprojectname}')]]/td[last()]
+    click element  xpath=//tr[td//text()[contains(., '${testprojectname}')]]/td[last()]/img[last()]
+    sleep  1
+    click button  Yes
+
+
+
+
+
+
+
+
 
 
 

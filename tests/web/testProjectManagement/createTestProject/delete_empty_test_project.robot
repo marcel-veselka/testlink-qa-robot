@@ -4,20 +4,23 @@ Documentation  A test suite with a single test for creating a new Test Project. 
 Resource       ../../../../resources/resourcesTestProjectManagement.robot
 
 *** Test Cases ***
-Create new Test Project
+Delete Test Project
 
     Open Browser To Login Page
     Login as Admin
     Submit Credentials
     Select desired frame
+    Click Test Plan Management
+    Test plan set for project = no
+    Go to desktop
+    Select desired frame
     Click Test Project Management
-    Create Test Project
-    Select Create From Existing Projects = No
-    Add Test Project Name
-    Add Prefix
-    Save Test Project
-    Check if Test Project is created
-    [Teardown]  close browser
-
-
-
+    Delete row with Test Project
+    #Create Test Project
+    #Select Create From Existing Projects = yes
+    #Add Test Project Name
+    #Add Prefix
+    #Save Test Project
+    #No warnings
+    #Check if Test Project is created
+    #[Teardown]  close browser

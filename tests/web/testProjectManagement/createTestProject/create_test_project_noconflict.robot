@@ -4,20 +4,19 @@ Documentation  A test suite with a single test for creating a new Test Project. 
 Resource       ../../../../resources/resourcesTestProjectManagement.robot
 
 *** Test Cases ***
-Create new Test Project
+Create new Test Project with no conflict
 
     Open Browser To Login Page
     Login as Admin
     Submit Credentials
     Select desired frame
     Click Test Project Management
+    Unique prefix or name check
     Create Test Project
-    Select Create From Existing Projects = No
+    Select Create From Existing Projects = yes
     Add Test Project Name
     Add Prefix
     Save Test Project
+    No warnings
     Check if Test Project is created
     [Teardown]  close browser
-
-
-
