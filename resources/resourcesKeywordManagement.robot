@@ -59,6 +59,7 @@ Check
     page should contain  Keyword Management
 
 Check if Keyword1 is created
+    sleep  2
     wait until page contains  ${KEYWORD}
 
 Check if Keyword2 is created

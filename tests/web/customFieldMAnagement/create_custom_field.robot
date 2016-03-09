@@ -9,13 +9,14 @@ Create new Custom Field
     Open Browser To Login Page
     Login as Admin
     Submit Credentials
+    Wait a little
     Select desired frame
     Select Define Custom Fields
     Create new custom field
     Input the name of the Custom Field
     Input the label of the Custom Field
     Add new Custom Field
-    Wait a little
+
     #Zkouska Push
     Check id new Custom Field is created
     [Teardown]  close browser

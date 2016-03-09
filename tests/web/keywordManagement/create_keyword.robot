@@ -11,11 +11,9 @@ Create Keyword
     Submit Credentials
     Wait a little
     Select desired frame
-    Wait a little
     Choose Keyword Management
     Create Keyword
     Enter the name for a Keyword1
     Save Keyword
-    Wait a little
     Check if Keyword1 is created
     [Teardown]  close browser

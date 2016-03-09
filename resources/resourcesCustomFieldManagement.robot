@@ -56,6 +56,6 @@ Add new Custom Field
     Click Button  do_update
 
 Check id new Custom Field is created
-    sleep  5
+    sleep  2
     page should contain  ${CFNAME}
 
