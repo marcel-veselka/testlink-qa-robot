@@ -111,7 +111,8 @@ Delete Test Project
     select frame  name=mainframe
     wait until page contains  Test Project Management
     click link  Test Project Management
-    click element  xpath=//tr[td//text()[contains(., '${testprojectname}')]]/td[last()]
+    sleep  2
+    click element  xpath=//tr[td//text()[contains(.,'${testprojectname}')]]/td[last()]
     sleep  1
     click button  Yes
     page should not contain  ${testprojectname}
