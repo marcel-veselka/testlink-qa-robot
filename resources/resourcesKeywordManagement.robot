@@ -15,6 +15,7 @@ ${LOGIN URL}     http://${SERVER}/login.php
 ${WELCOME URL}   http://${SERVER}/index.php?caller=login
 ${ERROR URL}     http://${SERVER}/login.php
 ${BROWSER}       ff
+${KEYWORD}      ART
 *** Keywords ***
 Open Browser To Login Page
     Open Browser  ${LOGIN URL}  ${BROWSER}
@@ -42,8 +43,8 @@ Choose Keyword Management
 Create Keyword
     click button  create_keyword
 
-Enter the name for a keyword1
-    input text  keyword  QWERTY
+Enter the name for a Keyword1
+    input text  keyword  ${KEYWORD}
 
 Enter the name for a keyword2
     input text  keyword  qwerty2
@@ -58,7 +59,7 @@ Check
     page should contain  Keyword Management
 
 Check if Keyword1 is created
-    wait until page contains  QWERTY
+    wait until page contains  ${KEYWORD}
 
 Check if Keyword2 is created
     page should contain  qwerty2
