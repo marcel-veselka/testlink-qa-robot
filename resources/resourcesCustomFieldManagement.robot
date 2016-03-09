@@ -57,5 +57,5 @@ Add new Custom Field
 
 Check id new Custom Field is created
     sleep  5
-    wait until page contains  ${CFLABEL}
+    page should contain  ${CFNAME}
 
