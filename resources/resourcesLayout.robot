@@ -126,5 +126,5 @@ Check New Project
 Check info
     select frame  name=mainframe
     click element  xpath=/html/body/div[1]/div[1]/img
-    wait until page contains  A test plan is a
+    wait until page contains element  tlhelp
     unselect frame
