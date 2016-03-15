@@ -106,3 +106,19 @@ Check Events
     page should contain  Event viewer
     unselect frame
     go back
+
+Change Test Project
+    sleep  3
+    select frame  name=titlebar
+    select from list  testproject  1
+    unselect frame
+
+Check Current Project
+    select frame  name=mainframe
+    page should not contain  Execute Tests
+    unselect frame
+
+Check New Project
+    select frame  name=mainframe
+    wait until page contains  Execute Tests
+    unselect frame
