@@ -122,3 +122,9 @@ Check New Project
     select frame  name=mainframe
     wait until page contains  Execute Tests
     unselect frame
+
+Check info
+    select frame  name=mainframe
+    click element  xpath=/html/body/div[1]/div[1]/img
+    wait until page contains  A test plan is a
+    unselect frame
