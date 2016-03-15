@@ -31,9 +31,78 @@ Login as Admin
 Submit Credentials
     Click Button  login_submit
 
-Select desired frame
-    select frame  name=titlebar
 
-Check my settings
+
+Check My settings
     sleep  3
-    click element  xpath=
+    select frame  name=titlebar
+    click element  xpath=/html/body/div[2]/span[2]/a[1]
+    unselect frame
+    select frame  name=mainframe
+    page should contain  Account Settings
+    unselect frame
+    go back
+
+Check Descktop
+    sleep  3
+    select frame  name=mainframe
+    page should contain  Define Custom Fields
+    unselect frame
+
+Check Test Specification
+    sleep  3
+    select frame  name=mainframe
+    click link  Test Specification
+    sleep  3
+    select frame  name=treeframe
+    wait until page contains  Navigator - Test Specification
+    unselect frame
+    go back
+
+Check Execute tests
+    sleep  3
+    select frame  name=titlebar
+    select from list  testproject  1
+    unselect frame
+    select frame  name=mainframe
+    click link  Execute Tests
+    sleep  3
+    select frame  name=treeframe
+    wait until page contains  Execute Tests
+    unselect frame
+    go back
+
+Check Test Reports
+    sleep  3
+    select frame  name=titlebar
+    select from list  testproject  1
+    unselect frame
+    select frame  name=mainframe
+    click link  Test Reports and Metrics
+    sleep  3
+    select frame  name=treeframe
+    wait until page contains  Reports and Metrics
+    unselect frame
+    go back
+
+Check User Roles
+    sleep  3
+    select frame  name=titlebar
+    select from list  testproject  1
+    unselect frame
+    select frame  name=mainframe
+    click link  Assign User Roles
+    sleep  3
+    wait until page contains  User Management - Assign roles
+    unselect frame
+    go back
+
+Check Events
+    sleep  3
+    select frame  name=titlebar
+    click element  xpath=/html/body/div[3]/a[7]
+    unselect frame
+    select frame  name=mainframe
+    page should contain  Event viewer
+    unselect frame
+    go back

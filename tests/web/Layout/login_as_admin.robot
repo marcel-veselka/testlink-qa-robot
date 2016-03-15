@@ -8,6 +8,12 @@ Login as admin
     Open Browser To Login Page
     Login as Admin
     Submit Credentials
-    Select desired frame
-    Check my settings
+    Check My Settings
+    Check Descktop
+    Check Test Specification
+    Check Execute tests
+    Check Test Reports
+    Check User Roles
+    Check Events
+    [Teardown]  close browser
 
