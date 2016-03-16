@@ -25,4 +25,3 @@ Check Search Requirements
     select frame  name=workframe
     wait until page contains  Requirement Search Page
     unselect frame
-    go back

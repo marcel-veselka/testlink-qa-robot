@@ -26,4 +26,3 @@ Check Assign Custom Fields
     wait until page contains  Assign custom fields
     wait until page contains element  doAssign
     unselect frame
-    go back

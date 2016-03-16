@@ -26,4 +26,3 @@ Check Platform Management
     wait until page contains  Platform Management
     wait until page contains element  create_platform
     unselect frame
-    go back

@@ -24,4 +24,3 @@ Check Define Custom Fields
     select frame  name=mainframe
     wait until page contains  Custom fields
     unselect frame
-    go back

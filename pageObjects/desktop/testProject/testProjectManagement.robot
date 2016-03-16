@@ -25,4 +25,4 @@ Check Test Project Management
     wait until page contains  Test Project Management
     wait until page contains element  search
     unselect frame
-    go back
+

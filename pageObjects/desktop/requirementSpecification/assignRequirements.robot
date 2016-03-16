@@ -25,4 +25,3 @@ Check Assign Requirements
     select frame  name=workframe
     wait until page contains  Assign Requirements to Test Case
     unselect frame
-    go back

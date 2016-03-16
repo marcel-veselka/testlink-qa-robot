@@ -25,4 +25,3 @@ Check Generate Requirement Specification Document
     select frame  name=workframe
     wait until page contains  Print Requirement Specification
     unselect frame
-    go back

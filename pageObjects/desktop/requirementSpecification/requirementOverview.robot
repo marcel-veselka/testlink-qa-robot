@@ -24,4 +24,3 @@ Check Requirement Overview
     select frame  name=mainframe
     wait until page contains  Requirement Overview - Number of Requirements
     unselect frame
-    go back

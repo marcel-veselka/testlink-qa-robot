@@ -18,6 +18,11 @@ ${BROWSER}      ff
 
 
 *** Keywords ***
+Go to index page
+    sleep  3
+    select frame  name=titlebar
+    click element  xpath=/html/body/div[1]/a
+    unselect frame
 Go to My Settings
     sleep  3
     select frame  name=titlebar
@@ -140,8 +145,7 @@ Go to Issue Tracker Management
 Go to Test Project Management
     sleep  3
     select frame  name=mainframe
-    wait until page contains  Test Project Management
-    wait until page contains element  search
+    click link  Test Project Management
     unselect frame
 
 Go to Assign User Roles
@@ -203,7 +207,6 @@ go to Generate Requirement Specification Document
     select frame  name=mainframe
     click link  Generate Requirement Specification Document
     unselect frame
-    go back
 
 Change Test Project
     sleep  3

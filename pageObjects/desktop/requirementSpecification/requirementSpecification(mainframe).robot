@@ -26,4 +26,3 @@ Check Requirement Specification (mainframe)
     select frame  name=treeframe
     wait until page contains  Navigator - Requirement Specifications
     unselect frame
-    go back

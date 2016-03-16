@@ -25,4 +25,3 @@ Check Assign User Roles
     wait until page contains  Assign Test Project roles
     wait until page contains element  do_update
     unselect frame
-    go back

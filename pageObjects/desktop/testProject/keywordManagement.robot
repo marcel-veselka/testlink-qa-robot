@@ -26,4 +26,3 @@ Check Keyword Management
     wait until page contains  Keyword Management
     wait until page contains element  create_keyword
     unselect frame
-    go back
