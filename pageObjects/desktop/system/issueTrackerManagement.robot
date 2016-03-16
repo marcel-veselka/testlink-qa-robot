@@ -24,4 +24,3 @@ Check Issue Tracker Management
     select frame  name=mainframe
     wait until page contains element  create
     unselect frame
-    go back
