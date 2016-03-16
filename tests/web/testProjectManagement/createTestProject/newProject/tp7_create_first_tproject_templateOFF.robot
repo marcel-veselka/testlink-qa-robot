@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation  A test suite with a single test for creating a new Test Project. This test has
 ...            a workflow that is created using keywords from the resource file.
-Resource       ../../../../resources/resourcesTestProjectManagement.robot
+Resource       ../../../../../resources/resourcesTestProjectManagement.robot
 Test Teardown  Delete Test Project
 
 *** Test Cases ***
