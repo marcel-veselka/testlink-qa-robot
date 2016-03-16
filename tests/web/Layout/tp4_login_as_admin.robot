@@ -16,7 +16,7 @@ Resource       ../../../pageObjects/desktop/testProject/assignUserRoles.robot
 Resource       ../../../pageObjects/desktop/testProject/keywordManagement.robot
 Resource       ../../../pageObjects/desktop/testProject/platformManagement.robot
 Resource       ../../../pageObjects/desktop/testProject/testProjectManagement.robot
-#blabla
+Test Teardown  close browser
 *** Test Cases ***
 
 Login as admin
@@ -66,5 +66,4 @@ Login as admin
     Check Assign Requirements
     Go to Generate Requirement Specification Document
     Check Generate Requirement Specification Document
-    [Teardown]  close browser
 
