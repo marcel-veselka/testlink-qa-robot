@@ -10,3 +10,4 @@ Info Boxes
     Submit Credentials
     Change Test Project
     Check info
+    [Teardown]  close browser
