@@ -34,7 +34,6 @@ Check My Settings
     select frame  name=mainframe
     page should contain  Account Settings
     unselect frame
-    go back
 
 Go to Desktop (Project)
     sleep  3
@@ -47,7 +46,6 @@ Check Desktop (Project)
     page should contain  System
     page should contain  Test Project
     unselect frame
-    go back
 
 Go to Requirement Specification (titlebar)
     sleep  3
@@ -61,7 +59,6 @@ Check Requirement Specification (titlebar)
     select frame  name=treeframe
     wait until page contains  Navigator - Requirement Specifications
     unselect frame
-    go back
 
 Go to Test Specification (titlebar)
     sleep  3
@@ -75,7 +72,6 @@ Check Test Specification (titlebar)
     select frame  name=treeframe
     wait until page contains  Navigator - Test Specification
     unselect frame
-    go back
 
 Go to Test Execution
     sleep  3
@@ -89,7 +85,6 @@ Check Test Execution
     select frame  name=treeframe
     wait until page contains  Execute Tests
     unselect frame
-    go back
 
 Go to Test Reports
     select frame  name=titlebar
@@ -102,7 +97,6 @@ Check Test Reports
     select frame  name=treeframe
     wait until page contains  Reports and Metrics
     unselect frame
-    go back
 
 Go to User Management
     sleep  3
@@ -115,7 +109,6 @@ Check User Management
     select frame  name=mainframe
     wait until page contains  User Management
     unselect frame
-    go back
 
 Go to Events
     sleep  3
@@ -128,7 +121,6 @@ Check Events
     select frame  name=mainframe
     page should contain  Event viewer
     unselect frame
-    go back
 
 Go to Define Custom Fields
     sleep  3
