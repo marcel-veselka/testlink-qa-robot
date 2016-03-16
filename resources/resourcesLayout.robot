@@ -43,30 +43,45 @@ Check My settings
     unselect frame
     go back
 
-Check Descktop
+Check Desktop (Project)
     sleep  3
-    select frame  name=mainframe
-    page should contain  Define Custom Fields
+    select frame  name=titlebar
+    click element  xpath=/html/body/div[3]/a[1]
     unselect frame
+    select frame  name=mainframe
+    page should contain  System
+    page should contain  Test Project
+    unselect frame
+    go back
+
+Check Requirement Specification (titlebar)
+    sleep  3
+    select frame  name=titlebar
+    click element  xpath=/html/body/div[3]/a[2]
+    unselect frame
+    select frame  name=mainframe
+    select frame  name=treeframe
+    wait until page contains  Navigator - Requirement Specifications
+    unselect frame
+    go back
 
 Check Test Specification
     sleep  3
+    select frame  name=titlebar
+    click element  xpath=/html/body/div[3]/a[3]
+    unselect frame
     select frame  name=mainframe
-    click link  Test Specification
-    sleep  3
     select frame  name=treeframe
     wait until page contains  Navigator - Test Specification
     unselect frame
     go back
 
-Check Execute tests
+Check Test Execution
     sleep  3
     select frame  name=titlebar
-    select from list  testproject  1
+    click element  xpath=/html/body/div[3]/a[4]
     unselect frame
     select frame  name=mainframe
-    click link  Execute Tests
-    sleep  3
     select frame  name=treeframe
     wait until page contains  Execute Tests
     unselect frame
@@ -75,25 +90,21 @@ Check Execute tests
 Check Test Reports
     sleep  3
     select frame  name=titlebar
-    select from list  testproject  1
+    click element  xpath=/html/body/div[3]/a[5]
     unselect frame
     select frame  name=mainframe
-    click link  Test Reports and Metrics
-    sleep  3
     select frame  name=treeframe
     wait until page contains  Reports and Metrics
     unselect frame
     go back
 
-Check User Roles
+Check User Management
     sleep  3
     select frame  name=titlebar
-    select from list  testproject  1
+    click element  xpath=/html/body/div[3]/a[6]
     unselect frame
     select frame  name=mainframe
-    click link  Assign User Roles
-    sleep  3
-    wait until page contains  User Management - Assign roles
+    wait until page contains  User Management
     unselect frame
     go back
 
@@ -104,6 +115,120 @@ Check Events
     unselect frame
     select frame  name=mainframe
     page should contain  Event viewer
+    unselect frame
+    go back
+
+Check Define Custom Fields
+    sleep  3
+    select frame  name=mainframe
+    click link  Define Custom Fields
+    wait until page contains  Custom fields
+    unselect frame
+    go back
+
+Check Issue Tracker Management
+    sleep  3
+    select frame  name=mainframe
+    click link  Issue Tracker Management
+    wait until page contains element  create
+    unselect frame
+    go back
+
+Check Test Project Management
+    sleep  3
+    select frame  name=mainframe
+    click link  Test Project Management
+    wait until page contains  Test Project Management
+    wait until page contains element  search
+    unselect frame
+    go back
+
+Check Assign User Roles
+    sleep  3
+    select frame  name=mainframe
+    click link  Assign User Roles
+    wait until page contains  Assign Test Project roles
+    wait until page contains element  do_update
+    unselect frame
+    go back
+
+Check Assign Custom Fields
+    sleep  3
+    select frame  name=mainframe
+    click link  Assign Custom Fields
+    wait until page contains  Assign custom fields
+    wait until page contains element  doAssign
+    unselect frame
+    go back
+
+Check Keyword Management
+    sleep  3
+    select frame  name=mainframe
+    click link  Keyword Management
+    wait until page contains  Keyword Management
+    wait until page contains element  create_keyword
+    unselect frame
+    go back
+
+Check Platform Management
+    sleep  3
+    select frame  name=mainframe
+    click link  Platform Management
+    wait until page contains  Platform Management
+    wait until page contains element  create_platform
+    unselect frame
+    go back
+
+Check Requirement Specification (mainframe)
+    sleep  3
+    select frame  name=mainframe
+    click link  Requirement Specification
+    select frame  name=treeframe
+    wait until page contains  Navigator - Requirement Specifications
+    unselect frame
+    go back
+
+Check Requirement Overview
+    sleep  3
+    select frame  name=mainframe
+    click link  Requirement Overview
+    wait until page contains  Requirement Overview - Number of Requirements
+    unselect frame
+    go back
+
+Check Search Requirements
+    sleep  3
+    select frame  name=mainframe
+    click link  Search Requirements
+    select frame  name=workframe
+    wait until page contains  Requirement Search Page
+    unselect frame
+    go back
+
+Check Search Requirement Specifications
+    sleep  3
+    select frame  name=mainframe
+    click link  Search Requirement Specifications
+    select frame  name=workframe
+    wait until page contains  Requirement Specification Search Page
+    unselect frame
+    go back
+
+Check Assign Requirements
+    sleep  3
+    select frame  name=mainframe
+    click link  Assign Requirements
+    select frame  name=workframe
+    wait until page contains  Assign Requirements to Test Case
+    unselect frame
+    go back
+
+Check Generate Requirement Specification Document
+    sleep  3
+    select frame  name=mainframe
+    click link  Generate Requirement Specification Document
+    select frame  name=workframe
+    wait until page contains  Print Requirement Specification
     unselect frame
     go back
 
