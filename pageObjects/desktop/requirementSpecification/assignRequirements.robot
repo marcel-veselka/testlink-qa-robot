@@ -20,7 +20,6 @@ ${BROWSER}      ff
 *** Keywords ***
 
 Check Assign Requirements
-    sleep  3
     select frame  name=mainframe
     select frame  name=workframe
     wait until page contains  Assign Requirements to Test Case

@@ -20,7 +20,6 @@ ${BROWSER}      ff
 *** Keywords ***
 
 Check Search Requirement Specifications
-    sleep  3
     select frame  name=mainframe
     select frame  name=workframe
     wait until page contains  Requirement Specification Search Page

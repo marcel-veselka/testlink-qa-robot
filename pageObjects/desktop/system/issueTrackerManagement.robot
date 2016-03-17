@@ -20,7 +20,6 @@ ${BROWSER}      ff
 *** Keywords ***
 
 Check Issue Tracker Management
-    sleep  3
     select frame  name=mainframe
     wait until page contains element  create
     unselect frame

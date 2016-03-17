@@ -20,8 +20,7 @@ ${BROWSER}      ff
 *** Keywords ***
 
 
-Check Platform Management
+Check Test Cases Created Per User
     select frame  name=mainframe
-    wait until page contains  Platform Management
-    wait until page contains element  create_platform
+    wait until page contains  Test Cases created per User
     unselect frame

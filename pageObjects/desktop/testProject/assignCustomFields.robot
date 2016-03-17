@@ -21,7 +21,6 @@ ${BROWSER}      ff
 
 
 Check Assign Custom Fields
-    sleep  3
     select frame  name=mainframe
     wait until page contains  Assign custom fields
     wait until page contains element  doAssign

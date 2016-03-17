@@ -20,8 +20,8 @@ ${BROWSER}      ff
 *** Keywords ***
 
 
-Check Platform Management
+Check Assign Keywords
     select frame  name=mainframe
-    wait until page contains  Platform Management
-    wait until page contains element  create_platform
+    select frame  name=workframe
+    wait until page contains  Keyword Assignment
     unselect frame

@@ -20,7 +20,6 @@ ${BROWSER}      ff
 *** Keywords ***
 
 Check Assign User Roles
-    sleep  3
     select frame  name=mainframe
     wait until page contains  Assign Test Project roles
     wait until page contains element  do_update

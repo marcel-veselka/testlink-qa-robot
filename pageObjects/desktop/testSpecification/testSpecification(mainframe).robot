@@ -20,8 +20,8 @@ ${BROWSER}      ff
 *** Keywords ***
 
 
-Check Platform Management
+Check Test Specification (Mainframe)
     select frame  name=mainframe
-    wait until page contains  Platform Management
-    wait until page contains element  create_platform
+    select frame  name=treeframe
+    wait until page contains  Navigator - Test Specification
     unselect frame

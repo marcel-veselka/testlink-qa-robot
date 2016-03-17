@@ -20,7 +20,6 @@ ${BROWSER}      ff
 *** Keywords ***
 
 Check Test Project Management
-    sleep  3
     select frame  name=mainframe
     wait until page contains  Test Project Management
     wait until page contains element  search

@@ -20,7 +20,6 @@ ${BROWSER}      ff
 *** Keywords ***
 
 Check Generate Requirement Specification Document
-    sleep  3
     select frame  name=mainframe
     select frame  name=workframe
     wait until page contains  Print Requirement Specification

@@ -20,8 +20,7 @@ ${BROWSER}      ff
 *** Keywords ***
 
 
-Check Platform Management
+Check Search Test Cases
     select frame  name=mainframe
-    wait until page contains  Platform Management
-    wait until page contains element  create_platform
+    wait until page contains  Search Test Cases
     unselect frame

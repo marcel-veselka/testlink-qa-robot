@@ -20,7 +20,6 @@ ${BROWSER}      ff
 *** Keywords ***
 
 Check Define Custom Fields
-    sleep  3
     select frame  name=mainframe
     wait until page contains  Custom fields
     unselect frame

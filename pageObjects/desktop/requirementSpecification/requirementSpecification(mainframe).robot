@@ -21,7 +21,6 @@ ${BROWSER}      ff
 
 
 Check Requirement Specification (mainframe)
-    sleep  3
     select frame  name=mainframe
     select frame  name=treeframe
     wait until page contains  Navigator - Requirement Specifications
