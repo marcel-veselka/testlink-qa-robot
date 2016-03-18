@@ -49,5 +49,6 @@ Wait until page contains all elements
 
 Submit project
     click button  Create
+    sleep  3
 
 
