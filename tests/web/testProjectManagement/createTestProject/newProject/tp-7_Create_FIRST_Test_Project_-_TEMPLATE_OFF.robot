@@ -20,3 +20,5 @@ Create new test project with template OFF
     createTestProjectPage.Fill Test project name
     createTestProjectPage.Fill Test project prefix
     createTestProjectPage.Submit project
+    testProjectManagementPage.Project Exist
+    testProjectManagementPage.Delete existing project
