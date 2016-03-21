@@ -6,8 +6,8 @@ Library        Selenium2Library
 
 
 *** Variables ***
-{@searchedTestCase}  =  4
-{@testProjectName}  =  tp:testing project
+${searchedTestCase}  4
+${testProjectName}  tp:testing project
 
 *** Keywords ***
 
@@ -118,7 +118,7 @@ Check Events
     unselect frame
 
 Input text into test case search
-    input text  targetTestCase  {@searchedTestCase}
+    input text  targetTestCase  ${searchedTestCase}
 
 Start searching test case
     click element  xpath=//img[@title="Search Test Case by ID"]
@@ -127,7 +127,7 @@ Click test project dropdown
     click element  xpath=//select[@name="testproject"]
 
 Choose test project from dropdown
-    select from list by label  xpath=//select[@name="testproject"]  {@testProjectName}
+    select from list by label  xpath=//select[@name="testproject"]  ${testProjectName}
 
 Change Test Project
     select frame  name=titlebar

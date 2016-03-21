@@ -1,25 +1,25 @@
 *** Settings ***
 Library  Selenium2Library
-Resource  resource/pageObjects/loginPage.robot
-Resource  resource/pageObjects/desktop/desktopPage.robot
-Resource  resource/pageObjects/desktop/headerPage.robot
-Resource  resource/pageObjects/desktop/requirementSpecification/assignRequirements.robot
-Resource  resource/pageObjects/desktop/requirementSpecification/generateRequirementSpecification.robot
-Resource  resource/pageObjects/desktop/requirementSpecification/requirementOverview.robot
-Resource  resource/pageObjects/desktop/requirementSpecification/requirementSpecification(mainframe).robot
-Resource  resource/pageObjects/desktop/requirementSpecification/searchRequirements.robot
-Resource  resource/pageObjects/desktop/requirementSpecification/searchRequirementSpecification.robot
-Resource  resource/pageObjects/desktop/system/defineCustomFields.robot
-Resource  resource/pageObjects/desktop/system/issueTrackerManagement.robot
-Resource  resource/pageObjects/desktop/testProject/assignCustomFields.robot
-Resource  resource/pageObjects/desktop/testProject/assignUserRoles.robot
-Resource  resource/pageObjects/desktop/testProject/keywordManagement.robot
-Resource  resource/pageObjects/desktop/testProject/platformManagement.robot
-Resource  resource/pageObjects/desktop/testProject/testProjectManagement.robot
-Resource  resource/pageObjects/desktop/testSpecification/assignKeywords.robot
-Resource  resource/pageObjects/desktop/testSpecification/searchTestCases.robot
-Resource  resource/pageObjects/desktop/testSpecification/testCasesCreatedPerUser.robot
-Resource  resource/pageObjects/desktop/testSpecification/testSpecification(mainframe).robot
+Resource  ../resource/pageObjects/loginPage.robot
+Resource  ../resource/pageObjects/desktop/desktopPage.robot
+Resource  ../resource/pageObjects/desktop/headerPage.robot
+Resource  ../resource/pageObjects/desktop/requirementSpecification/assignRequirements.robot
+Resource  ../resource/pageObjects/desktop/requirementSpecification/generateRequirementSpecificationDocument.robot
+Resource  ../resource/pageObjects/desktop/requirementSpecification/requirementOverview.robot
+Resource  ../resource/pageObjects/desktop/requirementSpecification/requirementSpecification(mainframe).robot
+Resource  ../resource/pageObjects/desktop/requirementSpecification/searchRequirements.robot
+Resource  ../resource/pageObjects/desktop/requirementSpecification/searchRequirementSpecifications.robot
+Resource  ../resource/pageObjects/desktop/system/defineCustomFields.robot
+Resource  ../resource/pageObjects/desktop/system/issueTrackerManagement.robot
+Resource  ../resource/pageObjects/desktop/testProject/assignCustomFields.robot
+Resource  ../resource/pageObjects/desktop/testProject/assignUserRoles.robot
+Resource  ../resource/pageObjects/desktop/testProject/keywordManagement.robot
+Resource  ../resource/pageObjects/desktop/testProject/platformManagement.robot
+Resource  ../resource/pageObjects/desktop/testProject/testProjectManagement.robot
+Resource  ../resource/pageObjects/desktop/testSpecification/assignKeywords.robot
+Resource  ../resource/pageObjects/desktop/testSpecification/searchTestCases.robot
+Resource  ../resource/pageObjects/desktop/testSpecification/testCasesCreatedPerUser.robot
+Resource  ../resource/pageObjects/desktop/testSpecification/testSpecification(mainframe).robot
 
 
 
