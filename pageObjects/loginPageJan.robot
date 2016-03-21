@@ -16,6 +16,10 @@ ${BROWSER}      chrome
 
 *** Keywords ***
 
+Login as Admin
+    input text  login  renat.kulalov
+    input text  tl_password  renat123
+
 Open Browser To Login Page
     Open Browser  ${LOGIN URL}  ${BROWSER}
     Maximize Browser Window
@@ -26,6 +30,9 @@ Open Browser To Login Page
 Go to login page
     go to  ${LOGIN URL}
     Title Should Be  TestLink
+
+Submit Credentials
+    Click Button  login_submit
 
 Wait until page contains all elements for login
     wait until page contains element  login

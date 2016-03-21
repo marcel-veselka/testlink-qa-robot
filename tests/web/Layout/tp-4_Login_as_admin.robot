@@ -16,3 +16,4 @@ Login as admin incorrect
     loginPageJan.Fill incorrect credentials and submit
     loginPageJan.Check there is a warning about login
     loginPageJan.Close the browser
+
