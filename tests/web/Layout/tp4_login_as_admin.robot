@@ -1,6 +1,8 @@
 *** Settings ***
+
 Documentation  A test suite with a single test for creating a new Custom Field. This test has
 ...            a workflow that is created using keywords from the resource file.
+
 Resource       ../../../pageObjects/loginPage.robot
 Resource       ../../../pageObjects/desktop/desktop.robot
 Resource       ../../../pageObjects/desktop/requirementSpecification/assignRequirements.robot
@@ -16,7 +18,13 @@ Resource       ../../../pageObjects/desktop/testProject/assignUserRoles.robot
 Resource       ../../../pageObjects/desktop/testProject/keywordManagement.robot
 Resource       ../../../pageObjects/desktop/testProject/platformManagement.robot
 Resource       ../../../pageObjects/desktop/testProject/testProjectManagement.robot
+Resource       ../../../pageObjects/desktop/testSpecification/assignKeywords.robot
+Resource       ../../../pageObjects/desktop/testSpecification/searchTestCases.robot
+Resource       ../../../pageObjects/desktop/testSpecification/testCasesCreatedPerUser.robot
+Resource       ../../../pageObjects/desktop/testSpecification/testSpecification(mainframe).robot
+
 Test Teardown  close browser
+
 *** Test Cases ***
 
 Login as admin
@@ -79,4 +87,22 @@ Login as admin
     Go to index page
     Go to Generate Requirement Specification Document
     Check Generate Requirement Specification Document
+    Go to index page
+    Go to Test Specification (Mainframe)
+    Check Test Specification (Mainframe)
+    Go to index page
+    Go to Search Test Cases
+    Check Search Test Cases
+    Go to index page
+    Go to Assign Keywords
+    Check Assign Keywords
+    Go to index page
+    Go to Test Cases Created Per User
+    Check Test Cases Created Per User
+
+
+
+
+
+
 
