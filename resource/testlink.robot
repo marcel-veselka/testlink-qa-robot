@@ -25,6 +25,7 @@ Resource  ../resource/pageObjects/desktop/testSpecification/testSpecification(ma
 
 *** Keywords ***
 
+
 Login as admin correct
     loginPage.Open Browser To Login Page
     loginPage.Wait until page contains all elements for login
