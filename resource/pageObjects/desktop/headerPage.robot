@@ -15,19 +15,22 @@ Check header is there  #pro ucely debugovani
     page should contain element  xpath=//frame[@name="titlebar"]
 
 Wait untill header is loaded
-    wait until page contains  xpath=//img[@alt="Company logo"]
-    wait until page contains  xpath=//img[@title="My Settings"]
-    wait until page contains  xpath=//img[@title="Logout"]
-    wait until page contains  xpath=//img[@title="Project"]
-    wait until page contains  xpath=//img[@title="Requirement Specification"]
-    wait until page contains  xpath=//img[@title="Test Specification"]
-    wait until page contains  xpath=//img[@title="Test Execution"]
-    wait until page contains  xpath=//img[@title="Test Reports"]
-    wait until page contains  xpath=//img[@title="User Management"]
-    wait until page contains  xpath=//img[@title="Events"]
-    wait until page contains  targetTestCase
-    wait until page contains  xpath=//img[@title="Search Test Case by ID"]
-    wait until page contains  xpath=//select[@name="testproject"]
+    select frame  name=titlebar
+    sleep  1
+    wait until page contains element  xpath=//img[@alt="Company logo"]
+    wait until page contains element  xpath=//img[@title="My Settings"]
+    wait until page contains element  xpath=//img[@title="Logout"]
+    wait until page contains element  xpath=//img[@title="Project"]
+    wait until page contains element  xpath=//img[@title="Requirement Specification"]
+    wait until page contains element  xpath=//img[@title="Test Specification"]
+    wait until page contains element  xpath=//img[@title="Test Execution"]
+    wait until page contains element  xpath=//img[@title="Test Reports"]
+    wait until page contains element  xpath=//img[@title="User Management"]
+    wait until page contains element  xpath=//img[@title="Events"]
+    wait until page contains element  name=targetTestCase
+    wait until page contains element  xpath=//img[@title="Search Test Case by ID"]
+    wait until page contains element  xpath=//select[@name="testproject"]
+    unselect frame
 
 Go to index page
     select frame  name=titlebar
