@@ -246,6 +246,7 @@ Go to Milestone Overview
     select frame  name=mainframe
     click link  Milestone Overview
     unselect frame
+
 Check Milestone Overview
     select frame  name=mainframe
     page should contain  Milestones for
@@ -260,7 +261,6 @@ Check Execute Tests
     select frame  name=mainframe
     select frame  name=treeframe
     wait until page contains  Execute Tests
-    Current Frame Contains  Execute Tests
     unselect frame
 
 Go to Test Cases Assigned to Me
@@ -282,7 +282,6 @@ Check Test Reports and Metrics
     select frame  name=mainframe
     select frame  name=treeframe
     wait until page contains  Reports and Metrics
-    Current Frame Contains  Reports and Metrics
     unselect frame
 
 Go to Metrics Dashboard
@@ -314,7 +313,6 @@ Check Add/Remove Test Cases
     select frame  name=mainframe
     select frame  name=treeframe
     wait until page contains  Add/Remove Test Cases
-    Current Frame Contains  Add/Remove Test Cases
     unselect frame
 
 Go to Assign Test Case Execution
@@ -326,7 +324,6 @@ Check Assign Test Case Execution
     select frame  name=mainframe
     select frame  name=treeframe
     wait until page contains  Assign Test Case Execution
-    Current Frame Contains  Assign Test Case Execution
     unselect frame
 
 Go to Set Urgent Tests
@@ -338,7 +335,6 @@ Check Set Urgent Tests
     select frame  name=mainframe
     select frame  name=treeframe
     wait until page contains  Set Urgent Tests
-    Current Frame Contains  Set Urgent Tests
     unselect frame
 
 Go to Update Linked Test Case Versions
@@ -350,7 +346,6 @@ Check Update Linked Test Case Versions
     select frame  name=mainframe
     select frame  name=treeframe
     wait until page contains  Update Linked Test Case Versions
-    Current Frame Contains  Update Linked Test Case Versions
     unselect frame
 
 Go to Show Test Cases Newest Versions
