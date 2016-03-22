@@ -65,7 +65,9 @@ Delete Test Project
     close browser
 
 
-Selecet Created Test Project
+Select Created Test Project
+
    click element  xpath//*[@id="item_view"]/tbody/tr[2]/td[1]/a
    click element  xpath=//tr[td//text()[contains(.,'${testprojectname}')]]/td[1]
 #Vojta
+#dodelam ve ctvrtek 24.3 - VOjta

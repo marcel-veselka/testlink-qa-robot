@@ -18,6 +18,6 @@ ${testprojectprefix}  122
 Set Test Project INACTIVE
 
     desktopPage.Go to Test Project Management
-    testProjectManagement.Selecet Created Test Project
-
+    testProjectManagement.Select Created Test Project
+#dodelam ve ctvrtek 24.3 - VOjta
 
