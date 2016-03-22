@@ -140,7 +140,7 @@ Create Empty Test Project
     click button  name=doActionButton
     sleep  5
     wait until page contains  ${testprojectname}
-    go to ${SERVER}
+
 
 
 
