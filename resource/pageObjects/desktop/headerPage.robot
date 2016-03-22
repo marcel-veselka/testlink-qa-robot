@@ -83,12 +83,6 @@ Go to Test Execution
     click element  xpath=/html/body/div[3]/a[4]
     unselect frame
 
-Check Test Execution
-    select frame  name=mainframe
-    select frame  name=treeframe
-    wait until page contains  Execute Tests
-    unselect frame
-
 Go to Test Reports
     select frame  name=titlebar
     click element  xpath=/html/body/div[3]/a[5]
@@ -97,7 +91,7 @@ Go to Test Reports
 Check Test Reports
     select frame  name=mainframe
     select frame  name=treeframe
-    wait until page contains  Reports and Metrics
+    Current Frame Contains  Reports and Metrics
     unselect frame
 
 Go to User Management

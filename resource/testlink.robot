@@ -142,7 +142,6 @@ Check header links
     headerPage.Go to Test Specification (titlebar)
     headerPage.Check Test Specification (titlebar)
     headerPage.Go to Test Execution
-    headerPage.Check Test Execution
     headerPage.Go to Test Reports
     headerPage.Check Test Reports
     headerPage.Go to User Management
