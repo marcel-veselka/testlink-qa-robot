@@ -280,6 +280,7 @@ Go to Test Reports and Metrics
 Check Test Reports and Metrics
     select frame  name=mainframe
     select frame  name=treeframe
+    sleep  1
     Current Frame Contains  Reports and Metrics
     unselect frame
 
@@ -311,6 +312,7 @@ Go to Add/Remove Test Cases
 Check Add/Remove Test Cases
     select frame  name=mainframe
     select frame  name=treeframe
+    sleep  1
     Current Frame Contains  Add/Remove Test Cases
     unselect frame
 
@@ -322,6 +324,7 @@ Go to Assign Test Case Execution
 Check Assign Test Case Execution
     select frame  name=mainframe
     select frame  name=treeframe
+    sleep  1
     Current Frame Contains  Assign Test Case Execution
     unselect frame
 
@@ -333,6 +336,7 @@ Go to Set Urgent Tests
 Check Set Urgent Tests
     select frame  name=mainframe
     select frame  name=treeframe
+    sleep  1
     Current Frame Contains  Set Urgent Tests
     unselect frame
 
@@ -344,6 +348,7 @@ Go to Update Linked Test Case Versions
 Check Update Linked Test Case Versions
     select frame  name=mainframe
     select frame  name=treeframe
+    sleep  1
     Current Frame Contains  Update Linked Test Case Versions
     unselect frame
 
