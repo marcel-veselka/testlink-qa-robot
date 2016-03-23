@@ -25,12 +25,3 @@ Check Test Project Management
     wait until page contains element  search
     unselect frame
 
-Click Create
-    select frame  mainframe
-    click button  Create
-    unselect frame
-
-Check new project exist
-    select frame  mainframe
-    element should contain  xpath=//table[@id="item_view"]  ${newTestProjectName}
-    unselect frame
