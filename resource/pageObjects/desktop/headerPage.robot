@@ -7,7 +7,8 @@ Library        Selenium2Library
 
 *** Variables ***
 ${searchedTestCase}  4
-${testProjectName}  tp:testing project
+${newTestProjectPrefix}  prefixNew1
+${newTestProjectName}  tp:testing project
 
 *** Keywords ***
 
@@ -124,7 +125,7 @@ Click test project dropdown
     click element  xpath=//select[@name="testproject"]
 
 Choose test project from dropdown
-    select from list by label  xpath=//select[@name="testproject"]  ${testProjectName}
+    select from list by label  xpath=//select[@name="testproject"]  ${newTestProjectName}
 
 Change Test Project
     select frame  name=titlebar

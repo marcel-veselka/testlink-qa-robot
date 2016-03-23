@@ -20,11 +20,11 @@ Resource  ../resource/pageObjects/desktop/testSpecification/assignKeywords.robot
 Resource  ../resource/pageObjects/desktop/testSpecification/searchTestCases.robot
 Resource  ../resource/pageObjects/desktop/testSpecification/testCasesCreatedPerUser.robot
 Resource  ../resource/pageObjects/desktop/testSpecification/testSpecification(mainframe).robot
+Resource  ../resource/pageObjects/desktop/testProject/createTestProjectPage.robot
 
 
 
 *** Keywords ***
-
 
 Login as admin correct
     loginPage.Open Browser To Login Page
@@ -151,9 +151,40 @@ Check header links
     headerPage.Check Events
     headerPage.Go to index page
 
-Create
+Start creating new test project without conflict
+    Check unique test project name and prefix
+    testProjectManagement.Click Create
 
+Fill information to create test without conflict
+    createTestProjectPage.Wait until page contains all elements
+    select frame  mainframe
+    createTestProjectPage.Fill Test Project Name
+    createTestProjectPage.Fill Test Project Prefix
+    unselect frame
+
+Submit and check new test project without conflict
+    createTestProjectPage.Click Create
+    testProjectManagement.Check new project exist
 
 Check unique test project name and prefix
+    desktopPage.Go to Test Project Management
+    testProjectManagement.Check Test Project Management
+    select frame  mainframe
+    element should not contain  item_view_wrapper  ${newTestProjectName}
+    element should not contain  item_view_wrapper  ${newTestProjectPrefix}
+    unselect frame
+
+Delete test project
+    testProjectManagement.Check Test Project Management
+    select frame  mainframe
+    click element  xpath=//tr[td//text()[contains(.,'${newTestProjectName}')]]/td[last()]
+    wait until page contains  Yes
+    click button  Yes
+    page should not contain  ${newTestProjectName}
+    page should not contain  ${newTestProjectPrefix}
+    unselect frame
+    close browser
+
+
 
 
