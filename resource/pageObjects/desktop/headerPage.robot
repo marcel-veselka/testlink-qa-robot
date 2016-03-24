@@ -134,5 +134,5 @@ Choose test project from dropdown
 
 Change Test Project
     select frame  name=titlebar
-    select from list by label  xpath=//select[@name="testproject"]  ${newTestProjectPrefix2}:${newTestProjectName2}
+    select from list by label  xpath=//select[@name="testproject"]  tp:testing project
     unselect frame
