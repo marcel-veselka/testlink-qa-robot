@@ -67,6 +67,7 @@ Select Created Test Project
 
 #dela vojta
 
+
 Create Test Project
     click button  create
 
@@ -108,6 +109,13 @@ Delete row with Test Project
     click button  Yes
     sleep  2
 
+Select Active Test Project
+    #click element  xpath=//tr[td//text()[contains(., '${testprojectname}')]]/td[last()]
+    sleep  2
+    click element  xpath=//tr[td//text()[contains(., '${testprojectname}')]]/td[setActive]
+    sleep  1
+    click button  Yes
+    sleep  2
 
 
 

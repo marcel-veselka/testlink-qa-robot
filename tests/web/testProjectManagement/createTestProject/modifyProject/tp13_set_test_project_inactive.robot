@@ -19,26 +19,15 @@ ${testprojectprefix}  122
 Set Test Project INACTIVE
 
 
+    testlink.Create new Test Project
+
+    testlink.Click desired project
+
+    testlink.Unselect Checkbox Availibility Active
+
+    testProjectManagement.Select Active Test Project
 
 
-
-
-
-
-    loginPage.Open Browser To Login Page
-    loginPage.Login as Admin
-    loginPage.Submit Credentials
-
-    desktopPage.Go to Test Project Management
-    testProjectManagement.Click Create
-    testProjectManagement.Add Test Project Name
-    testProjectManagement.Add Prefix
-    testProjectManagement.Create Test Project
-
-
-    testProjectManagement.Check new project exists
-
-    testProjectManagement.Click desired project
 
 #dodelam ve ctvrtek 24.3 - VOjta
 
