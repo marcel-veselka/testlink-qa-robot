@@ -320,9 +320,18 @@ Change Test Project
     [Tags]  tp38
     headerPage.Change Test Project
 
+Choose Requirement Specification
+    [Tags]  tp38
+    requirementSpecificationEdit.Choose Requirement Specification
+
 Create Requirement Operations
     [Tags]  tp38
     requirementSpecificationEdit.Create Requirement Operations
+
+
+Delete Requirement Specification
+    [Tags]  tp38
+    requirementSpecificationEdit.Delete Requirement Specification
 
 Change and check test project
     headerPage.Change Test Project

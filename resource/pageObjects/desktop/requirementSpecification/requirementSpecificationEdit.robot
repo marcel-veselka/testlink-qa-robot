@@ -39,7 +39,13 @@ Choose Requirement Specification
     select frame  treeframe
     wait until page contains element  name=expand_tree
     wait until page contains element  name=collapse_tree
-    click element  xpath=//ul[@class="x-tree-node-ct"]/li[contains(., "${dokumentID}:${title}")]
+    #click element  xpath=//ul[@class="x-tree-node-ct"]/li[contains(., "${dokumentID}:${title}")]
+    #click element  xpath=//*[@id="extdd-13"]
+    sleep  3
+    click element  xpath=//*[@id="extdd-13"]/a
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
     wait until page contains element  xpath=/html/body/div/img
     unselect frame
 
@@ -51,12 +57,29 @@ Create Requirement Operations
     wait until page contains element  name=importReq
     wait until page contains element  name=exportReq
     wait until page contains element  name=createReqFromIssueXML
-    click element  name=create_req
+    click button  name=create_req
     wait until page contains element  name=create_req
     wait until page contains element  name=go_back
     input text  reqDocId  ${dokumentID}
     input text  req_title  ${title}
-    select from list by value  reqStatus  3
+    select from list by value  reqStatus  F
     select from list by value  reqType  1
     click element  name=create_req
     unselect frame
+
+
+Delete Requirement Specification
+    select frame  mainframe
+    select frame  treeframe
+    click element  xpath=//*[@id="extdd-13"]/a
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  xpath=/html/body/div/img
+    click button  deleteSRS
+    wait until page contains  Yes
+    click button  Yes
+    wait until page contains  Requirement Specification: newtitle was successfully deleted
+    unselect frame
+
+
