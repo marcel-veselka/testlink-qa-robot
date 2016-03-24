@@ -34,3 +34,4 @@ Check new project exist
     select frame  mainframe
     element should contain  xpath=//table[@id="item_view"]  ${newTestProjectName}
     unselect frame
+#fff
