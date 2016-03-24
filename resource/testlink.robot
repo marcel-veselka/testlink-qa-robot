@@ -220,7 +220,7 @@ Check unique test project name and prefix
     unselect frame
 
 Delete test project
-    [Arguments]  ${newTestProjectName}  ${newTestProjectPrefix}
+   # [Arguments]  ${newTestProjectName}  ${newTestProjectPrefix}
     testProjectManagement.Check Test Project Management
     select frame  mainframe
     click element  xpath=//tr[td//text()[contains(.,'${newTestProjectName}')]]/td[last()]
