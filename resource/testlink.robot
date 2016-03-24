@@ -309,5 +309,3 @@ Delete Custom Field
     desktopPage.Go to Define Custom Fields
     defineCustomFields.Select and delete Custom Field
     defineCustomFields.Check if Custom Field has been deleted
-
-#sldfjkh
