@@ -23,3 +23,32 @@ Check Define Custom Fields
     select frame  name=mainframe
     wait until page contains  Custom fields
     unselect frame
+
+Click create Custom Field
+    select frame  name=mainframe
+    Click Button  create_cfield
+    unselect frame
+Input information about Custom Field
+    select frame  name=mainframe
+    input text  cf_name  ${CFNAME}
+    input text  cf_label  ${CFLABEL}
+    unselect frame
+
+Create and check custom field
+    select frame  name=mainframe
+    Click Button  do_update
+    page should contain  ${CFNAME}
+    unselect frame
+
+Select and delete Custom Field
+    select frame  name=mainframe
+    click link  ${CFNAME}
+    click button  do_delete
+    wait until page contains  Yes
+    click button  Yes
+    unselect frame
+
+Check if Custom Field has been deleted
+    select frame  name=mainframe
+    page should not contain  ${CFNAME}
+    unselect frame
