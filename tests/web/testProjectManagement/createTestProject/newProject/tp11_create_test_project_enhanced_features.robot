@@ -13,7 +13,7 @@ ${newTestProjectPrefix}  newProjectPrefixEnch
 
 Create new Test Project with enhanced features
 
-    Login as admin correct
-    Start creating new test project (enchanced features)
-    Fill information to create test (enchanced feautures)
-    Submit and check new test project
+    testlink.Login as admin correct
+    testlink.Start creating new test project (enchanced features)
+    testlink.Fill information to create test (enchanced feautures)
+    testlink.Submit and check new test project

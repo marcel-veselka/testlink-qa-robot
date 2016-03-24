@@ -17,7 +17,7 @@ ${newTestProjectDescription}  Description of new test project
 
 *** Test Cases ***
 Create new Test Project with template ON
-    Login as admin correct
-    Start creating new test project
-    Fill information to create test with template ON
-    Submit and check new test project
+    testlink.Login as admin correct
+    testlink.Start creating new test project
+    testlink.Fill information to create test with template ON
+    testlink.Submit and check new test project
