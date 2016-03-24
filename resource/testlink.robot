@@ -283,6 +283,7 @@ Go to index page
     headerPage.Go to index page
 
 
-
-
+Change and check test project
+    headerPage.Change Test Project
+    desktopPage.Check New Project
 
