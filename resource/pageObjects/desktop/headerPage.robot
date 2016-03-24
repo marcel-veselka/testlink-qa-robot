@@ -122,10 +122,15 @@ Start searching test case
     click element  xpath=//img[@title="Search Test Case by ID"]
 
 Click test project dropdown
+    select frame  name=titlebar
     click element  xpath=//select[@name="testproject"]
+    unselect frame
+
 
 Choose test project from dropdown
-    select from list by label  xpath=//select[@name="testproject"]  ${newTestProjectName}
+    select frame  name=titlebar
+    select from list by label  xpath=//select[@name="testproject"]  ${newTestProjectPrefix}:${newTestProjectName}
+    unselect frame
 
 Change Test Project
     select frame  name=titlebar
