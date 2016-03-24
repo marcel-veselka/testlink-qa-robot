@@ -16,4 +16,5 @@ Create Keyword
     Enter the name for a Keyword1
     Save Keyword
     #Check if Keyword1 is created   Check je funkcni, zakomentovano jen protoze TC jeste nema Delete Teardown.
+
     [Teardown]  close browser

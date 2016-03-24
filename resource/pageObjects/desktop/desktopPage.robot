@@ -89,8 +89,7 @@ Check Keyword Management
     wait until page contains  Keyword Management
     unselect frame
 
-Go to Platform Management
-    select frame  name=mainframe
+     ``    select frame  name=mainframe
     click link  Platform Management
     unselect frame
 
