@@ -4,7 +4,7 @@ Documentation  A test suite with a single test for creating a new Test Project. 
 #Resource        ../../../../../pageObjects/testProjectManagementPage.robot
 Resource        ../../../../../resource/testlink.robot
 
-Test Setup  Create Empty Test Project
+#Test Setup  Create Empty Test Project
 #Test Teardown  Delete Test Project
 
 *** Variables ***
@@ -15,9 +15,9 @@ ${testprojectprefix}  122
 
 *** Test Cases ***
 
-Set Test Project INACTIVE
+#Set Test Project INACTIVE
 
-    desktopPage.Go to Test Project Management
-    testProjectManagement.Select Created Test Project
+    #desktopPage.Go to Test Project Management
+    #testProjectManagement.Select Created Test Project
 #dodelam ve ctvrtek 24.3 - VOjta
 
