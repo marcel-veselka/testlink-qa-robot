@@ -1,7 +1,8 @@
 *** Settings ***
 Documentation  A test suite with a single test for creating a new Test Project. This test has
 ...            a workflow that is created using keywords from the resource file.
-#Resource        ../../../../../pageObjects/testProjectManagementPage.robot
+
+Resource        ../../../../../resource/pageObjects/desktop/testProject/testProjectManagement.robot
 Resource        ../../../../../resource/testlink.robot
 
 #Test Setup  Create Empty Test Project
@@ -15,9 +16,18 @@ ${testprojectprefix}  122
 
 *** Test Cases ***
 
-#Set Test Project INACTIVE
+Set Test Project INACTIVE
 
-    #desktopPage.Go to Test Project Management
-    #testProjectManagement.Select Created Test Project
+
+    testlink.Create new Test Project
+
+    testlink.Click desired project
+
+    testlink.Unselect Checkbox Availibility Active
+
+    testProjectManagement.Select Active Test Project
+
+
+
 #dodelam ve ctvrtek 24.3 - VOjta
 

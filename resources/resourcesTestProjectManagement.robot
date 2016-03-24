@@ -61,11 +61,12 @@ Select Create From Existing Projects = No
 Select Create From Existing Projects = Yes
     select from list  copy_from_tproject_id  681
 
-Selecet Created Test Project
+Select Created Test Project
    click element  xpath//*[@id="item_view"]/tbody/tr[2]/td[1]/a
    click element  xpath=//tr[td//text()[contains(.,'${testprojectname}')]]/td[1]
 
 #dela vojta
+
 
 Create Test Project
     click button  create
@@ -108,6 +109,13 @@ Delete row with Test Project
     click button  Yes
     sleep  2
 
+Select Active Test Project
+    #click element  xpath=//tr[td//text()[contains(., '${testprojectname}')]]/td[last()]
+    sleep  2
+    click element  xpath=//tr[td//text()[contains(., '${testprojectname}')]]/td[setActive]
+    sleep  1
+    click button  Yes
+    sleep  2
 
 
 
