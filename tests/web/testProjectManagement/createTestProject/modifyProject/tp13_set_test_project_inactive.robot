@@ -5,13 +5,13 @@ Documentation  A test suite with a single test for creating a new Test Project. 
 Resource        ../../../../../resource/pageObjects/desktop/testProject/testProjectManagement.robot
 Resource        ../../../../../resource/testlink.robot
 
-#Test Setup  Create Empty Test Project
+Test Setup  Create new Test Project
 #Test Teardown  Delete Test Project
 
 *** Variables ***
 
-${testprojectname}  ProjectName1
-${testprojectprefix}  122
+${newTestProjectName}  ProjectName1
+${newtestprojectprefix}  122
 
 
 *** Test Cases ***
@@ -19,7 +19,6 @@ ${testprojectprefix}  122
 Set Test Project INACTIVE
 
 
-    testlink.Create new Test Project
 
     testlink.Click desired project
 
