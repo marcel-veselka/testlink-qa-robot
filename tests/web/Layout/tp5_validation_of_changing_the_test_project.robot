@@ -1,18 +1,18 @@
 *** Settings ***
 Documentation  A test suite with a single test for creating a new Custom Field. This test has
 ...            a workflow that is created using keywords from the resource file.
-Resource       ../../../resource/pageObjects/loginPage.robot
-Resource       ../../../resource/pageObjects/desktop/headerPage.robot
-Resource       ../../../resource/pageObjects/desktop/desktopPage.robot
+Resource       ../../../resource/testlink.robot
 
-#blabla
 Test Teardown  close browser
+
+*** Variables ***
+${newTestProjectPrefix}  NEMAZAT
+${newTestProjectName}  TENTO TEST PROJECT
+#blabla
+
 *** Test Cases ***
 Validation of changing the Test Project
-    Open Browser To Login Page
-    Login as Admin
-    Submit Credentials
-    Check Current Project
-    Change Test Project
-    Check New Project
+    testlink.Login as admin correct
+    testlink.Choose test project from dropdown
+    testlink.Change and check test project
 

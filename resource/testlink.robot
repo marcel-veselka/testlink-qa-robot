@@ -4,6 +4,7 @@ Resource  ../resource/pageObjects/loginPage.robot
 Resource  ../resource/pageObjects/desktop/desktopPage.robot
 Resource  ../resource/pageObjects/desktop/headerPage.robot
 Resource  ../resource/pageObjects/desktop/requirementSpecification/assignRequirements.robot
+Resource  ../resource/pageObjects/desktop/requirementSpecification/requirementSpecificationEdit.robot
 Resource  ../resource/pageObjects/desktop/requirementSpecification/generateRequirementSpecificationDocument.robot
 Resource  ../resource/pageObjects/desktop/requirementSpecification/requirementOverview.robot
 Resource  ../resource/pageObjects/desktop/requirementSpecification/requirementSpecification(mainframe).robot
@@ -23,6 +24,7 @@ Resource  ../resource/pageObjects/desktop/testSpecification/testSpecification(ma
 Resource  ../resource/pageObjects/desktop/testProject/createTestProjectPage.robot
 Resource  ../resource/pageObjects/desktop/testProject/testProjectEdit.robot
 Resource  ../resource/pageObjects/desktop/userManagement/userManagement.robot
+
 
 *** Variables ***
 
@@ -291,7 +293,60 @@ Select desired user
 
 
 
+Click test project dropdown
+    headerPage.Click test project dropdown
+
+Choose test project from dropdown
+    headerPage.Choose test project from dropdown
+
+Go to Platform Management
+    desktopPage.Go to Platform Management
+
+Check Platform Management Without Platforms
+    platformManagement.Check Platform Management Without Platforms
+
+Go to index page
+    headerPage.Go to index page
+
+Go to Requirement Specification (mainframe)
+    [Tags]  tp38
+    desktopPage.Go to Requirement Specification (mainframe)
+
+Create New Requirement Specification (type URS)
+    [Tags]  tp38
+    requirementSpecificationEdit.Create New Requirement Specification (type URS)
+
+Change Test Project
+    [Tags]  tp38
+    headerPage.Change Test Project
+
+Create Requirement Operations
+    [Tags]  tp38
+    requirementSpecificationEdit.Create Requirement Operations
+
+Change and check test project
+    headerPage.Change Test Project
+    desktopPage.Check New Project
+
+Start creating Define Custom Fields
+    [Tags]  tp105
+    desktopPage.Go to Define Custom Fields
+    defineCustomFields.Check Define Custom Fields
+    defineCustomFields.Click create Custom Field
 
 
+Fill information to create Custom Field
+    [Tags]  tp105
+    defineCustomFields.Input information about Custom Field
 
 
+Submit and check Define Custom Field
+    [Tags]  tp105
+    defineCustomFields.Create and check custom field
+
+Delete Custom Field
+    [Tags]  tp105
+    headerPage.Go to index page
+    desktopPage.Go to Define Custom Fields
+    defineCustomFields.Select and delete Custom Field
+    defineCustomFields.Check if Custom Field has been deleted
