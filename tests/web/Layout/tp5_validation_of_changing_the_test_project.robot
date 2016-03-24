@@ -8,8 +8,6 @@ Test Teardown  close browser
 *** Variables ***
 ${newTestProjectPrefix}  NEMAZAT
 ${newTestProjectName}  TENTO TEST PROJECT
-${newTestProjectPrefix2}  tp
-${newTestProjectName2}  testing project
 #blabla
 
 *** Test Cases ***
