@@ -287,10 +287,6 @@ Check that user exists
     [Tags]  tp-100_Create_New_User
     userManagement.Check that user exists
 
-Select desired user
-    [Tags]  tp-101_Modify_User
-    headerPage.Change Test Project
-
 
 
 Click test project dropdown
@@ -350,3 +346,24 @@ Delete Custom Field
     desktopPage.Go to Define Custom Fields
     defineCustomFields.Select and delete Custom Field
     defineCustomFields.Check if Custom Field has been deleted
+
+Start editing user
+    [Tags]  tp-101_Modify_user
+    headerPage.Change Test Project
+    headerPage.Wait untill header is loaded
+    headerPage.Go to User Management
+    headerPage.Check User Management
+    userManagement.Wait until page contains view users content
+    testlink.Click desired user
+
+Click desired user
+    [Tags]  tp-101_Modify_user
+    userManagement.Click desired user
+
+Edit user
+    [Tags]  tp-101_Modify_user
+    userManagement.Check all fields for editing user are availiable
+    userManagement.Fill inputs for editing user and submit
+
+
+

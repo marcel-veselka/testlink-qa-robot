@@ -3,6 +3,13 @@
 #Resource       ../../../../resource/testlink.robot
 #Test Teardown  Close browser
 
+*** Variables ***
+${login}  vojta.svoboda
+${fname}  Vojtěch
+${lname}  Svoboda
+${pass}  vojta123
+${email}  vojtech.svoboda@tesena.com
+
 *** Test Cases ***
 #Create new user test case
     #testlink.Login as admin correct
