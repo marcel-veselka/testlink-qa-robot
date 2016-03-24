@@ -221,12 +221,27 @@ Check unique test project name and prefix
     unselect frame
 
 Delete test project
-   # [Arguments]  ${newTestProjectName}  ${newTestProjectPrefix}
+   [Arguments]  ${newTestProjectName}  ${newTestProjectPrefix}
     testProjectManagement.Check Test Project Management
     select frame  mainframe
     click element  xpath=//tr[td//text()[contains(.,'${newTestProjectName}')]]/td[last()]
     wait until page contains  Yes
     click button  Yes
+    wait until page does not contain element  ${newTestProjectName}
+    wait until page does not contain element  ${newTestProjectPrefix}
+    unselect frame
+
+Delete empty test project
+
+    testProjectManagement.Check Test Project Management
+    select frame  mainframe
+    click element  xpath=//tr[td//text()[contains(.,'${newTestProjectName}')]]/td[last()]
+    wait until page contains  Yes
+    click button  Yes
+    unselect frame
+
+Check that test has been deleted
+    select frame  mainframe
     wait until page does not contain element  ${newTestProjectName}
     wait until page does not contain element  ${newTestProjectPrefix}
     unselect frame
