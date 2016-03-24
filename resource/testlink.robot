@@ -287,3 +287,26 @@ Change and check test project
     headerPage.Change Test Project
     desktopPage.Check New Project
 
+Start creating Define Custom Fields
+    [Tags]  tp105
+    desktopPage.Go to Define Custom Fields
+    defineCustomFields.Check Define Custom Fields
+    defineCustomFields.Click create Custom Field
+
+
+Fill information to create Custom Field
+    [Tags]  tp105
+    defineCustomFields.Input information about Custom Field
+
+
+Submit and check Define Custom Field
+    [Tags]  tp105
+    defineCustomFields.Create and check custom field
+
+Delete Custom Field
+    [Tags]  tp105
+    headerPage.Go to index page
+    desktopPage.Go to Define Custom Fields
+    defineCustomFields.Select and delete Custom Field
+    defineCustomFields.Check if Custom Field has been deleted
+

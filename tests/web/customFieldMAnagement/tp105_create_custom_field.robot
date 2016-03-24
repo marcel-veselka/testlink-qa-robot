@@ -1,21 +1,18 @@
 *** Settings ***
 Documentation  A test suite with a single test for creating a new Custom Field. This test has
 ...            a workflow that is created using keywords from the resource file.
-Resource       ../../../resources/resourcesCustomFieldManagement.robot
-Test Setup
-Test Teardown
+Resource       ../../../resource/testlink.robot
+Test Teardown  Run keywords  testlink.Delete Custom Field
+...            AND           Close browser
+
+*** Variables ***
+${CFNAME}   DEFCUS
+${CFLABEL}  FIELD
 *** Test Cases ***
 Create new Custom Field
 
-    Open Browser To Login Page
-    Login as Admin
-    Submit Credentials
-    Wait a little
-    Select desired frame
-    Select Define Custom Fields
-    Create new custom field
-    Input the name of the Custom Field
-    Input the label of the Custom Field
-    Add new Custom Field
-   #Check id new Custom Field is created   Check je funkcni, zakomentovano jen protoze TC jeste nema Delete Teardown.
-    [Teardown]  close browser
+    testlink.Login as admin correct
+    testlink.Start creating Define Custom Fields
+    testlink.Fill information to create Custom Field
+    testlink.Submit and check Define Custom Field
+
