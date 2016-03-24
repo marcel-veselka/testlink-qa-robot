@@ -21,6 +21,7 @@ Resource  ../resource/pageObjects/desktop/testSpecification/searchTestCases.robo
 Resource  ../resource/pageObjects/desktop/testSpecification/testCasesCreatedPerUser.robot
 Resource  ../resource/pageObjects/desktop/testSpecification/testSpecification(mainframe).robot
 Resource  ../resource/pageObjects/desktop/testProject/createTestProjectPage.robot
+Resource  ../resource/pageObjects/desktop/testProject/testProjectEdit.robot
 
 *** Variables ***
 
@@ -223,6 +224,19 @@ Create new Test Project
     Fill information to create test without conflict
     Submit and check new test project
 
+Go to Test Project Management
+    desktopPage.Go to Test Project Management
+
+Click desired project
+    testProjectManagement.Wait until container with projects is here
+    testProjectManagement.Click desired project
+
+Unselect Checkbox Availibility Active
+    testProjectEdit.Unselect Checkbox Availibility Active
+
+
+Check Test Project Is Inactive
+    testProjectManagement.Check Test Project Is Inactive
 
 
 

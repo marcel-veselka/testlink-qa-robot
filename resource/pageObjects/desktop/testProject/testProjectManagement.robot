@@ -34,3 +34,19 @@ Check new project exist
     select frame  mainframe
     element should contain  xpath=//table[@id="item_view"]  ${newTestProjectName}
     unselect frame
+
+Click desired project
+    select frame  mainframe
+    click link  ${newTestProjectName}
+    unselect frame
+
+Check Test Project Is Inactive
+    select frame  mainframe
+    page should contain element  xpath=//tr[td//text()[contains(.,'${newTestProjectName}')]]/td[input[@title="Inactive (click to set active)"]]
+    unselect frame
+
+Wait until container with projects is here
+    select frame  mainframe
+    wait until page contains element  xpath=//*[@id="item_view"]/tfoot
+    unselect frame
+
