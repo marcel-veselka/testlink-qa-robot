@@ -38,10 +38,18 @@ Click Template
 Choose from template
     select from list by label  copy_from_tproject_id  ${newTestProjectName}
 
+Choose no template
+    select from list by label  copy_from_tproject_id  No
+
+Choose template from created project
+    select from list by label  copy_from_tproject_id  ${newTestProjectName}
+
 Fill Test Project Name
+    [Arguments]  ${newTestProjectName}
     input text  tprojectName  ${newTestProjectName}
 
 Fill Test Project Prefix
+    [Arguments]  ${newTestProjectPrefix}
     input text  tcasePrefix  ${newTestProjectPrefix}
 
 Click Issue Tracker
@@ -59,3 +67,7 @@ Click Create
     select frame  mainframe
     click button  Create
     unselect frame
+
+Warning message is not here
+    page should not contain  There's already Test Project named ${newTestProjectName}
+    page should not contain  Test Case ID prefix ${newTestProjectPrefix} already exists

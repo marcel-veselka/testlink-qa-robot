@@ -1,23 +1,20 @@
 *** Settings ***
-Documentation  A test suite with a single test for creating a new Test Project. This test has
-...            a workflow that is created using keywords from the resource file.
-Resource       ../../../../../resources/resourcesTestProjectManagement.robot
-Test Teardown  Delete Test Project
+Documentation  A test case for creating project without conflict (no existing project)
+Resource       ../../../../../resource/testlink.robot
+Test Teardown  Run keywords  Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
+...            AND           Close browser
+
+*** Variables ***
+${newTestProjectName}  newTestProject
+${newTestProjectPrefix}  newProjectPrefix
+${newTestProjectDescription}  Description of new test project
 
 *** Test Cases ***
-Create new Test Project
-
-    Open Browser To Login Page
-    Login as Admin
-    Submit Credentials
-    Select desired frame
-    Click Test Project Management
-    Create Test Project
-    Select Create From Existing Projects = No
-    Add Test Project Name
-    Add Prefix
-    Save Test Project
-    Check if Test Project is created
+Create new Test Project with template off
+    testlink.Login as admin correct
+    testlink.Start creating new test project
+    testlink.Fill information to create test with template OFF
+    testlink.Submit and check new test project
 
 
 

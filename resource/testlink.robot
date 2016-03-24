@@ -22,6 +22,7 @@ Resource  ../resource/pageObjects/desktop/testSpecification/testCasesCreatedPerU
 Resource  ../resource/pageObjects/desktop/testSpecification/testSpecification(mainframe).robot
 Resource  ../resource/pageObjects/desktop/testProject/createTestProjectPage.robot
 
+*** Variables ***
 
 
 *** Keywords ***
@@ -31,6 +32,7 @@ Login as admin correct
     loginPage.Wait until page contains all elements for login
     loginPage.Fill correct credentials and submit
     loginPage.Check there is no warning about login
+
 
 
 Login as admin incorrect
@@ -152,23 +154,52 @@ Check header links
     headerPage.Check Events
     headerPage.Go to index page
 
+Start creating new test project
+    desktopPage.Go to Test Project Management
+    testProjectManagement.Check Test Project Management
+    testProjectManagement.Click Create
+
+
 Start creating new test project without conflict
+    desktopPage.Go to Test Project Management
     Check unique test project name and prefix
     testProjectManagement.Click Create
 
 Fill information to create test without conflict
     createTestProjectPage.Wait until page contains all elements
     select frame  mainframe
-    createTestProjectPage.Fill Test Project Name
-    createTestProjectPage.Fill Test Project Prefix
+    createTestProjectPage.Fill Test Project Name  ${newTestProjectName}
+    createTestProjectPage.Fill Test Project Prefix  ${newTestProjectPrefix}
     unselect frame
 
-Submit and check new test project without conflict
+No warning about existing projects
+    createTestProjectPage.Warning message is not here
+
+Fill information to create test with template OFF
+    createTestProjectPage.Wait until page contains all elements
+    select frame  mainframe
+    createTestProjectPage.Choose no template
+    createTestProjectPage.Fill Test Project Name  ${newTestProjectName}
+    createTestProjectPage.Fill Test Project Prefix  ${newTestProjectPrefix}
+    unselect frame
+
+
+Fill information to create test with template ON
+    createTestProjectPage.Wait until page contains all elements
+    select frame  mainframe
+    createTestProjectPage.Choose template from created project
+    createTestProjectPage.Fill Test Project Name  ${newTestProjectName2}
+    createTestProjectPage.Fill Test Project Prefix  ${newTestProjectPrefix2}
+    unselect frame
+
+
+Submit and check new test project
     createTestProjectPage.Click Create
+    No warning about existing projects
     testProjectManagement.Check new project exist
 
 Check unique test project name and prefix
-    desktopPage.Go to Test Project Management
+
     testProjectManagement.Check Test Project Management
     select frame  mainframe
     element should not contain  item_view_wrapper  ${newTestProjectName}
@@ -176,15 +207,21 @@ Check unique test project name and prefix
     unselect frame
 
 Delete test project
+    [Arguments]  ${newTestProjectName}  ${newTestProjectPrefix}
     testProjectManagement.Check Test Project Management
     select frame  mainframe
     click element  xpath=//tr[td//text()[contains(.,'${newTestProjectName}')]]/td[last()]
     wait until page contains  Yes
     click button  Yes
-    page should not contain  ${newTestProjectName}
-    page should not contain  ${newTestProjectPrefix}
+    wait until page does not contain element  ${newTestProjectName}
+    wait until page does not contain element  ${newTestProjectPrefix}
     unselect frame
-    close browser
+
+Create new Test Project
+    Login as admin correct
+    Start creating new test project without conflict
+    Fill information to create test without conflict
+    Submit and check new test project
 
 
 
