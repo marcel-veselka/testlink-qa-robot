@@ -25,3 +25,11 @@ Check Platform Management
     wait until page contains  Platform Management
     wait until page contains element  create_platform
     unselect frame
+
+
+Check Platform Management Without Platforms
+    select frame  name=mainframe
+    wait until page contains  Platform Management
+    wait until page contains element  create_platform
+    page should not contain element  xpath=/html/body/div/table
+    unselect frame

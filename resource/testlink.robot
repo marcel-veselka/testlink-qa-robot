@@ -23,6 +23,7 @@ Resource  ../resource/pageObjects/desktop/testSpecification/testSpecification(ma
 Resource  ../resource/pageObjects/desktop/testProject/createTestProjectPage.robot
 Resource  ../resource/pageObjects/desktop/testProject/testProjectEdit.robot
 
+
 *** Variables ***
 
 
@@ -266,7 +267,23 @@ Unselect Checkbox Availibility Active
 Check Test Project Is Inactive
     testProjectManagement.Check Test Project Is Inactive
 
+Click test project dropdown
+    headerPage.Click test project dropdown
+
+Choose test project from dropdown
+    headerPage.Choose test project from dropdown
+
+Go to Platform Management
+    desktopPage.Go to Platform Management
+
+Check Platform Management Without Platforms
+    platformManagement.Check Platform Management Without Platforms
+
+Go to index page
+    headerPage.Go to index page
 
 
-
+Change and check test project
+    headerPage.Change Test Project
+    desktopPage.Check New Project
 
