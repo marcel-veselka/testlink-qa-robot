@@ -11,7 +11,7 @@ ${newTestProjectDescription}  Description of new test project
 
 *** Test Cases ***
 Create new Test Project with no conflict
-    testlink.Login as admin correct
-    testlink.Start creating new test project without conflict
-    testlink.Fill information to create test without conflict
-    testlink.Submit and check new test project
+    Login as admin correct
+    Start creating new test project without conflict
+    Fill information to create test without conflict
+    Submit and check new test project

@@ -11,10 +11,10 @@ ${newTestProjectDescription}  Description of new test project
 
 *** Test Cases ***
 Create new Test Project with template off
-    testlink.Login as admin correct
-    testlink.Start creating new test project
-    testlink.Fill information to create test with template OFF
-    testlink.Submit and check new test project
+    Login as admin correct
+    Start creating new test project
+    Fill information to create test with template OFF
+    Submit and check new test project
 
 
 

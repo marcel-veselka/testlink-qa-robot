@@ -108,44 +108,8 @@ Delete row with Test Project
     click button  Yes
     sleep  2
 
-Delete Test Project
 
-    go to  ${WELCOME URL}
-    select frame  name=mainframe
-    wait until page contains  Test Plan Management
-    click link  Test Plan Management
-    page should contain  There are no Test Plans defined!
-    go to  ${WELCOME URL}
-    select frame  name=mainframe
-    wait until page contains  Test Project Management
-    click link  Test Project Management
-    sleep  2
-    click element  xpath=//tr[td//text()[contains(.,'${testprojectname}')]]/td[last()]
-    sleep  1
-    click button  Yes
-    page should not contain  ${testprojectname}
-    page should not contain  ${testprojectprefix}
-    close browser
 
-Create Empty Test Project
-    Open Browser  ${LOGIN URL}  ${BROWSER}
-    Maximize Browser Window
-    Set Selenium Speed  ${DELAY}
-    Capture Page Screenshot
-    Title Should Be  TestLink
-    input text  login  renat.kulalov
-    input text  tl_password  renat123
-    Click Button  login_submit
-    select frame  name=mainframe
-    wait until page contains  Test Project Management
-    click link  Test Project Management
-    click button  create
-    select from list  copy_from_tproject_id  0
-    input text  tprojectName  ${testprojectname}
-    input text  tcasePrefix  ${testprojectprefix}
-    click button  name=doActionButton
-    sleep  5
-    wait until page contains  ${testprojectname}
 
 
 

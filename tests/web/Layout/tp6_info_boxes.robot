@@ -1,7 +1,9 @@
 *** Settings ***
 Documentation  A test suite with a single test for creating a new Custom Field. This test has
 ...            a workflow that is created using keywords from the resource file.
-Resource       ../../../resources/resourcesLayout.robot
+Resource       ../../../resource/pageObjects/loginPage.robot
+Resource       ../../../resource/pageObjects/desktop/headerPage.robot
+Resource       ../../../resource/pageObjects/desktop/desktopPage.robot
 
 *** Test Cases ***
 Info Boxes

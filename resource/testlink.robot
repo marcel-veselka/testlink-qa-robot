@@ -159,6 +159,19 @@ Start creating new test project
     testProjectManagement.Check Test Project Management
     testProjectManagement.Click Create
 
+Start creating new test project (enchanced features)
+    desktopPage.Go to Test Project Management
+    testProjectManagement.Check Test Project Management
+    testProjectManagement.Click Create
+
+Fill information to create test (enchanced feautures)
+    createTestProjectPage.Wait until page contains all elements
+    select frame  mainframe
+    createTestProjectPage.Fill Test Project Name  ${newTestProjectName}
+    createTestProjectPage.Fill Test Project Prefix  ${newTestProjectPrefix}
+    createTestProjectPage.Select Create From Existing Projects = No
+    createTestProjectPage.Unselect all features
+    unselect frame
 
 Start creating new test project without conflict
     desktopPage.Go to Test Project Management
@@ -196,7 +209,7 @@ Fill information to create test with template ON
 Submit and check new test project
     createTestProjectPage.Click Create
     No warning about existing projects
-    testProjectManagement.Check new project exist
+    testProjectManagement.Check new project exists
 
 Check unique test project name and prefix
 

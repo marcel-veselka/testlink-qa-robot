@@ -30,7 +30,8 @@ Click Create
     click button  Create
     unselect frame
 
-Check new project exist
+Check new project exists
     select frame  mainframe
     element should contain  xpath=//table[@id="item_view"]  ${newTestProjectName}
     unselect frame
+

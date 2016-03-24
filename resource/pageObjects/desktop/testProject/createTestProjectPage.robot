@@ -71,3 +71,12 @@ Click Create
 Warning message is not here
     page should not contain  There's already Test Project named ${newTestProjectName}
     page should not contain  Test Case ID prefix ${newTestProjectPrefix} already exists
+
+Select Create From Existing Projects = No
+    select from list  copy_from_tproject_id  0
+
+Unselect all features
+    unselect checkbox  optReq
+    unselect checkbox  optPriority
+    unselect checkbox  optAutomation
+    unselect checkbox  optInventory
