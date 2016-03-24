@@ -21,4 +21,3 @@ Delete Test Project Without Platforms
     testlink.Go to index page
     testlink.Go to Test Project Management
     testlink.Delete empty test project
-

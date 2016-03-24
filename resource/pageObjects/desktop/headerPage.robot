@@ -132,6 +132,7 @@ Choose test project from dropdown
     select from list by label  xpath=//select[@name="testproject"]  ${newTestProjectPrefix}:${newTestProjectName}
     unselect frame
 
+
 Change Test Project
     select frame  name=titlebar
     select from list  testproject  1

@@ -4,6 +4,7 @@ Resource  ../resource/pageObjects/loginPage.robot
 Resource  ../resource/pageObjects/desktop/desktopPage.robot
 Resource  ../resource/pageObjects/desktop/headerPage.robot
 Resource  ../resource/pageObjects/desktop/requirementSpecification/assignRequirements.robot
+Resource  ../resource/pageObjects/desktop/requirementSpecification/requirementSpecificationEdit.robot
 Resource  ../resource/pageObjects/desktop/requirementSpecification/generateRequirementSpecificationDocument.robot
 Resource  ../resource/pageObjects/desktop/requirementSpecification/requirementOverview.robot
 Resource  ../resource/pageObjects/desktop/requirementSpecification/requirementSpecification(mainframe).robot
@@ -282,6 +283,21 @@ Check Platform Management Without Platforms
 Go to index page
     headerPage.Go to index page
 
+Go to Requirement Specification (mainframe)
+    [Tags]  tp38
+    desktopPage.Go to Requirement Specification (mainframe)
+
+Create New Requirement Specification (type URS)
+    [Tags]  tp38
+    requirementSpecificationEdit.Create New Requirement Specification (type URS)
+
+Change Test Project
+    [Tags]  tp38
+    headerPage.Change Test Project
+
+Create Requirement Operations
+    [Tags]  tp38
+    requirementSpecificationEdit.Create Requirement Operations
 
 
 
