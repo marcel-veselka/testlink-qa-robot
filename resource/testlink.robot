@@ -22,6 +22,7 @@ Resource  ../resource/pageObjects/desktop/testSpecification/testCasesCreatedPerU
 Resource  ../resource/pageObjects/desktop/testSpecification/testSpecification(mainframe).robot
 Resource  ../resource/pageObjects/desktop/testProject/createTestProjectPage.robot
 Resource  ../resource/pageObjects/desktop/testProject/testProjectEdit.robot
+Resource  ../resource/pageObjects/desktop/userManagement/userManagement.robot
 
 *** Variables ***
 
@@ -265,6 +266,30 @@ Unselect Checkbox Availibility Active
 
 Check Test Project Is Inactive
     testProjectManagement.Check Test Project Is Inactive
+
+Start creating new user
+    [Tags]  tp-100_Create_New_User
+    headerPage.Change Test Project
+    headerPage.Wait untill header is loaded
+    headerPage.Go to User Management
+    headerPage.Check User Management
+    userManagement.Wait until page contains view users content
+    userManagement.Click create button
+
+Fill all info about user and submit
+    [Tags]  tp-100_Create_New_User
+    userManagement.Check all fields for new user are availiable
+    userManagement.Fill inputs for creating user and submit
+
+Check that user exists
+    [Tags]  tp-100_Create_New_User
+    userManagement.Check that user exists
+
+Select desired user
+    [Tags]  tp-101_Modify_User
+    headerPage.Change Test Project
+
+
 
 
 
