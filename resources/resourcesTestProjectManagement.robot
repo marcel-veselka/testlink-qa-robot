@@ -61,7 +61,7 @@ Select Create From Existing Projects = No
 Select Create From Existing Projects = Yes
     select from list  copy_from_tproject_id  681
 
-Selecet Created Test Project
+Select Created Test Project
    click element  xpath//*[@id="item_view"]/tbody/tr[2]/td[1]/a
    click element  xpath=//tr[td//text()[contains(.,'${testprojectname}')]]/td[1]
 

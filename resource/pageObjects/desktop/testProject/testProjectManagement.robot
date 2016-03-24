@@ -30,6 +30,16 @@ Click Create
     click button  Create
     unselect frame
 
+Add Test Project Name
+    select frame  name=mainframe
+    input text  tprojectName  ${testprojectname}
+
+Add Prefix
+    input text  tcasePrefix  ${testprojectprefix}
+
+Create Test Project
+    click button  doActionButton
+
 Check new project exists
     select frame  mainframe
     element should contain  xpath=//table[@id="item_view"]  ${newTestProjectName}
