@@ -6,6 +6,10 @@ Resource       ../../../../../resource/testlink.robot
 Test Setup  testlink.Create new Test Project
 Test Teardown  close browser
 
+*** Variables ***
+${newTestProjectName}  testingProjectNew1
+${newTestProjectPrefix}  prefixNew1
+
 *** Test Cases ***
 Delete Test Project
 
