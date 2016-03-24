@@ -13,6 +13,6 @@ ${newTestProjectPrefix}  prefixNew1
 *** Test Cases ***
 Delete Test Project
 
-    testlink.Login as admin correct
+    #testlink.Login as admin correct
     testlink.Delete empty test project
     testlink.Check that test has been deleted
