@@ -55,6 +55,13 @@ Check Test Project Is Inactive
     page should contain element  xpath=//tr[td//text()[contains(.,'${newTestProjectName}')]]/td[input[@title="Inactive (click to set active)"]]
     unselect frame
 
+Check Test Project Is Active
+
+    select frame  mainframe
+    page should contain element  xpath=//tr[td//text()[contains(.,'${newTestProjectName}')]]/td[input[@title="Active (click to set inactive)"]]
+    unselect frame
+
+
 Wait until container with projects is here
     select frame  mainframe
     wait until page contains element  xpath=//*[@id="item_view"]/tfoot
@@ -68,3 +75,9 @@ Select Active Test Project
     click button  Yes
     sleep  2
 
+Unactive Test Project by Bulb
+
+    select frame  mainframe
+    click element  xpath=//tr[td//text()[contains(.,'${newTestProjectName}')]]/td[input[@title="Inactive (click to set active)"]]
+    page should not contain  xpath=//tr[td//text()[contains(.,'${newTestProjectName}')]]/td[input[@title="Active (click to set inactive)"]]
+    unselect frame

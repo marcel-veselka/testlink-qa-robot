@@ -24,7 +24,13 @@ Set Test Project INACTIVE
 
     testlink.Unselect Checkbox Availibility Active
 
-    testProjectManagement.Select Active Test Project
+    testProjectManagement.Unactive Test Project by Bulb
+
+    testProjectManagement.Check Test Project Is Active
+
+    testlink.Delete test project  ${newTestProjectName}  ${newtestprojectprefix}
+
+
 
 
 
