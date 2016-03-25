@@ -6,7 +6,7 @@ Resource        ../../../../../resource/pageObjects/desktop/testProject/testProj
 Resource        ../../../../../resource/testlink.robot
 
 Test Setup  Create new Test Project
-#Test Teardown  Delete Test Project
+Test Teardown  Delete Test Project  ${newTestProjectName}  ${newtestprojectprefix}
 
 *** Variables ***
 
@@ -19,7 +19,6 @@ ${newtestprojectprefix}  122
 Set Test Project INACTIVE
 
 
-
     testlink.Click desired project
 
     testlink.Unselect Checkbox Availibility Active
@@ -28,11 +27,5 @@ Set Test Project INACTIVE
 
     testProjectManagement.Check Test Project Is Active
 
-    testlink.Delete test project  ${newTestProjectName}  ${newtestprojectprefix}
 
-
-
-
-
-#dodelam ve ctvrtek 24.3 - VOjta
 
