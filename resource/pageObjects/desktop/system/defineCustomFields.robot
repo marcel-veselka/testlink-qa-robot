@@ -28,6 +28,7 @@ Click create Custom Field
     select frame  name=mainframe
     Click Button  create_cfield
     unselect frame
+
 Input information about Custom Field
     select frame  name=mainframe
     input text  cf_name  ${CFNAME}
@@ -38,6 +39,37 @@ Create and check custom field
     select frame  name=mainframe
     Click Button  do_update
     page should contain  ${CFNAME}
+    unselect frame
+
+Check edited custom field
+    Click Button  do_update
+    page should contain  ${NEWCFNAME}
+
+Select Custom Field
+    select frame  name=mainframe
+    click link  ${CFNAME}
+    unselect frame
+
+Edit Custom Fields
+    select frame  name=mainframe
+    input text  cf_name  ${NEWCFNAME}
+    #change (Available for)
+    click element  xpath=//*[@id="combo_cf_node_type_id"]
+    click element  xpath=//*[@id="combo_cf_node_type_id"]/option[3]
+    #change (Type)
+    click element  xpath=//*[@id="combo_cf_type"]
+    click element  xpath=//*[@id="combo_cf_type"]/option[4]
+    #change[Display on test execution]
+    click element  xpath=//*[@id="cf_show_on_execution"]
+    click element  xpath=//*[@id="cf_show_on_execution"]/option[2]
+ #   input text  cf_label  ${CFLABEL}
+
+Select and delete EDITED Custom Field
+    select frame  name=mainframe
+    click link  ${NEWCFNAME}
+    click button  do_delete
+    wait until page contains  Yes
+    click button  Yes
     unselect frame
 
 Select and delete Custom Field
@@ -51,4 +83,9 @@ Select and delete Custom Field
 Check if Custom Field has been deleted
     select frame  name=mainframe
     page should not contain  ${CFNAME}
+    unselect frame
+
+Check if EDITED Custom Field has been deleted
+    select frame  name=mainframe
+    page should not contain  ${NEWCFNAME}
     unselect frame

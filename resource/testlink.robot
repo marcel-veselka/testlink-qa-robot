@@ -339,6 +339,13 @@ Start creating Define Custom Fields
     defineCustomFields.Check Define Custom Fields
     defineCustomFields.Click create Custom Field
 
+Go to Define Custom Fields
+    [Tags]  tp106
+    defineCustomFields.Check Define Custom Fields
+
+Edit information Custom Field
+    defineCustomFields.Select Custom Field
+    defineCustomFields.Edit Custom Fields
 
 Fill information to create Custom Field
     [Tags]  tp105
@@ -349,12 +356,23 @@ Submit and check Define Custom Field
     [Tags]  tp105
     defineCustomFields.Create and check custom field
 
+Submit and check Edited Define Custom Field
+    [Tags]  tp106
+   defineCustomFields.Check edited custom field
+
 Delete Custom Field
     [Tags]  tp105
     headerPage.Go to index page
     desktopPage.Go to Define Custom Fields
     defineCustomFields.Select and delete Custom Field
     defineCustomFields.Check if Custom Field has been deleted
+
+Delete EDITED Custom Field
+    [Tags]  tp106
+    headerPage.Go to index page
+    desktopPage.Go to Define Custom Fields
+    defineCustomFields.Select and delete EDITED Custom Field
+    defineCustomFields.Check if EDITED Custom Field has been deleted
 
 Start editing user
     [Tags]  tp-101_Modify_user
