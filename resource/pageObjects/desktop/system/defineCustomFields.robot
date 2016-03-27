@@ -62,7 +62,6 @@ Edit Custom Fields
     #change[Display on test execution]
     click element  xpath=//*[@id="cf_show_on_execution"]
     click element  xpath=//*[@id="cf_show_on_execution"]/option[2]
- #   input text  cf_label  ${CFLABEL}
 
 Select and delete EDITED Custom Field
     select frame  name=mainframe
