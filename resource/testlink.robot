@@ -21,6 +21,7 @@ Resource  ../resource/pageObjects/desktop/testSpecification/assignKeywords.robot
 Resource  ../resource/pageObjects/desktop/testSpecification/searchTestCases.robot
 Resource  ../resource/pageObjects/desktop/testSpecification/testCasesCreatedPerUser.robot
 Resource  ../resource/pageObjects/desktop/testSpecification/testSpecification(mainframe).robot
+Resource  ../resource/pageObjects/desktop/testSpecification/navigatorTestSpecification.robot
 Resource  ../resource/pageObjects/desktop/testProject/createTestProjectPage.robot
 Resource  ../resource/pageObjects/desktop/testProject/testProjectEdit.robot
 Resource  ../resource/pageObjects/desktop/userManagement/userManagement.robot
@@ -331,6 +332,7 @@ Create Requirement Operations
 
 Delete Requirement Specification
     [Tags]  tp38
+    desktopPage.Go to Requirement Specification (mainframe)
     requirementSpecificationEdit.Delete Requirement Specification
 
 Change and check test project
@@ -415,7 +417,23 @@ Create New Test Plan
 Edit Requirement Operations
     [Tags]  tp40_modify_requirement
     requirementSpecificationEdit.Edit Requirement Operations
-    requirementSpecificationEdit.Check Edited Requirements Operations
+    requirementSpecificationEdit.Check Edited Requirement Operations
+
+Create Test Case From Requirement
+    [Tags]  tp41_requirement_operation_creare_tc
+    requirementSpecificationEdit.Create Test Case From Requirement
+
+Check Test Specification
+    [Tags]  tp41_requirement_operation_creare_tc
+    desktopPage.Go to Test Specification (mainframe)
+    navigatorTestSpecification.Add Filters Test Case Title Test Specification
+
+Delete Test Case
+    [Tags]  tp41_requirement_operation_creare_tc
+    navigatorTestSpecification.Delete Test Case
+    headerPage.Go to index page
+
+
 
 
 Start Creating Issue Tracker Management

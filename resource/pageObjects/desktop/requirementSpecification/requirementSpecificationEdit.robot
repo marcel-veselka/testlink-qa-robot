@@ -85,11 +85,35 @@ Edit Requirement Operations
     click button  OK
     unselect frame
 
-Check Edited Requirements Operations
+Check Edited Requirement Operations
     select frame  mainframe
     select frame  workframe
     sleep  3
     wait until page contains  revision 2
+    unselect frame
+
+Create Test Case From Requirement
+    select frame  mainframe
+    select frame  treeframe
+    wait until page contains element  name=expand_tree
+    wait until page contains element  name=collapse_tree
+    sleep  3
+    click element  xpath=//*[@id="extdd-13"]/a
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    sleep  3
+    click element  xpath=/html/body/div/img
+    wait until page contains element  name=create_req
+    wait until page contains element  name=importReq
+    wait until page contains element  name=exportReq
+    wait until page contains element  name=createReqFromIssueXML
+    wait until page contains element  name=create_tcases
+    wait until page contains element  name=copy_req
+    click button  name=create_tcases
+    wait until page contains element  name=create_tc_from_req
+    click element  xpath=//*[@id="req_div"]/table/tbody/tr[2]/td[1]
+    click button  name=create_tc_from_req
     unselect frame
 
 
@@ -118,5 +142,7 @@ Delete Requirement Specification
     click button  Yes
     wait until page contains  Requirement Specification: newtitle was successfully deleted
     unselect frame
+
+
 
 
