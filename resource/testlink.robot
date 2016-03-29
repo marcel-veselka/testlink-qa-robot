@@ -334,6 +334,7 @@ Delete Requirement Specification
     requirementSpecificationEdit.Delete Requirement Specification
 
 Change and check test project
+    [Tags]  tp5
     headerPage.Change Test Project
     desktopPage.Check New Project
 

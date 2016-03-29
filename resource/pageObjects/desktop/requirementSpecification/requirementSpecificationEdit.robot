@@ -103,6 +103,7 @@ Delete Requirement Specification
     unselect frame
     select frame  mainframe
     select frame  workframe
+    wait until page contains  xpath=/html/body/div/img
     click element  xpath=/html/body/div/img
     wait until page contains element  name=btn_new_req_spec
     wait until page contains element  name=edit_req_spec

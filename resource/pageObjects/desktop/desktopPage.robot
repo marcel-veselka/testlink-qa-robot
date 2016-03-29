@@ -227,8 +227,8 @@ Check Current Project
     unselect frame
 
 Check New Project
-    select frame  name=mainframe
-    wait until page contains  Execute Tests
+    select frame  name=titlebar
+    list selection should be  name=testproject  1
     unselect frame
 
 Check info
