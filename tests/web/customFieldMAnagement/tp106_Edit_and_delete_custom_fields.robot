@@ -6,9 +6,11 @@ Test Teardown   Run keywords  testlink.Delete EDITED Custom Field
 ...            AND           Close browser
 
 *** Variables ***
+
 ${CFNAME}   DEFCUS
 ${NEWCFNAME}   DEFCUSEDITED
 ${CFLABEL}  FIELDEDITED
+
 *** Test Cases ***
 
 Create edit and delete new Custom Field
