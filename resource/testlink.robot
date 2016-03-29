@@ -399,5 +399,11 @@ Create New Test Plan
     desktopPage.Go to Test Plan Management
     desktopPage.Check Test Plan Management
 
+Edit Requirement Operations
+    [Tags]  tp40_modify_requirement
+    requirementSpecificationEdit.Edit Requirement Operations
+    requirementSpecificationEdit.Check Edited Requirements Operations
+
+
 
 
