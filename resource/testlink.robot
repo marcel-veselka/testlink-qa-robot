@@ -392,5 +392,12 @@ Edit user
     userManagement.Check all fields for editing user are availiable
     userManagement.Fill inputs for editing user and submit
 
+Create New Test Plan
+    [Tags]  tp53_Create_test_plan_no_conflict
+
+    testlink.Login as admin correct
+    desktopPage.Go to Test Plan Management
+    desktopPage.Check Test Plan Management
+
 
 
