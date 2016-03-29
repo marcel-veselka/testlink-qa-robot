@@ -45,7 +45,7 @@ Go to Issue Tracker Management
 
 Check Issue Tracker Management
     select frame  name=mainframe
-    wait until page contains  Issue Tracker
+    wait until page contains element  create
     unselect frame
 
 Go to Test Project Management
