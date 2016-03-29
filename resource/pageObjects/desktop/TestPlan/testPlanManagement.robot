@@ -30,6 +30,7 @@ Check Test Plan Management
 Create Test Plan Management
 
     select frame  name=mainframe
+    wait until page contains  Create
     click button  create_testplan
     unselect frame
 

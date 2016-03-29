@@ -18,9 +18,11 @@ ${BROWSER}      ff
 
 
 *** Keywords ***
+
 Input Name
 
      select frame  name=mainframe
+     wait until page contains  testplan_name
     input text  testplan_name  ${TPMName}
     unselect frame
 
@@ -28,6 +30,7 @@ Input Description
 
     sleep  1
     select frame  name=mainframe
+    wait until page contains  Description
     click element  cke_8_label
     input text  xpath=//*[@id="cke_contents_notes"]/textarea  ${TPMDescription}
     unselect frame
@@ -50,3 +53,9 @@ Click Create button to finish TPM
     click button  Create
     unselect frame
 
+Click Button Delete Test Plan Management
+
+    select frame  mainframe
+    click element  xpath=//tr[td//text()[contains(.,'${TPMName}')]]/td[last()]/img[1]
+    click button  ext-gen20
+    page should not contain  ${TPMName}

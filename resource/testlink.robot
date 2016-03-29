@@ -399,10 +399,11 @@ Edit user
     userManagement.Check all fields for editing user are availiable
     userManagement.Fill inputs for editing user and submit
 
-Create New Test Plan
+Create New Test Plan Management
     [Tags]  tp53_Create_test_plan_no_conflict
 
     testlink.Login as admin correct
+    desktopPage.Wait until page contains all elements
     desktopPage.Go to Test Plan Management
     desktopPage.Check Test Plan Management
     testPlanManagement.Create Test Plan Management
@@ -412,6 +413,11 @@ Create New Test Plan
     testPlanManagement_detail.Select Checkbox Public
     testPlanManagement_detail.Click Create button to finish TPM
     testPlanManagement.Check Test Plan Management is Created
+
+Delete Test Plan Management
+
+     testPlanManagement_detail.Click Button Delete Test Plan Management
+     testPlanManagement_detail.Confirm Delete Test Plan Management
 
 
 Edit Requirement Operations
