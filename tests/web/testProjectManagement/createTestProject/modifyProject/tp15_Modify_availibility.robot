@@ -5,7 +5,6 @@ Test Setup  Create new Test Project
 Test Teardown  Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 
 
-
 *** Variables ***
 
 ${newTestProjectName}  newtestprojectname
@@ -21,9 +20,3 @@ Change Project Availibility
     testlink.Click desired project
     testlink.Unselect Checkbox Availibility Active
     testlink.Check Test Project Is Inactive
-
-
-
-
-
-
