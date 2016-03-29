@@ -392,5 +392,48 @@ Edit user
     userManagement.Check all fields for editing user are availiable
     userManagement.Fill inputs for editing user and submit
 
+Start Creating Issue Tracker Management
+    [Tags]  tp107
+    desktopPage.Go to Issue Tracker Management
+    issueTrackerManagement.Check Issue Tracker Management
+    issueTrackerManagement.Click Create Issue Tracker Management
+
+Fill in all the fields, types and finish creating
+    [Tags]  tp107
+    issueTrackerManagement.Fill in all fields, type: BUGZILLA (XMLRPC)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: BUGZILLA (DB)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: MANTIS (SOAP)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: MANTIS (DB)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: JIRA (SOAP)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: JIRA (DB)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: JIRA (REST)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: FOGBUGZ (DB)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: FOGBUGZ (REST)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: YOUTRACK (REST)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: REDMINE (REST)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: TRAC (XMLRPC)
+
+Check issue trackers have been created
+    issueTrackerManagement.Check created issue trackers
+
+Delete all created issue trackers
+    issueTrackerManagement.Delete Issue trackers
+
+
+
+
+
+
 
 
