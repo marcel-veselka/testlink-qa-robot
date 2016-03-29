@@ -25,7 +25,7 @@ Resource  ../resource/pageObjects/desktop/testProject/createTestProjectPage.robo
 Resource  ../resource/pageObjects/desktop/testProject/testProjectEdit.robot
 Resource  ../resource/pageObjects/desktop/userManagement/userManagement.robot
 Resource  ../resource/pageObjects/desktop/TestPlan/testPlanManagement.robot
-
+Resource  ../resource/pageObjects/desktop/TestPlan/testPlanManagement_detail.robot
 
 *** Variables ***
 
@@ -404,11 +404,11 @@ Create New Test Plan
     desktopPage.Go to Test Plan Management
     desktopPage.Check Test Plan Management
     testPlanManagement.Create Test Plan Management
-    testPlanManagement.Input Name
-    testPlanManagement.Input Description
-    testPlanManagement.Select Checkbox Active
-    testPlanManagement.Select Checkbox Public
-    testPlanManagement.Click Create button to finish TPM
+    testPlanManagement_detail.Input Name
+    testPlanManagement_detail.Input Description
+    testPlanManagement_detail.Select Checkbox Active
+    testPlanManagement_detail.Select Checkbox Public
+    testPlanManagement_detail.Click Create button to finish TPM
     testPlanManagement.Check Test Plan Management is Created
 
 
@@ -416,6 +416,49 @@ Edit Requirement Operations
     [Tags]  tp40_modify_requirement
     requirementSpecificationEdit.Edit Requirement Operations
     requirementSpecificationEdit.Check Edited Requirements Operations
+
+
+Start Creating Issue Tracker Management
+    [Tags]  tp107
+    desktopPage.Go to Issue Tracker Management
+    issueTrackerManagement.Check Issue Tracker Management
+    issueTrackerManagement.Click Create Issue Tracker Management
+
+Fill in all the fields, types and finish creating
+    [Tags]  tp107
+    issueTrackerManagement.Fill in all fields, type: BUGZILLA (XMLRPC)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: BUGZILLA (DB)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: MANTIS (SOAP)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: MANTIS (DB)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: JIRA (SOAP)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: JIRA (DB)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: JIRA (REST)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: FOGBUGZ (DB)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: FOGBUGZ (REST)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: YOUTRACK (REST)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: REDMINE (REST)
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: TRAC (XMLRPC)
+
+Check issue trackers have been created
+    issueTrackerManagement.Check created issue trackers
+
+Delete all created issue trackers
+    issueTrackerManagement.Delete Issue trackers
+
+
+
+
 
 
 
