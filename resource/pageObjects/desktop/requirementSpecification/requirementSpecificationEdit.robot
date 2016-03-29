@@ -71,12 +71,23 @@ Create Requirement Operations
 Delete Requirement Specification
     select frame  mainframe
     select frame  treeframe
+    wait until page contains element  name=expand_tree
+    wait until page contains element  name=collapse_tree
+    sleep  3
     click element  xpath=//*[@id="extdd-13"]/a
     unselect frame
     select frame  mainframe
     select frame  workframe
-    wait until page contains element  xpath=/html/body/div/img
-    click button  deleteSRS
+    click element  xpath=/html/body/div/img
+    wait until page contains element  name=btn_new_req_spec
+    wait until page contains element  name=edit_req_spec
+    wait until page contains element  name=deleteSRS
+    wait until page contains element  name=importReqSpec
+    wait until page contains element  name=exportReq
+    wait until page contains element  name=freeze_req_spec
+    wait until page contains element  name=new_revision
+    wait until page contains element  name=printerFriendly
+    click button  name=deleteSRS
     wait until page contains  Yes
     click button  Yes
     wait until page contains  Requirement Specification: newtitle was successfully deleted
