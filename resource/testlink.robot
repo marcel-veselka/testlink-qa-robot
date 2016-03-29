@@ -24,6 +24,7 @@ Resource  ../resource/pageObjects/desktop/testSpecification/testSpecification(ma
 Resource  ../resource/pageObjects/desktop/testProject/createTestProjectPage.robot
 Resource  ../resource/pageObjects/desktop/testProject/testProjectEdit.robot
 Resource  ../resource/pageObjects/desktop/userManagement/userManagement.robot
+Resource  ../resource/pageObjects/desktop/TestPlan/testPlanManagement.robot
 
 
 *** Variables ***
@@ -398,6 +399,14 @@ Create New Test Plan
     testlink.Login as admin correct
     desktopPage.Go to Test Plan Management
     desktopPage.Check Test Plan Management
+    testPlanManagement.Create Test Plan Management
+    testPlanManagement.Input Name
+    testPlanManagement.Input Description
+    testPlanManagement.Select Checkbox Active
+    testPlanManagement.Select Checkbox Public
+    testPlanManagement.Click Create button to finish TPM
+    testPlanManagement.Check Test Plan Management is Created
+
 
 Edit Requirement Operations
     [Tags]  tp40_modify_requirement
