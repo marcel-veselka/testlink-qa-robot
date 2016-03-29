@@ -22,8 +22,6 @@ Wait until page contains all elements
     wait until page contains element  optPriority
     wait until page contains element  optAutomation
     wait until page contains element  optInventory
-    wait until page contains element  issue_tracker_enabled
-    wait until page contains element  issue_tracker_id
     wait until page contains element  active
     wait until page contains element  is_public
     wait until page contains element  go_back
