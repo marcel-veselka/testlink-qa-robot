@@ -18,22 +18,35 @@ ${BROWSER}      ff
 
 
 *** Keywords ***
+Input Name
 
-
-Check Test Plan Management
-
-    select frame  name=mainframe
-    wait until page contains  Test Plan Management
-    wait until page contains element  Create
+     select frame  name=mainframe
+    input text  testplan_name  ${TPMName}
     unselect frame
 
-Create Test Plan Management
+Input Description
 
+    sleep  1
     select frame  name=mainframe
-    click button  create_testplan
+    click element  cke_8_label
+    input text  xpath=//*[@id="cke_contents_notes"]/textarea  ${TPMDescription}
     unselect frame
 
-Check Test Plan Management is Created
+Select Checkbox Active
+
+    select frame  name=mainframe
+    select checkbox  active
+    unselect frame
+
+Select Checkbox Public
+
+    select frame  name=mainframe
+    select checkbox  is_public
+    unselect frame
+
+Click Create button to finish TPM
 
     select frame  mainframe
-    page should contain  ${TPMName}
+    click button  Create
+    unselect frame
+
