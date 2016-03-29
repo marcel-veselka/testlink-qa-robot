@@ -18,10 +18,35 @@ ${BROWSER}      ff
 
 
 *** Keywords ***
+Input Name
 
+     select frame  name=mainframe
+    input text  testplan_name  ${TPMName}
+    unselect frame
 
-Check Test Cases Created Per User
+Input Description
+
+    sleep  1
+    select frame  name=mainframe
+    click element  cke_8_label
+    input text  xpath=//*[@id="cke_contents_notes"]/textarea  ${TPMDescription}
+    unselect frame
+
+Select Checkbox Active
 
     select frame  name=mainframe
-    wait until page contains  Test Cases created per User
+    select checkbox  active
     unselect frame
+
+Select Checkbox Public
+
+    select frame  name=mainframe
+    select checkbox  is_public
+    unselect frame
+
+Click Create button to finish TPM
+
+    select frame  mainframe
+    click button  Create
+    unselect frame
+

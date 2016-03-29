@@ -24,7 +24,8 @@ Resource  ../resource/pageObjects/desktop/testSpecification/testSpecification(ma
 Resource  ../resource/pageObjects/desktop/testProject/createTestProjectPage.robot
 Resource  ../resource/pageObjects/desktop/testProject/testProjectEdit.robot
 Resource  ../resource/pageObjects/desktop/userManagement/userManagement.robot
-
+Resource  ../resource/pageObjects/desktop/TestPlan/testPlanManagement.robot
+Resource  ../resource/pageObjects/desktop/TestPlan/testPlanManagement_detail.robot
 
 *** Variables ***
 
@@ -225,6 +226,9 @@ Check unique test project name and prefix
 
 Delete test project
    [Arguments]  ${newTestProjectName}  ${newTestProjectPrefix}
+    headerPage.Go to index page
+    desktopPage.Wait until page contains all elements
+    desktopPage.Go to Test Project Management
     testProjectManagement.Check Test Project Management
     select frame  mainframe
     click element  xpath=//tr[td//text()[contains(.,'${newTestProjectName}')]]/td[last()]
@@ -391,6 +395,27 @@ Edit user
     [Tags]  tp-101_Modify_user
     userManagement.Check all fields for editing user are availiable
     userManagement.Fill inputs for editing user and submit
+
+Create New Test Plan
+    [Tags]  tp53_Create_test_plan_no_conflict
+
+    testlink.Login as admin correct
+    desktopPage.Go to Test Plan Management
+    desktopPage.Check Test Plan Management
+    testPlanManagement.Create Test Plan Management
+    testPlanManagement_detail.Input Name
+    testPlanManagement_detail.Input Description
+    testPlanManagement_detail.Select Checkbox Active
+    testPlanManagement_detail.Select Checkbox Public
+    testPlanManagement_detail.Click Create button to finish TPM
+    testPlanManagement.Check Test Plan Management is Created
+
+
+Edit Requirement Operations
+    [Tags]  tp40_modify_requirement
+    requirementSpecificationEdit.Edit Requirement Operations
+    requirementSpecificationEdit.Check Edited Requirements Operations
+
 
 Start Creating Issue Tracker Management
     [Tags]  tp107

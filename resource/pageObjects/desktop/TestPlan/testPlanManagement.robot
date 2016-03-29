@@ -20,8 +20,20 @@ ${BROWSER}      ff
 *** Keywords ***
 
 
-Check Test Cases Created Per User
+Check Test Plan Management
 
     select frame  name=mainframe
-    wait until page contains  Test Cases created per User
+    wait until page contains  Test Plan Management
+    wait until page contains element  Create
     unselect frame
+
+Create Test Plan Management
+
+    select frame  name=mainframe
+    click button  create_testplan
+    unselect frame
+
+Check Test Plan Management is Created
+
+    select frame  mainframe
+    page should contain  ${TPMName}
