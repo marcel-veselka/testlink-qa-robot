@@ -15,5 +15,3 @@ Create new Custom Field
     testlink.Start creating Define Custom Fields
     testlink.Fill information to create Custom Field
     testlink.Submit and check Define Custom Field
-    #sdf
-
