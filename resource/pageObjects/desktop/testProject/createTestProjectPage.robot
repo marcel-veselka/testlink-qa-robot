@@ -2,6 +2,7 @@
 
 Documentation  This is the resource file containing all methods based on create project page
 Library        Selenium2Library
+Library        BuiltIn
 
 *** Variables ***
 ${newTestProjectDescription}  New test project description
@@ -80,3 +81,9 @@ Unselect all features
     unselect checkbox  optPriority
     unselect checkbox  optAutomation
     unselect checkbox  optInventory
+
+Confirm warning about empty fields
+    select frame  mainframe
+    wait until page contains   cannot be empty!
+    click button  OK
+    unselect frame

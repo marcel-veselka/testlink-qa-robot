@@ -21,12 +21,10 @@ ${newTestProjectPrefix}  prefixNew1
 Go to desired frame
     select frame  mainframe
 
-Click Test Project Management
-    click link  Test Project Management
-
 Wait until page contains all elements
     desktopPage.Go to desired frame
     wait until page contains  Test Project Management
+    unselect frame
 
 Go to Define Custom Fields
     sleep  1

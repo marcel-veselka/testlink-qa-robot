@@ -225,6 +225,9 @@ Check unique test project name and prefix
 
 Delete test project
    [Arguments]  ${newTestProjectName}  ${newTestProjectPrefix}
+    headerPage.Go to index page
+    desktopPage.Wait until page contains all elements
+    desktopPage.Go to Test Project Management
     testProjectManagement.Check Test Project Management
     select frame  mainframe
     click element  xpath=//tr[td//text()[contains(.,'${newTestProjectName}')]]/td[last()]
