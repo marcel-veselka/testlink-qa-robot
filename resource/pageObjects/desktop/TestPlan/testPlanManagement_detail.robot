@@ -57,5 +57,10 @@ Click Button Delete Test Plan Management
 
     select frame  mainframe
     click element  xpath=//tr[td//text()[contains(.,'${TPMName}')]]/td[last()]/img[1]
-    click button  ext-gen20
-    page should not contain  ${TPMName}
+    unselect frame
+
+Confirm Delete Test Plan Management
+    select frame  mainframe
+    click button  Yes
+    wait until page does not contain  ${TPMName}
+    unselect frame

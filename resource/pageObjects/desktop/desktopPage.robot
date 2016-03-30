@@ -105,8 +105,8 @@ Check Platform Management
     unselect frame
 
 Go to Requirement Specification (mainframe)
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Requirement Specification
     click link  Requirement Specification
     unselect frame
 
