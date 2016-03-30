@@ -318,8 +318,9 @@ Create New Requirement Specification (type URS)
     requirementSpecificationEdit.Create New Requirement Specification (type URS)
 
 Change Test Project
-    [Tags]  tp38
+    [Tags]  tp38  tp5
     headerPage.Change Test Project
+    desktopPage.Check New Project
 
 Choose Requirement Specification
     [Tags]  tp38
@@ -332,6 +333,7 @@ Create Requirement Operations
 
 Delete Requirement Specification
     [Tags]  tp38
+    headerPage.Go to index page
     desktopPage.Go to Requirement Specification (mainframe)
     requirementSpecificationEdit.Delete Requirement Specification
 
@@ -339,6 +341,12 @@ Change and check test project
     [Tags]  tp5
     headerPage.Change Test Project
     desktopPage.Check New Project
+
+Change and check test project with RS control
+    [Tags]  tp38
+    headerPage.Change Test Project
+    desktopPage.Check Selected Project and Requirement link
+
 
 Start creating Define Custom Fields
     [Tags]  tp105

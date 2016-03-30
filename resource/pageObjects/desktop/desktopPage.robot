@@ -18,11 +18,9 @@ ${newTestProjectPrefix}  prefixNew1
 
 
 *** Keywords ***
-Go to desired frame
-    select frame  mainframe
 
 Wait until page contains all elements
-    desktopPage.Go to desired frame
+    select frame  mainframe
     wait until page contains  Test Project Management
     unselect frame
 
@@ -112,7 +110,6 @@ Go to Requirement Specification (mainframe)
 
 Check Requirement Specification (mainframe)
     select frame  name=mainframe
-    select frame  name=treeframe
     wait until page contains  Requirement Specifications
     unselect frame
 
@@ -230,6 +227,11 @@ Check New Project
     select frame  name=titlebar
     list selection should be  name=testproject  1
     unselect frame
+
+Check Selected Project and Requirement link
+    desktopPage.Check New Project
+    desktopPage.Check Requirement Specification (mainframe)
+
 
 Check info
     select frame  name=mainframe
