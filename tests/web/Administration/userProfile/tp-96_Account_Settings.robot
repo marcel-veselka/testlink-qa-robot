@@ -7,6 +7,7 @@ Resource       ../../../../resource/testlink.robot
 
 Test Teardown  Run keywords  testlink.Set Personal data in My Settings back
 ...            AND           testlink.Set Personal password in My Settings back
+...            AND           Close browser
 
 
 *** Variables ***

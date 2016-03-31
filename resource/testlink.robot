@@ -527,6 +527,7 @@ Set Personal password in My Settings back
     mySettings.Change Password back
 
 Set Personal data in My Settings back
+    [Tags]  tp96
 
     mySettings.Set Personal data back to normal
 
