@@ -411,7 +411,6 @@ Edit user
 Create New Test Plan Management
     [Tags]  tp53_Create_test_plan_no_conflict
 
-    testlink.Login as admin correct
     desktopPage.Wait until page contains all elements
     desktopPage.Go to Test Plan Management
     desktopPage.Check Test Plan Management
@@ -489,10 +488,9 @@ Check issue trackers have been created
 Delete all created issue trackers
     issueTrackerManagement.Delete Issue trackers
 
-Change Password
+Validate settings fields
     [Tags]  tp96
 
-    testlink.Login as admin correct
     desktopPage.Wait until page contains all elements
     headerPage.Go to My Settings
     headerPage.Check My Settings
@@ -503,14 +501,18 @@ Change Password
     mySettings.Check First Name field must be filled
     mySettings.Last Name Empty
     mySettings.Check Last Name field must be filled
-    mySettings.
 
- #   mySettings.Input First Name
- #   mySettings.Click Save Button
-  #  mySettings.First Name Empty
-  # mySettings.Click Save Button
-  #  mySettings.Last Name Empty
-   # mySettings.Click Save Button
+Input Personal data in settings
+
+    mySettings.input First Name
+    mySettings.input Last Name
+    mySettings.input Email Adress
+    mySettings.click Save Button
+
+Set Personal data back
+
+    mySettings.Set Personal data back to normal
+
 
 
 

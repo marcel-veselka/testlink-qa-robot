@@ -18,6 +18,7 @@ ${TPMDescription}  DescriptionDescription
 
 Create new test plan
 
+     testlink.Login as admin correct
      testlink.Create New Test Plan Management
 
 

@@ -19,6 +19,14 @@ ${newTestProjectPrefix}  prefixNew1
 
 *** Keywords ***
 
+Set Personal data back to normal
+
+    input text  firstName  renat
+    input text  lastName   kulalov
+    input text  emailAddress  renat.kulalov@tesena.com
+    click button    Save
+    wait until page contains  Personal data changed
+
 First Name Empty
 
     input text  firstName  ${EmptyName}
@@ -39,6 +47,7 @@ Last Name Empty
 Click Save Button
 
     click button  Save
+    wait until page contains  Personal data changed
 
 Check Email field must be filled
 

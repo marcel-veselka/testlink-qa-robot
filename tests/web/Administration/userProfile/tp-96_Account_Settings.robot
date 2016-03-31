@@ -4,10 +4,9 @@ Documentation  A test suite with a single test for creating a new Custom Field. 
 ...            a workflow that is created using keywords from the resource file.
 
 Resource       ../../../../resource/testlink.robot
-#Resource
 
-#Test Teardown  Run keywords  testlink.Delete Test Plan Management
-#...            AND           Close browser
+Test Teardown  Run keywords  testlink.Set Personal data back
+...            AND           Close browser
 
 
 *** Variables ***
@@ -23,6 +22,9 @@ ${NewTestFirstName}    testFirstName
 
 Change password in MySettings
 
-     testlink.Change Password
+     testlink.Login as admin correct
+     testlink.Validate settings fields
+     testlink.Input Personal data in settings
+
 
 
