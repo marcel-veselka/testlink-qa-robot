@@ -45,29 +45,25 @@ Add Filters Test Case Title Test Specification
 Delete Test Case
     select frame  mainframe
     select frame  treeframe
-    click element  xpath=//*[@id="extdd-4"]/a
+    page should contain element  xpath=//a[span[contains(text(),"${title} (")]]
+    click element  xpath=//a[span[contains(text(),"${title} (")]]
     unselect frame
     select frame  mainframe
     select frame  workframe
-    wait until page contains element  xpath=/html/body/div/img[2]
-    click element  xpath=/html/body/div/img[2]
+    wait until page contains element  xpath=//img[@title="Actions"]
+    click element  xpath=//img[@title="Actions"]
     wait until page contains element  name=create_tc
     wait until page contains element  name=move_testcases_viewer
     wait until page contains element  name=delete_testcases
     wait until page contains element  name=reorder_testcases
-    unselect frame
-    select frame  mainframe
-    select frame  workframe
     click element  name=delete_testcases
     unselect frame
     select frame  mainframe
     select frame  workframe
+    wait until page contains element  xpath=//img[@title="check/uncheck all"]
+    click element  xpath=//img[@title="check/uncheck all"]
     wait until page contains element  name=do_delete_testcases
-    click element  name=tcaseSet[]
-    unselect frame
-    select frame  mainframe
-    select frame  workframe
-    click button  xpath=//*[@id="delete_testcases"]/div[2]/input
+    click button  Delete
     unselect frame
     select frame  mainframe
     select frame  workframe

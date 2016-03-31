@@ -145,20 +145,14 @@ Delete Requirement Specification
     unselect frame
     select frame  mainframe
     select frame  workframe
-    wait until page contains element  xpath=/html/body/div/img
-    click element  xpath=/html/body/div/img
-    wait until page contains element  name=btn_new_req_spec
+    wait until page contains element  xpath=//img[@title="Actions"]
+    click element  xpath=//img[@title="Actions"]
     wait until page contains element  name=edit_req_spec
     wait until page contains element  name=deleteSRS
-    wait until page contains element  name=importReqSpec
-    wait until page contains element  name=exportReq
-    wait until page contains element  name=freeze_req_spec
-    wait until page contains element  name=new_revision
-    wait until page contains element  name=printerFriendly
     click button  name=deleteSRS
     wait until page contains  Yes
     click button  Yes
-    wait until page contains  Requirement Specification: newtitle was successfully deleted
+    wait until page contains  Requirement Specification: ${title} was successfully deleted
     unselect frame
 
 
