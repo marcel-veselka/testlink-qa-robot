@@ -110,6 +110,7 @@ Go to Requirement Specification (mainframe)
 
 Check Requirement Specification (mainframe)
     select frame  name=mainframe
+    select frame  treeframe
     wait until page contains  Requirement Specifications
     unselect frame
 
