@@ -27,6 +27,7 @@ Resource  ../resource/pageObjects/desktop/testProject/testProjectEdit.robot
 Resource  ../resource/pageObjects/desktop/userManagement/userManagement.robot
 Resource  ../resource/pageObjects/desktop/TestPlan/testPlanManagement.robot
 Resource  ../resource/pageObjects/desktop/TestPlan/testPlanManagement_detail.robot
+Resource  ../resource/pageObjects/desktop/mySettings/mySettings.robot
 
 *** Variables ***
 
@@ -487,6 +488,29 @@ Check issue trackers have been created
 
 Delete all created issue trackers
     issueTrackerManagement.Delete Issue trackers
+
+Change Password
+    [Tags]  tp96
+
+    testlink.Login as admin correct
+    desktopPage.Wait until page contains all elements
+    headerPage.Go to My Settings
+    headerPage.Check My Settings
+    mySettings.Check Page
+    mySettings.Email Adress Empty
+    mySettings.Check Email field must be filled
+    mySettings.First Name Empty
+    mySettings.Check First Name field must be filled
+    mySettings.Last Name Empty
+    mySettings.Check Last Name field must be filled
+    mySettings.
+
+ #   mySettings.Input First Name
+ #   mySettings.Click Save Button
+  #  mySettings.First Name Empty
+  # mySettings.Click Save Button
+  #  mySettings.Last Name Empty
+   # mySettings.Click Save Button
 
 
 
