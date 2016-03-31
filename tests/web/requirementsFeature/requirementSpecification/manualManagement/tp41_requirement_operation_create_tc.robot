@@ -2,9 +2,9 @@
 Documentation  A test case for changing the project availibility
 Resource  ../../../../../resource/testlink.robot
 Test Setup  Login as admin correct
-#Test Teardown  Run keywords  testlink.Delete Test Case
-#...            AND           testlink.Delete Requirement Specification
-#...            AND           Close browser
+Test Teardown  Run keywords  testlink.Delete Test Case
+...            AND           testlink.Delete Requirement Specification
+...            AND           Close browser
 *** Variables ***
 
 ${dokumentID}   newdokumentid

@@ -127,6 +127,11 @@ Check Requirement Specification (mainframe)
     wait until page contains  Requirement Specifications
     unselect frame
 
+Check link ${link}
+    select frame  mainframe
+    wait until page contains  ${link}
+    unselect frame
+
 Go to Requirement Overview
     sleep  1
     select frame  name=mainframe
@@ -244,7 +249,7 @@ Check New Project
 
 Check Selected Project and Requirement link
     desktopPage.Check New Project
-    desktopPage.Check Requirement Specification (mainframe)
+    desktopPage.Check link Requirement Specification
 
 
 Check info

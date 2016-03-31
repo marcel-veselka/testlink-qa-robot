@@ -81,13 +81,10 @@ Create Requirement Operations
 Edit Requirement Operations
     select frame  mainframe
     select frame  treeframe
-    wait until page contains element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
-    double click element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
-    unselect frame
-    select frame  mainframe
-    select frame  treeframe
-    wait until page contains element  xpath=//ul[contains(., "${dokumentID}:${title}")]//ul//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
-    click element  xpath=//ul[contains(., "${dokumentID}:${title}")]//ul//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
+    wait until page contains element  name=expand_tree
+    click element  name=expand_tree
+    wait until page contains element  xpath=//a[span[text()="${dokumentID}:${title}"]]
+    double click element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     unselect frame
     select frame  mainframe
     select frame  workframe
