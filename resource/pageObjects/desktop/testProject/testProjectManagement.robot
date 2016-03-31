@@ -41,6 +41,7 @@ Create Test Project
     select frame  mainframe
     click button  doActionButton
     unselect frame
+
 Check new project exists
     select frame  mainframe
     element should contain  xpath=//table[@id="item_view"]  ${newTestProjectName}
@@ -86,17 +87,19 @@ Unactive Test Project by Bulb
 Add issue tracker to test project
     sleep  2
     select frame  name=mainframe
-    select from list by label  xpath=//*[@id="issue_tracker_id"]  ${IssueTrackerFullName}
+    select from list by label  xpath=//*[@id="issue_tracker_id"]  ${ISSUETRACKER} ( bugzilla (Interface: xmlrpc) )
+    select checkbox  issue_tracker_enabled
     unselect frame
 
 Remove issue tracker from test project
     sleep  2
     select frame  name=mainframe
+    unselect checkbox  issue_tracker_enabled
     select from list by value  xpath=//*[@id="issue_tracker_id"]  0
     unselect frame
 
 Check Issue Tracker has been added to the Test Project
     sleep  2
     select frame  mainframe
-    element should contain  xpath=//table[@id="item_view"]  ${IssueTrackerName}
+    element should contain  xpath=//table[@id="item_view"]  ${ISSUETRACKER}
     unselect frame

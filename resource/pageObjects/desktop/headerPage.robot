@@ -35,8 +35,10 @@ Wait untill header is loaded
 
 Go to index page
     select frame  name=titlebar
+    wait until page contains element  xpath=/html/body/div[1]/a
     click element  xpath=/html/body/div[1]/a
     unselect frame
+
 Go to My Settings
     select frame  name=titlebar
     click element  xpath=/html/body/div[2]/span[2]/a[1]

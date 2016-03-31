@@ -534,14 +534,14 @@ Modify name and type of Issue Tracker
     editIssueTracker.Modify name and type of Issue Tracker ${ISSUETRACKER}
     issueTrackerManagement.Check Issue Tracker named ${ISSUETRACKER}
 
-Delete Issue Tracker
+Delete Issue Tracker ${ISSUETRACKER}
     [Tags]  tp108
     headerPage.Go to index page
     Get to Issue Tracker Management
-    issueTrackerManagement.Delete Issue tracker
+    issueTrackerManagement.Delete Issue tracker ${ISSUETRACKER}
+
 Validate settings fields
     [Tags]  tp96
-
     desktopPage.Wait until page contains all elements
     headerPage.Go to My Settings
     headerPage.Check My Settings
@@ -589,6 +589,8 @@ Save test project and check Issue Tracker has been added
     testProjectManagement.Check Issue Tracker has been added to the Test Project
 
 Delete Issue Tracker from test Project
+    headerPage.Go to index page
+    desktopPage.Go to link Test Project Management
     testProjectManagement.Click desired project
     testProjectManagement.Remove issue tracker from test project
     testProjectManagement.Create Test Project

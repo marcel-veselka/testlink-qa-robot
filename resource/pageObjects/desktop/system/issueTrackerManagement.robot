@@ -215,7 +215,7 @@ Delete Issue trackers
     click button  Yes
     unselect frame
 
-Delete Issue tracker
+Delete Issue tracker ${ISSUETRACKER}
     select frame  name=mainframe
     click element  xpath=//tr[td//text()[contains(.,'${ISSUETRACKER}')]]/td[last()]
     wait until page contains  Yes
