@@ -12,18 +12,22 @@ ${LOGIN URL}     http://${SERVER}/login.php
 ${WELCOME URL}   http://${SERVER}/index.php?caller=login
 ${ERROR URL}     http://${SERVER}/login.php
 ${BROWSER}      chrome
-${projectTemplate}  testing project
-${newTestProjectName}  testingProjectNew1
-${newTestProjectPrefix}  prefixNew1
+${Name}         renat
+${LastName}     kulalov
+${emailAdress}  renat.kulalov@tesena.com
+${Password}     renat123
+
+
+
 
 
 *** Keywords ***
 
 Set Personal data back to normal
 
-    input text  firstName  renat
-    input text  lastName   kulalov
-    input text  emailAddress  renat.kulalov@tesena.com
+    input text  firstName  ${Name}
+    input text  lastName   ${LastName}
+    input text  emailAddress  ${emailAdress}
     click button    Save
     wait until page contains  Personal data changed
 
@@ -81,3 +85,21 @@ Check First Name field must be filled
 Input First Name
 
     input text  firstName  ${NewTestFirstName}
+
+Change Password
+
+    input text  oldpassword  ${Password}
+    input text  newpassword  ${NewTestPassword}
+    input text  newpassword_check   ${NewTestPassword}
+    click button  Change password
+    wait until page contains  Your password was changed succesfully
+
+Change Password back
+
+    input text  oldpassword  ${NewTestPassword}
+     input text  newpassword  ${Password}
+    input text  newpassword_check   ${Password}
+    click button  Change password
+    wait until page contains  Your password was changed succesfully
+
+

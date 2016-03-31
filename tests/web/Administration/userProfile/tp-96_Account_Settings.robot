@@ -5,8 +5,8 @@ Documentation  A test suite with a single test for creating a new Custom Field. 
 
 Resource       ../../../../resource/testlink.robot
 
-Test Teardown  Run keywords  testlink.Set Personal data back
-...            AND           Close browser
+Test Teardown  Run keywords  testlink.Set Personal data in My Settings back
+...            AND           testlink.Set Personal password in My Settings back
 
 
 *** Variables ***
@@ -18,13 +18,18 @@ ${EmptyLastName}
 ${NewTestEmailAdress}  testemailadress@honzaknownothing.com
 ${NewTestLastName}     testLastName
 ${NewTestFirstName}    testFirstName
+${NewTestPassword}     testPassword
+
 *** Test Cases ***
 
 Change password in MySettings
 
      testlink.Login as admin correct
      testlink.Validate settings fields
+     testlink.Change Personal password in My Settings
      testlink.Input Personal data in settings
+
+
 
 
 

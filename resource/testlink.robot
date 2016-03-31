@@ -509,15 +509,27 @@ Validate settings fields
     mySettings.Check Last Name field must be filled
 
 Input Personal data in settings
+    [Tags]  tp96
 
     mySettings.input First Name
     mySettings.input Last Name
     mySettings.input Email Adress
     mySettings.click Save Button
 
-Set Personal data back
+Change Personal password in My Settings
+    [Tags]  tp96
+
+    mySettings.Change Password
+
+Set Personal password in My Settings back
+    [Tags]  tp96
+
+    mySettings.Change Password back
+
+Set Personal data in My Settings back
 
     mySettings.Set Personal data back to normal
+
 
 
 
