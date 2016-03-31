@@ -542,6 +542,22 @@ Set Personal data in My Settings back
     mySettings.Set Personal data back to normal
 
 
+Add Issue Tracker to test project
+    [Tags]  tp14
+    testProjectManagement.Check Test Project Management
+    testProjectManagement.Click desired project
+    testProjectManagement.Add issue tracker to test project
+
+Save test project and check Issue Tracker has been added
+    [Tags]  tp14
+    testProjectManagement.Create Test Project
+    testProjectManagement.Check Issue Tracker has been added to the Test Project
+
+Delete Issue Tracker from test Project
+    testProjectManagement.Click desired project
+    testProjectManagement.Remove issue tracker from test project
+    testProjectManagement.Create Test Project
+
 
 
 
