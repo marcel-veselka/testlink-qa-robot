@@ -70,6 +70,13 @@ Fill incorrect credentials and submit
 Click Log in Button
     Click Button  login_submit
 
+Check that warning about empty field appears
+    execute javascript  #var imput = document.getElementsByName('tl_login'); imput[0].required = false;
+                   ...  var imput2 = document.getElementsByName('tl_password'); imput2[0].required = false;
+    click button  login_submit
+    wait until page contains  Try again! Wrong login name or password!
+
+
 Check if Login was succesful
     Title Should Be  TestLink 1.9.14 (Padawan)
 

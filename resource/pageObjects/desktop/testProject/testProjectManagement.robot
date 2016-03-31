@@ -38,8 +38,9 @@ Add Prefix
     input text  tcasePrefix  ${testprojectprefix}
 
 Create Test Project
+    select frame  mainframe
     click button  doActionButton
-
+    unselect frame
 Check new project exists
     select frame  mainframe
     element should contain  xpath=//table[@id="item_view"]  ${newTestProjectName}
@@ -80,4 +81,22 @@ Unactive Test Project by Bulb
     select frame  mainframe
     click element  xpath=//tr[td//text()[contains(.,'${newTestProjectName}')]]/td[input[@title="Inactive (click to set active)"]]
     page should not contain  xpath=//tr[td//text()[contains(.,'${newTestProjectName}')]]/td[input[@title="Active (click to set inactive)"]]
+    unselect frame
+
+Add issue tracker to test project
+    sleep  2
+    select frame  name=mainframe
+    select from list by label  xpath=//*[@id="issue_tracker_id"]  ${IssueTrackerFullName}
+    unselect frame
+
+Remove issue tracker from test project
+    sleep  2
+    select frame  name=mainframe
+    select from list by value  xpath=//*[@id="issue_tracker_id"]  0
+    unselect frame
+
+Check Issue Tracker has been added to the Test Project
+    sleep  2
+    select frame  mainframe
+    element should contain  xpath=//table[@id="item_view"]  ${IssueTrackerName}
     unselect frame

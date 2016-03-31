@@ -3,6 +3,7 @@ var imput = document.getElementsByName('tprojectName');
 var imput2 = document.getElementsByName('tcasePrefix');
 imput[0].required = false;
 imput2[0].required = false;
+// document.getElementById('id').required = false;
 
 Buuuu
     testlink.Login as admin correct

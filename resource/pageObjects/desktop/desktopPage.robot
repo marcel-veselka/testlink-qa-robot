@@ -123,7 +123,7 @@ Go to Requirement Specification (mainframe)
 
 Check Requirement Specification (mainframe)
     select frame  name=mainframe
-    select frame  name=treeframe
+    select frame  treeframe
     wait until page contains  Requirement Specifications
     unselect frame
 
@@ -244,7 +244,7 @@ Check New Project
 
 Check Selected Project and Requirement link
     desktopPage.Check New Project
-    desktopPage.Link Requirement Specification is here
+    desktopPage.Check Requirement Specification (mainframe)
 
 
 Check info

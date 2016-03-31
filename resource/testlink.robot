@@ -28,6 +28,7 @@ Resource  ../resource/pageObjects/desktop/testProject/testProjectEdit.robot
 Resource  ../resource/pageObjects/desktop/userManagement/userManagement.robot
 Resource  ../resource/pageObjects/desktop/TestPlan/testPlanManagement.robot
 Resource  ../resource/pageObjects/desktop/TestPlan/testPlanManagement_detail.robot
+Resource  ../resource/pageObjects/desktop/mySettings/mySettings.robot
 
 *** Variables ***
 
@@ -47,7 +48,13 @@ Login as admin incorrect
     loginPage.Wait until page contains all elements for login
     loginPage.Fill incorrect credentials and submit
     loginPage.Check there is a warning about login
-    loginPage.Close the browser
+
+Login as admin with empty password field
+    loginPage.Open Browser To Login Page
+    loginPage.Wait until page contains all elements for login
+    loginPage.Fill correct Login input
+    loginPage.Check that warning about empty field appears
+
 
 Check desktop links
     desktopPage.Go to Define Custom Fields
@@ -307,6 +314,16 @@ Go to Platform Management
 Check Platform Management Without Platforms
     platformManagement.Check Platform Management Without Platforms
 
+Unactive Test Project by Bulb
+    [Tags]  tp13
+
+    testProjectManagement.Unactive Test Project by Bulb
+
+Check Test Project Is Active
+    [Tags]  tp13
+
+    testProjectManagement.Check Test Project Is Active
+
 Go to index page
     headerPage.Go to index page
 
@@ -397,7 +414,7 @@ Start editing user
     headerPage.Go to User Management
     headerPage.Check User Management
     userManagement.Wait until page contains view users content
-    testlink.Click desired user
+    userManagement.Click desired user
 
 Click desired user
     [Tags]  tp-101_Modify_user
@@ -411,7 +428,6 @@ Edit user
 Create New Test Plan Management
     [Tags]  tp53_Create_test_plan_no_conflict
 
-    testlink.Login as admin correct
     desktopPage.Wait until page contains all elements
     desktopPage.Go to Test Plan Management
     desktopPage.Check Test Plan Management
@@ -523,6 +539,61 @@ Delete Issue Tracker
     headerPage.Go to index page
     Get to Issue Tracker Management
     issueTrackerManagement.Delete Issue tracker
+Validate settings fields
+    [Tags]  tp96
+
+    desktopPage.Wait until page contains all elements
+    headerPage.Go to My Settings
+    headerPage.Check My Settings
+    mySettings.Check Page
+    mySettings.Email Adress Empty
+    mySettings.Check Email field must be filled
+    mySettings.First Name Empty
+    mySettings.Check First Name field must be filled
+    mySettings.Last Name Empty
+    mySettings.Check Last Name field must be filled
+
+Input Personal data in settings
+    [Tags]  tp96
+
+    mySettings.input First Name
+    mySettings.input Last Name
+    mySettings.input Email Adress
+    mySettings.click Save Button
+
+Change Personal password in My Settings
+    [Tags]  tp96
+
+    mySettings.Change Password
+
+Set Personal password in My Settings back
+    [Tags]  tp96
+
+    mySettings.Change Password back
+
+Set Personal data in My Settings back
+    [Tags]  tp96
+
+    mySettings.Set Personal data back to normal
+
+
+Add Issue Tracker to test project
+    [Tags]  tp14
+    testProjectManagement.Check Test Project Management
+    testProjectManagement.Click desired project
+    testProjectManagement.Add issue tracker to test project
+
+Save test project and check Issue Tracker has been added
+    [Tags]  tp14
+    testProjectManagement.Create Test Project
+    testProjectManagement.Check Issue Tracker has been added to the Test Project
+
+Delete Issue Tracker from test Project
+    testProjectManagement.Click desired project
+    testProjectManagement.Remove issue tracker from test project
+    testProjectManagement.Create Test Project
+
+
 
 
 
