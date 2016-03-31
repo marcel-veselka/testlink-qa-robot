@@ -58,6 +58,9 @@ Create Requirement Operations
     click element  xpath=//img[@title="Actions"]
     wait until page contains element  name=create_req
     click button  name=create_req
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
     wait until page contains element  name=create_req
     wait until page contains element  name=go_back
     wait until page contains element  req_title
@@ -69,6 +72,10 @@ Create Requirement Operations
     select from list by value  reqStatus  F
     select from list by value  reqType  1
     click element  name=create_req
+    unselect frame
+    select frame  mainframe
+    select frame  treeframe
+    wait until page contains  ${dokumentID}:${title}
     unselect frame
 
 Edit Requirement Operations
@@ -113,22 +120,20 @@ Create Test Case From Requirement
     select frame  treeframe
     wait until page contains element  name=expand_tree
     wait until page contains element  name=collapse_tree
-    wait until page contains element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
-    click element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
+    click element  name=expand_tree
+    sleep  2
+    click element  xpath=//a[span[contains(text(), "${dokumentID}:${title} ")]]
     unselect frame
     select frame  mainframe
     select frame  workframe
     wait until page contains element  xpath=//img[@title="Actions"]
     click element  xpath=//img[@title="Actions"]
     wait until page contains element  name=create_req
-    wait until page contains element  name=importReq
-    wait until page contains element  name=exportReq
-    wait until page contains element  name=createReqFromIssueXML
     wait until page contains element  name=create_tcases
-    wait until page contains element  name=copy_req
     click button  name=create_tcases
     wait until page contains element  name=create_tc_from_req
-    click element  xpath=//*[@id="req_div"]/table/tbody/tr[2]/td[1]
+    wait until page contains element  xpath= //tr[contains(.,"${dokumentID} : ${title}")]//input[@type="checkbox"]
+    select checkbox  xpath= //tr[contains(.,"${dokumentID} : ${title}")]//input[@type="checkbox"]
     click button  name=create_tc_from_req
     unselect frame
 

@@ -148,6 +148,11 @@ Check created issue trackers
     wait until page contains  ${ISSUETRACKER11}
     unselect frame
 
+Check Issue Tracker named ${ISSUETRACKER}
+    select frame  name=mainframe
+    wait until page contains  ${ISSUETRACKER}
+    unselect frame
+
 Delete Issue trackers
     select frame  name=mainframe
     click element  xpath=//tr[td//text()[contains(.,'${ISSUETRACKER}')]]/td[last()]
@@ -209,4 +214,15 @@ Delete Issue trackers
     wait until page contains  Yes
     click button  Yes
     unselect frame
+
+Delete Issue tracker
+    select frame  name=mainframe
+    click element  xpath=//tr[td//text()[contains(.,'${ISSUETRACKER}')]]/td[last()]
+    wait until page contains  Yes
+    click button  Yes
+    unselect frame
+    select frame  name=mainframe
+    wait until page does not contain  ${ISSUETRACKER}
+    unselect frame
+
 

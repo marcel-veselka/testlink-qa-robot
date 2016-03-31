@@ -12,6 +12,7 @@ Resource  ../resource/pageObjects/desktop/requirementSpecification/searchRequire
 Resource  ../resource/pageObjects/desktop/requirementSpecification/searchRequirementSpecifications.robot
 Resource  ../resource/pageObjects/desktop/system/defineCustomFields.robot
 Resource  ../resource/pageObjects/desktop/system/issueTrackerManagement.robot
+Resource  ../resource/pageObjects/desktop/system/editIssueTracker.robot
 Resource  ../resource/pageObjects/desktop/testProject/assignCustomFields.robot
 Resource  ../resource/pageObjects/desktop/testProject/assignUserRoles.robot
 Resource  ../resource/pageObjects/desktop/testProject/keywordManagement.robot
@@ -488,6 +489,40 @@ Check issue trackers have been created
 Delete all created issue trackers
     issueTrackerManagement.Delete Issue trackers
 
+Get to Issue Tracker Management
+    [Tags]  tp108
+    desktopPage.Go to link Issue Tracker Management
+    issueTrackerManagement.Check Issue Tracker Management
+
+Create Issue Tracker
+    [Tags]  tp108
+    testlink.Login as admin correct
+    testlink.Get to Issue Tracker Management
+    issueTrackerManagement.Click Create Issue Tracker Management
+    issueTrackerManagement.Fill in all fields, type: BUGZILLA (XMLRPC)
+    issueTrackerManagement.Check Issue Tracker named ${ISSUETRACKER}
+    headerPage.Go to index page
+
+Click created Issue Tracker with name ${ISSUETRACKER}
+    [Tags]  tp108
+    select frame  mainframe
+    wait until page contains element  xpath=//a[contains(text(),"${ISSUETRACKER}")]
+    click element  xpath=//a[contains(text(),"${ISSUETRACKER}")]
+    unselect frame
+
+Modify name and type of Issue Tracker
+    [Tags]  tp108
+    editIssueTracker.Modify name and type of Issue Tracker newIssueTracker
+    issueTrackerManagement.Check Issue Tracker named newIssueTracker
+    testlink.Click created Issue Tracker with name newIssueTracker
+    editIssueTracker.Modify name and type of Issue Tracker ${ISSUETRACKER}
+    issueTrackerManagement.Check Issue Tracker named ${ISSUETRACKER}
+
+Delete Issue Tracker
+    [Tags]  tp108
+    headerPage.Go to index page
+    Get to Issue Tracker Management
+    issueTrackerManagement.Delete Issue tracker
 
 
 

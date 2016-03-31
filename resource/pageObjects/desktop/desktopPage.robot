@@ -35,9 +35,17 @@ Check Define Custom Fields
     wait until page contains  Custom fields
     unselect frame
 
+Go to link ${link}
+    select frame  name=mainframe
+    wait until page contains  ${link}
+    click link  ${link}
+    unselect frame
+
+
 Go to Issue Tracker Management
     sleep  1
     select frame  name=mainframe
+    wait until page contains  Issue Tracker Management
     click link  Issue Tracker Management
     unselect frame
 
@@ -75,6 +83,11 @@ Go to Assign Custom Fields
     click link  Assign Custom Fields
     unselect frame
 
+Link ${link} is here
+    select frame  mainframe
+    wait until page contains  ${link}
+    unselect frame
+
 Check Assign Custom Fields
     select frame  name=mainframe
     wait until page contains  Assign custom fields
@@ -110,6 +123,7 @@ Go to Requirement Specification (mainframe)
 
 Check Requirement Specification (mainframe)
     select frame  name=mainframe
+    select frame  name=treeframe
     wait until page contains  Requirement Specifications
     unselect frame
 
@@ -230,7 +244,7 @@ Check New Project
 
 Check Selected Project and Requirement link
     desktopPage.Check New Project
-    desktopPage.Check Requirement Specification (mainframe)
+    desktopPage.Link Requirement Specification is here
 
 
 Check info

@@ -25,11 +25,21 @@ Add Filters Test Case Title Test Specification
 
     select frame  mainframe
     select frame  treeframe
+    wait until page contains element  name=filter_testcase_name
+    wait until page contains element  name=doUpdateTree
     input text  name=filter_testcase_name  ${title}
     click button  name=doUpdateTree
+    unselect frame
+    select frame  mainframe
+    select frame  treeframe
     wait until page contains element  name=expand_tree
-    wait until page contains element  name=collapse_tree
-    page should contain element  xpath=//*[@id="extdd-4"]/a
+    click element  name=expand_tree
+    page should contain element  xpath=//a[span[contains(text(),"${title} [1]")]]
+    click element  xpath=//a[span[contains(text(),"${title} [1]")]]
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains  The Test Case was generated from the assigned requirement "${title}"
     unselect frame
 
 Delete Test Case
