@@ -33,4 +33,4 @@ Edit Issue Tracker Test Case
     testlink.Get to Issue Tracker Management
     testlink.Click created Issue Tracker with name ${ISSUETRACKER}
     testlink.Modify name and type of Issue Tracker
-    testlink.Delete Issue Tracker
+    testlink.Delete Issue Tracker ${ISSUETRACKER}
