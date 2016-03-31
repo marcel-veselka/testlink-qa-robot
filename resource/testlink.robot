@@ -47,7 +47,13 @@ Login as admin incorrect
     loginPage.Wait until page contains all elements for login
     loginPage.Fill incorrect credentials and submit
     loginPage.Check there is a warning about login
-    loginPage.Close the browser
+
+Login as admin with empty password field
+    loginPage.Open Browser To Login Page
+    loginPage.Wait until page contains all elements for login
+    loginPage.Fill correct Login input
+    loginPage.Check that warning about empty field appears
+
 
 Check desktop links
     desktopPage.Go to Define Custom Fields
@@ -397,7 +403,7 @@ Start editing user
     headerPage.Go to User Management
     headerPage.Check User Management
     userManagement.Wait until page contains view users content
-    testlink.Click desired user
+    userManagement.Click desired user
 
 Click desired user
     [Tags]  tp-101_Modify_user
