@@ -313,6 +313,16 @@ Go to Platform Management
 Check Platform Management Without Platforms
     platformManagement.Check Platform Management Without Platforms
 
+Unactive Test Project by Bulb
+    [Tags]  tp13
+
+    testProjectManagement.Unactive Test Project by Bulb
+
+Check Test Project Is Active
+    [Tags]  tp13
+
+    testProjectManagement.Check Test Project Is Active
+
 Go to index page
     headerPage.Go to index page
 
