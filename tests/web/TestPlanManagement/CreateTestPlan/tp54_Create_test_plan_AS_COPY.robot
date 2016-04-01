@@ -19,7 +19,7 @@ Test Teardown  Run keywords  testlink.Delete Test Plan Management  ${TestPlanMan
 
 ${TestPlanManagementName}  TestplanNumberOne
 ${TestPlanManagementName2}  TestplanNumbertwoCOPY
-${TPMDescription}  DescriptionDescription
+${TestPlanManagementDescription}  DescriptionDescription
 
 *** Test Cases ***
 
