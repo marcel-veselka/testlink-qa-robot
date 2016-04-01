@@ -490,8 +490,10 @@ Check Test Specification
 
 Delete Test Case
     [Tags]  tp41_requirement_operation_creare_tc
-    navigatorTestSpecification.Delete Test Case
     headerPage.Go to index page
+    desktopPage.Go to Test Specification (mainframe)
+    navigatorTestSpecification.Delete Test Case
+
 
 Go to Test Specification (mainframe)
     [Tags]  tp41_requirement_operation_creare_tc
@@ -653,6 +655,15 @@ Go to Assign Requirements
 Select Test Suite
     [Tags]  tp47
     assignRequirementsNavigator.Select Test Suite
+
+Assign Requirements
+    [Tags]  tp47
+    assignRequirementsNavigator.Assign Requirements
+
+Check Assign Requirements
+    [Tags]  tp47
+    assignRequirementsNavigator.Check Assign Requirements
+
 Start creating build
     [Tags]  tp61
     headerPage.Change Test Project

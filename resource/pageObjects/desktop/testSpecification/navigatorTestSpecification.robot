@@ -46,7 +46,15 @@ Add Filters Test Case Title Test Specification
 Delete Test Case
     select frame  mainframe
     select frame  treeframe
+    wait until page contains element  name=filter_testcase_name
+    wait until page contains element  name=doUpdateTree
+    input text  name=filter_testcase_name  ${title}
+    click button  name=doUpdateTree
+    unselect frame
+    select frame  mainframe
+    select frame  treeframe
     page should contain element  xpath=//a[span[contains(text(),"${title} (")]]
+    sleep  2
     click element  xpath=//a[span[contains(text(),"${title} (")]]
     unselect frame
     select frame  mainframe

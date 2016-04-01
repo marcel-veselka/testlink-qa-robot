@@ -3,7 +3,7 @@ Documentation  A test case for changing the project availibility
 Resource  ../../../../resource/testlink.robot
 Test Setup  Login as admin correct
 Test Teardown  Run keywords  testlink.Delete Requirement Specification
-#...            AND           testlink.Delete Test Case
+...            AND           testlink.Delete Test Case
 ...            AND           Close browser
 *** Variables ***
 
@@ -25,5 +25,6 @@ Modify requirement
         testlink.Go to index page
         testlink.Go to Assign Requirements
         testlink.Select Test Suite
-        #testlink.Go to index page
-        #testlink.Go to Test Specification (mainframe)
+        testlink.Assign Requirements
+        testlink.Check Assign Requirements
+

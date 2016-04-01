@@ -31,13 +31,43 @@ Select Test Suite
     unselect frame
     select frame  mainframe
     select frame  treeframe
+    sleep  2
     page should contain element  xpath=//a[span[contains(text(),"${title} (")]]
-    click element  xpath=//a[span[contains(text(),"${title} (")]]
+    double click element  xpath=//a[span[contains(text(),"${title} (")]]
     unselect frame
     select frame  mainframe
     select frame  workframe
     wait until page contains  Requirements Specification Document
     unselect frame
 
+Assign Requirements
+    select frame  mainframe
+    select frame  workframe
+    click element  name=idSRS
+    select from list by label  idSRS  [${dokumentID}] - ${title}
+    wait until page contains element  name=actionButton
+    click element  name=actionButton
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains  OK
+    click button  OK
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    click element  xpath=//*[@id="div_assigned_req"]/table/tbody/tr[1]/th[1]/img
+    click element  name=actionButton
+    unselect frame
 
-
+Check Assign Requirements
+    select frame  mainframe
+    select frame  treeframe
+    click button  name=expand_tree
+    sleep  2
+    page should contain element  xpath=//a[span[contains(text(),"${title} [1]")]]
+    double click element  xpath=//a[span[contains(text(),"${title} [1]")]]
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    page should contain element  xpath=//*[@id="div_assigned_req"]/table/tbody
+    unselect frame
