@@ -35,7 +35,9 @@ Create Test Plan Management
     unselect frame
 
 Check Test Plan Management is Created
+    [Arguments]   ${TestPlanManagementName}
 
     select frame  mainframe
-    wait until page contains  ${TPMName}
+    wait until page contains  Test Plan Management
+    wait until page contains  ${TestPlanManagementName}
     unselect frame

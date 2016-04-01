@@ -432,28 +432,31 @@ Create New Test Plan Management
     desktopPage.Go to Test Plan Management
     desktopPage.Check Test Plan Management
     testPlanManagement.Create Test Plan Management
-    testPlanManagement_detail.Input Name  ${TPMName}
+    testPlanManagement_detail.Input Name  ${TestPlanManagementName}
     testPlanManagement_detail.Input Description
     testPlanManagement_detail.Select Checkbox Active
     testPlanManagement_detail.Select Checkbox Public
-    testPlanManagement_detail.Click Create button to finish TPM
-    testPlanManagement.Check Test Plan Management is Created
+    testPlanManagement_detail.Click Create button to finish Test Plan Management
+    testPlanManagement.Check Test Plan Management is Created  ${TestPlanManagementName}
 
 Create Test Plan Management AS COPY
      [Tags]  tp54
 
+    desktopPage.Wait until page contains all elements
+    desktopPage.Go to Test Plan Management
+    desktopPage.Check Test Plan Management
     testPlanManagement.Create Test Plan Management
-    testPlanManagement_detail.Input Name  ${TPMName2}
+    testPlanManagement_detail.Input Name  ${TestPlanManagementName2}
     testPlanManagement_detail.Create from existing Test Plan?
-    testPlanManagement_detail.Click Create button to finish TPM
-    testPlanManagement.Check Test Plan Management is Created
+    testPlanManagement_detail.Click Create button to finish Test Plan Management
+    testPlanManagement.Check Test Plan Management is Created  ${TestPlanManagementName2}
 
 
 Delete Test Plan Management
-        [Arguments]  ${TPMNameToDelete}
-     testPlanManagement_detail.Click Button Delete Test Plan Management  ${TPMNameToDelete}
+        [Arguments]  ${TestPlanManagementNameToDelete}
+     testPlanManagement_detail.Click Button Delete Test Plan Management  ${TestPlanManagementNameToDelete}
      testPlanManagement_detail.Confirm Delete Test Plan Management
-     testPlanManagement_detail.Check Test Plan Management Deleted  ${TPMNameToDelete}
+     testPlanManagement_detail.Check Test Plan Management Deleted  ${TestPlanManagementNameToDelete}
 
 
 Edit Requirement Operations

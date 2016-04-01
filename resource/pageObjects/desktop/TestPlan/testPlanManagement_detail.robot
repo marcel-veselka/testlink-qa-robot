@@ -20,11 +20,11 @@ ${BROWSER}      ff
 *** Keywords ***
 
 Input Name
-    [Arguments]   ${TPMName}
+    [Arguments]   ${TestPlanManagementName}
 
      select frame  name=mainframe
      wait until page contains  testplan_name
-    input text  testplan_name  ${TPMName}
+    input text  testplan_name  ${TestPlanManagementName}
     unselect frame
 
 Input Description
@@ -48,17 +48,19 @@ Select Checkbox Public
     select checkbox  is_public
     unselect frame
 
-Click Create button to finish TPM
+Click Create button to finish Test Plan Management
 
     select frame  mainframe
     click button  Create
     unselect frame
 
+
 Click Button Delete Test Plan Management
-    [Arguments]  ${TPMNameToDelete}
+    [Arguments]  ${TestPlanManagementNameToDelete}
 
     select frame  mainframe
-    click element  xpath=//tr[td//text()[contains(.,'${TPMNameToDelete}')]]/td[last()]/img[1]
+    wait until page contains  ${TestPlanManagementNameToDelete}
+    click element  xpath=//tr[td//text()[contains(.,'${TestPlanManagementNameToDelete}')]]/td[last()]/img[1]
     unselect frame
 
 Confirm Delete Test Plan Management
@@ -68,10 +70,10 @@ Confirm Delete Test Plan Management
     unselect frame
 
 Check Test Plan Management Deleted
-    [Arguments]  ${TPMNameToDelete}
+    [Arguments]  ${TestPlanManagementNameToDelete}
 
     select frame  mainframe
-    page should not contain  ${TPMNameToDelete}
+    page should not contain  ${TestPlanManagementNameToDelete}
     unselect frame
 
 Create from existing Test Plan?
