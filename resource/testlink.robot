@@ -29,6 +29,8 @@ Resource  ../resource/pageObjects/desktop/userManagement/userManagement.robot
 Resource  ../resource/pageObjects/desktop/TestPlan/testPlanManagement.robot
 Resource  ../resource/pageObjects/desktop/TestPlan/testPlanManagement_detail.robot
 Resource  ../resource/pageObjects/desktop/mySettings/mySettings.robot
+Resource  ../resource/pageObjects/desktop/buildsReleases/buildsReleases.robot
+
 
 *** Variables ***
 
@@ -630,6 +632,26 @@ Check Requirement Version
     requirementSpecificationEdit.Check Requirement Version
 
 
+Start creating build
+    [Tags]  tp61
+    headerPage.Change Test Project
+    desktopPage.Go to Builds/Releases
+    buildsReleases.Check Builds/Releases
+    buildsReleases.Create Build
+    buildsReleases.Check if warning message appears
+
+Add Details and Finish creating build
+    [Tags]  tp61
+    buildsReleases.Fill in the details of the Build
+    buildsReleases.Save Build
+
+Check that Build is created
+    [Tags]  tp61
+    buildsReleases.Check if Build was created
+
+Delete Build
+    [Tags]  tp61
+    buildsReleases.Delete Build
 
 
 
