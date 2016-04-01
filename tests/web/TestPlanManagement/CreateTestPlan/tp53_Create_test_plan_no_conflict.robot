@@ -5,14 +5,14 @@ Documentation  A test suite with a single test for creating a new Custom Field. 
 
 Resource       ../../../../resource/testlink.robot
 
-Test Teardown  Run keywords  testlink.Delete Test Plan Management  ${TPMName}
+Test Teardown  Run keywords  testlink.Delete Test Plan Management  ${TestPlanManagementName}
 ...            AND           Close browser
 
 
 *** Variables ***
 
-${TPMName}  TestplanNumberOne
-${TPMDescription}  DescriptionDescription
+${TestPlanManagementName}  TestplanNumberOne
+${TestPlanManagementDescription}  DescriptionDescription
 
 *** Test Cases ***
 

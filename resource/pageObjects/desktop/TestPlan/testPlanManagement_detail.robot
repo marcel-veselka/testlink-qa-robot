@@ -33,7 +33,7 @@ Input Description
     select frame  name=mainframe
     wait until page contains  Description
     click element  cke_8_label
-    input text  xpath=//*[@id="cke_contents_notes"]/textarea  ${TPMDescription}
+    input text  xpath=//*[@id="cke_contents_notes"]/textarea  ${TestPlanManagementDescription}
     unselect frame
 
 Select Checkbox Active
