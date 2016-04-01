@@ -35,6 +35,7 @@ Add Filters Test Case Title Test Specification
     wait until page contains element  name=expand_tree
     click element  name=expand_tree
     page should contain element  xpath=//a[span[contains(text(),"${title} [1]")]]
+    sleep  2
     click element  xpath=//a[span[contains(text(),"${title} [1]")]]
     unselect frame
     select frame  mainframe

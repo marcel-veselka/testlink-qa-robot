@@ -108,10 +108,10 @@ Check Edited Requirement Operations
 Create Test Case From Requirement
     select frame  mainframe
     select frame  treeframe
-    wait until page contains element  name=expand_tree
-    click element  name=expand_tree
+    sleep  2
     wait until page contains element  xpath=//a[span[contains(text(), "${dokumentID}:${title} ")]]
-    click element  xpath=//a[span[contains(text(), "${dokumentID}:${title} ")]]
+    double click element  xpath=//a[span[contains(text(), "${dokumentID}:${title} ")]]
+    capture page screenshot
     unselect frame
     select frame  mainframe
     select frame  workframe

@@ -5,6 +5,7 @@ Resource  ../resource/pageObjects/desktop/desktopPage.robot
 Resource  ../resource/pageObjects/desktop/headerPage.robot
 Resource  ../resource/pageObjects/desktop/requirementSpecification/assignRequirements.robot
 Resource  ../resource/pageObjects/desktop/requirementSpecification/requirementSpecificationEdit.robot
+Resource  ../resource/pageObjects/desktop/requirementSpecification/assignRequirementsNavigator.robot
 Resource  ../resource/pageObjects/desktop/requirementSpecification/generateRequirementSpecificationDocument.robot
 Resource  ../resource/pageObjects/desktop/requirementSpecification/requirementOverview.robot
 Resource  ../resource/pageObjects/desktop/requirementSpecification/requirementSpecification(mainframe).robot
@@ -480,7 +481,9 @@ Delete Test Case
     navigatorTestSpecification.Delete Test Case
     headerPage.Go to index page
 
-
+Go to Test Specification (mainframe)
+    [Tags]  tp41_requirement_operation_creare_tc
+    desktopPage.Go to Test Specification (mainframe)
 
 
 Start Creating Issue Tracker Management
@@ -631,7 +634,13 @@ Check Requirement Version
     [Tags]  tp44
     requirementSpecificationEdit.Check Requirement Version
 
+Go to Assign Requirements
+    [Tags]  tp47
+    desktopPage.Go to Assign Requirements
 
+Select Test Suite
+    [Tags]  tp47
+    assignRequirementsNavigator.Select Test Suite
 Start creating build
     [Tags]  tp61
     headerPage.Change Test Project
