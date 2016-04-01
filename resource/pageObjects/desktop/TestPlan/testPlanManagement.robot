@@ -30,11 +30,12 @@ Check Test Plan Management
 Create Test Plan Management
 
     select frame  name=mainframe
-    wait until page contains  Create
+    wait until page contains  Test Plan Management
     click button  create_testplan
     unselect frame
 
 Check Test Plan Management is Created
 
     select frame  mainframe
-    page should contain  ${TPMName}
+    wait until page contains  ${TPMName}
+    unselect frame

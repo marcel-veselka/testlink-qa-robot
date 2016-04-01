@@ -20,6 +20,7 @@ ${BROWSER}      ff
 *** Keywords ***
 
 Input Name
+    [Arguments]   ${TPMName}
 
      select frame  name=mainframe
      wait until page contains  testplan_name
@@ -54,13 +55,29 @@ Click Create button to finish TPM
     unselect frame
 
 Click Button Delete Test Plan Management
+    [Arguments]  ${TPMNameToDelete}
 
     select frame  mainframe
-    click element  xpath=//tr[td//text()[contains(.,'${TPMName}')]]/td[last()]/img[1]
+    click element  xpath=//tr[td//text()[contains(.,'${TPMNameToDelete}')]]/td[last()]/img[1]
     unselect frame
 
 Confirm Delete Test Plan Management
+
     select frame  mainframe
     click button  Yes
-    wait until page does not contain  ${TPMName}
+    unselect frame
+
+Check Test Plan Management Deleted
+    [Arguments]  ${TPMNameToDelete}
+
+    select frame  mainframe
+    page should not contain  ${TPMNameToDelete}
+    unselect frame
+
+Create from existing Test Plan?
+
+    select frame  mainframe
+    wait until page contains  Create from existing Test Plan?
+    click element  copy_from_tplan_id
+    click element  xpath=//*[@id="testplan_mgmt"]/table/tbody/tr[3]/td/select/option[2]
     unselect frame

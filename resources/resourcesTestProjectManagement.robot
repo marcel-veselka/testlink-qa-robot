@@ -102,6 +102,7 @@ Go to desktop
     go to  ${WELCOME URL}
 
 Delete row with Test Project
+    #click element  xpath=//tr[td//text()[contains(., '${testprojectname}')]]/td[last()]
     sleep  2
     click element  xpath=//tr[td//text()[contains(., '${testprojectname}')]]/td[last()]
     sleep  1
