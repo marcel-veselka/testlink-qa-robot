@@ -439,6 +439,14 @@ Create New Test Plan Management
     testPlanManagement_detail.Click Create button to finish TPM
     testPlanManagement.Check Test Plan Management is Created
 
+Create Test Plan Management AS COPY
+     [Tags]  tp54
+
+    desktopPage.Wait until page contains all elements
+    desktopPage.Go to Test Plan Management
+    desktopPage.Check Test Plan Management
+
+
 Delete Test Plan Management
 
      testPlanManagement_detail.Click Button Delete Test Plan Management
