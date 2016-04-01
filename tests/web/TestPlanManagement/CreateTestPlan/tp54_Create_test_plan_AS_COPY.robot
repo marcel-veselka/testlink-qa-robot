@@ -23,7 +23,7 @@ ${TestPlanManagementDescription}  DescriptionDescription
 
 *** Test Cases ***
 
-Create new test plan
+Create test plan AS COPY
 
      testlink.Login as admin correct
      testlink.Create Test Plan Management AS COPY

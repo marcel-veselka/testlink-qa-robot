@@ -181,6 +181,7 @@ Start creating new test project (enchanced features)
     testProjectManagement.Check Test Project Management
     testProjectManagement.Click Create
 
+
 Fill information to create test (enchanced feautures)
     createTestProjectPage.Wait until page contains all elements
     select frame  mainframe
@@ -453,6 +454,17 @@ Create Test Plan Management AS COPY
     testPlanManagement_detail.Create from existing Test Plan?
     testPlanManagement_detail.Click Create button to finish Test Plan Management
     testPlanManagement.Check Test Plan Management is Created  ${TestPlanManagementName2}
+
+Click on Test Plan Management
+    [Tags]  tp55
+
+    testlink.Login as admin correct
+    desktopPage.Wait until page contains all elements
+    desktopPage.Go to Test Plan Management
+    desktopPage.Check Test Plan Management
+    #testPlanManagement_detail.Click Create button to finish Test Plan Management
+
+
 
 
 Delete Test Plan Management
