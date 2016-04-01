@@ -603,7 +603,25 @@ Delete Issue Tracker from test Project
     testProjectManagement.Remove issue tracker from test project
     testProjectManagement.Create Test Project
 
+Create New Version Of Requirement
+    [Tags]  tp44
+    requirementSpecificationEdit.Create New Version Of Requirement
 
+Delete Requirement Specification NO
+    [Tags]  tp44
+    requirementSpecificationEdit.Delete Requirement Specification NO
+
+Select More Than 1 Version Requirement
+    [Tags]  tp44
+    requirementSpecificationEdit.Select More Than 1 Version Requirement
+
+Delete More Than 1 Version Requirement
+    [Tags]  tp44
+    requirementSpecificationEdit.Delete More Than 1 Version Requirement
+
+Check Requirement Version
+    [Tags]  tp44
+    requirementSpecificationEdit.Check Requirement Version
 
 
 

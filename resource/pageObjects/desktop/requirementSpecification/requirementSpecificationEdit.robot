@@ -39,11 +39,6 @@ Create New Requirement Specification (type URS)
 Choose Requirement Specification
     select frame  mainframe
     select frame  treeframe
-    wait until page contains element  name=expand_tree
-    wait until page contains element  name=collapse_tree
-    wait until page contains element  tree_div
-    #click element  xpath=//ul[@class="x-tree-node-ct"]/li[contains(., "${dokumentID}:${title}")]
-    #click element  xpath=//*[@id="extdd-13"]
     wait until page contains element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
     click element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
     unselect frame
@@ -62,7 +57,6 @@ Create Requirement Operations
     select frame  mainframe
     select frame  workframe
     wait until page contains element  name=create_req
-    wait until page contains element  name=go_back
     wait until page contains element  req_title
     wait until page contains element  reqDocId
     wait until page contains element  reqType
@@ -93,7 +87,6 @@ Edit Requirement Operations
     wait until page contains element  name=edit_req
     click button  name=edit_req
     wait until page contains element  name=create_req
-    wait until page contains element  name=go_back
     wait until page contains element  reqStatus
     wait until page contains element  reqType
     select from list by value  reqStatus  I
@@ -116,16 +109,14 @@ Create Test Case From Requirement
     select frame  mainframe
     select frame  treeframe
     wait until page contains element  name=expand_tree
-    wait until page contains element  name=collapse_tree
     click element  name=expand_tree
-    sleep  2
+    wait until page contains element  xpath=//a[span[contains(text(), "${dokumentID}:${title} ")]]
     click element  xpath=//a[span[contains(text(), "${dokumentID}:${title} ")]]
     unselect frame
     select frame  mainframe
     select frame  workframe
     wait until page contains element  xpath=//img[@title="Actions"]
     click element  xpath=//img[@title="Actions"]
-    wait until page contains element  name=create_req
     wait until page contains element  name=create_tcases
     click button  name=create_tcases
     wait until page contains element  name=create_tc_from_req
@@ -138,8 +129,6 @@ Create Test Case From Requirement
 Delete Requirement Specification
     select frame  mainframe
     select frame  treeframe
-    wait until page contains element  name=expand_tree
-    wait until page contains element  name=collapse_tree
     wait until page contains element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
     click element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
     unselect frame
@@ -147,7 +136,6 @@ Delete Requirement Specification
     select frame  workframe
     wait until page contains element  xpath=//img[@title="Actions"]
     click element  xpath=//img[@title="Actions"]
-    wait until page contains element  name=edit_req_spec
     wait until page contains element  name=deleteSRS
     click button  name=deleteSRS
     wait until page contains  Yes
@@ -156,5 +144,87 @@ Delete Requirement Specification
     unselect frame
 
 
+Create New Version Of Requirement
+    select frame  mainframe
+    select frame  treeframe
+    wait until page contains element  name=expand_tree
+    wait until page contains element  name=collapse_tree
+    click element  name=expand_tree
+    wait until page contains element  xpath=//a[span[text()="${dokumentID}:${title}"]]
+    double click element  xpath=//a[span[text()="${dokumentID}:${title}"]]
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  xpath=//img[@title="Actions"]
+    click element  xpath=//img[@title="Actions"]
+    wait until page contains element  name=edit_req
+    wait until page contains element  name=delete_req
+    wait until page contains element  name=freeze_req_version
+    wait until page contains element  name=copy_req
+    wait until page contains element  name=new_revision
+    wait until page contains element  name=new_version
+    wait until page contains element  name=printerFriendly
+    click button  name=new_version
+    wait until page contains element  ext-gen30
+    input text  ext-gen30  This is new log
+    click button  OK
+    unselect frame
 
+Delete Requirement Specification NO
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  xpath=//img[@title="Actions"]
+    click element  xpath=//img[@title="Actions"]
+    wait until page contains element  name=edit_req_spec
+    wait until page contains element  name=deleteSRS
+    click button  name=deleteSRS
+    wait until page contains  No
+    click button  No
+    wait until page contains  Requirement Specification Operations
+    unselect frame
 
+Select More Than 1 Version Requirement
+    select frame  mainframe
+    select frame  treeframe
+    wait until page contains element  name=expand_tree
+    wait until page contains element  name=collapse_tree
+    click element  name=expand_tree
+    wait until page contains element  xpath=//a[span[text()="${dokumentID}:${title}"]]
+    double click element  xpath=//a[span[text()="${dokumentID}:${title}"]]
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  xpath=//img[@title="Actions"]
+    click element  xpath=//img[@title="Actions"]
+    wait until page contains element  name=edit_req
+    wait until page contains element  name=delete_req
+    wait until page contains element  name=freeze_req_version
+    wait until page contains element  name=copy_req
+    wait until page contains element  name=new_revision
+    wait until page contains element  name=new_version
+    wait until page contains element  name=printerFriendly
+    unselect frame
+
+Delete More Than 1 Version Requirement
+    select frame  mainframe
+    select frame  workframe
+    click button  name=delete_req_version
+    wait until page contains element  ext-gen38
+    wait until page contains  Yes
+    click button  Yes
+    wait until page contains  Req: newdokumentid-newtitle Version 2 was successfully deleted
+    unselect frame
+
+Check Requirement Version
+    select frame  mainframe
+    select frame  treeframe
+    wait until page contains element  name=expand_tree
+    wait until page contains element  name=collapse_tree
+    click element  name=expand_tree
+    wait until page contains element  xpath=//a[span[text()="${dokumentID}:${title}"]]
+    double click element  xpath=//a[span[text()="${dokumentID}:${title}"]]
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  xpath=//td[starts-with(text(), 'Version') and contains(text(), '1 revision')]
+    unselect frame
