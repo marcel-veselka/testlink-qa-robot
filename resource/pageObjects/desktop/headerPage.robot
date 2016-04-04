@@ -39,6 +39,17 @@ Go to index page
     click element  xpath=/html/body/div[1]/a
     unselect frame
 
+Go to index page and change testproject
+
+    select frame  name=titlebar
+    wait until page contains element  xpath=/html/body/div[1]/a
+    click element  xpath=/html/body/div[1]/a
+    unselect frame
+    select frame  name=titlebar
+    wait until page contains element  testproject
+    select from list by label  xpath=//select[@name="testproject"]  ${newTestProjectPrefix}:${newTestProjectName}
+    unselect frame
+
 Go to My Settings
     select frame  name=titlebar
     click element  xpath=/html/body/div[2]/span[2]/a[1]

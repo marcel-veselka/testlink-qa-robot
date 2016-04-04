@@ -6,7 +6,7 @@ Documentation  A test suite with a single test for creating a new Custom Field. 
 Resource       ../../../../resource/testlink.robot
 
 Test Setup  Run keywords    testlink.Create new Test Project
-...             AND         headerPage.Go to index page
+...             AND         headerPage.Go to index page and change testproject
 ...             AND         testlink.Choose test project from dropdown
 ...             AND         testlink.Create New Test Plan Management
 
@@ -32,7 +32,7 @@ ${TestPlanManagementDescription}  DescriptionDescription
 Create Build - "Easy" - No release date
 
 
-    headerPage.Go to index page
+    headerPage.Go to index page and change testproject
     testlink.Start creating build
     testlink.Add Details and Finish creating build
     testlink.Check that Build is created
