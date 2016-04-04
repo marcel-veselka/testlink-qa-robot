@@ -64,6 +64,7 @@ Click Cancel
 
 Click Create
     select frame  mainframe
+    wait until page contains  Create
     click button  Create
     unselect frame
 

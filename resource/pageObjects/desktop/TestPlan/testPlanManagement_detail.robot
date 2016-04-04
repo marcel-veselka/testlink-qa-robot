@@ -36,6 +36,19 @@ Input Description
     input text  xpath=//*[@id="cke_contents_notes"]/textarea  ${TestPlanManagementDescription}
     unselect frame
 
+wait until page contains all checkboxes from existing Test Plan
+
+    select frame  mainframe
+    wait until page contains  Copy User Roles
+    wait until page contains  Copy Attachments
+    wait until page contains  Copy Test Cases
+    wait until page contains  Copy Builds
+    wait until page contains  Copy Platforms Links
+    wait until page contains  Copy Milestones
+    unselect frame
+
+
+
 Select Checkbox Active
 
     select frame  name=mainframe
@@ -48,12 +61,65 @@ Select Checkbox Public
     select checkbox  is_public
     unselect frame
 
+unselect checkbox Public
+
+    select frame  name=mainframe
+    unselect checkbox  is_public
+    unselect frame
+
+unselect checkbox Active
+
+    select frame  name=mainframe
+    unselect checkbox  active
+    unselect frame
+
+unselect checkbox Copy User Roles
+
+    select frame  name=mainframe
+    unselect checkbox  copy_user_roles
+    unselect frame
+
+unselect checkbox Copy Test Cases
+
+    select frame  name=mainframe
+    unselect checkbox  copy_tcases
+    unselect frame
+
+unselect checkbox Copy Attachements
+
+    select frame  name=mainframe
+    unselect checkbox  copy_attachments
+    unselect frame
+
+unselect checkbox Copy Builds
+
+    select frame  name=mainframe
+    unselect checkbox  copy_builds
+    unselect frame
+
+unselect checkbox Copy Platforms Links
+
+    select frame  name=mainframe
+    unselect checkbox  copy_platforms_links
+    unselect frame
+
+unselect checkbox Copy Milestones
+
+    select frame  name=mainframe
+    unselect checkbox  copy_milestones
+    unselect frame
+
 Click Create button to finish Test Plan Management
 
     select frame  mainframe
     click button  Create
     unselect frame
 
+Warning Message Creating Same Test Plan Management
+
+    select frame  mainframe
+    wait until page contains  There is already a Test Plan with this name. Please choose another name!
+    unselect frame
 
 Click Button Delete Test Plan Management
     [Arguments]  ${TestPlanManagementNameToDelete}
@@ -83,3 +149,5 @@ Create from existing Test Plan?
     click element  copy_from_tplan_id
     click element  xpath=//*[@id="testplan_mgmt"]/table/tbody/tr[3]/td/select/option[2]
     unselect frame
+
+

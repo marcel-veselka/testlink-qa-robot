@@ -458,17 +458,46 @@ Create Test Plan Management AS COPY
 Click on Test Plan Management
     [Tags]  tp55
 
-    testlink.Login as admin correct
     desktopPage.Wait until page contains all elements
     desktopPage.Go to Test Plan Management
     desktopPage.Check Test Plan Management
     #testPlanManagement_detail.Click Create button to finish Test Plan Management
+
+Create Test Plan Management AS COPY NOK
+    [Tags]  tp55
+
+    testPlanManagement.Create Test Plan Management
+    testPlanManagement_detail.Input Name  ${TestPlanManagementName}
+    testPlanManagement_detail.Click Create button to finish Test Plan Management
+    testPlanManagement_detail.Warning Message Creating Same Test Plan Management
+
+Create Test Plan Management AS COPY Unselect all checkboxes
+    [Tags]  tp55
+
+    testPlanManagement_detail.Input Name  ${TestPlanManagementName2}
+    testPlanManagement_detail.Create from existing Test Plan?
+    wait until page contains all checkboxes from existing Test Plan
+    testPlanManagement_detail.unselect checkbox Copy User Roles
+    testPlanManagement_detail.unselect checkbox Copy Attachements
+    testPlanManagement_detail.unselect checkbox Copy Test Cases
+    testPlanManagement_detail.unselect checkbox Copy Builds
+    testPlanManagement_detail.unselect checkbox Copy Platforms Links
+    testPlanManagement_detail.unselect checkbox Copy Milestones
+    testPlanManagement_detail.unselect checkbox Active
+    testPlanManagement_detail.unselect checkbox Public
+    testPlanManagement_detail.Click Create button to finish Test Plan Management
+    testPlanManagement.Check Test Plan Management is Created  ${TestPlanManagementName2}
+
 
 
 
 
 Delete Test Plan Management
         [Arguments]  ${TestPlanManagementNameToDelete}
+
+     headerPage.Go to index page
+     desktopPage.Go to Test Plan Management
+     desktopPage.Check Test Plan Management
      testPlanManagement_detail.Click Button Delete Test Plan Management  ${TestPlanManagementNameToDelete}
      testPlanManagement_detail.Confirm Delete Test Plan Management
      testPlanManagement_detail.Check Test Plan Management Deleted  ${TestPlanManagementNameToDelete}
