@@ -115,6 +115,7 @@ Edit Requirement Operations
     select frame  treeframe
     wait until page contains element  name=expand_tree
     click element  name=expand_tree
+    sleep  2
     wait until page contains element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     double click element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     unselect frame
@@ -188,6 +189,7 @@ Create New Version Of Requirement
     wait until page contains element  name=expand_tree
     wait until page contains element  name=collapse_tree
     click element  name=expand_tree
+    sleep  2
     wait until page contains element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     double click element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     unselect frame
@@ -227,8 +229,8 @@ Select More Than 1 Version Requirement
     wait until page contains element  name=expand_tree
     wait until page contains element  name=collapse_tree
     click element  name=expand_tree
-    wait until page contains element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     sleep  2
+    wait until page contains element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     double click element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     unselect frame
     select frame  mainframe
@@ -260,8 +262,8 @@ Check Requirement Version
     wait until page contains element  name=expand_tree
     wait until page contains element  name=collapse_tree
     click element  name=expand_tree
-    wait until page contains element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     sleep  2
+    wait until page contains element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     double click element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     unselect frame
     select frame  mainframe
