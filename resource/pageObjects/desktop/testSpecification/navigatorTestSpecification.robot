@@ -61,22 +61,19 @@ Delete Test Case
     select frame  workframe
     wait until page contains element  xpath=//img[@title="Actions"]
     click element  xpath=//img[@title="Actions"]
-    wait until page contains element  name=create_tc
-    wait until page contains element  name=move_testcases_viewer
-    wait until page contains element  name=delete_testcases
-    wait until page contains element  name=reorder_testcases
-    click element  name=delete_testcases
+    wait until page contains element  name=delete_testsuite
+    click element  name=delete_testsuite
     unselect frame
     select frame  mainframe
     select frame  workframe
-    wait until page contains element  xpath=//img[@title="check/uncheck all"]
-    click element  xpath=//img[@title="check/uncheck all"]
-    wait until page contains element  name=do_delete_testcases
-    click button  Delete
+    #wait until page contains element  xpath=//img[@title="check/uncheck all"]
+    #click element  xpath=//img[@title="check/uncheck all"]
+    wait until page contains element  name=delete_testsuite
+    click button  name=delete_testsuite
     unselect frame
     select frame  mainframe
     select frame  workframe
-    wait until page contains  All Test Cases have been deleted
+    wait until page contains  The Test Suite was successfully deleted
     unselect frame
 
 
