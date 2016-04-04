@@ -695,7 +695,7 @@ Check Assign Requirements
 
 Start creating build
     [Tags]  tp61
-    headerPage.Change Test Project
+
     desktopPage.Go to Builds/Releases
     buildsReleases.Check Builds/Releases
     buildsReleases.Create Build
@@ -712,6 +712,9 @@ Check that Build is created
 
 Delete Build
     [Tags]  tp61
+
+    headerPage.Go to index page
+    desktopPage.Go to Builds/Releases
     buildsReleases.Delete Build
 
 Create Another Requirement Operations
