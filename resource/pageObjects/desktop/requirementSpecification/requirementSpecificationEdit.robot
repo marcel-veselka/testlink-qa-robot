@@ -224,6 +224,7 @@ Select More Than 1 Version Requirement
     wait until page contains element  name=collapse_tree
     click element  name=expand_tree
     wait until page contains element  xpath=//a[span[text()="${dokumentID}:${title}"]]
+    sleep  2
     double click element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     unselect frame
     select frame  mainframe
@@ -256,10 +257,10 @@ Check Requirement Version
     wait until page contains element  name=collapse_tree
     click element  name=expand_tree
     wait until page contains element  xpath=//a[span[text()="${dokumentID}:${title}"]]
+    sleep  2
     double click element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     unselect frame
     select frame  mainframe
     select frame  workframe
     wait until page contains element  xpath=//td[starts-with(text(), 'Version') and contains(text(), '1 revision')]
     unselect frame
-#gggg
