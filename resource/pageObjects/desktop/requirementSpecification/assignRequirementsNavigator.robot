@@ -63,7 +63,7 @@ Check Assign Requirements
     select frame  mainframe
     select frame  treeframe
     click button  name=expand_tree
-    sleep  2
+    sleep  4
     page should contain element  xpath=//a[span[contains(text(),"${title} [1]")]]
     double click element  xpath=//a[span[contains(text(),"${title} [1]")]]
     unselect frame
@@ -76,7 +76,7 @@ Unassign Requirements And Check Availiable Requirements
     select frame  mainframe
     select frame  treeframe
     click button  name=expand_tree
-    sleep  2
+    sleep  4
     page should contain element  xpath=//a[span[contains(text(),"${title} [1]")]]
     double click element  xpath=//a[span[contains(text(),"${title} [1]")]]
     unselect frame
@@ -90,6 +90,7 @@ Unassign Requirements And Check Availiable Requirements
     select frame  mainframe
     select frame  workframe
     wait until page contains  Available Requirements
+    sleep  2
     page should not contain  xpath=//*[@id="div_assigned_req"]/table
     unselect frame
     select frame  mainframe
