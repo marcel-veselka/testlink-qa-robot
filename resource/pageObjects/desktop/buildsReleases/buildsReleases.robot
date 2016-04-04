@@ -54,7 +54,7 @@ Fill in the details of the Build
 Save Build
     select frame  name=mainframe
     wait until page contains element  do_create
-    click element  do_create
+    click button  Create
     unselect frame
 
 Check if Build was created
