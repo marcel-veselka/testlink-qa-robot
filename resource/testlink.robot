@@ -714,7 +714,13 @@ Delete Build
     [Tags]  tp61
     buildsReleases.Delete Build
 
+Create Another Requirement Operations
+    [Tags]  tp48
+    requirementSpecificationEdit.Create Another Requirement Operations
 
+Unassign Requirements And Check Availiable Requirements
+    [Tags]  tp48
+    assignRequirementsNavigator.Unassign Requirements And Check Availiable Requirements
 
 
 

@@ -71,3 +71,28 @@ Check Assign Requirements
     select frame  workframe
     page should contain element  xpath=//*[@id="div_assigned_req"]/table/tbody
     unselect frame
+
+Unassign Requirements And Check Availiable Requirements
+    select frame  mainframe
+    select frame  treeframe
+    click button  name=expand_tree
+    sleep  2
+    page should contain element  xpath=//a[span[contains(text(),"${title} [1]")]]
+    double click element  xpath=//a[span[contains(text(),"${title} [1]")]]
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    page should contain element  xpath=//*[@id="div_assigned_req"]/table/tbody
+    wait until page contains element  name=unassign
+    click element  xpath=//*[@id="div_assigned_req"]/table/tbody/tr[1]/th[1]/img
+    click element  name=unassign
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains  Available Requirements
+    page should not contain  xpath=//*[@id="div_assigned_req"]/table
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    page should contain element  xpath=/html/body/div[3]
+    unselect frame

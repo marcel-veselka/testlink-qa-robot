@@ -17,6 +17,8 @@ ${ERROR URL}     http://${SERVER}/login.php
 ${BROWSER}      ff
 ${dokumentID}   newdokumentid
 ${title}        newtitle
+${dokumentID1}   newdokumentid1
+${title1}        newtitle1
 
 
 *** Keywords ***
@@ -72,6 +74,38 @@ Create Requirement Operations
     wait until page contains  ${dokumentID}:${title}
     unselect frame
 
+Create Another Requirement Operations
+    select frame  mainframe
+    select frame  treeframe
+    sleep  2
+    wait until page contains element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
+    double click element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  xpath=//img[@title="Actions"]
+    click element  xpath=//img[@title="Actions"]
+    wait until page contains element  name=create_req
+    click button  name=create_req
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  name=create_req
+    wait until page contains element  req_title
+    wait until page contains element  reqDocId
+    wait until page contains element  reqType
+    wait until page contains element  reqStatus
+    input text  reqDocId  ${dokumentID1}
+    input text  req_title  ${title1}
+    select from list by value  reqStatus  F
+    select from list by value  reqType  1
+    click element  name=create_req
+    unselect frame
+    select frame  mainframe
+    select frame  treeframe
+    wait until page contains  ${dokumentID1}:${title1}
+    unselect frame
+
 Edit Requirement Operations
     select frame  mainframe
     select frame  treeframe
@@ -111,7 +145,7 @@ Create Test Case From Requirement
     sleep  2
     wait until page contains element  xpath=//a[span[contains(text(), "${dokumentID}:${title} ")]]
     double click element  xpath=//a[span[contains(text(), "${dokumentID}:${title} ")]]
-    capture page screenshot
+    #capture page screenshot
     unselect frame
     select frame  mainframe
     select frame  workframe
@@ -121,7 +155,7 @@ Create Test Case From Requirement
     click button  name=create_tcases
     wait until page contains element  name=create_tc_from_req
     wait until page contains element  xpath= //tr[contains(.,"${dokumentID} : ${title}")]//input[@type="checkbox"]
-    select checkbox  xpath= //tr[contains(.,"${dokumentID} : ${title}")]//input[@type="checkbox"]
+    click element  xpath=//*[@id="req_div"]/table/tbody/tr[1]/th[1]/img
     click button  name=create_tc_from_req
     unselect frame
 
