@@ -17,6 +17,7 @@ Test Teardown  Run keywords  testlink.Delete Test Plan Management  ${TestPlanMan
 ...             AND         testlink.Delete Test Plan Management  ${TestPlanManagementName2}
 ...             AND          testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 ...             AND          testlink.Check that test has been deleted
+...             AND          headerPage.Go to index page
 ...             AND          Close browser
 
 
