@@ -43,6 +43,7 @@ Select Test Suite
 Assign Requirements
     select frame  mainframe
     select frame  workframe
+    wait until page contains element  name=idSRS
     click element  name=idSRS
     select from list by label  idSRS  [${dokumentID}] - ${title}
     wait until page contains element  name=actionButton
@@ -50,12 +51,15 @@ Assign Requirements
     unselect frame
     select frame  mainframe
     select frame  workframe
-    wait until page contains  OK
-    click button  OK
+    wait until page contains  Please select a requirement
+    wait until page contains element  xpath=//button[text()="OK"]
+    click element  xpath=//button[text()="OK"]
     unselect frame
     select frame  mainframe
     select frame  workframe
-    click element  xpath=//*[@id="div_assigned_req"]/table/tbody/tr[1]/th[1]/img
+    wait until page contains element  xpath=//tbody//img[@title="check/uncheck all"]
+    wait until page contains element  name=actionButton
+    click element  xpath=//tbody//img[@title="check/uncheck all"]
     click element  name=actionButton
     unselect frame
 
@@ -77,14 +81,17 @@ Unassign Requirements And Check Availiable Requirements
     select frame  treeframe
     click button  name=expand_tree
     sleep  4
+    wait until page contains element  xpath=//a[span[contains(text(),"${title} [1]")]]
     page should contain element  xpath=//a[span[contains(text(),"${title} [1]")]]
     double click element  xpath=//a[span[contains(text(),"${title} [1]")]]
     unselect frame
     select frame  mainframe
     select frame  workframe
+    wait until page contains element  xpath=//*[@id="div_assigned_req"]/table/tbody
     page should contain element  xpath=//*[@id="div_assigned_req"]/table/tbody
     wait until page contains element  name=unassign
-    click element  xpath=//*[@id="div_assigned_req"]/table/tbody/tr[1]/th[1]/img
+    wait until page contains element  xpath=//*[@id="div_assigned_req"]//tbody//img[@title="check/uncheck all"]
+    click element  xpath=//*[@id="div_assigned_req"]//tbody//img[@title="check/uncheck all"]
     click element  name=unassign
     unselect frame
     select frame  mainframe
@@ -95,5 +102,5 @@ Unassign Requirements And Check Availiable Requirements
     unselect frame
     select frame  mainframe
     select frame  workframe
-    page should contain element  xpath=/html/body/div[3]
+    page should contain element  div_free_req
     unselect frame

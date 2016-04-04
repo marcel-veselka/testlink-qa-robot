@@ -41,6 +41,7 @@ Create New Requirement Specification (type URS)
 Choose Requirement Specification
     select frame  mainframe
     select frame  treeframe
+    sleep  2
     wait until page contains element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
     click element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
     unselect frame
@@ -52,6 +53,7 @@ Choose Requirement Specification
 Create Requirement Operations
     select frame  mainframe
     select frame  workframe
+    wait until page contains element  xpath=//img[@title="Actions"]
     click element  xpath=//img[@title="Actions"]
     wait until page contains element  name=create_req
     click button  name=create_req
@@ -73,6 +75,8 @@ Create Requirement Operations
     select frame  treeframe
     wait until page contains  ${dokumentID}:${title}
     unselect frame
+
+Create Requirement Operations ${dokumentID} ${title}
 
 Create Another Requirement Operations
     select frame  mainframe
@@ -154,8 +158,8 @@ Create Test Case From Requirement
     wait until page contains element  name=create_tcases
     click button  name=create_tcases
     wait until page contains element  name=create_tc_from_req
-    wait until page contains element  xpath= //tr[contains(.,"${dokumentID} : ${title}")]//input[@type="checkbox"]
-    click element  xpath=//*[@id="req_div"]/table/tbody/tr[1]/th[1]/img
+    wait until page contains element  xpath=//tbody//img[@title="check/uncheck all"]
+    click element  xpath=//tbody//img[@title="check/uncheck all"]
     click button  name=create_tc_from_req
     unselect frame
 
