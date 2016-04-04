@@ -9,6 +9,8 @@ Test Teardown  Run keywords  testlink.Delete Requirement Specification
 
 ${dokumentID}   newdokumentid
 ${title}        newtitle
+${dokumentID1}   newdokumentid1
+${title1}        newtitle1
 
 
 

@@ -62,3 +62,9 @@ Delete Build
     wait until page contains  Yes
     click button  Yes
     unselect frame
+
+Fill In Future Release Date
+    select frame  mainframe
+    wait until page contains element  name=release_date
+    input text  release_date  ${ReleaseDate}
+    unselect frame

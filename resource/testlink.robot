@@ -442,6 +442,7 @@ Create New Test Plan Management
     testPlanManagement_detail.Select Checkbox Public
     testPlanManagement_detail.Click Create button to finish Test Plan Management
     testPlanManagement.Check Test Plan Management is Created  ${TestPlanManagementName}
+    capture page screenshot
 
 Create Test Plan Management AS COPY
      [Tags]  tp54
@@ -704,6 +705,12 @@ Start creating build
 Add Details and Finish creating build
     [Tags]  tp61
     buildsReleases.Fill in the details of the Build
+    buildsReleases.Save Build
+
+Create Build With Release Date And Save
+    [Tags]  tp62
+    buildsReleases.Fill in the details of the Build
+    buildsReleases.Fill In Future Release Date
     buildsReleases.Save Build
 
 Check that Build is created
