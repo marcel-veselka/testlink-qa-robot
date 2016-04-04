@@ -26,29 +26,35 @@ Check Builds/Releases
 
 Create Build
     select frame  name=mainframe
+    wait until page contains element  create_build
     click button  create_build
     unselect frame
 
 Check if warning message appears
     select frame  name=mainframe
     execute javascript  var imput = document.getElementsByName('build_name'); imput[0].required = false;
-    click button  xpath=//*[@id="create_build"]/div/input[3]
+    wait until page contains element  do_create
+    click element  do_create
     wait until page contains  Please enter a name for the Build!
-    click button  ext-gen18
+    wait until page contains element  xpath=//button[text()="OK"]
+    click element  xpath=//button[text()="OK"]
     unselect frame
 
 Fill in the details of the Build
-    sleep  1
     select frame  name=mainframe
+    wait until page contains element  build_name
     wait until page contains  Description
+    wait until page contains element  cke_8_label
     click element  cke_8_label
+    wait until page contains element  xpath=//*[@id="cke_contents_notes"]/textarea
     input text  xpath=//*[@id="cke_contents_notes"]/textarea  ${Description}
-    input text  xpath=//*[@id="build_name"]  ${BuildName}
+    input text  build_name  ${BuildName}
     unselect frame
 
 Save Build
     select frame  name=mainframe
-    click button  xpath=//*[@id="create_build"]/div/input[3]
+    wait until page contains element  do_create
+    click element  do_create
     unselect frame
 
 Check if Build was created

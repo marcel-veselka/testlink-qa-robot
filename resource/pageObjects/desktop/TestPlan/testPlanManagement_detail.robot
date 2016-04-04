@@ -22,8 +22,8 @@ ${BROWSER}      ff
 Input Name
     [Arguments]   ${TestPlanManagementName}
 
-     select frame  name=mainframe
-     wait until page contains  testplan_name
+    select frame  name=mainframe
+    wait until page contains element  testplan_name
     input text  testplan_name  ${TestPlanManagementName}
     unselect frame
 
@@ -52,12 +52,14 @@ wait until page contains all checkboxes from existing Test Plan
 Select Checkbox Active
 
     select frame  name=mainframe
+    wait until page contains element  name=active
     select checkbox  active
     unselect frame
 
 Select Checkbox Public
 
     select frame  name=mainframe
+    wait until page contains element  name=is_public
     select checkbox  is_public
     unselect frame
 

@@ -430,7 +430,7 @@ Edit user
     userManagement.Fill inputs for editing user and submit
 
 Create New Test Plan Management
-    [Tags]  tp53_Create_test_plan_no_conflict
+    [Tags]  tp53_Create_test_plan_no_conflict  tp_61
 
     desktopPage.Wait until page contains all elements
     desktopPage.Go to Test Plan Management

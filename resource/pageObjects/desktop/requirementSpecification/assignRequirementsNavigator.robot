@@ -68,11 +68,13 @@ Check Assign Requirements
     select frame  treeframe
     click button  name=expand_tree
     sleep  4
+    wait until page contains element  xpath=//a[span[contains(text(),"${title} [1]")]]
     page should contain element  xpath=//a[span[contains(text(),"${title} [1]")]]
     double click element  xpath=//a[span[contains(text(),"${title} [1]")]]
     unselect frame
     select frame  mainframe
     select frame  workframe
+    wait until page contains element  xpath=//*[@id="div_assigned_req"]/table/tbody
     page should contain element  xpath=//*[@id="div_assigned_req"]/table/tbody
     unselect frame
 

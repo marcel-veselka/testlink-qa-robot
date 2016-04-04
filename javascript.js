@@ -13,3 +13,10 @@ Buuuu
     unselect frame
     createTestProjectPage.Click Create
     createTestProjectPage.Confirm warning about empty fields
+
+
+execute javascript  document.getElementById('name').required = false;
+click button  Save
+wait until page contains  Please give a name to Test Suite
+wait until page contains element  xpath=//button[text()="OK"]
+click element  xpath=//button[text()="OK"]

@@ -7,7 +7,6 @@ Resource       ../../../../resource/testlink.robot
 
 Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         headerPage.Go to index page and change testproject
-...             AND         testlink.Choose test project from dropdown
 ...             AND         testlink.Create New Test Plan Management
 
 
