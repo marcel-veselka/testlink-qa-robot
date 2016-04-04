@@ -13,7 +13,7 @@ ${title}        newtitle
 
 *** Test Cases ***
 
-Modify requirement
+Modify filters requirement
 
         testlink.Change and check test project with RS control
         testlink.Go to Requirement Specification (mainframe)

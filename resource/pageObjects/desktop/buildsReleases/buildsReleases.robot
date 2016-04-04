@@ -59,7 +59,7 @@ Save Build
 
 Check if Build was created
     select frame  name=mainframe
-    wait until page contains  ${BuildName}
+    wait until page contains element  xpath=//a[contains(text(),"${BuildName}")]
     unselect frame
 
 Delete Build
