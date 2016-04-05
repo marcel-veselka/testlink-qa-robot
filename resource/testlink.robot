@@ -726,7 +726,7 @@ Create Build from existing build
 
 Add Details and Finish creating build
     [Tags]  tp61
-    buildsReleases.Fill in the details of the Build  ${BuildName}
+    buildsReleases.Fill in the details of the Build  #${BuildName}
     buildsReleases.Save Build
 
 Create Build With Release Date And Save
@@ -791,6 +791,10 @@ Edit Test Suite Move It Copy It
     navigatorTestSpecification.Move Test Suite
     navigatorTestSpecification.Check Move And Copy Action
 
+Edit Build Info and Save Changes
+    buildsReleases.Fill in the details of the Build
+    buildsReleases.Add Release Date
+    buildsReleases.Save Build after Editing
 Delete Another New Test Suite
     [Tags]  tp80
     headerPage.Go to index page and change testproject

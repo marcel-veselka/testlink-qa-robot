@@ -10,11 +10,11 @@ Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         testlink.Create New Test Plan Management
 ...             AND         testlink.Create Build
 
-Test Teardown  Run keywords  testlink.Delete Test Plan Management  ${TestPlanManagementName}
+Test Teardown  Run keywords  testlink.Delete Build
+...             AND          testlink.Delete Test Plan Management  ${TestPlanManagementName}
 ...             AND          testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 ...             AND          testlink.Check that test has been deleted
 ...             AND          close browser
-
 
 *** Variables ***
 
@@ -26,6 +26,8 @@ ${newTestProjectPrefix}  128
 ${TestPlanManagementDescription}  DescriptionDescription
 
 *** Test Cases ***
+Edit Build
+        buildsReleases.Select Build
+        testlink.Edit Build Info and Save Changes
 
-Delete Build
-    testlink.Delete Build
+

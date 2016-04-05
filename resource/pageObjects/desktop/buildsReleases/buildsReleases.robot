@@ -41,21 +41,28 @@ Check if warning message appears
     unselect frame
 
 Fill in the details of the Build
-    [Arguments]  ${BuildName}
+    #[Arguments]  ${BuildName}  ${Description}
     select frame  name=mainframe
     wait until page contains element  build_name
     input text  build_name  ${BuildName}
-    #wait until page contains  Description
-    #wait until page contains element  cke_8_label
-    #click element  cke_8_label
-    #wait until page contains element  xpath=//*[@id="cke_contents_notes"]/textarea
-    #input text  xpath=//*[@id="cke_contents_notes"]/textarea  ${Description}
+    wait until page contains  Description
+    wait until page contains element  cke_8_label
+    click element  cke_8_label
+    wait until page contains element  xpath=//*[@id="cke_contents_notes"]/textarea
+    input text  xpath=//*[@id="cke_contents_notes"]/textarea  ${Description}
     unselect frame
 
 Save Build
     select frame  name=mainframe
     wait until page contains element  do_create
     click button  Create
+    unselect frame
+
+Save Build after Editing
+    [Tags]  tp64
+    select frame  name=mainframe
+    wait until page contains element  do_update
+    click button  Save
     unselect frame
 
 Check if Build was created
@@ -75,4 +82,19 @@ Fill In Future Release Date
     select frame  mainframe
     wait until page contains element  name=release_date
     input text  release_date  ${ReleaseDate}
+    unselect frame
+
+Add Release Date
+    select frame  name=mainframe
+    click element  xpath=//img[@title="Show Calender"]
+    #//tr[th//text()[contains(.,'Release date')]]/td[input[@title="Show Calender"]]
+    #//*[@id="create_build"]/table/tbody/tr[5]/td/img[1]
+    wait until page contains  Today
+    click button  Today
+    unselect frame
+
+Select Build
+    select frame  name=mainframe
+    click link  ${BuildName}
+    wait until page contains  A build is identified by its title
     unselect frame
