@@ -700,6 +700,24 @@ Start creating build
     buildsReleases.Create Build
     buildsReleases.Check if warning message appears
 
+Start creating build
+
+    [Tags]  tp63
+
+    desktopPage.Go to Builds/Releases
+    buildsReleases.Check Builds/Releases
+    buildsReleases.Create Build
+
+
+Create Build
+    [Tags]  tp63
+
+    headerPage.Go to index page and change testproject
+    testlink.Start creating build with warning
+    testlink.Add Details and Finish creating build
+    testlink.Check that Build is created
+
+
 Add Details and Finish creating build
     [Tags]  tp61
     buildsReleases.Fill in the details of the Build

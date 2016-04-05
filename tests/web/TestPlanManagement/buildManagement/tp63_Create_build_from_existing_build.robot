@@ -8,6 +8,7 @@ Resource       ../../../../resource/testlink.robot
 Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         headerPage.Go to index page and change testproject
 ...             AND         testlink.Create New Test Plan Management
+...             AND         testlink.Create Build
 
 
 Test Teardown  Run keywords  testlink.Delete Build
@@ -19,20 +20,18 @@ Test Teardown  Run keywords  testlink.Delete Build
 
 *** Variables ***
 
-${BuildName}  BuildName
+${BuildName}  BuildName1
 ${Description}  Description
-${TestPlanManagementName}  TestplanNumberOne
-${newTestProjectName}  testProjectName
-${newTestProjectPrefix}  128
+${TestPlanManagementName}  TestplanNumberOne1
+${newTestProjectName}  testProjectName1
+${newTestProjectPrefix}  129
 ${TestPlanManagementDescription}  DescriptionDescription
 
 *** Test Cases ***
 
-Create Build - "Easy" - No release date
+Create Build - "Easy" - from existing build
 
 
     headerPage.Go to index page and change testproject
-    testlink.Start creating build with warning
-    testlink.Add Details and Finish creating build
-    testlink.Check that Build is created
+    testlink.Start creating build
 

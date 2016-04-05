@@ -34,5 +34,5 @@ ${ReleaseDate}  12/12/2048
 Test Case Create Build "EASY" With Release Date
 
     headerPage.Go to index page and change testproject
-    testlink.Start creating build
+    testlink.Start creating build with warning
     testlink.Create Build With Release Date And Save
