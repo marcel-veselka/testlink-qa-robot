@@ -12,7 +12,7 @@ Test Setup  Run keywords    testlink.Create new Test Project
 Test Teardown  Run keywords     testlink.Delete New Test Suite
 ...             AND             testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 ...             AND             testlink.Check that test has been deleted
-...            AND             Close browser
+...            AND              Close browser
 
 *** Variables ***
 
