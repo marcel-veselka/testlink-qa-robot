@@ -111,9 +111,3 @@ Click License of Testlink
 
 Close the browser
     close browser
-
-Login as admin correct
-    loginPage.Open Browser To Login Page
-    loginPage.Wait until page contains all elements for login
-    loginPage.Fill correct credentials and submit
-    loginPage.Check there is no warning about login

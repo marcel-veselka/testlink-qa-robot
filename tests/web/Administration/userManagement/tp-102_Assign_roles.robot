@@ -2,7 +2,7 @@
 Documentation  A test case for assigning roles to existing users
 Resource       ../../../../resource/testlink.robot
 Test Setup  Run Keywords
-...             loginPage.Login as admin correct    AND
+...             testlink.Login as admin correct    AND
 ...             testlink.Create and check role novaRole in user management    AND
 ...             close browser
 Test Teardown  userManagement.Delete role novaRole
