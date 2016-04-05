@@ -9,10 +9,10 @@ Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         headerPage.Go to index page and change testproject
 
 
-Test Teardown  Run keywords     testlink.Delete New Test Suite
+Test Teardown  Run keywords     testlink.Delete Another New Test Suite
 ...             AND             testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 ...             AND             testlink.Check that test has been deleted
-...            AND              Close browser
+...             AND             Close browser
 
 *** Variables ***
 

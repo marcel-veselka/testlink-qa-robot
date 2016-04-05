@@ -74,6 +74,7 @@ Check Assign Requirements
     unselect frame
     select frame  mainframe
     select frame  workframe
+    sleep  2
     wait until page contains element  xpath=//*[@id="div_assigned_req"]/table/tbody
     page should contain element  xpath=//*[@id="div_assigned_req"]/table/tbody
     unselect frame

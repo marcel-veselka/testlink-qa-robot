@@ -777,12 +777,19 @@ Check New Test Suite
     [Tags]  tp80
     navigatorTestSpecification.Check If Test Suite Was Created
 
-
 Edit Test Suite Move It Copy It
     [Tags]  tp81
     navigatorTestSpecification.Create Another Test Suite For Move Or Copy
     navigatorTestSpecification.Edit New Test Suite
+    navigatorTestSpecification.Copy Test Suite
+    navigatorTestSpecification.Move Test Suite
+    navigatorTestSpecification.Check Move And Copy Action
 
+Delete Another New Test Suite
+    [Tags]  tp80
+    headerPage.Go to index page and change testproject
+    desktopPage.Go to Test Specification (mainframe)
+    navigatorTestSpecification.Delete Another New Test Suite
 
 
 
