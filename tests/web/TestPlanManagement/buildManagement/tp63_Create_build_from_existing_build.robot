@@ -11,21 +11,23 @@ Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         testlink.Create Build
 
 
-Test Teardown  Run keywords  testlink.Delete Build
-...            AND           testlink.Delete Test Plan Management  ${TestPlanManagementName}
-...             AND          testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
-...             AND          testlink.Check that test has been deleted
+#Test Teardown  Run keywords  testlink.Delete Build
+#...            AND           testlink.Delete Test Plan Management  ${TestPlanManagementName}
+#...             AND          testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
+#...             AND          testlink.Check that test has been deleted
 #...            AND           Close browser
 
 
 *** Variables ***
 
 ${BuildName}  BuildName1
+${BuildName2}  NewBuild
 ${Description}  Description
 ${TestPlanManagementName}  TestplanNumberOne1
 ${newTestProjectName}  testProjectName1
 ${newTestProjectPrefix}  129
 ${TestPlanManagementDescription}  DescriptionDescription
+${FromBuild}  ${BuildName}
 
 *** Test Cases ***
 
@@ -34,4 +36,6 @@ Create Build - "Easy" - from existing build
 
     headerPage.Go to index page and change testproject
     testlink.Start creating build
+    testlink.Create Build from existing build  ${BuildName2}  ${FromBuild}
 
+#vojta dodela

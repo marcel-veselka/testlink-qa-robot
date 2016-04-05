@@ -718,15 +718,22 @@ Create Build
     testlink.Add Details and Finish creating build
     testlink.Check that Build is created
 
+Create Build from existing build
+    [Arguments]  ${NewNameBuild}  ${FromBuild}
+    [Tags]  tp63
+
+    buildsReleases.Fill in the details of the Build  ${NewNameBuild}
+
+
 
 Add Details and Finish creating build
     [Tags]  tp61
-    buildsReleases.Fill in the details of the Build
+    buildsReleases.Fill in the details of the Build  ${BuildName}
     buildsReleases.Save Build
 
 Create Build With Release Date And Save
     [Tags]  tp62
-    buildsReleases.Fill in the details of the Build
+    buildsReleases.Fill in the details of the Build  ${BuildName}
     buildsReleases.Fill In Future Release Date
     buildsReleases.Save Build
 
