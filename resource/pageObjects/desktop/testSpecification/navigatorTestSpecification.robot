@@ -19,6 +19,8 @@ ${dokumentID}       newdokumentid
 ${title}            newtitle
 ${testSuiteName}    suiteTest
 ${testDescription}  testDescription
+${testSuiteCopy}    copyFile
+${testDescriptionCopy}  copyDescrition
 
 
 *** Keywords ***
@@ -29,20 +31,20 @@ Add Filters Test Case Title Test Specification
     select frame  treeframe
     wait until page contains element  name=filter_testcase_name
     wait until page contains element  name=doUpdateTree
-    input text  name=filter_testcase_name  ${testSuiteName}
+    input text  name=filter_testcase_name  ${title}
     click button  name=doUpdateTree
     unselect frame
     select frame  mainframe
     select frame  treeframe
     wait until page contains element  name=expand_tree
     click element  name=expand_tree
-    page should contain element  xpath=//a[span[contains(text(),"${testSuiteName} [1]")]]
+    page should contain element  xpath=//a[span[contains(text(),"${title} [1]")]]
     sleep  2
-    click element  xpath=//a[span[contains(text(),"${testSuiteName} [1]")]]
+    click element  xpath=//a[span[contains(text(),"${title} [1]")]]
     unselect frame
     select frame  mainframe
     select frame  workframe
-    wait until page contains  The Test Case was generated from the assigned requirement "${testSuiteName}"
+    wait until page contains  The Test Case was generated from the assigned requirement "${title}"
     unselect frame
 
 Delete Test Suite
@@ -50,14 +52,14 @@ Delete Test Suite
     select frame  treeframe
     wait until page contains element  name=filter_testcase_name
     wait until page contains element  name=doUpdateTree
-    input text  name=filter_testcase_name  ${testSuiteName}
+    input text  name=filter_testcase_name  ${title}
     click button  name=doUpdateTree
     unselect frame
     select frame  mainframe
     select frame  treeframe
-    page should contain element  xpath=//a[span[contains(text(),"${testSuiteName} (")]]
+    page should contain element  xpath=//a[span[contains(text(),"${title} (")]]
     sleep  2
-    click element  xpath=//a[span[contains(text(),"${testSuiteName} (")]]
+    click element  xpath=//a[span[contains(text(),"${title} (")]]
     unselect frame
     select frame  mainframe
     select frame  workframe
@@ -151,8 +153,6 @@ Check If Test Suite Was Created
     select frame  workframe
     wait until page contains  Test Suite created
     unselect frame
-
-Check If Test Suite Is Visible In Search Tree
     select frame  mainframe
     select frame  treeframe
     wait until page contains element  name=doUpdateTree
@@ -163,3 +163,23 @@ Check If Test Suite Is Visible In Search Tree
     wait until page contains element  xpath=//a[span/span[contains(text(),"${testSuiteName}")]]
     page should contain element  xpath=//a[span/span[contains(text(),"${testSuiteName}")]]
     unselect frame
+
+Create Another Test Suite For Move Or Copy
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  xpath=//img[@title="Actions"]
+    click element  xpath=//img[@title="Actions"]
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  name=container_name
+    wait until page contains element  name=add_testsuite_button
+    wait until page contains element  cke_8
+    input text  container_name  ${testSuiteCopy}
+    click element  cke_8
+    input text  xpath=//*[@id="cke_contents_details"]/textarea  ${testDescriptionCopy}
+    click element  name=add_testsuite_button
+    unselect frame
+

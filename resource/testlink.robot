@@ -771,6 +771,7 @@ Delete New Test Suite
 Check New Test Suite
     [Tags]  tp80
     navigatorTestSpecification.Check If Test Suite Was Created
-    headerPage.Go to index page and change testproject
-    desktopPage.Go to Test Specification (mainframe)
-    navigatorTestSpecification.Check If Test Suite Is Visible In Search Tree
+
+
+
+
