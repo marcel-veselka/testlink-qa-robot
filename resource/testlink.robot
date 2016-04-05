@@ -428,7 +428,6 @@ Edit user
     userManagement.Fill inputs for editing user and submit
 
 Create New Test Plan Management
-
     [Tags]  tp53_Create_test_plan_no_conflict  tp_61
 
     desktopPage.Wait until page contains all elements
@@ -693,8 +692,8 @@ Check Assign Requirements
     [Tags]  tp47
     assignRequirementsNavigator.Check Assign Requirements
 
-Start creating build with warning
-    [Tags]  tp61
+Start creating build
+    [Tags]  tp61 tp62
 
     desktopPage.Go to Builds/Releases
     buildsReleases.Check Builds/Releases

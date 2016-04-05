@@ -47,6 +47,14 @@ I am here
     wait until page contains element  xpath=//select[@name="testproject"]
     unselect frame
 
+I am here in full
+    headerPage.I am here
+    select frame  name=titlebar
+    wait until page contains element  xpath=//img[@title="Requirement Specification"]
+    wait until page contains element  xpath=//img[@title="Test Execution"]
+    wait until page contains element  xpath=//img[@title="Test Reports"]
+    unselect frame
+
 
 Go to index page
     select frame  name=titlebar
