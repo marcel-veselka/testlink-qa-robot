@@ -692,8 +692,8 @@ Check Assign Requirements
     [Tags]  tp47
     assignRequirementsNavigator.Check Assign Requirements
 
-Start creating build
-    [Tags]  tp61 tp62
+Start creating build with warning
+    [Tags]  tp61
 
     desktopPage.Go to Builds/Releases
     buildsReleases.Check Builds/Releases
