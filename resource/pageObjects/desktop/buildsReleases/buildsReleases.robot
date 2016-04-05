@@ -44,11 +44,11 @@ Fill in the details of the Build
     select frame  name=mainframe
     wait until page contains element  build_name
     input text  build_name  ${BuildName}
-    wait until page contains  Description
-    wait until page contains element  cke_8_label
-    click element  cke_8_label
-    wait until page contains element  xpath=//*[@id="cke_contents_notes"]/textarea
-    input text  xpath=//*[@id="cke_contents_notes"]/textarea  ${Description}
+    #wait until page contains  Description
+    #wait until page contains element  cke_8_label
+    #click element  cke_8_label
+    #wait until page contains element  xpath=//*[@id="cke_contents_notes"]/textarea
+    #input text  xpath=//*[@id="cke_contents_notes"]/textarea  ${Description}
     unselect frame
 
 Save Build

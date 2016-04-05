@@ -18,6 +18,24 @@ ${newTestProjectPrefix}  prefixNew1
 
 
 *** Keywords ***
+I am here
+    select frame  mainframe
+    wait until page contains  System
+    wait until page contains  Define Custom Fields
+    wait until page contains  Issue Tracker Management
+    wait until page contains  Test Project
+    wait until page contains  Test Project Management
+    wait until page contains  Assign User Roles
+    wait until page contains  Assign Custom Fields
+    wait until page contains  Keyword Management
+    wait until page contains  Platform Management
+    wait until page contains  Test Specification
+    wait until page contains  Test Specification
+    wait until page contains  Test Cases created per User
+    wait until page contains  Test Plan
+    wait until page contains  Test Plan Management
+    xpath should match x times  //div[@class="vertical_menu"]  2
+    unselect frame
 
 Wait until page contains all elements
     select frame  mainframe

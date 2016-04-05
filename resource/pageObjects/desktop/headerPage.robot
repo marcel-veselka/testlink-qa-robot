@@ -33,6 +33,21 @@ Wait untill header is loaded
     wait until page contains element  xpath=//select[@name="testproject"]
     unselect frame
 
+I am here
+    select frame  name=titlebar
+    wait until page contains element  xpath=//img[@alt="Company logo"]
+    wait until page contains element  xpath=//img[@title="My Settings"]
+    wait until page contains element  xpath=//img[@title="Logout"]
+    wait until page contains element  xpath=//img[@title="Project"]
+    wait until page contains element  xpath=//img[@title="Test Specification"]
+    wait until page contains element  xpath=//img[@title="User Management"]
+    wait until page contains element  xpath=//img[@title="Events"]
+    wait until page contains element  name=targetTestCase
+    wait until page contains element  xpath=//img[@title="Search Test Case by ID"]
+    wait until page contains element  xpath=//select[@name="testproject"]
+    unselect frame
+
+
 Go to index page
     select frame  name=titlebar
     wait until page contains element  xpath=/html/body/div[1]/a

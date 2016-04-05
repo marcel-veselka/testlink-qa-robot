@@ -40,6 +40,18 @@ Wait until page contains all elements for login
     wait until page contains element  login_submit
     wait until page contains element  css=div.messages_rounded
 
+I am here
+    wait until page contains element  xpath=//img[@alt="Company logo"]
+    wait until page contains element  login
+    wait until page contains element  tl_password
+    wait until page contains element  login_submit
+    wait until page contains element  css=div.messages_rounded
+    wait until page contains  New User?
+    wait until page contains  Lost Password?
+    wait until page contains  Home
+    wait until page contains  GNU GPL
+
+
 Fill correct Login input
     clear element text  login
     input text  login  renat.kulalov
