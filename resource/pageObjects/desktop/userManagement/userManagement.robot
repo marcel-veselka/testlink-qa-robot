@@ -93,3 +93,79 @@ Check all fields for editing user are availiable
     wait until page contains element  name=do_reset_password
     unselect frame
 
+Create role ${role}
+    select frame  mainframe
+    wait until page contains element  xpath=//table
+    page should not contain element  xpath=//a[contains(., "${role}")]
+    wait until page contains element  name=doCreate
+    click element  name=doCreate
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  xpath=//input[@name="rolename"]
+    input text  xpath=//input[@name="rolename"]  ${role}
+    wait until page contains element  xpath=//fieldset[legend[text()="Test Project"]]/input[1]
+    select checkbox  xpath=//fieldset[legend[text()="Test Project"]]/input[1]
+    wait until page contains element  xpath=//input[@type="submit"]
+    click element  xpath=//input[@type="submit"]
+    wait until page does not contain element  xpath=//input[@name="rolename"]
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  xpath=//table
+    wait until element contains  xpath=//table  ${role}
+    unselect frame
+
+Click bookmark ${bookmark}
+    select frame  mainframe
+    wait until page contains element  xpath=//div[@class="tabMenu"]/span[contains(., "${bookmark}")]
+    click element  xpath=//div[@class="tabMenu"]/span[contains(., "${bookmark}")]
+    unselect frame
+
+Change user role in test project
+    select frame  mainframe
+    wait until page contains element  xpath=//table[@id="item_view"]
+    wait until page contains element  xpath=//tr[*[contains(text(),"tester (tester tesena)")]]//select
+    select from list by label  xpath=//tr[*[contains(text(),"tester (tester tesena)")]]//select  ${role}
+    wait until page contains element  name=do_update
+    click element  name=do_update
+    unselect frame
+    select frame  mainframe
+    wait until page contains  User Roles updated
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  xpath=//table[@id="item_view"]
+    wait until page contains element  xpath=//tr[*[contains(text(),"tester (tester tesena)")]]//select
+    select from list by label  xpath=//tr[*[contains(text(),"tester (tester tesena)")]]//select  tester
+    wait until page contains element  name=do_update
+    click element  name=do_update
+    unselect frame
+
+Change user role in test plan
+    select frame  mainframe
+    wait until page contains element  xpath=//table[@id="item_view"]
+    wait until page contains element  xpath=//tr[*[contains(text(),"tester (tester tesena)")]]//select
+    select from list by label  xpath=//tr[*[contains(text(),"tester (tester tesena)")]]//select  ${role}
+    wait until page contains element  name=do_update
+    click element  name=do_update
+    unselect frame
+    select frame  mainframe
+    wait until page contains  User Roles updated
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  xpath=//table[@id="item_view"]
+    wait until page contains element  xpath=//tr[*[contains(text(),"tester (tester tesena)")]]//select
+    select from list by label  xpath=//tr[*[contains(text(),"tester (tester tesena)")]]//select  tester
+    wait until page contains element  name=do_update
+    click element  name=do_update
+    unselect frame
+
+Delete role ${role}
+    userManagement.Click bookmark View roles
+    select frame  mainframe
+    wait until page contains element  xpath=//tr[contains(.,"${role}")]//img[@title="Delete role"]
+    click element  xpath=//tr[contains(.,"${role}")]//img[@title="Delete role"]
+    wait until page contains  You are going to delete: ${role}
+    wait until page contains  Yes
+    click button  Yes
+    unselect frame
+
+

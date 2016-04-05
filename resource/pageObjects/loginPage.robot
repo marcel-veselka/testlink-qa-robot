@@ -24,7 +24,6 @@ Open Browser To Login Page
     Open Browser  ${LOGIN URL}  ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed  ${DELAY}
-    Capture Page Screenshot
     Title Should Be  TestLink
 
 Go to login page
@@ -113,3 +112,8 @@ Click License of Testlink
 Close the browser
     close browser
 
+Login as admin correct
+    loginPage.Open Browser To Login Page
+    loginPage.Wait until page contains all elements for login
+    loginPage.Fill correct credentials and submit
+    loginPage.Check there is no warning about login

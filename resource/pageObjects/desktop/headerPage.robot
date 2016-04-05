@@ -130,7 +130,7 @@ Check Test Reports
 
 Go to User Management
     select frame  name=titlebar
-    click element  xpath=/html/body/div[3]/a[6]
+    click element  xpath=//img[@title="User Management"]
     unselect frame
 
 Check User Management
@@ -168,5 +168,6 @@ Choose test project from dropdown
 
 Change Test Project
     select frame  name=titlebar
+    wait until page contains element  xpath=//select[@name="testproject"]
     select from list by label  xpath=//select[@name="testproject"]  tp:testing project
     unselect frame

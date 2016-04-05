@@ -777,6 +777,12 @@ Check New Test Suite
     [Tags]  tp80
     navigatorTestSpecification.Check If Test Suite Was Created
 
+Create and check role ${role} in user management
+    headerPage.I am here
+    headerPage.Go to User Management
+    userManagement.Click bookmark View roles
+    userManagement.Create role ${role}
+
 
 
 
