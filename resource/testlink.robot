@@ -778,5 +778,11 @@ Check New Test Suite
     navigatorTestSpecification.Check If Test Suite Was Created
 
 
+Edit Test Suite Move It Copy It
+    [Tags]  tp81
+    navigatorTestSpecification.Create Another Test Suite For Move Or Copy
+    navigatorTestSpecification.Edit New Test Suite
+
+
 
 

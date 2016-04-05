@@ -12,7 +12,7 @@ Test Setup  Run keywords    testlink.Create new Test Project
 Test Teardown  Run keywords     testlink.Delete New Test Suite
 ...             AND             testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 ...             AND             testlink.Check that test has been deleted
-...            AND             Close browser
+...            AND              Close browser
 
 *** Variables ***
 
@@ -23,6 +23,9 @@ ${testDescription}  testDescription
 
 *** Test Cases ***
 
-Create Test Suite Easy
+Rename Test Suite Easy
         testlink.Controll Warning Message And Create Test Suite
         testlink.Check New Test Suite
+        testlink.Edit Test Suite Move It Copy It
+
+

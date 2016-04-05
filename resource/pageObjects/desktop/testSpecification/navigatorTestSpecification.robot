@@ -9,18 +9,20 @@ Library        Selenium2Library
 
 *** Variables ***
 
-${SERVER}           testlab.tesena.com/testlink
-${DELAY}            0
-${LOGIN URL}        http://${SERVER}/login.php
-${WELCOME URL}      http://${SERVER}/index.php?caller=login
-${ERROR URL}        http://${SERVER}/login.php
-${BROWSER}          ff
-${dokumentID}       newdokumentid
-${title}            newtitle
-${testSuiteName}    suiteTest
-${testDescription}  testDescription
-${testSuiteCopy}    copyFile
-${testDescriptionCopy}  copyDescrition
+${SERVER}                   testlab.tesena.com/testlink
+${DELAY}                    0
+${LOGIN URL}                http://${SERVER}/login.php
+${WELCOME URL}              http://${SERVER}/index.php?caller=login
+${ERROR URL}                http://${SERVER}/login.php
+${BROWSER}                  ff
+${dokumentID}               newdokumentid
+${title}                    newtitle
+${testSuiteName}            suiteTest
+${testDescription}          testDescription
+${testSuiteCopy}            copyFile
+${testDescriptionCopy}      copyDescrition
+${newTestProjectName}       NewNamedProject
+${newTestProjectPrefix}     nnp
 
 
 *** Keywords ***
@@ -166,12 +168,20 @@ Check If Test Suite Was Created
 
 Create Another Test Suite For Move Or Copy
     select frame  mainframe
+    select frame  treeframe
+    wait until page contains element  xpath=//a[span[contains(text(),"${newTestProjectName} (")]]
+    double click element  xpath=//a[span[contains(text(),"${newTestProjectName} (")]]
+    unselect frame
+    select frame  mainframe
     select frame  workframe
     wait until page contains element  xpath=//img[@title="Actions"]
     click element  xpath=//img[@title="Actions"]
     unselect frame
     select frame  mainframe
     select frame  workframe
+    wait until page contains element  name=new_testsuite
+    click element  name=new_testsuite
+    unselect frame
     select frame  mainframe
     select frame  workframe
     wait until page contains element  name=container_name
@@ -182,4 +192,36 @@ Create Another Test Suite For Move Or Copy
     input text  xpath=//*[@id="cke_contents_details"]/textarea  ${testDescriptionCopy}
     click element  name=add_testsuite_button
     unselect frame
+
+Edit New Test Suite
+    select frame  mainframe
+    select frame  treeframe
+    wait until page contains element  name=expand_tree
+    click button  name=expand_tree
+    unselect frame
+    select frame  mainframe
+    select frame  treeframe
+    wait until page contains element  xpath=//a[span/span[contains(text(),"${testSuiteName}")]]
+    page should contain element  xpath=//a[span/span[contains(text(),"${testSuiteName}")]]
+    sleep  2
+    click element  xpath=//a[span/span[contains(text(),"${testSuiteName}")]]
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  xpath=//img[@title="Actions"]
+    click element  xpath=//img[@title="Actions"]
+    wait until page contains element  name=edit_testsuite
+    click element  edit_testsuite
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  name=container_name
+    wait until page contains element  name=update_testsuite
+    wait until page contains element  cke_8
+    input text  container_name  ${testSuiteName} ${testSuiteCopy}
+    click element  cke_8
+    input text  xpath=//*[@id="cke_contents_details"]/textarea  ${testDescription} ${testDescriptionCopy}
+    click element  name=update_testsuite
+    unselect frame
+
 
