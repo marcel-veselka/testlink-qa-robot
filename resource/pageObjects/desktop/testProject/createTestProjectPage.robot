@@ -86,3 +86,7 @@ Confirm warning about empty fields
     wait until page contains   cannot be empty!
     click button  OK
     unselect frame
+
+Select Unselected Checkboxes
+    select checkbox  optReq
+    select checkbox  optInventory

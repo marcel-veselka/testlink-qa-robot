@@ -199,6 +199,7 @@ Fill information to create test without conflict
     select frame  mainframe
     createTestProjectPage.Fill Test Project Name  ${newTestProjectName}
     createTestProjectPage.Fill Test Project Prefix  ${newTestProjectPrefix}
+    createTestProjectPage.Select Unselected Checkboxes
     unselect frame
 
 No warning about existing projects
@@ -748,5 +749,28 @@ Unassign Requirements And Check Availiable Requirements
     [Tags]  tp48
     assignRequirementsNavigator.Unassign Requirements And Check Availiable Requirements
 
+Controll Warning Message And Create Test Suite
+    [Tags]  tp80
+    desktopPage.Go to Test Specification (mainframe)
+    navigatorTestSpecification.Create Test Suite Button
+    navigatorTestSpecification.Controll Warning Message
+    navigatorTestSpecification.Fill In The Fields
 
+Delete Test Suite
+    [Tags]  tp47
+    headerPage.Go to index page and change testproject
+    desktopPage.Go to Test Specification (mainframe)
+    navigatorTestSpecification.Delete Test Suite
 
+Delete New Test Suite
+    [Tags]  tp80
+    headerPage.Go to index page and change testproject
+    desktopPage.Go to Test Specification (mainframe)
+    navigatorTestSpecification.Delete New Test Suite
+
+Check New Test Suite
+    [Tags]  tp80
+    navigatorTestSpecification.Check If Test Suite Was Created
+    headerPage.Go to index page and change testproject
+    desktopPage.Go to Test Specification (mainframe)
+    navigatorTestSpecification.Check If Test Suite Is Visible In Search Tree
