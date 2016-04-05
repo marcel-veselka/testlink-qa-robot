@@ -13,7 +13,7 @@ ${role}  novaRole
 
 *** Test Cases ***
 Assign Test Project and Test Plan roles
-    loginPage.Login as admin correct
+    testlink.Login as admin correct
     headerPage.Change Test Project
     headerPage.Go to User Management
     userManagement.Click bookmark Assign Test Project roles
