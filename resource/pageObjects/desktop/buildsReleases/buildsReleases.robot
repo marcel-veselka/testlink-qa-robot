@@ -41,6 +41,7 @@ Check if warning message appears
     unselect frame
 
 Fill in the details of the Build
+    [Arguments]  ${BuildName}
     select frame  name=mainframe
     wait until page contains element  build_name
     input text  build_name  ${BuildName}
