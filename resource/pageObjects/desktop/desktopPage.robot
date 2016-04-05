@@ -275,7 +275,7 @@ Check Current Project
 
 Check New Project
     select frame  name=titlebar
-    list selection should be  name=testproject  1
+    list selection should be  name=testproject  5319
     unselect frame
 
 Check Selected Project and Requirement link
