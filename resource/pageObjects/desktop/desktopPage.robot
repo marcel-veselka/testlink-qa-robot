@@ -273,13 +273,7 @@ Check Current Project
     wait until page contains  Execute Tests
     unselect frame
 
-Check New Project
-    select frame  name=titlebar
-    list selection should be  name=testproject  5319
-    unselect frame
-
 Check Selected Project and Requirement link
-    desktopPage.Check New Project
     desktopPage.Check link Requirement Specification
 
 

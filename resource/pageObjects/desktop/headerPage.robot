@@ -12,9 +12,6 @@ ${newTestProjectName}  tp:testing project
 
 *** Keywords ***
 
-Check header is there  #pro ucely debugovani
-    page should contain element  xpath=//frame[@name="titlebar"]
-
 Wait untill header is loaded
     select frame  name=titlebar
     sleep  1
