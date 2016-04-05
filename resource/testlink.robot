@@ -341,7 +341,6 @@ Create New Requirement Specification (type URS)
 Change Test Project
     [Tags]  tp38  tp5
     headerPage.Change Test Project
-    desktopPage.Check New Project
 
 Choose Requirement Specification
     [Tags]  tp38
@@ -361,7 +360,6 @@ Delete Requirement Specification
 Change and check test project
     [Tags]  tp5
     headerPage.Change Test Project
-    desktopPage.Check New Project
 
 Change and check test project with RS control
     [Tags]  tp38
@@ -718,15 +716,22 @@ Create Build
     testlink.Add Details and Finish creating build
     testlink.Check that Build is created
 
+Create Build from existing build
+    [Arguments]  ${NewNameBuild}  ${FromBuild}
+    [Tags]  tp63
+
+    buildsReleases.Fill in the details of the Build  ${NewNameBuild}
+
+
 
 Add Details and Finish creating build
     [Tags]  tp61
-    buildsReleases.Fill in the details of the Build
+    buildsReleases.Fill in the details of the Build  ${BuildName}
     buildsReleases.Save Build
 
 Create Build With Release Date And Save
     [Tags]  tp62
-    buildsReleases.Fill in the details of the Build
+    buildsReleases.Fill in the details of the Build  ${BuildName}
     buildsReleases.Fill In Future Release Date
     buildsReleases.Save Build
 
