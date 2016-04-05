@@ -75,7 +75,8 @@ Check Issue Tracker Management
 Go to Test Project Management
     sleep  1
     select frame  name=mainframe
-    click link  Test Project Management
+    wait until page contains element  xpath=//a[text()="Test Project Management"]
+    click element  xpath=//a[text()="Test Project Management"]
     unselect frame
 
 Check Test Project Management
