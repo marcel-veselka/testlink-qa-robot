@@ -693,7 +693,7 @@ Check Assign Requirements
     assignRequirementsNavigator.Check Assign Requirements
 
 Start creating build
-    [Tags]  tp61
+    [Tags]  tp61 tp62
 
     desktopPage.Go to Builds/Releases
     buildsReleases.Check Builds/Releases

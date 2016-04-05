@@ -37,6 +37,17 @@ I am here
     xpath should match x times  //div[@class="vertical_menu"]  2
     unselect frame
 
+I am here in full
+    desktopPage.I am here
+    select frame  mainframe
+    wait until page contains  Requirement Specification
+    wait until page contains  Requirement Overview
+    wait until page contains  Search Requirements
+    wait until page contains  Search Requirement Specifications
+    wait until page contains  Assign Requirements
+    wait until page contains  Generate Requirement Specification Document
+    unselect frame
+
 Wait until page contains all elements
     select frame  mainframe
     wait until page contains  Test Project Management
