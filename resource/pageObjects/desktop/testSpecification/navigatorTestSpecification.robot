@@ -40,8 +40,7 @@ Add Filters Test Case Title Test Specification
     select frame  treeframe
     wait until page contains element  name=expand_tree
     click element  name=expand_tree
-    page should contain element  xpath=//a[span[contains(text(),"${title} [1]")]]
-    sleep  2
+    wait until page contains element  xpath=//a[span[contains(text(),"${title} [1]")]]
     click element  xpath=//a[span[contains(text(),"${title} [1]")]]
     unselect frame
     select frame  mainframe
@@ -59,8 +58,7 @@ Delete Test Suite
     unselect frame
     select frame  mainframe
     select frame  treeframe
-    page should contain element  xpath=//a[span[contains(text(),"${title} (")]]
-    sleep  2
+    wait until page contains element  xpath=//a[span[contains(text(),"${title} (")]]
     click element  xpath=//a[span[contains(text(),"${title} (")]]
     unselect frame
     select frame  mainframe
@@ -91,8 +89,6 @@ Delete New Test Suite
     select frame  mainframe
     select frame  treeframe
     wait until page contains element  xpath=//a[span/span[contains(text(),"${testSuiteName}")]]
-    page should contain element  xpath=//a[span/span[contains(text(),"${testSuiteName}")]]
-    sleep  2
     click element  xpath=//a[span/span[contains(text(),"${testSuiteName}")]]
     unselect frame
     select frame  mainframe
@@ -163,7 +159,6 @@ Check If Test Suite Was Created
     select frame  mainframe
     select frame  treeframe
     wait until page contains element  xpath=//a[span/span[contains(text(),"${testSuiteName}")]]
-    page should contain element  xpath=//a[span/span[contains(text(),"${testSuiteName}")]]
     unselect frame
 
 Create Another Test Suite For Move Or Copy
@@ -202,8 +197,6 @@ Edit New Test Suite
     select frame  mainframe
     select frame  treeframe
     wait until page contains element  xpath=//a[span/span[contains(text(),"${testSuiteName}")]]
-    page should contain element  xpath=//a[span/span[contains(text(),"${testSuiteName}")]]
-    sleep  2
     click element  xpath=//a[span/span[contains(text(),"${testSuiteName}")]]
     unselect frame
     select frame  mainframe
@@ -250,7 +243,6 @@ Copy Test Suite
     select frame  mainframe
     select frame  workframe
     wait until page contains element  xpath=//p[contains(text(),"Test Suite suiteTest copyFile")][contains(text(),"has been copied inside")][contains(text(),"copyFile")]
-    page should contain element  xpath=//p[contains(text(),"Test Suite suiteTest copyFile")][contains(text(),"has been copied inside")][contains(text(),"copyFile")]
     unselect frame
 
 Move Test Suite
@@ -261,9 +253,7 @@ Move Test Suite
     unselect frame
     select frame  mainframe
     select frame  treeframe
-    sleep  2
     wait until page contains element  xpath=//a[span/span[contains(text(),"${testSuiteName} ${testSuiteCopy} (")]]
-    page should contain element  xpath=//a[span/span[contains(text(),"${testSuiteName} ${testSuiteCopy} (")]]
     double click element  xpath=//a[span/span[contains(text(),"${testSuiteName} ${testSuiteCopy} (")]]
     unselect frame
     select frame  mainframe
@@ -303,8 +293,6 @@ Delete Another New Test Suite
     select frame  mainframe
     select frame  treeframe
     wait until page contains element  xpath=//a[span/span[contains(text(),"${testSuiteCopy}")]]
-    page should contain element  xpath=//a[span/span[contains(text(),"${testSuiteCopy}")]]
-    sleep  2
     click element  xpath=//a[span/span[contains(text(),"${testSuiteCopy}")]]
     unselect frame
     select frame  mainframe

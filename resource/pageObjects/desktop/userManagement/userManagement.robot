@@ -94,9 +94,9 @@ Check all fields for editing user are availiable
     unselect frame
 
 Create role ${role}
+    page should not contain element  xpath=//a[contains(., "${role}")]
     select frame  mainframe
     wait until page contains element  xpath=//table
-    page should not contain element  xpath=//a[contains(., "${role}")]
     wait until page contains element  name=doCreate
     click element  name=doCreate
     unselect frame

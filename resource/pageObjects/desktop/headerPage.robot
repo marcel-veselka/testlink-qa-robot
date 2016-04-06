@@ -76,19 +76,16 @@ Go to My Settings
     unselect frame
 
 Check My Settings
-    select frame  name=mainframe
     page should contain  Account Settings
-    unselect frame
 
 Go to Desktop (Project)
     select frame  name=titlebar
     click element  xpath=/html/body/div[3]/a[1]
     unselect frame
+
 Check Desktop (Project)
-    select frame  name=mainframe
     page should contain  System
     page should contain  Test Project
-    unselect frame
 
 Go to Requirement Specification (titlebar)
     select frame  name=titlebar
@@ -144,9 +141,7 @@ Go to Events
     unselect frame
 
 Check Events
-    select frame  name=mainframe
     page should contain  Event viewer
-    unselect frame
 
 Input text into test case search
     input text  targetTestCase  ${searchedTestCase}
