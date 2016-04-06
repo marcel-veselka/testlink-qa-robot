@@ -32,7 +32,7 @@ Select Test Suite
     select frame  mainframe
     select frame  treeframe
     sleep  2
-    page should contain element  xpath=//a[span[contains(text(),"${title} (")]]
+    wait until page contains element  xpath=//a[span[contains(text(),"${title} (")]]
     double click element  xpath=//a[span[contains(text(),"${title} (")]]
     unselect frame
     select frame  mainframe
@@ -69,14 +69,12 @@ Check Assign Requirements
     click button  name=expand_tree
     sleep  4
     wait until page contains element  xpath=//a[span[contains(text(),"${title} [1]")]]
-    page should contain element  xpath=//a[span[contains(text(),"${title} [1]")]]
     double click element  xpath=//a[span[contains(text(),"${title} [1]")]]
     unselect frame
     select frame  mainframe
     select frame  workframe
     sleep  2
     wait until page contains element  xpath=//*[@id="div_assigned_req"]/table/tbody
-    page should contain element  xpath=//*[@id="div_assigned_req"]/table/tbody
     unselect frame
 
 Unassign Requirements And Check Availiable Requirements
@@ -85,13 +83,11 @@ Unassign Requirements And Check Availiable Requirements
     click button  name=expand_tree
     sleep  4
     wait until page contains element  xpath=//a[span[contains(text(),"${title} [1]")]]
-    page should contain element  xpath=//a[span[contains(text(),"${title} [1]")]]
     double click element  xpath=//a[span[contains(text(),"${title} [1]")]]
     unselect frame
     select frame  mainframe
     select frame  workframe
     wait until page contains element  xpath=//*[@id="div_assigned_req"]/table/tbody
-    page should contain element  xpath=//*[@id="div_assigned_req"]/table/tbody
     wait until page contains element  name=unassign
     wait until page contains element  xpath=//*[@id="div_assigned_req"]//tbody//img[@title="check/uncheck all"]
     click element  xpath=//*[@id="div_assigned_req"]//tbody//img[@title="check/uncheck all"]

@@ -11,16 +11,15 @@ Test Setup  Run keywords    testlink.Create new Test Project
 
 
 
-Test Teardown  Run keywords  testlink.Delete Build
+Test Teardown  Run keywords  testlink.Delete Build ${buildName}
 ...            AND           testlink.Delete Test Plan Management  ${TestPlanManagementName}
 ...            AND           testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
-...            AND           testlink.Check that test has been deleted
 ...            AND           Close browser
 
 
 *** Variables ***
 
-${BuildName}  BuildName
+${buildName}  BuildName
 ${Description}  Description
 ${TestPlanManagementName}  TestplanNumberOne
 ${newTestProjectName}  testProjectName
@@ -33,6 +32,6 @@ Create Build - "Easy" - No release date
 
     headerPage.Go to index page and change testproject
     testlink.Start creating build with warning
-    testlink.Add Details and Finish creating build
-    testlink.Check that Build is created
+    testlink.Add Details and Finish creating build ${buildName}
+    testlink.Check that Build is created ${buildName}
 

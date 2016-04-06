@@ -40,16 +40,16 @@ Check if warning message appears
     click element  xpath=//button[text()="OK"]
     unselect frame
 
-Fill in the details of the Build
+Fill in the details of the Build ${buildName}
     #[Arguments]  ${BuildName}  ${Description}
     select frame  name=mainframe
     wait until page contains element  build_name
-    input text  build_name  ${BuildName}
-    wait until page contains  Description
-    wait until page contains element  cke_8_label
-    click element  cke_8_label
-    wait until page contains element  xpath=//*[@id="cke_contents_notes"]/textarea
-    input text  xpath=//*[@id="cke_contents_notes"]/textarea  ${Description}
+    input text  build_name  ${buildName}
+    wait until page contains element  xpath=//iframe[@title="Rich text editor, notes"]
+    mouse down  xpath=//iframe[@title="Rich text editor, notes"]
+    mouse up  xpath=//iframe[@title="Rich text editor, notes"]
+    select frame  xpath=//iframe[@title="Rich text editor, notes"]
+    input text  xpath=//body  ${Description}
     unselect frame
 
 Save Build
@@ -65,27 +65,22 @@ Save Build after Editing
     click button  Save
     unselect frame
 
-Check if Build was created
+Check if Build was created ${buildName}
     select frame  name=mainframe
-    sleep  2
-    wait until page contains element  xpath=//a[contains(text(),"${BuildName}")]
+    wait until page contains element  xpath=//a[contains(text(),"${buildName}")]
     unselect frame
 
-Delete Build
+Delete Build ${buildName}
     select frame  name=mainframe
-    click element  xpath=//tr[td//text()[contains(.,'${BuildName}')]]/td[last()]
+    click element  xpath=//tr[td//text()[contains(.,'${buildName}')]]/td[last()]/img
+    wait until page contains  You are going to delete: ${buildName}
     wait until page contains  Yes
     click button  Yes
     unselect frame
 
-Fill In Future Release Date
-    select frame  mainframe
-    wait until page contains element  name=release_date
-    input text  release_date  ${ReleaseDate}
-    unselect frame
-
 Add Release Date
     select frame  name=mainframe
+    wait until page contains element  name=release_date
     click element  xpath=//img[@title="Show Calender"]
     #//tr[th//text()[contains(.,'Release date')]]/td[input[@title="Show Calender"]]
     #//*[@id="create_build"]/table/tbody/tr[5]/td/img[1]
@@ -93,8 +88,17 @@ Add Release Date
     click button  Today
     unselect frame
 
-Select Build
+Select Build ${buildName}
     select frame  name=mainframe
-    click link  ${BuildName}
+    wait until page contains element  xpath=//a[contains(text(),"${buildName}")]
+    click link  ${buildName}
     wait until page contains  A build is identified by its title
+    unselect frame
+
+Choose template ${FromBuild}
+    select frame  mainframe
+    wait until page contains element  name=copy_tester_assignments
+    select checkbox  name=copy_tester_assignments
+    wait until page contains element  name=source_build_id
+    select from list by label  name=source_build_id  ${FromBuild} (0)
     unselect frame

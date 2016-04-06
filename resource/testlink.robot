@@ -237,7 +237,7 @@ Check unique test project name and prefix
     unselect frame
 
 Delete test project
-   [Arguments]  ${newTestProjectName}  ${newTestProjectPrefix}
+    [Arguments]  ${newTestProjectName}  ${newTestProjectPrefix}
     headerPage.Go to index page
     desktopPage.Wait until page contains all elements
     desktopPage.Go to Test Project Management
@@ -249,6 +249,7 @@ Delete test project
     wait until page does not contain element  ${newTestProjectName}
     wait until page does not contain element  ${newTestProjectPrefix}
     unselect frame
+
 
 Delete empty test project
 
@@ -429,7 +430,7 @@ Edit user
 Create New Test Plan Management
     [Tags]  tp53_Create_test_plan_no_conflict  tp_61
 
-    desktopPage.Wait until page contains all elements
+    desktopPage.I am here
     desktopPage.Go to Test Plan Management
     desktopPage.Check Test Plan Management
     testPlanManagement.Create Test Plan Management
@@ -439,7 +440,6 @@ Create New Test Plan Management
     testPlanManagement_detail.Select Checkbox Public
     testPlanManagement_detail.Click Create button to finish Test Plan Management
     testPlanManagement.Check Test Plan Management is Created  ${TestPlanManagementName}
-    capture page screenshot
 
 Create Test Plan Management AS COPY
      [Tags]  tp54
@@ -491,8 +491,7 @@ Create Test Plan Management AS COPY Unselect all checkboxes
 
 
 Delete Test Plan Management
-        [Arguments]  ${TestPlanManagementNameToDelete}
-
+     [Arguments]  ${TestPlanManagementNameToDelete}
      headerPage.Go to index page
      desktopPage.Go to Test Plan Management
      desktopPage.Check Test Plan Management
@@ -702,49 +701,51 @@ Start creating build with warning
 Start creating build
 
     [Tags]  tp63
-
     desktopPage.Go to Builds/Releases
     buildsReleases.Check Builds/Releases
     buildsReleases.Create Build
 
 
-Create Build
+Create Build with name ${buildName}
     [Tags]  tp63
-
     headerPage.Go to index page and change testproject
-    testlink.Start creating build with warning
-    testlink.Add Details and Finish creating build
-    testlink.Check that Build is created
+    testlink.Start creating build
+    testlink.Add Details and Finish creating build ${buildName}
+    testlink.Check that Build is created ${buildName}
 
-Create Build from existing build
-    [Arguments]  ${NewNameBuild}  ${FromBuild}
+
+Create Build from existing build ${NewNameBuild} ${FromBuild}
     [Tags]  tp63
+    headerPage.Go to index page and change testproject
+    testlink.Start creating build
+    testlink.Fill info and choose template ${NewNameBuild} ${FromBuild}
 
-    buildsReleases.Fill in the details of the Build  ${NewNameBuild}
 
+Fill info and choose template ${NewNameBuild} ${FromBuild}
+    buildsReleases.Fill in the details of the Build ${NewNameBuild}
+    buildsReleases.Choose template ${FromBuild}
+    buildsReleases.Save Build
 
-
-Add Details and Finish creating build
+Add Details and Finish creating build ${buildName}
     [Tags]  tp61
-    buildsReleases.Fill in the details of the Build  #${BuildName}
+    buildsReleases.Fill in the details of the Build ${buildName}
     buildsReleases.Save Build
 
 Create Build With Release Date And Save
     [Tags]  tp62
-    buildsReleases.Fill in the details of the Build  ${BuildName}
-    buildsReleases.Fill In Future Release Date
+    buildsReleases.Fill in the details of the Build ${buildName}
+    buildsReleases.Add release date
     buildsReleases.Save Build
 
-Check that Build is created
+Check that Build is created ${buildName}
     [Tags]  tp61
-    buildsReleases.Check if Build was created
+    buildsReleases.Check if Build was created ${buildName}
 
-Delete Build
+Delete Build ${buildName}
     [Tags]  tp61
-
     headerPage.Go to index page
     desktopPage.Go to Builds/Releases
-    buildsReleases.Delete Build
+    buildsReleases.Delete Build ${buildName}
 
 Create Another Requirement Operations
     [Tags]  tp48
@@ -792,9 +793,10 @@ Edit Test Suite Move It Copy It
     navigatorTestSpecification.Check Move And Copy Action
 
 Edit Build Info and Save Changes
-    buildsReleases.Fill in the details of the Build
+    buildsReleases.Fill in the details of the Build ${NewBuildName}
     buildsReleases.Add Release Date
     buildsReleases.Save Build after Editing
+
 Delete Another New Test Suite
     [Tags]  tp80
     headerPage.Go to index page and change testproject

@@ -29,11 +29,15 @@ Input Name
 
 Input Description
 
-    sleep  1
     select frame  name=mainframe
     wait until page contains  Description
-    click element  cke_8_label
-    input text  xpath=//*[@id="cke_contents_notes"]/textarea  ${TestPlanManagementDescription}
+    wait until page contains element  xpath=//iframe[@title="Rich text editor, notes"]
+    mouse down  xpath=//iframe[@title="Rich text editor, notes"]
+    mouse up  xpath=//iframe[@title="Rich text editor, notes"]
+    #click element  cke_8_label
+    select frame  xpath=//iframe[@title="Rich text editor, notes"]
+    input text  xpath=//body  ${TestPlanManagementDescription}
+    #input text  xpath=//*[@id="cke_contents_notes"]/textarea  ${TestPlanManagementDescription}
     unselect frame
 
 wait until page contains all checkboxes from existing Test Plan
@@ -114,6 +118,7 @@ unselect checkbox Copy Milestones
 Click Create button to finish Test Plan Management
 
     select frame  mainframe
+    wait until page contains element  do_create
     click button  Create
     unselect frame
 

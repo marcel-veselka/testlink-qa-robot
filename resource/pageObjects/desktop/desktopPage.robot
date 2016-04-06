@@ -30,7 +30,6 @@ I am here
     wait until page contains  Keyword Management
     wait until page contains  Platform Management
     wait until page contains  Test Specification
-    wait until page contains  Test Specification
     wait until page contains  Test Cases created per User
     wait until page contains  Test Plan
     wait until page contains  Test Plan Management
@@ -297,6 +296,7 @@ Check Test Plan Management
 Go to Builds/Releases
     sleep  1
     select frame  name=mainframe
+    wait until page contains element  xpath=//a[text()="Builds / Releases"]
     click link  Builds / Releases
     unselect frame
 
