@@ -69,14 +69,6 @@ Wait until container with projects is here
     wait until page contains element  xpath=//*[@id="item_view"]/tfoot
     unselect frame
 
-Select Active Test Project
-    #click element  xpath=//tr[td//text()[contains(., '${testprojectname}')]]/td[last()]
-    sleep  2
-    click element  xpath=//tr[td//text()[contains(., '${testprojectname}')]]/td[setActive]
-    sleep  1
-    click button  Yes
-    sleep  2
-
 Unactive Test Project by Bulb
 
     select frame  mainframe

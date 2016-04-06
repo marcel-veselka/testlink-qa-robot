@@ -53,8 +53,8 @@ Wait until page contains all elements
     unselect frame
 
 Go to Define Custom Fields
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Define Custom Fields
     click link  Define Custom Fields
     unselect frame
 
@@ -71,7 +71,6 @@ Go to link ${link}
 
 
 Go to Issue Tracker Management
-    sleep  1
     select frame  name=mainframe
     wait until page contains  Issue Tracker Management
     click link  Issue Tracker Management
@@ -83,7 +82,6 @@ Check Issue Tracker Management
     unselect frame
 
 Go to Test Project Management
-    sleep  1
     select frame  name=mainframe
     wait until page contains element  xpath=//a[text()="Test Project Management"]
     click element  xpath=//a[text()="Test Project Management"]
@@ -95,8 +93,8 @@ Check Test Project Management
     unselect frame
 
 Go to Assign User Roles
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Assign User Roles
     click link  Assign User Roles
     unselect frame
 
@@ -105,16 +103,10 @@ Check Assign User Roles
     wait until page contains  User Management
     unselect frame
 
-
 Go to Assign Custom Fields
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Assign Custom Fields
     click link  Assign Custom Fields
-    unselect frame
-
-Link ${link} is here
-    select frame  mainframe
-    wait until page contains  ${link}
     unselect frame
 
 Check Assign Custom Fields
@@ -123,8 +115,8 @@ Check Assign Custom Fields
     unselect frame
 
 Go to Keyword Management
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Keyword Management
     click link  Keyword Management
     unselect frame
 
@@ -134,8 +126,8 @@ Check Keyword Management
     unselect frame
 
 Go to Platform Management
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Platform Management
     click link  Platform Management
     unselect frame
 
@@ -145,9 +137,8 @@ Check Platform Management
     unselect frame
 
 Go to Requirement Specification (mainframe)
-    sleep  1
     select frame  name=mainframe
-    #wait until page contains  Requirement Specification
+    wait until page contains  Requirement Specification
     click link  Requirement Specification
     unselect frame
 
@@ -163,8 +154,8 @@ Check link ${link}
     unselect frame
 
 Go to Requirement Overview
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Requirement Overview
     click link  Requirement Overview
     unselect frame
 
@@ -174,8 +165,8 @@ Check Requirement Overview
     unselect frame
 
 Go to Search Requirements
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Search Requirements
     click link  Search Requirements
     unselect frame
 
@@ -186,8 +177,8 @@ Check Search Requirements
     unselect frame
 
 Go to Search Requirement Specifications
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Search Requirement Specifications
     click link  Search Requirement Specifications
     unselect frame
 
@@ -198,8 +189,8 @@ Check Search Requirement Specifications
     unselect frame
 
 Go to Assign Requirements
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Assign Requirements
     click link  Assign Requirements
     unselect frame
 
@@ -210,8 +201,8 @@ Check Assign Requirements
     unselect frame
 
 go to Generate Requirement Specification Document
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Generate Requirement Specification Document
     click link  Generate Requirement Specification Document
     unselect frame
 
@@ -222,8 +213,8 @@ Check Generate Requirement Specification Document
     unselect frame
 
 Go to Test Specification (mainframe)
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Test Specification
     click link  Test Specification
     unselect frame
 
@@ -234,8 +225,8 @@ Check Test Specification (mainframe)
     unselect frame
 
 Go to Search Test Cases
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Search Test Cases
     click link  Search Test Cases
     unselect frame
 
@@ -245,8 +236,8 @@ Check Search Test Cases
     unselect frame
 
 Go to Assign Keywords
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Assign Keywords
     click link  Assign Keywords
     unselect frame
 
@@ -257,8 +248,8 @@ Check Assign Keywords
     unselect frame
 
 Go to Test Cases Created Per User
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Test Cases created per User
     click link  Test Cases created per User
     unselect frame
 
@@ -283,8 +274,8 @@ Check info
     unselect frame
 
 Go to Test Plan Management
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Test Plan Management
     click link  Test Plan Management
     unselect frame
 
@@ -294,7 +285,6 @@ Check Test Plan Management
     unselect frame
 
 Go to Builds/Releases
-    sleep  1
     select frame  name=mainframe
     wait until page contains element  xpath=//a[text()="Builds / Releases"]
     click link  Builds / Releases
@@ -306,8 +296,8 @@ Check Builds/Releases
     unselect frame
 
 Go to Milestone Overview
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Milestone Overview
     click link  Milestone Overview
     unselect frame
 
@@ -317,8 +307,8 @@ Check Milestone Overview
     unselect frame
 
 Go to Execute Tests
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Execute Tests
     click link  Execute Tests
     unselect frame
 
@@ -329,8 +319,8 @@ Check Execute Tests
     unselect frame
 
 Go to Test Cases Assigned to Me
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Test Cases Assigned to Me
     click link  Test Cases Assigned to Me
     unselect frame
 
@@ -340,8 +330,8 @@ Check Test Cases Assigned to Me
     unselect frame
 
 Go to Test Reports and Metrics
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Test Reports and Metrics
     click link  Test Reports and Metrics
     unselect frame
 
@@ -352,8 +342,8 @@ Check Test Reports and Metrics
     unselect frame
 
 Go to Metrics Dashboard
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Metrics Dashboard
     click link  Metrics Dashboard
     unselect frame
 
@@ -363,8 +353,8 @@ Check Metrics Dashboard
     unselect frame
 
 Go to Add/Remove Platforms
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Add / Remove Platforms
     click link  Add / Remove Platforms
     unselect frame
 
@@ -374,8 +364,8 @@ Check Add/Remove Platforms
     unselect frame
 
 Go to Add/Remove Test Cases
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Add / Remove Test Cases
     click link  Add / Remove Test Cases
     unselect frame
 
@@ -386,8 +376,8 @@ Check Add/Remove Test Cases
     unselect frame
 
 Go to Assign Test Case Execution
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Assign Test Case Execution
     click link  Assign Test Case Execution
     unselect frame
 
@@ -398,8 +388,8 @@ Check Assign Test Case Execution
     unselect frame
 
 Go to Set Urgent Tests
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Set Urgent Tests
     click link  Set Urgent Tests
     unselect frame
 
@@ -410,8 +400,8 @@ Check Set Urgent Tests
     unselect frame
 
 Go to Update Linked Test Case Versions
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Update Linked Test Case Versions
     click link  Update Linked Test Case Versions
     unselect frame
 
@@ -422,8 +412,8 @@ Check Update Linked Test Case Versions
     unselect frame
 
 Go to Show Test Cases Newest Versions
-    sleep  1
     select frame  name=mainframe
+    wait until page contains  Show Test Cases Newest Versions
     click link  Show Test Cases Newest Versions
     unselect frame
 

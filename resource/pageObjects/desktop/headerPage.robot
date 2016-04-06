@@ -76,7 +76,7 @@ Go to My Settings
     unselect frame
 
 Check My Settings
-    page should contain  Account Settings
+    wait until page contains  Account Settings
 
 Go to Desktop (Project)
     select frame  name=titlebar
@@ -84,8 +84,8 @@ Go to Desktop (Project)
     unselect frame
 
 Check Desktop (Project)
-    page should contain  System
-    page should contain  Test Project
+    wait until page contains  System
+    wait until page contains  Test Project
 
 Go to Requirement Specification (titlebar)
     select frame  name=titlebar
@@ -120,10 +120,7 @@ Go to Test Reports
     unselect frame
 
 Check Test Reports
-    select frame  name=mainframe
-    select frame  name=treeframe
-    Current Frame Contains  Reports and Metrics
-    unselect frame
+    wait until page contains  Reports and Metrics
 
 Go to User Management
     select frame  name=titlebar
@@ -141,7 +138,7 @@ Go to Events
     unselect frame
 
 Check Events
-    page should contain  Event viewer
+    wait until page contains  Event viewer
 
 Input text into test case search
     input text  targetTestCase  ${searchedTestCase}
