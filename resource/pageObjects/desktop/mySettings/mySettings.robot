@@ -23,6 +23,17 @@ ${Password}     renat123
 
 *** Keywords ***
 
+I am here
+    select frame  mainframe
+    wait until page contains element  xpath=//h1[text()="Account Settings"]
+    wait until page contains element  xpath=//h2[text()="Personal data"]
+    wait until page contains element  xpath=//h2[text()="Personal password"]
+    wait until page contains element  xpath=//h2[text()="API interface"]
+    wait until page contains element  xpath=//input[@value="Save"]
+    wait until page contains element  xpath=//input[@value="Change password"]
+    wait until page contains element  xpath=//input[@value="Generate a new key"]
+    unselect frame
+
 Set Personal data back to normal
 
     input text  firstName  ${Name}

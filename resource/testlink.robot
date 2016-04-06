@@ -31,6 +31,9 @@ Resource  ../resource/pageObjects/desktop/TestPlan/testPlanManagement.robot
 Resource  ../resource/pageObjects/desktop/TestPlan/testPlanManagement_detail.robot
 Resource  ../resource/pageObjects/desktop/mySettings/mySettings.robot
 Resource  ../resource/pageObjects/desktop/buildsReleases/buildsReleases.robot
+Resource  ../resource/pageObjects/desktop/testExecution/executeTestsPage.robot
+Resource  ../resource/pageObjects/desktop/testExecution/reportsAndMetricsPage.robot
+Resource  ../resource/pageObjects/desktop/events/eventsPage.robot
 
 
 *** Variables ***
@@ -151,22 +154,23 @@ Check desktop links
 
 Check header links
     headerPage.Change Test Project
-    headerPage.Wait untill header is loaded
+    headerPage.I am here in full
     headerPage.Go to My Settings
-    headerPage.Check My Settings
+    mySettings.I am here
     headerPage.Go to Desktop (Project)
-    headerPage.Check Desktop (Project)
+    desktopPage.I am here
     headerPage.Go to Requirement Specification (titlebar)
-    headerPage.Check Requirement Specification (titlebar)
+    requirementSpecification(mainframe).I am here
     headerPage.Go to Test Specification (titlebar)
-    headerPage.Check Test Specification (titlebar)
+    navigatorTestSpecification.I am here
     headerPage.Go to Test Execution
+    executeTestsPage.I am here
     headerPage.Go to Test Reports
-    headerPage.Check Test Reports
+    reportsAndMetricsPage.I am here
     headerPage.Go to User Management
-    headerPage.Check User Management
+    userManagement.I am here
     headerPage.Go to Events
-    headerPage.Check Events
+    eventsPage.I am here
     headerPage.Go to index page
 
 Start creating new test project
@@ -289,10 +293,9 @@ Check Test Project Is Inactive
 Start creating new user
     [Tags]  tp-100_Create_New_User
     headerPage.Change Test Project
-    headerPage.Wait untill header is loaded
+    headerPage.I am here
     headerPage.Go to User Management
-    headerPage.Check User Management
-    userManagement.Wait until page contains view users content
+    userManagement.I am here
     userManagement.Click create button
 
 Fill all info about user and submit
@@ -412,9 +415,9 @@ Delete EDITED Custom Field
 Start editing user
     [Tags]  tp-101_Modify_user
     headerPage.Change Test Project
-    headerPage.Wait untill header is loaded
+    headerPage.I am here
     headerPage.Go to User Management
-    headerPage.Check User Management
+    userManagement.I am here
     userManagement.Wait until page contains view users content
     userManagement.Click desired user
 
@@ -601,10 +604,9 @@ Delete Issue Tracker ${ISSUETRACKER}
 
 Validate settings fields
     [Tags]  tp96
-    desktopPage.Wait until page contains all elements
+    headerPage.I am here
     headerPage.Go to My Settings
-    headerPage.Check My Settings
-    mySettings.Check Page
+    mySettings.I am here
     mySettings.Email Adress Empty
     mySettings.Check Email field must be filled
     mySettings.First Name Empty

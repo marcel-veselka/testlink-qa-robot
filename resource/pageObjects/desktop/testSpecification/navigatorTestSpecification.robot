@@ -26,9 +26,21 @@ ${newTestProjectPrefix}     nnp
 
 
 *** Keywords ***
+I am here
+    select frame  name=mainframe
+    select frame  name=treeframe
+    wait until page contains element  xpath=//h1[text()="Navigator - Test Specification"]
+    wait until page contains element  xpath=//span[contains(text(),"Settings")]
+    wait until page contains element  xpath=//span[contains(text(),"Filters")]
+    wait until page contains element  xpath=//input[@value="Apply"]
+    wait until page contains element  xpath=//input[@value="Reset Filters"]
+    wait until page contains element  xpath=//input[@value="Expand tree"]
+    wait until page contains element  xpath=//input[@value="Collapse tree"]
+    wait until page contains element  tree_div
+    unselect frame
+
 
 Add Filters Test Case Title Test Specification
-
     select frame  mainframe
     select frame  treeframe
     wait until page contains element  name=filter_testcase_name

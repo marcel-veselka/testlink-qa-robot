@@ -7,6 +7,16 @@ Library        Selenium2Library
 
 
 *** Keywords ***
+I am here
+    select frame  name=mainframe
+    wait until page contains element  xpath=//div[@class="tabMenu"]//*[contains(text(),"View Users")]
+    wait until page contains element  xpath=//div[@class="tabMenu"]//*[contains(text(),"View roles")]
+    wait until page contains element  xpath=//div[@class="tabMenu"]//*[contains(text(),"Assign Test Project roles")]
+    wait until page contains element  xpath=//div[@class="tabMenu"]//*[contains(text(),"Assign Test Plan roles")]
+    wait until page contains element  css=div.workBack
+    wait until page contains element  name=doCreate
+    wait until page contains element  id=export
+    unselect frame
 
 Wait until page contains view users content
     select frame  name=mainframe

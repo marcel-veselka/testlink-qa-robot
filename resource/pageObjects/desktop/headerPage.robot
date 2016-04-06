@@ -11,25 +11,6 @@ ${newTestProjectPrefix}  prefixNew1
 ${newTestProjectName}  tp:testing project
 
 *** Keywords ***
-
-Wait untill header is loaded
-    select frame  name=titlebar
-    sleep  1
-    wait until page contains element  xpath=//img[@alt="Company logo"]
-    wait until page contains element  xpath=//img[@title="My Settings"]
-    wait until page contains element  xpath=//img[@title="Logout"]
-    wait until page contains element  xpath=//img[@title="Project"]
-    wait until page contains element  xpath=//img[@title="Requirement Specification"]
-    wait until page contains element  xpath=//img[@title="Test Specification"]
-    wait until page contains element  xpath=//img[@title="Test Execution"]
-    wait until page contains element  xpath=//img[@title="Test Reports"]
-    wait until page contains element  xpath=//img[@title="User Management"]
-    wait until page contains element  xpath=//img[@title="Events"]
-    wait until page contains element  name=targetTestCase
-    wait until page contains element  xpath=//img[@title="Search Test Case by ID"]
-    wait until page contains element  xpath=//select[@name="testproject"]
-    unselect frame
-
 I am here
     select frame  name=titlebar
     wait until page contains element  xpath=//img[@alt="Company logo"]
@@ -52,15 +33,13 @@ I am here in full
     wait until page contains element  xpath=//img[@title="Test Reports"]
     unselect frame
 
-
 Go to index page
+    headerPage.I am here
     select frame  name=titlebar
-    wait until page contains element  xpath=/html/body/div[1]/a
-    click element  xpath=/html/body/div[1]/a
+    click element  xpath=//img[@title="logo"]
     unselect frame
 
 Go to index page and change testproject
-
     select frame  name=titlebar
     wait until page contains element  xpath=/html/body/div[1]/a
     click element  xpath=/html/body/div[1]/a
@@ -71,74 +50,53 @@ Go to index page and change testproject
     unselect frame
 
 Go to My Settings
+    headerPage.I am here
     select frame  name=titlebar
-    click element  xpath=/html/body/div[2]/span[2]/a[1]
+    click element  xpath=//a[img[@title="My Settings"]]
     unselect frame
-
-Check My Settings
-    wait until page contains  Account Settings
 
 Go to Desktop (Project)
+    headerPage.I am here
     select frame  name=titlebar
-    click element  xpath=/html/body/div[3]/a[1]
+    click element  xpath=//img[@title="Project"]
     unselect frame
-
-Check Desktop (Project)
-    wait until page contains  System
-    wait until page contains  Test Project
 
 Go to Requirement Specification (titlebar)
+    headerPage.I am here in full
     select frame  name=titlebar
-    click element  xpath=/html/body/div[3]/a[2]
+    click element  xpath=//img[@title="Requirement Specification"]
     unselect frame
 
-Check Requirement Specification (titlebar)
-    select frame  name=mainframe
-    select frame  name=treeframe
-    wait until page contains  Navigator - Requirement Specifications
-    unselect frame
 
 Go to Test Specification (titlebar)
+    headerPage.I am here
     select frame  name=titlebar
-    click element  xpath=/html/body/div[3]/a[3]
-    unselect frame
-
-Check Test Specification (titlebar)
-    select frame  name=mainframe
-    select frame  name=treeframe
-    wait until page contains  Navigator - Test Specification
+    click element  xpath=//img[@title="Test Specification"]
     unselect frame
 
 Go to Test Execution
+    headerPage.I am here in full
     select frame  name=titlebar
-    click element  xpath=/html/body/div[3]/a[4]
+    click element  xpath=//img[@title="Test Execution"]
     unselect frame
 
 Go to Test Reports
+    headerPage.I am here in full
     select frame  name=titlebar
-    click element  xpath=/html/body/div[3]/a[5]
+    click element  xpath=//img[@title="Test Reports"]
     unselect frame
 
-Check Test Reports
-    wait until page contains  Reports and Metrics
-
 Go to User Management
+    headerPage.I am here
     select frame  name=titlebar
     click element  xpath=//img[@title="User Management"]
     unselect frame
 
-Check User Management
-    select frame  name=mainframe
-    wait until page contains  User Management
-    unselect frame
-
 Go to Events
+    headerPage.I am here
     select frame  name=titlebar
-    click element  xpath=/html/body/div[3]/a[7]
+    click element  xpath=//img[@title="Events"]
     unselect frame
-
-Check Events
-    wait until page contains  Event viewer
 
 Input text into test case search
     input text  targetTestCase  ${searchedTestCase}

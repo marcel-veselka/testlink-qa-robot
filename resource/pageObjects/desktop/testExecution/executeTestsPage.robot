@@ -1,5 +1,4 @@
 *** Settings ***
-
 Documentation  A resource file containing the application specific keywords
 ...            that create our own domain specific language. This resource
 ...            implements keywords for testing HTML version of the test
@@ -19,11 +18,10 @@ ${BROWSER}      ff
 
 *** Keywords ***
 
-
 I am here
     select frame  name=mainframe
     select frame  name=treeframe
-    wait until page contains element  xpath=//h1[text()="Navigator - Requirement Specifications"]
+    wait until page contains element  xpath=//h1[text()="Execute Tests"]
     wait until page contains element  xpath=//span[contains(text(),"Settings")]
     wait until page contains element  xpath=//span[contains(text(),"Filters")]
     wait until page contains element  xpath=//input[@value="Apply"]
@@ -33,5 +31,3 @@ I am here
     wait until page contains element  xpath=//input[@value="Collapse tree"]
     wait until page contains element  tree_div
     unselect frame
-
-
