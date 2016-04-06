@@ -35,16 +35,17 @@ I am here
     unselect frame
 
 Set Personal data back to normal
-
+    select frame  mainframe
     input text  firstName  ${Name}
     input text  lastName   ${LastName}
     input text  emailAddress  ${emailAdress}
     click button    Save
     wait until page contains  Personal data changed
+    unselect frame
 
 First Name Empty
 
-    input text  firstName  ${EmptyName}
+    clear element text  firstName
 
 Check Page
     select frame  mainframe
@@ -52,12 +53,11 @@ Check Page
     wait until page contains  Personal password
 
 Email Adress Empty
-
-    input text  emailAddress  ${EmptyEmailAdress}
+    clear element text  emailAddress
 
 Last Name Empty
 
-    input text  lastName  ${EmptyLastName}
+    clear element text  lastName
 
 Click Save Button
 
@@ -69,6 +69,7 @@ Check Email field must be filled
     execute javascript  var imput = document.getElementsByName('emailAddress'); imput[0].required = false;
     click button  Save
     wait until page contains  Warning!!
+    wait until page contains  OK
     click button    OK
 
 Input Email Adress
@@ -80,6 +81,7 @@ Check Last Name field must be filled
     execute javascript  var imput = document.getElementsByName('lastName'); imput[0].required = false;
     click button  Save
     wait until page contains  Warning!!
+    wait until page contains  OK
     click button    OK
 
 Input Last Name
@@ -91,6 +93,7 @@ Check First Name field must be filled
     execute javascript  var imput = document.getElementsByName('firstName'); imput[0].required = false;
     click button  Save
     wait until page contains  Warning!!
+    wait until page contains  OK
     click button    OK
 
 Input First Name
@@ -98,19 +101,25 @@ Input First Name
     input text  firstName  ${NewTestFirstName}
 
 Change Password
-
+    select frame  mainframe
+    wait until page contains element  oldpassword
+    wait until page contains element  newpassword
+    wait until page contains element  newpassword_check
     input text  oldpassword  ${Password}
     input text  newpassword  ${NewTestPassword}
     input text  newpassword_check   ${NewTestPassword}
     click button  Change password
+    unselect frame
+    select frame  mainframe
     wait until page contains  Your password was changed succesfully
+    unselect frame
 
 Change Password back
-
+    select frame  mainframe
     input text  oldpassword  ${NewTestPassword}
      input text  newpassword  ${Password}
     input text  newpassword_check   ${Password}
     click button  Change password
     wait until page contains  Your password was changed succesfully
-
+    unselect frame
 

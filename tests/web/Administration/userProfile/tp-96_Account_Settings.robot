@@ -13,9 +13,6 @@ Test Teardown  Run keywords  testlink.Set Personal data in My Settings back
 *** Variables ***
 
 ${ChangedName}  SomeChangedName
-${EmptyName}
-${EmptyEmailAdress}
-${EmptyLastName}
 ${NewTestEmailAdress}  testemailadress@honzaknownothing.com
 ${NewTestLastName}     testLastName
 ${NewTestFirstName}    testFirstName

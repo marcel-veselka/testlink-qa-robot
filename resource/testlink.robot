@@ -607,20 +607,27 @@ Validate settings fields
     headerPage.I am here
     headerPage.Go to My Settings
     mySettings.I am here
+    select frame  mainframe
     mySettings.Email Adress Empty
     mySettings.Check Email field must be filled
+    unselect frame
+    select frame  mainframe
     mySettings.First Name Empty
     mySettings.Check First Name field must be filled
+    unselect frame
+    select frame  mainframe
     mySettings.Last Name Empty
     mySettings.Check Last Name field must be filled
+    unselect frame
 
 Input Personal data in settings
     [Tags]  tp96
-
+    select frame  mainframe
     mySettings.input First Name
     mySettings.input Last Name
     mySettings.input Email Adress
     mySettings.click Save Button
+    unselect frame
 
 Change Personal password in My Settings
     [Tags]  tp96
