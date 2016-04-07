@@ -35,7 +35,5 @@ Create Build - "Easy" - from existing build
 
 
     headerPage.Go to index page and change testproject
-    testlink.Start creating build
-    testlink.Create Build from existing build buildName1 buildName
+    testlink.Create buildName1 from existing buildName
 
-#vojta dodela
