@@ -722,7 +722,6 @@ Create Build with name ${buildName}
     testlink.Add Details and Finish creating build ${buildName}
     testlink.Check that Build is created ${buildName}
 
-
 Create Build from existing build ${NewNameBuild} ${FromBuild}
     [Tags]  tp63
     headerPage.Go to index page and change testproject
