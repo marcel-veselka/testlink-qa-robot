@@ -11,7 +11,7 @@ ${DELAY}         0
 ${LOGIN URL}     http://${SERVER}/login.php
 ${WELCOME URL}   http://${SERVER}/index.php?caller=login
 ${ERROR URL}     http://${SERVER}/login.php
-${BROWSER}      ff
+${BROWSER}      chrome
 
 
 *** Keywords ***

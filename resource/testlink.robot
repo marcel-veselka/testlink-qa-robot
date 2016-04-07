@@ -22,8 +22,7 @@ Resource  ../resource/pageObjects/desktop/testProject/testProjectManagement.robo
 Resource  ../resource/pageObjects/desktop/testSpecification/assignKeywords.robot
 Resource  ../resource/pageObjects/desktop/testSpecification/searchTestCases.robot
 Resource  ../resource/pageObjects/desktop/testSpecification/testCasesCreatedPerUser.robot
-Resource  ../resource/pageObjects/desktop/testSpecification/testSpecification(mainframe).robot
-Resource  ../resource/pageObjects/desktop/testSpecification/navigatorTestSpecification.robot
+Resource  ../resource/pageObjects/desktop/testSpecification/testSpecificationPage.robot
 Resource  ../resource/pageObjects/desktop/testProject/createTestProjectPage.robot
 Resource  ../resource/pageObjects/desktop/testProject/testProjectEdit.robot
 Resource  ../resource/pageObjects/desktop/userManagement/userManagement.robot
@@ -162,7 +161,7 @@ Check header links
     headerPage.Go to Requirement Specification (titlebar)
     requirementSpecification(mainframe).I am here
     headerPage.Go to Test Specification (titlebar)
-    navigatorTestSpecification.I am here
+    testSpecificationPage.I am here
     headerPage.Go to Test Execution
     executeTestsPage.I am here
     headerPage.Go to Test Reports
@@ -515,13 +514,13 @@ Create Test Case From Requirement
 Check Test Specification
     [Tags]  tp41_requirement_operation_creare_tc
     desktopPage.Go to Test Specification (mainframe)
-    navigatorTestSpecification.Add Filters Test Case Title Test Specification
+    testSpecificationPage.Add Filters Test Case Title Test Specification
 
 Delete Test Case
     [Tags]  tp41_requirement_operation_creare_tc
     headerPage.Go to index page
     desktopPage.Go to Test Specification (mainframe)
-    navigatorTestSpecification.Delete Test Case
+    testSpecificationPage.Delete Test Case
 
 
 Go to Test Specification (mainframe)
@@ -767,25 +766,56 @@ Unassign Requirements And Check Availiable Requirements
 Controll Warning Message And Create Test Suite
     [Tags]  tp80
     desktopPage.Go to Test Specification (mainframe)
-    navigatorTestSpecification.Create Test Suite Button
-    navigatorTestSpecification.Controll Warning Message
-    navigatorTestSpecification.Fill In The Fields
+    testSpecificationPage.Create Test Suite Button
+    testSpecificationPage.Controll Warning Message
+    testSpecificationPage.Fill In The Fields
+
+Create Test Suite
+    [Tags]  tp86
+    desktopPage.Go to Test Specification (mainframe)
+    testSpecificationPage.Create Test Suite Button
+    testSpecificationPage.Fill In The Fields
 
 Delete Test Suite
     [Tags]  tp47
     headerPage.Go to index page and change testproject
     desktopPage.Go to Test Specification (mainframe)
-    navigatorTestSpecification.Delete Test Suite
+    testSpecificationPage.Delete Test Suite
+
+Start Creating Test Case
+     testSpecificationPage.Click Test Case Button
+
+#Click to Test Suite in Navigator frame
+
+
+Create test suite ${testSuiteName} in test project ${newTestProjectName}
+    headerPage.Go to Index Page
+    headerPage.Go to Test Specification (titlebar)
+    testSpecificationPage.I am here
+    testSpecificationPage.Select test project ${newTestProjectName} node
+    testSpecificationPage.Click Actions button
+    testSpecificationPage.Click new test suite
+    testSpecificationPage.Fill name for ts: ${testSuiteName} and submit
+
+
+Create test case ${testCaseName} in ${testSuiteName}
+    headerPage.Go to Index Page
+    headerPage.Go to Test Specification (titlebar)
+    testSpecificationPage.I am here
+    testSpecificationPage.Select test suite ${testSuiteName} node
+    testSpecificationPage.Click Actions button
+    testSpecificationPage.Click new test case
+    testSpecificationPage.Fill name for tc: ${testCaseName} and submit
 
 Delete New Test Suite
     [Tags]  tp80
     headerPage.Go to index page and change testproject
     desktopPage.Go to Test Specification (mainframe)
-    navigatorTestSpecification.Delete New Test Suite
+    testSpecificationPage.Delete New Test Suite
 
 Check New Test Suite
     [Tags]  tp80
-    navigatorTestSpecification.Check If Test Suite Was Created
+    testSpecificationPage.Check If Test Suite Was Created
 
 Create and check role ${role} in user management
     headerPage.I am here
@@ -795,11 +825,11 @@ Create and check role ${role} in user management
 
 Edit Test Suite Move It Copy It
     [Tags]  tp81
-    navigatorTestSpecification.Create Another Test Suite For Move Or Copy
-    navigatorTestSpecification.Edit New Test Suite
-    navigatorTestSpecification.Copy Test Suite
-    navigatorTestSpecification.Move Test Suite
-    navigatorTestSpecification.Check Move And Copy Action
+    testSpecificationPage.Create Another Test Suite For Move Or Copy
+    testSpecificationPage.Edit New Test Suite
+    testSpecificationPage.Copy Test Suite
+    testSpecificationPage.Move Test Suite
+    testSpecificationPage.Check Move And Copy Action
 
 Edit Build Info and Save Changes
     buildsReleases.Fill in the details of the Build ${NewBuildName}
@@ -810,7 +840,7 @@ Delete Another New Test Suite
     [Tags]  tp80
     headerPage.Go to index page and change testproject
     desktopPage.Go to Test Specification (mainframe)
-    navigatorTestSpecification.Delete Another New Test Suite
+    testSpecificationPage.Delete Another New Test Suite
 
 
 

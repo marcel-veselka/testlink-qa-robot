@@ -325,3 +325,77 @@ Delete Another New Test Suite
     select frame  workframe
     wait until page contains  The Test Suite was successfully deleted
     unselect frame
+
+Click Test Case Button
+
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  xpath=//img[@title="Actions"]
+    click element  xpath=//img[@title="Actions"]
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  name=create_tc
+    click element  name=create_tc
+    unselect frame
+
+
+Select test project ${newTestProjectName} node
+    select frame  mainframe
+    select frame  treeframe
+    click element  expand_tree
+    wait until page contains element  xpath=//a[contains(.,"${newTestProjectName} (")]
+    double click element  xpath=//a[contains(.,"${newTestProjectName} (")]
+    unselect frame
+
+Click Actions button
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  xpath=//img[@title="Actions"]
+    click element  xpath=//img[@title="Actions"]
+    unselect frame
+
+Click new test suite
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  new_testsuite
+    click element  new_testsuite
+    unselect frame
+
+Fill name for ts: ${testSuiteName} and submit
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  name
+    wait until page contains element  add_testsuite_button
+    input text  name  ${testSuiteName}
+    click element  add_testsuite_button
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains  Test Suite created
+    unselect frame
+
+Select test suite ${testSuiteName} node
+    select frame  mainframe
+    select frame  treeframe
+    wait until page contains element  expand_tree
+    click element  expand_tree
+    wait until page contains  ${testSuiteName}
+    click element  xpath=//ul/li/ul/li[contains(.,"${testSuiteName}")]/div/a
+    unselect frame
+
+Click new test case
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  create_tc
+    click element  create_tc
+    unselect frame
+
+Fill name for tc: ${testCaseName} and submit
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  testcase_name
+    wait until page contains element  do_create_button
+    input text  testcase_name  ${testCaseName}
+    click element  do_create_button
+    unselect frame
