@@ -376,10 +376,9 @@ Fill name for ts: ${testSuiteName} and submit
     unselect frame
 
 Select test suite ${testSuiteName} node
+    Expand tree
     select frame  mainframe
     select frame  treeframe
-    wait until page contains element  expand_tree
-    click element  expand_tree
     wait until page contains  ${testSuiteName}
     click element  xpath=//ul/li/ul/li[contains(.,"${testSuiteName}")]/div/a
     unselect frame
@@ -398,4 +397,27 @@ Fill name for tc: ${testCaseName} and submit
     wait until page contains element  do_create_button
     input text  testcase_name  ${testCaseName}
     click element  do_create_button
+    unselect frame
+
+Move suite ${from} to suite ${target}
+    [Tags]  tp82
+    Expand tree
+    select frame  mainframe
+    select frame  treeframe
+    wait until page contains  ${newTestProjectName}
+    wait until page contains  ${from}
+    wait until page contains  ${target}
+    wait until page contains  super-1:tc1
+    wait until page contains  super-2:tc2
+    #mouse down  xpath=//ul/li/ul/li[contains(.,"${from}")]/div/img[2]
+    #mouse over  xpath=//ul/li/ul/li[contains(.,"${target}")]/div/img[2]
+    #mouse up  xpath=//ul/li/ul/li[contains(.,"${target}")]/div/img[2]
+    drag and drop  xpath=//ul/li/ul/li[contains(.,"${from}")]/div/img[2]  xpath=//ul/li/ul/li[contains(.,"${target}")]/div/img[2]
+    unselect frame
+
+Expand tree
+    select frame  mainframe
+    select frame  treeframe
+    wait until page contains element  expand_tree
+    click element  expand_tree
     unselect frame

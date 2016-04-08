@@ -12,6 +12,8 @@ Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         testlink.Create test case ${tc1} in ${suite2}
 ...             AND         testlink.Create test case ${tc2} in ${suite2}
 
+Test Teardown  testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
+
 *** Variables ***
 ${newTestProjectName}  superProject
 ${newTestProjectPrefix}  super
@@ -24,13 +26,24 @@ ${tc2}  tc2
 
 *** Test Cases ***
 Drag drop
-    sleep  10
-    close all browsers
+    testlink.Login as admin correct
+    headerPage.Go to index page and change testproject
+    desktopPage.Go to link Test Specification
+    testSpecificationPage.I am here
+    testSpecificationPage.Move suite ${suite1} to suite ${suite3}
+    testSpecificationPage.Move suite ${suite2} to suite ${suite3}
+    Check this testcase structure after movement
 
-    #xpath should match x times  //ul/li/ul/li[contains(.,"suite1")]/ul/li  2
-    #xpath should match x times  //ul/li/ul/li[contains(.,"AnyOther")]/ul/li  0
-    #drag and drop  xpath=//ul/li/ul/li[contains(.,"suite1")]/div/img[2]  xpath=//ul/li/ul/li[contains(.,"AnyOther")]/div/img[2]
-   # element should be enabled
+*** Keywords ***
+Check this testcase structure after movement
+    testSpecificationPage.Expand tree
+    select frame  mainframe
+    select frame  treeframe
+    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite1")]
+    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite2")]
+    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite2")]/ul/li[contains(.,"tc1")]
+    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite2")]/ul/li[contains(.,"tc2")]
+    unselect frame
 
 
 

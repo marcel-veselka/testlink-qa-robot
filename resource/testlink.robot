@@ -29,7 +29,7 @@ Resource  ../resource/pageObjects/desktop/userManagement/userManagement.robot
 Resource  ../resource/pageObjects/desktop/TestPlan/testPlanManagement.robot
 Resource  ../resource/pageObjects/desktop/TestPlan/testPlanManagement_detail.robot
 Resource  ../resource/pageObjects/desktop/mySettings/mySettings.robot
-Resource  ../resource/pageObjects/desktop/buildsReleases/buildsReleases.robot
+Resource  ../resource/pageObjects/desktop/TestPlan/buildsReleases.robot
 Resource  ../resource/pageObjects/desktop/testExecution/executeTestsPage.robot
 Resource  ../resource/pageObjects/desktop/testExecution/reportsAndMetricsPage.robot
 Resource  ../resource/pageObjects/desktop/events/eventsPage.robot
@@ -841,6 +841,8 @@ Delete Another New Test Suite
     headerPage.Go to index page and change testproject
     desktopPage.Go to Test Specification (mainframe)
     testSpecificationPage.Delete Another New Test Suite
+
+
 
 
 
