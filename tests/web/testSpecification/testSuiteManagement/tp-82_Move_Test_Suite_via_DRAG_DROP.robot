@@ -39,6 +39,11 @@ Check this testcase structure after movement
     testSpecificationPage.Expand tree
     select frame  mainframe
     select frame  treeframe
+    wait until page contains  suite1
+    wait until page contains  suite2
+    wait until page contains  suite3
+    wait until page contains  tc1
+    wait until page contains  tc2
     wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite1")]
     wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite2")]
     wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite2")]/ul/li[contains(.,"tc1")]

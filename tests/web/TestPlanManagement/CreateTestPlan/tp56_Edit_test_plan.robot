@@ -14,6 +14,11 @@ Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         testlink.Create test case tc1 in suite1
 ...             AND         testlink.Create test case tc2 in suite1
 
+
+*** Variables ***
+${TestPlanManagementName}  TestplanNumberOne
+${TestPlanManagementDescription}  DescriptionDescription
+
 *** Test Cases ***
 TestSSS
-    sleep  20
+    capture page screenshot
