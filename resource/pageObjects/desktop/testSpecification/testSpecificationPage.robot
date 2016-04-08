@@ -23,7 +23,8 @@ ${testSuiteCopy}            copyFile
 ${testDescriptionCopy}      copyDescrition
 ${newTestProjectName}       NewNamedProject
 ${newTestProjectPrefix}     nnp
-
+${testCaseName}             testCaseName
+${testCaseNameNew}          testCaseNameNew
 
 *** Keywords ***
 I am here
@@ -401,7 +402,7 @@ Fill name for tc: ${testCaseName} and submit
 
 Move suite ${from} to suite ${target}
     [Tags]  tp82
-    Expand tree
+    testSpecificationPage.Expand tree
     select frame  mainframe
     select frame  treeframe
     wait until page contains  ${newTestProjectName}
@@ -456,3 +457,61 @@ Check create test case open
     wait until page contains  Summary
     wait until page contains  Preconditions
     unselect frame
+
+Select test case ${testCaseName} node
+    Expand tree
+    select frame  mainframe
+    select frame  treeframe
+    wait until page contains  ${testCaseName}
+    click element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName}")]/div/a
+    unselect frame
+
+Create New Sibling ${testCaseNameNew}
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  name=new_tc
+    click element  name=new_tc
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  name=testcase_name
+    wait until page contains element  name=do_create_button
+    input text  testcase_name  ${testCaseNameNew}
+    click element  name=do_create_button
+    unselect frame
+
+
+Check New Sibling Was Created
+    Expand tree
+    select frame  mainframe
+    select frame  treeframe
+    wait until page contains element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseNameNew}")]/div/a
+    page should contain element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseNameNew}")]/div/a
+    unselect frame
+
+
+Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Select test case ${testCaseNameNew} node
+    testSpecificationPage.Click Actions button
+
+
+Click On Export Test Case
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  name=export_tc
+    click element  name=export_tc
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  name=export
+    click element  name=export
+    unselect frame
+
+Click On Print View Test Case
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  name=tcPrinterFriendly
+    click element  name=tcPrinterFriendly
+    unselect frame
+
+

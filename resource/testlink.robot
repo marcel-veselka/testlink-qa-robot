@@ -846,6 +846,25 @@ Delete Another New Test Suite
     desktopPage.Go to Test Specification (mainframe)
     testSpecificationPage.Delete Another New Test Suite
 
+Create New Sibling ${testCaseNameNew}
+    [Tags]  tp90
+    testSpecificationPage.Select test case ${testCaseName} node
+    testSpecificationPage.Click Actions button
+    testSpecificationPage.Create New Sibling ${testCaseNameNew}
+    testSpecificationPage.Check New Sibling Was Created
+
+Check All Actions Button
+    [Tags]  tp90
+    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    #testSpecificationPage.Click On Export Test Case
+    #testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Click On Print View Test Case
+    Select Window  Print Test Case: testCaseNameNew
+    wait until page contains  Test Case np-2: testCaseNameNew
+    close window
+    Select Window  TestLink 1.9.14 (Padawan)
+    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+
 
 
 
