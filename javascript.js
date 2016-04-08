@@ -20,3 +20,5 @@ click button  Save
 wait until page contains  Please give a name to Test Suite
 wait until page contains element  xpath=//button[text()="OK"]
 click element  xpath=//button[text()="OK"]
+
+document.evaluate("//a[contains(.,"superProject (0)")]", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.style.display = "block";

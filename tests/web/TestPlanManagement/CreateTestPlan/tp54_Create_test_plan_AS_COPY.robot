@@ -6,7 +6,7 @@ Documentation  A test suite with a single test for creating a new Custom Field. 
 Resource       ../../../../resource/testlink.robot
 
 Test Setup  Run keywords    testlink.Login as admin correct
-...             AND         testlink.Create New Test Plan Management
+...             AND         testlink.Create New Test Plan ${TestPlanManagementName}
 ...             AND         Close Browser
 
 

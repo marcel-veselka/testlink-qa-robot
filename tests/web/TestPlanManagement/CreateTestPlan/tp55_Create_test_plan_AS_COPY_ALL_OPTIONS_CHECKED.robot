@@ -10,7 +10,7 @@ Test Setup  Run keywords    testlink.Login as admin correct
 ...             AND         testlink.Fill information to create test without conflict
 ...             AND         testlink.Submit and check new test project
 ...             AND         headerPage.Go to index page
-...             AND         testlink.Create New Test Plan Management
+...             AND         testlink.Create New Test Plan ${TestPlanManagementName}
 
 
 Test Teardown  Run keywords  testlink.Delete Test Plan Management  ${TestPlanManagementName}

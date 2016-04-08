@@ -429,9 +429,10 @@ Edit user
     userManagement.Check all fields for editing user are availiable
     userManagement.Fill inputs for editing user and submit
 
-Create New Test Plan Management
+Create New Test Plan ${TestPlanManagementName}
     [Tags]  tp53_Create_test_plan_no_conflict  tp_61
 
+    headerPage.Go to index page
     desktopPage.I am here
     desktopPage.Go to Test Plan Management
     desktopPage.Check Test Plan Management
