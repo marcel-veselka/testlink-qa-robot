@@ -19,16 +19,25 @@ Test Setup  Run keywords    testlink.Create new Test Project
 *** Variables ***
 
 ${newTestProjectName}  NewNamedProject
-${newTestProjectPrefix}  nnp
-${testSuiteName}    suiteTest
-${testDescription}  testDescription
+${newTestProjectPrefix}  voj
+${testSuiteName}    suiteTestt
+${testDescription}  testDescriptionn
+${testDescription}
+${testDescription}
+${testDescription}
+
 
 *** Test Cases ***
 
 Create Test Case
 
     desktopPage.Go to Test Specification (mainframe)
+    testSpecificationPage.I am here
+    testSpecificationPage.Select test suite ${testSuiteName} node
     testlink.Start Creating Test Case
+    testlink.Fill informations test case
+  #  testSpecificationPage.Click new test case
+  #  testSpecificationPage.Move suite ${suite1} to suite ${suite3}
     #testlink.Click to Test Suite
 
 

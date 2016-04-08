@@ -786,7 +786,10 @@ Delete Test Suite
 Start Creating Test Case
      testSpecificationPage.Click Test Case Button
 
-#Click to Test Suite in Navigator frame
+Fill informations test case
+    testSpecificationPage.Check create test case open
+    testSpecificationPage.Fill in Summary test case
+
 
 
 Create test suite ${testSuiteName} in test project ${newTestProjectName}

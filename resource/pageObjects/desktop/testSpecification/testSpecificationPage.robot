@@ -421,3 +421,38 @@ Expand tree
     wait until page contains element  expand_tree
     click element  expand_tree
     unselect frame
+
+
+Fill in title test case
+    select frame  mainframe
+    input text  testcase_name  ${testCaseName}
+    unselect frame
+
+Fill in Summary test case
+    select frame  name=mainframe
+    select frame  name=workframe
+    wait until page contains  Summary
+    wait until page contains element  xpath=//*[@id="cke_contents_summary"]/iframe
+    mouse down  xpath=//*[@id="cke_contents_summary"]/iframe
+    mouse up  xpath=//*[@id="cke_contents_summary"]/iframe
+
+    select frame  xpath=//*[@id="cke_contents_summary"]/iframe
+    input text  xpath=//body  Summary
+
+    unselect frame
+
+Fill in Preconditions test case
+    select frame  mainframe
+    unselect frame
+
+Click on Create button test case
+    select frame  mainframe
+    unselect frame
+
+Check create test case open
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains  Test Case Title
+    wait until page contains  Summary
+    wait until page contains  Preconditions
+    unselect frame
