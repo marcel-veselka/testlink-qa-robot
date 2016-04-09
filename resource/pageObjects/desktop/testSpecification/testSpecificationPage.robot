@@ -384,6 +384,7 @@ Select test suite ${testSuiteName} node
     click element  xpath=//ul/li/ul/li[contains(.,"${testSuiteName}")]/div/a
     unselect frame
 
+
 Click new test case
     select frame  mainframe
     select frame  workframe
@@ -398,6 +399,75 @@ Fill name for tc: ${testCaseName} and submit
     wait until page contains element  do_create_button
     input text  testcase_name  ${testCaseName}
     click element  do_create_button
+    unselect frame
+
+Create Step
+
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  create_step
+    click button  create_step
+    wait until page contains  Step actions
+    wait until page contains element  xpath=//*[@id="cke_contents_steps"]/iframe
+    mouse down  xpath=//*[@id="cke_contents_steps"]/iframe
+    mouse up  xpath=//*[@id="cke_contents_steps"]/iframe
+    select frame  xpath=//*[@id="cke_contents_steps"]/iframe
+    input text  xpath=//body  StepAction
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains  Expected Results
+    wait until page contains element  xpath=//*[@id="cke_contents_expected_results"]/iframe
+    mouse down  xpath=//*[@id="cke_contents_expected_results"]/iframe
+    mouse up  xpath=//*[@id="cke_contents_expected_results"]/iframe
+    select frame  xpath=//*[@id="cke_contents_expected_results"]/iframe
+    input text  xpath=//body  Expect.Results
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    click button  do_update_step
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains  Step number:
+    unselect frame
+
+
+Add Step after created first step
+
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains  Step actions
+    wait until page contains element  xpath=//*[@id="cke_contents_steps"]/iframe
+    mouse down  xpath=//*[@id="cke_contents_steps"]/iframe
+    mouse up  xpath=//*[@id="cke_contents_steps"]/iframe
+    select frame  xpath=//*[@id="cke_contents_steps"]/iframe
+    input text  xpath=//body  StepAction
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains  Expected Results
+    wait until page contains element  xpath=//*[@id="cke_contents_expected_results"]/iframe
+    mouse down  xpath=//*[@id="cke_contents_expected_results"]/iframe
+    mouse up  xpath=//*[@id="cke_contents_expected_results"]/iframe
+    select frame  xpath=//*[@id="cke_contents_expected_results"]/iframe
+    input text  xpath=//body  Expect.Results
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    click button  do_update_step
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains  Step number:
+    unselect frame
+
+Click on save & exit
+
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  do_update_step_and_exit
+    click button  do_update_step_and_exit
     unselect frame
 
 Move suite ${from} to suite ${target}
@@ -424,8 +494,10 @@ Expand tree
     unselect frame
 
 
-Fill in title test case
+Fill in title test case name ${testCaseName}
+
     select frame  mainframe
+    select frame  name=workframe
     input text  testcase_name  ${testCaseName}
     unselect frame
 
@@ -444,6 +516,14 @@ Fill in Summary test case
 
 Fill in Preconditions test case
     select frame  mainframe
+    select frame  name=workframe
+    wait until page contains  Preconditions
+    wait until page contains element  xpath=//*[@id="cke_contents_preconditions"]/iframe
+    mouse down  xpath=//*[@id="cke_contents_preconditions"]/iframe
+    mouse up  xpath=//*[@id="cke_contents_preconditions"]/iframe
+
+    select frame  xpath=//*[@id="cke_contents_preconditions"]/iframe
+    input text  xpath=//body  Preconditionsss
     unselect frame
 
 Click on Create button test case

@@ -786,11 +786,21 @@ Delete Test Suite
 Start Creating Test Case
      testSpecificationPage.Click Test Case Button
 
-Fill informations test case
+Fill informations test case and create
+
     testSpecificationPage.Check create test case open
     testSpecificationPage.Fill in Summary test case
+    testSpecificationPage.Fill in Preconditions test case
+    testSpecificationPage.Fill name for tc: TestCase1 and submit
 
+Create Step in test case: ${testCaseName}
+    [Tags]  tp86
 
+    headerPage.Go to index page
+    headerPage.Go to Test Specification (titlebar)
+    testSpecificationPage.I am here
+    testSpecificationPage.Select test case ${testCaseName} node
+    testSpecificationPage.Create Step
 
 Create test suite ${testSuiteName} in test project ${newTestProjectName}
     headerPage.Go to Index Page

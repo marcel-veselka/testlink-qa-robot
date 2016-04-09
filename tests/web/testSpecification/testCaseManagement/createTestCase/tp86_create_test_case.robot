@@ -13,9 +13,7 @@ Test Setup  Run keywords    testlink.Create new Test Project
 
 Test Teardown  Run keywords    testlink.Go to index page
 ...             AND              testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
-#...             AND             testlink.Delete New Test Suite
-#...             AND             testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
-#...             AND             testlink.Check that test has been deleted
+...             AND             testlink.Check that test has been deleted
 ...             AND              Close browser
 
 *** Variables ***
@@ -24,9 +22,8 @@ ${newTestProjectName}  NewNamedProject
 ${newTestProjectPrefix}  voj
 ${testSuiteName}    suiteTestt
 ${testDescription}  testDescriptionn
-${testDescription}
-${testDescription}
-${testDescription}
+${testCaseName}     TestCase1
+
 
 
 *** Test Cases ***
@@ -37,9 +34,9 @@ Create Test Case
     testSpecificationPage.I am here
     testSpecificationPage.Select test suite ${testSuiteName} node
     testlink.Start Creating Test Case
-   # testlink.Fill informations test case
-  #  testSpecificationPage.Click new test case
-  #  testSpecificationPage.Move suite ${suite1} to suite ${suite3}
-    #testlink.Click to Test Suite
+    testlink.Fill informations test case and create
+    testlink.Create Step in test case: ${testCaseName}
+    testSpecificationPage.Add Step after created first step
+    testSpecificationPage.Click on save & exit
 
 
