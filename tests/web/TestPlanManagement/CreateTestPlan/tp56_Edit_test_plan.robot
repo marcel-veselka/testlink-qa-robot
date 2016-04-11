@@ -11,14 +11,23 @@ Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         testlink.Create New Test Plan testPlan2
 ...             AND         testlink.Create Build with name buildName
 ...             AND         testlink.Create test suite suite1 in test project ${newTestProjectName}
-...             AND         testlink.Create test case tc1 in suite1
-...             AND         testlink.Create test case tc2 in suite1
+...             AND         testlink.Create test case ${testCaseName} in suite1
+#...             AND         testlink.Add Test Case To the Test Plan
+
+
 
 
 *** Variables ***
-${TestPlanManagementName}  TestplanNumberOne
-${TestPlanManagementDescription}  DescriptionDescription
+
+${newTestProjectName}               IamNewTestProject
+${newTestProjectPrefix}             ThisIsMyPrefix
+#${TestPlanManagementName}           TestplanNumberOne
+${TestPlanManagementDescription}    DescriptionDescription
+${Description}                      Bla Bla Descritpion
+${testCaseNameNew}                  tc1
+${testCaseName}                     tc1
 
 *** Test Cases ***
-TestSSS
+
+Edit Test Plan
     capture page screenshot

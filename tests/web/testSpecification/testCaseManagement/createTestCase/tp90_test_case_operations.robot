@@ -37,7 +37,7 @@ ${testCaseNameNew}                  testCaseNameNew
 
 *** Test Cases ***
 
-Create Test Case
+Test Case Operations
 
     desktopPage.Go to Test Specification (mainframe)
     testlink.Create New Sibling ${testCaseNameNew}

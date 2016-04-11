@@ -490,9 +490,6 @@ Create Test Plan Management AS COPY Unselect all checkboxes
     testPlanManagement.Check Test Plan Management is Created  ${TestPlanManagementName2}
 
 
-
-
-
 Delete Test Plan Management
      [Arguments]  ${TestPlanManagementNameToDelete}
      headerPage.Go to index page
@@ -911,7 +908,10 @@ Show Execution History
     close window
     Select Window  TestLink 1.9.14 (Padawan)
 
-
-
+Add Test Case To the Test Plan
+    headerPage.Go to index page
+    desktopPage.Go to Test Specification (mainframe)
+    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Click On Add To Test Plans
 
 
