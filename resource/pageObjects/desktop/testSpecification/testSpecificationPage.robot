@@ -360,7 +360,7 @@ Click Actions button
     select frame  mainframe
     select frame  workframe
     wait until page contains element  xpath=//img[@title="Actions"]
-    click element  xpath=//img[@title="Actions"]
+    double click element  xpath=//img[@title="Actions"]
     unselect frame
 
 Click new test suite
@@ -549,8 +549,9 @@ Select test case ${testCaseName} node
     Expand tree
     select frame  mainframe
     select frame  treeframe
-    wait until page contains  ${testCaseName}
-    click element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName}")]/div/a
+    wait until page contains element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName}")]/div/a
+    page should contain element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName}")]/div/a
+    double click element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName}")]/div/a
     unselect frame
 
 Create New Sibling ${testCaseNameNew}
@@ -601,4 +602,59 @@ Click On Print View Test Case
     click element  name=tcPrinterFriendly
     unselect frame
 
+Click On Create New Version
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  name=do_create_new_version
+    click element  name=do_create_new_version
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  xpath=//div/p[contains(text(),"was successfully created" )]
+    page should contain element  xpath=//div/p[contains(text(),"was successfully created" )]
+    unselect frame
 
+Click On Deactivate This Version
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  name=deactivate_this_tcversion
+    click element  name=deactivate_this_tcversion
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  xpath=//div/div[contains(text(),"This version is INACTIVE" )]
+    page should contain element  xpath=//div/div[contains(text(),"This version is INACTIVE" )]
+    unselect frame
+
+Click On Activate This Version
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  name=activate_this_tcversion
+    click element  name=activate_this_tcversion
+    unselect frame
+
+Click On Add To Test Plans
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  name=addToTestPlans
+    click element  name=addToTestPlans
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  name=add2testplan
+    wait until page contains element  xpath=//*[@id="item_view"]
+    select checkbox  xpath=//form/div/div/table/tbody/tr/td/input[@type="checkbox"]
+    click element  name=add2testplan
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  xpath=//table[tbody[tr/td[contains(text(),"NewTestPlanManagement")]]]
+    page should contain element  xpath=//table[tbody[tr/td[contains(text(),"NewTestPlanManagement")]]]
+    unselect frame
+
+Click On Execution History
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  xpath=//div/div/span/input[@type="button"]
+    click element  xpath=//div/div/span/input[@type="button"]
+    unselect frame

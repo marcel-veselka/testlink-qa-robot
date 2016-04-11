@@ -7,24 +7,33 @@ Resource       ../../../../../resource/testlink.robot
 
 Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         headerPage.Go to index page and change testproject
+...             AND         testlink.Create New Test Plan ${TestPlanManagementName}
+...             AND         headerPage.Go to index page and change testproject
+...             AND         testlink.Create Build with name ${buildName}
+...             AND         headerPage.Go to index page and change testproject
 ...             AND         testlink.Create test suite ${testSuiteName} in test project ${newTestProjectName}
 ...             AND         testlink.Check New Test Suite
 ...             AND         testlink.Create test case ${testCaseName} in ${testSuiteName}
-...             AND         testlink.Go to index page
+...             AND         headerPage.Go to index page
 
-Test Teardown  Run keywords     testlink.Delete New Test Suite
-...             AND             testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
-...             AND             testlink.Check that test has been deleted
-...             AND              Close browser
+
+
+Test Teardown  Run keywords     testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
+...             AND             Close browser
+
 
 *** Variables ***
 
-${newTestProjectName}       NewProject
-${newTestProjectPrefix}     np
-${testSuiteName}            suiteTest
-${testDescription}          testDescription
-${testCaseName}             testCaseName
-${testCaseNameNew}          testCaseNameNew
+${newTestProjectName}               NewProject
+${newTestProjectPrefix}             np
+${TestPlanManagementName}           NewTestPlanManagement
+${TestPlanManagementDescription}    This is New Descritoin, baby
+${buildName}                        NewBuild
+${Description}                      Another Description, baby
+${testSuiteName}                    suiteTest
+${testDescription}                  testDescription
+${testCaseName}                     testCaseName
+${testCaseNameNew}                  testCaseNameNew
 
 *** Test Cases ***
 
@@ -32,5 +41,8 @@ Create Test Case
 
     desktopPage.Go to Test Specification (mainframe)
     testlink.Create New Sibling ${testCaseNameNew}
-    testlink.Check All Actions Button
+    testlink.Check All Actions Buttons For Test Case
+    testlink.Show Execution History
+
+
 

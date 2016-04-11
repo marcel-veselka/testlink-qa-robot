@@ -875,7 +875,7 @@ Create New Sibling ${testCaseNameNew}
     testSpecificationPage.Create New Sibling ${testCaseNameNew}
     testSpecificationPage.Check New Sibling Was Created
 
-Check All Actions Button
+Check All Actions Buttons For Test Case
     [Tags]  tp90
     testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
     #testSpecificationPage.Click On Export Test Case
@@ -886,6 +886,30 @@ Check All Actions Button
     close window
     Select Window  TestLink 1.9.14 (Padawan)
     testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Click On Create New Version
+    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Click On Deactivate This Version
+    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Click On Activate This Version
+    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Click On Add To Test Plans
+
+Show Execution History
+    [Tags]  90
+    headerPage.Go to index page
+    desktopPage.Go to Execute Tests
+    desktopPage.Check Execute Tests
+    testSpecificationPage.Expand tree
+    testSpecificationPage.Select test case ${testCaseNameNew} node
+    executeTestsPage.Execute Test Case
+    headerPage.Go to index page
+    desktopPage.Go to Test Specification (mainframe)
+    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Click On Execution History
+    select window  TestLink
+    wait until page contains  Test Case np-2 : testCaseNameNew
+    close window
+    Select Window  TestLink 1.9.14 (Padawan)
 
 
 
