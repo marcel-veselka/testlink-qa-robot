@@ -871,7 +871,7 @@ Check All Actions Buttons For Test Case
     #testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
     testSpecificationPage.Click On Print View Test Case
     Select Window  Print Test Case: testCaseNameNew
-    wait until page contains  Test Case np-2: testCaseNameNew
+    wait until page contains  Test Case npnp-2: testCaseNameNew
     close window
     Select Window  TestLink 1.9.14 (Padawan)
     testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
@@ -896,11 +896,12 @@ Show Execution History
     testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
     testSpecificationPage.Click On Execution History
     select window  TestLink
-    wait until page contains  Test Case np-2 : testCaseNameNew
+    wait until page contains  Test Case npnp-2 : testCaseNameNew
     close window
     Select Window  TestLink 1.9.14 (Padawan)
 
 Add Test Case To the Test Plan
+    [Tags]  56
     headerPage.Go to index page
     desktopPage.Go to Test Specification (mainframe)
     testSpecificationPage.Select test case ${testCaseNameNew} node and click action button

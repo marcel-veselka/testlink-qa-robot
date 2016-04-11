@@ -23,8 +23,9 @@ ${testSuiteCopy}            copyFile
 ${testDescriptionCopy}      copyDescrition
 ${newTestProjectName}       NewNamedProject
 ${newTestProjectPrefix}     nnp
-${testCaseName}             testCaseName
-${testCaseNameNew}          testCaseNameNew
+${testCaseNameNew}
+${testCaseName}
+
 
 *** Keywords ***
 I am here
@@ -649,8 +650,8 @@ Click On Add To Test Plans
     unselect frame
     select frame  mainframe
     select frame  workframe
-    wait until page contains element  xpath=//table[tbody[tr/td[contains(text(),"NewTestPlanManagement")]]]
-    page should contain element  xpath=//table[tbody[tr/td[contains(text(),"NewTestPlanManagement")]]]
+    wait until page contains element  xpath=//table[tbody[tr/td[contains(text(),"${TestPlanManagementName}")]]]
+    page should contain element  xpath=//table[tbody[tr/td[contains(text(),"${TestPlanManagementName}")]]]
     unselect frame
 
 Click On Execution History
