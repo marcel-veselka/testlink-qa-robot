@@ -788,7 +788,7 @@ Fill informations test case and create
     testSpecificationPage.Check create test case open
     testSpecificationPage.Fill in Summary test case
     testSpecificationPage.Fill in Preconditions test case
-    testSpecificationPage.Fill name for tc: TestCase1 and submit
+    testSpecificationPage.Fill name for tc: ${testSuiteName} and submit
 
 Create Step in test case: ${testCaseName}
     [Tags]  tp86
@@ -817,18 +817,10 @@ Create test case ${testCaseName} in ${testSuiteName}
     testSpecificationPage.Click Actions button
     testSpecificationPage.Click new test case
     testSpecificationPage.Fill name for tc: ${testCaseName} and submit
-
-
-New Test Case ${testCaseName} with steps in ${testSuiteName}
-    testlink.Go to index page
-    desktopPage.Go to Test Specification (mainframe)
-    testSpecificationPage.I am here
-    testSpecificationPage.Select test suite ${testSuiteName} node
-    testlink.Start Creating Test Case
-    testlink.Fill informations test case and create
     testlink.Create Step in test case: ${testCaseName}
     testSpecificationPage.Add Step after created first step
     testSpecificationPage.Click on save & exit
+
 
 Delete New Test Suite
     [Tags]  tp80

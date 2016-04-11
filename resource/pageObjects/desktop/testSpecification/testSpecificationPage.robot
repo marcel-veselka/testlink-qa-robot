@@ -405,6 +405,7 @@ Fill name for tc: ${testCaseName} and submit
     wait until page contains element  testcase_name
     wait until page contains element  do_create_button
     input text  testcase_name  ${testCaseName}
+
     click element  do_create_button
     unselect frame
 
@@ -438,7 +439,7 @@ Create Step
     select frame  workframe
     wait until page contains  Step number:
     unselect frame
-
+#sdfdf
 
 Add Step after created first step
 
@@ -546,7 +547,7 @@ Check create test case open
     unselect frame
 
 Select test case ${testCaseName} node
-    Expand tree
+    testSpecificationPage.Expand tree
     select frame  mainframe
     select frame  treeframe
     wait until page contains element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName}")]/div/a
@@ -657,4 +658,17 @@ Click On Execution History
     select frame  workframe
     wait until page contains element  xpath=//div/div/span/input[@type="button"]
     click element  xpath=//div/div/span/input[@type="button"]
+    unselect frame
+
+Edit Test Case
+    select frame  name=mainframe
+    select frame  name=workframe
+    click button  edit_tc
+    unselect frame
+    testSpecificationPage.Fill in title test case name ${testCaseNameEdit}
+    testSpecificationPage.Fill in Summary test case
+    testSpecificationPage.Fill in Preconditions test case
+    select frame  name=mainframe
+    select frame  name=workframe
+    click button  do_update
     unselect frame

@@ -7,26 +7,28 @@ Resource       ../../../../../resource/testlink.robot
 
 Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         headerPage.Go to index page and change testproject
-...             AND         testlink.Create test suite ${testSuiteName} in test project ${newTestProjectName}
+...             AND         testlink.Create Test Suite
 ...             AND         testlink.Check New Test Suite
 ...             AND         testlink.Create test case ${testCaseName} in ${testSuiteName}
-...             AND         testlink.Go to index page
 
-#Test Teardown  Run keywords     testlink.Delete New Test Suite
-#...             AND             testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
-#...             AND             testlink.Check that test has been deleted
-#...             AND              Close browser
+Test Teardown  Run keywords         testlink.Go to index page
+...             AND                 testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
+...             AND                 testlink.Check that test has been deleted
+...             AND                 Close browser
 
 *** Variables ***
 
-${newTestProjectName}       NewProject
-${newTestProjectPrefix}     np
-${testSuiteName}            suiteTest
-${testDescription}          testDescription
-${testCaseName}             testCaseName
+${newTestProjectName}  NewNamedProjectRen
+${newTestProjectPrefix}  prfRen
+${testSuiteName}    suiteRen
+${testDescription}  testDescrRen
+${testCaseName}     TCRen
+${testCaseNameNew}  TCRen
+${testCaseNameEdit}  TCRenEdit
 
 *** Test Cases ***
 
-Create Test Case
+Edit test case
+    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Edit Test Case
 
-    desktopPage.Go to Test Specification (mainframe)
