@@ -24,8 +24,8 @@ Test Teardown  Run keywords     testlink.Delete test project  ${newTestProjectNa
 
 *** Variables ***
 
-${newTestProjectName}               NewProject
-${newTestProjectPrefix}             np
+${newTestProjectName}               NewProjectNewProject
+${newTestProjectPrefix}             npnp
 ${TestPlanManagementName}           NewTestPlanManagement
 ${TestPlanManagementDescription}    This is New Descritoin, baby
 ${buildName}                        NewBuild

@@ -14,8 +14,8 @@ Test Teardown  Run keywords     testlink.Delete Requirement Specification
 
 ${dokumentID}   newdokumentid
 ${title}        newtitle
-${newTestProjectName}  NewNamedProject
-${newTestProjectPrefix}  nnp
+${newTestProjectName}  NewNamedProject1
+${newTestProjectPrefix}  nnp1
 
 
 

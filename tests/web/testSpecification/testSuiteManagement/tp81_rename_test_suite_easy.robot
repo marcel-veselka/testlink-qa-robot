@@ -16,8 +16,8 @@ Test Teardown  Run keywords     testlink.Delete Another New Test Suite
 
 *** Variables ***
 
-${newTestProjectName}  NewNamedProject
-${newTestProjectPrefix}  nnp
+${newTestProjectName}  NewNamedProjectOO
+${newTestProjectPrefix}  nnpo
 ${testSuiteName}    suiteTest
 ${testDescription}  testDescription
 

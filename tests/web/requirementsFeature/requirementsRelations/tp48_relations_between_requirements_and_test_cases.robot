@@ -16,8 +16,8 @@ ${dokumentID}   newdokumentid
 ${title}        newtitle
 ${dokumentID1}   newdokumentid1
 ${title1}        newtitle1
-${newTestProjectName}  NewNamedProject
-${newTestProjectPrefix}  nnp
+${newTestProjectName}  NewNamedProjectSasha
+${newTestProjectPrefix}  nnps
 
 
 

@@ -25,8 +25,8 @@ Test Teardown  Run keywords  testlink.Delete Test Plan Management  ${TestPlanMan
 ${BuildName}  BuildName
 ${Description}  Description
 ${TestPlanManagementName}  TestplanNumberOne
-${newTestProjectName}  testProjectName
-${newTestProjectPrefix}  128
+${newTestProjectName}  testProjectNameWW
+${newTestProjectPrefix}  12899
 ${TestPlanManagementDescription}  DescriptionDescription
 
 *** Test Cases ***

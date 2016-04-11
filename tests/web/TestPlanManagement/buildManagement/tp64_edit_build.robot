@@ -20,8 +20,8 @@ ${NewBuildName}  NewBuildName
 ${BuildName}  BuildName
 ${Description}  Description
 ${TestPlanManagementName}  TestplanNumberOne
-${newTestProjectName}  testProjectName
-${newTestProjectPrefix}  128
+${newTestProjectName}  testProjectNameEE
+${newTestProjectPrefix}  12888
 ${TestPlanManagementDescription}  DescriptionDescription
 
 *** Test Cases ***
