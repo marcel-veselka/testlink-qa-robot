@@ -71,6 +71,7 @@ Delete Test Suite
     unselect frame
     select frame  mainframe
     select frame  treeframe
+    wait until page contains  ${title}
     wait until page contains element  xpath=//a[span[contains(text(),"${title} (")]]
     click element  xpath=//a[span[contains(text(),"${title} (")]]
     unselect frame
