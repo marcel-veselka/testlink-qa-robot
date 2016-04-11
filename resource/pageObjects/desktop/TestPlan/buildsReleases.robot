@@ -82,8 +82,6 @@ Add Release Date
     select frame  name=mainframe
     wait until page contains element  name=release_date
     click element  xpath=//img[@title="Show Calender"]
-    #//tr[th//text()[contains(.,'Release date')]]/td[input[@title="Show Calender"]]
-    #//*[@id="create_build"]/table/tbody/tr[5]/td/img[1]
     wait until page contains  Today
     click button  Today
     unselect frame

@@ -327,6 +327,12 @@ Delete Another New Test Suite
     wait until page contains  The Test Suite was successfully deleted
     unselect frame
 
+
+
+Drag and drop test suite
+    select frame  name=treeframe
+    drag and drop
+
 Click Test Case Button
 
     select frame  mainframe
