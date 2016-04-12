@@ -29,8 +29,8 @@ ${testCaseName}
 
 *** Keywords ***
 I am here
-    select frame  name=mainframe
-    select frame  name=treeframe
+    select frame  mainframe
+    select frame  treeframe
     wait until page contains element  xpath=//h1[text()="Navigator - Test Specification"]
     wait until page contains element  xpath=//span[contains(text(),"Settings")]
     wait until page contains element  xpath=//span[contains(text(),"Filters")]
@@ -329,8 +329,6 @@ Delete Another New Test Suite
     wait until page contains  The Test Suite was successfully deleted
     unselect frame
 
-
-
 Drag and drop test suite
     select frame  name=treeframe
     drag and drop
@@ -440,10 +438,8 @@ Create Step
     select frame  workframe
     wait until page contains  Step number:
     unselect frame
-#sdfdf
 
 Add Step after created first step
-
     select frame  mainframe
     select frame  workframe
     wait until page contains  Step actions
@@ -472,7 +468,6 @@ Add Step after created first step
     unselect frame
 
 Click on save & exit
-
     select frame  mainframe
     select frame  workframe
     wait until page contains element  do_update_step_and_exit
@@ -581,6 +576,7 @@ Check New Sibling Was Created
 
 
 Select test case ${testCaseNameNew} node and click action button
+
     testSpecificationPage.Select test case ${testCaseNameNew} node
     testSpecificationPage.Click Actions button
 
@@ -672,4 +668,39 @@ Edit Test Case
     select frame  name=mainframe
     select frame  name=workframe
     click button  do_update
+    unselect frame
+
+Delete Test Case ${NameTestCase}
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  name=delete_tc
+    click element  name=delete_tc
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  name=do_delete
+    wait until page contains element  xpath=//div/p[contains(text(),"Really delete Test Case?")]
+    page should contain element  xpath=//div/p[contains(text(),"Really delete Test Case?")]
+    click button  name=do_delete
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains  was successfully deleted
+    unselect frame
+
+Delete Test Step
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  xpath=//*[@id="step_row_1"]/td[5]/img
+    click element  xpath=//*[@id="step_row_1"]/td[5]/img
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains  Yes
+    click button  Yes
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
+    wait until page contains element  xpath=//*[@id="step_row_2"]
+    page should not contain element  xpath=//*[@id="step_row_1"]
     unselect frame

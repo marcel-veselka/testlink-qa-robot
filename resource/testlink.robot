@@ -771,6 +771,7 @@ Controll Warning Message And Create Test Suite
 
 Create Test Suite
     [Tags]  tp86
+    headerPage.Go to index page and change testproject
     desktopPage.Go to Test Specification (mainframe)
     testSpecificationPage.Create Test Suite Button
     testSpecificationPage.Fill In The Fields
@@ -793,7 +794,6 @@ Fill informations test case and create
 
 Create Step in test case: ${testCaseName}
     [Tags]  tp86
-
     headerPage.Go to index page
     headerPage.Go to Test Specification (titlebar)
     testSpecificationPage.I am here
@@ -887,12 +887,6 @@ Check All Actions Buttons For Test Case
 Show Execution History
     [Tags]  90
     headerPage.Go to index page
-    desktopPage.Go to Execute Tests
-    desktopPage.Check Execute Tests
-    testSpecificationPage.Expand tree
-    testSpecificationPage.Select test case ${testCaseNameNew} node
-    executeTestsPage.Execute Test Case
-    headerPage.Go to index page
     desktopPage.Go to Test Specification (mainframe)
     testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
     testSpecificationPage.Click On Execution History
@@ -901,6 +895,14 @@ Show Execution History
     close window
     Select Window  TestLink 1.9.14 (Padawan)
 
+Execute Test
+    headerPage.Go to index page
+    desktopPage.Go to Execute Tests
+    desktopPage.Check Execute Tests
+    testSpecificationPage.Expand tree
+    testSpecificationPage.Select test case ${testCaseNameNew} node
+    executeTestsPage.Execute Test Case
+
 Add Test Case To the Test Plan
     [Tags]  56
     headerPage.Go to index page
@@ -908,6 +910,13 @@ Add Test Case To the Test Plan
     testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
     testSpecificationPage.Click On Add To Test Plans
 
+Order By Test Case, Name, Build In Test Plan Management
+    [Tags]  56
+    headerPage.Go to index page
+    desktopPage.Go to Test Plan Management
+    testPlanManagement_detail.Order By Name
+    testPlanManagement_detail.Order By Test Case
+    testPlanManagement_detail.Order By Test Build
 
 Create Platform ${PlatformName}
     select frame  name=titlebar
@@ -959,3 +968,48 @@ Assign TC ${testCaseName} from platform ${PlatformName} to users ${Username}
     #assignTestCaseExecution.Select User ${Username}
 
 
+Make all Test Plan Active/Inactive
+    [Tags]  56
+    testPlanManagement_detail.Check Test Plan Is Active
+    testPlanManagement_detail.Click On Bulb Icon
+    testPlanManagement_detail.Check Test Plan Is Active
+
+Edit And Check Test Plan
+    [Tags]  56
+    testPlanManagement_detail.Edit Test Plan
+    testPlanManagement_detail.Check Updated Test Plan
+
+Keywords
+    [Tags]  89
+    headerPage.Go to index page
+    desktopPage.Go to Keyword Management
+    assignKeywords.Create Keyword
+    assignKeywords.Check Keyword Was Created
+    assignKeywords.Click Assign Keyword to Test Case
+    testSpecificationPage.Select test case ${testCaseName} node
+    assignKeywords.Assign Keywords
+
+Execute Test Suite
+    headerPage.Go to index page
+    desktopPage.Go to Test Specification (mainframe)
+    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Click On Add To Test Plans
+    testSpecificationPage.Select test case ${testCaseName1} node and click action button
+    testSpecificationPage.Click On Add To Test Plans
+    testSpecificationPage.Select test case ${testCaseName} node and click action button
+    testSpecificationPage.Click On Add To Test Plans
+
+Check this testcase structure after movement
+    testSpecificationPage.Expand tree
+    select frame  mainframe
+    select frame  treeframe
+    wait until page contains  suite1
+    wait until page contains  suite2
+    wait until page contains  suite3
+    wait until page contains  tc1
+    wait until page contains  tc2
+    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite1")]
+    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite2")]
+    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite2")]/ul/li[contains(.,"tc1")]
+    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite2")]/ul/li[contains(.,"tc2")]
+    unselect frame
