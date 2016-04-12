@@ -907,4 +907,21 @@ Add Test Case To the Test Plan
     testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
     testSpecificationPage.Click On Add To Test Plans
 
+Order By Test Case, Name, Build In Test Plan Management
+    [Tags]  56
+    headerPage.Go to index page
+    desktopPage.Go to Test Plan Management
+    testPlanManagement_detail.Order By Name
+    testPlanManagement_detail.Order By Test Case
+    testPlanManagement_detail.Order By Test Build
 
+Make all Test Plan Active/Inactive
+    [Tags]  56
+    testPlanManagement_detail.Check Test Plan Is Active
+    testPlanManagement_detail.Click On Bulb Icon
+    testPlanManagement_detail.Check Test Plan Is Active
+
+Edit And Check Test Plan
+    [Tags]  56
+    testPlanManagement_detail.Edit Test Plan
+    testPlanManagement_detail.Check Updated Test Plan

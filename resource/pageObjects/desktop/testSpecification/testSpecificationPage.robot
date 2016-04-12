@@ -29,8 +29,8 @@ ${testCaseName}
 
 *** Keywords ***
 I am here
-    select frame  name=mainframe
-    select frame  name=treeframe
+    select frame  mainframe
+    select frame  treeframe
     wait until page contains element  xpath=//h1[text()="Navigator - Test Specification"]
     wait until page contains element  xpath=//span[contains(text(),"Settings")]
     wait until page contains element  xpath=//span[contains(text(),"Filters")]
