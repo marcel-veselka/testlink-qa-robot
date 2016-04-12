@@ -18,21 +18,15 @@ ${BROWSER}      ff
 
 
 *** Keywords ***
-
-
-Check Platform Management
-    select frame  name=mainframe
-    wait until page contains  Platform Management
-    wait until page contains element  create_platform
+Assign TC to platform ${PlatformName}
+    select frame  mainframe
+    select frame  workframe
+    click element  xpath=//tr[td//text()[contains(.,'${PlatformName}')]]/td[input[@type="checkbox"]]/input   /
+    click button  doAddRemove
     unselect frame
 
-
-Check Platform Management Without Platforms
-    select frame  name=mainframe
-    wait until page contains  Platform Management
-    wait until page contains element  create_platform
-    page should not contain element  xpath=/html/body/div/table
+Show Test Cases
+    select frame  mainframe
+    select frame  treeframe
+    click button  show_whole_test_spec
     unselect frame
-
-Create Platform
-    # v testlinku

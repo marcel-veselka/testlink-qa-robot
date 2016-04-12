@@ -18,21 +18,17 @@ ${BROWSER}      ff
 
 
 *** Keywords ***
-
-
-Check Platform Management
-    select frame  name=mainframe
-    wait until page contains  Platform Management
-    wait until page contains element  create_platform
+Select platform ${PlatformName}
+    select frame  mainframe
+    select frame  treeframe
+    click element  xpath=//*[@id="settings"]/table/tbody/tr[2]/td[2]/div
+    click element  xpath=//*[@id="settings"]/table/tbody/tr[2]/td[2]/select/option[.='${PlatformName}']
     unselect frame
 
-
-Check Platform Management Without Platforms
-    select frame  name=mainframe
-    wait until page contains  Platform Management
-    wait until page contains element  create_platform
-    page should not contain element  xpath=/html/body/div/table
+Select User ${Username}
+    select frame  mainframe
+    select frame  workframe
+    click element  xpath//*[@id="tester_for_tcid_12218_18_chosen"]/ul/li/input
+    click element  xpath=//*[@id="tester_for_tcid_12218_18"]/option[.='${Username}']
+    click button  doActionButton
     unselect frame
-
-Create Platform
-    # v testlinku

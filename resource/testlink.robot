@@ -33,7 +33,8 @@ Resource  ../resource/pageObjects/desktop/TestPlan/buildsReleases.robot
 Resource  ../resource/pageObjects/desktop/testExecution/executeTestsPage.robot
 Resource  ../resource/pageObjects/desktop/testExecution/reportsAndMetricsPage.robot
 Resource  ../resource/pageObjects/desktop/events/eventsPage.robot
-
+Resource  ../resource/pageObjects/desktop/testPlanContents/addRemoveTestCases.robot
+Resource  ../resource/pageObjects/desktop/testPlanContents/assignTestCaseExecution.robot
 
 *** Variables ***
 
@@ -906,5 +907,55 @@ Add Test Case To the Test Plan
     desktopPage.Go to Test Specification (mainframe)
     testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
     testSpecificationPage.Click On Add To Test Plans
+
+
+Create Platform ${PlatformName}
+    select frame  name=titlebar
+    click element  xpath=//img[@title="logo"]
+    unselect frame
+    select frame  name=mainframe
+    wait until page contains  Platform Management
+    click link  Platform Management
+    unselect frame
+    select frame  name=mainframe
+    click button  create_platform
+    unselect frame
+    select frame  name=mainframe
+    input text  name    ${PlatformName}
+    click button  submitButton
+    unselect frame
+    select frame  name=mainframe
+    wait until page contains  ${PlatformName}
+    unselect frame
+
+
+Add Platform to Test Plan
+    select frame  name=titlebar
+    click element  xpath=//img[@title="logo"]
+    unselect frame
+    select frame  name=mainframe
+    click link  Add / Remove Platforms
+    unselect frame
+    select frame  name=mainframe
+    click element  xpath=//tr/td[2]/img[1]
+    click button  doAssignPlatforms
+    unselect frame
+
+
+Add TC ${testCaseName} to a platform ${PlatformName}
+    headerPage.go to index page
+    desktopPage.Go to Add/Remove Test Cases
+    desktopPage.Check Add/Remove Test Cases
+    addRemoveTestCases.Show Test Cases
+    addRemoveTestCases.Assign TC to platform ${PlatformName}
+
+
+Assign TC ${testCaseName} from platform ${PlatformName} to users ${Username}
+    headerPage.go to index page
+    desktopPage.Go to Assign Test Case Execution
+    desktopPage.Check Assign Test Case Execution
+    #assignTestCaseExecution.Select platform ${PlatformName}
+    #testSpecificationPage.Select test case ${testCaseName} node
+    #assignTestCaseExecution.Select User ${Username}
 
 
