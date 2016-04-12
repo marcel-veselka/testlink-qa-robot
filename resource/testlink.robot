@@ -1013,3 +1013,4 @@ Check this testcase structure after movement
     wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite2")]/ul/li[contains(.,"tc1")]
     wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite2")]/ul/li[contains(.,"tc2")]
     unselect frame
+    #sdf
