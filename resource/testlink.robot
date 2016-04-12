@@ -788,7 +788,7 @@ Fill informations test case and create
     testSpecificationPage.Check create test case open
     testSpecificationPage.Fill in Summary test case
     testSpecificationPage.Fill in Preconditions test case
-    testSpecificationPage.Fill name for tc: ${testSuiteName} and submit
+    testSpecificationPage.Fill name for tc: ${testCaseName} and submit
 
 Create Step in test case: ${testCaseName}
     [Tags]  tp86
