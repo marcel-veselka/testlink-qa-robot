@@ -793,7 +793,6 @@ Fill informations test case and create
 
 Create Step in test case: ${testCaseName}
     [Tags]  tp86
-
     headerPage.Go to index page
     headerPage.Go to Test Specification (titlebar)
     testSpecificationPage.I am here
@@ -939,3 +938,27 @@ Keywords
     testSpecificationPage.Select test case ${testCaseName} node
     assignKeywords.Assign Keywords
 
+Execute Test Suite
+    headerPage.Go to index page
+    desktopPage.Go to Test Specification (mainframe)
+    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Click On Add To Test Plans
+    testSpecificationPage.Select test case ${testCaseName1} node and click action button
+    testSpecificationPage.Click On Add To Test Plans
+    testSpecificationPage.Select test case ${testCaseName} node and click action button
+    testSpecificationPage.Click On Add To Test Plans
+
+Check this testcase structure after movement
+    testSpecificationPage.Expand tree
+    select frame  mainframe
+    select frame  treeframe
+    wait until page contains  suite1
+    wait until page contains  suite2
+    wait until page contains  suite3
+    wait until page contains  tc1
+    wait until page contains  tc2
+    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite1")]
+    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite2")]
+    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite2")]/ul/li[contains(.,"tc1")]
+    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite2")]/ul/li[contains(.,"tc2")]
+    unselect frame

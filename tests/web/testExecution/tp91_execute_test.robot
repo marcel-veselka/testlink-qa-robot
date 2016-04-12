@@ -3,7 +3,7 @@
 Documentation  A test suite with a single test for creating a new Custom Field. This test has
 ...            a workflow that is created using keywords from the resource file.
 
-Resource       ../../../../../resource/testlink.robot
+Resource       ../../../resource/testlink.robot
 
 Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         headerPage.Go to index page and change testproject
@@ -14,10 +14,9 @@ Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         testlink.Create test case ${testCaseNameNew} in ${testSuiteName}
 ...             AND         testlink.Create test case ${testCaseName} in ${testSuiteName}
 ...             AND         testlink.Create test case ${testCaseName1} in ${testSuiteName}
-...             AND         testlink.Add Test Case To the Test Plan
-...             AND         testlink.Execute Test
-...             AND         testlink.Keywords
-...             AND         testlink.go to index page
+
+
+
 
 Test Teardown  Run keywords         testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 ...             AND                 testlink.Check that test has been deleted
@@ -25,28 +24,21 @@ Test Teardown  Run keywords         testlink.Delete test project  ${newTestProje
 
 *** Variables ***
 
-${newTestProjectName}               SasaProject
-${newTestProjectPrefix}             SasaPrefix
-${testSuiteName}                    suiteSasa
+${newTestProjectName}               ProjectSasa
+${newTestProjectPrefix}             PrefixSasa
+${testSuiteName}                    SasaSuite
 ${testDescription}                  Descriptiondescription
-${testCaseNameNew}                  testCaseSasa
-${testCaseName1}                    testCaseSasa1
-${testCaseName}                     testCaseSasa2
-${TestPlanManagementName}           NewPlanSasa
+${testCaseNameNew}                  SasaTestCase
+${testCaseName1}                    SasaTestCase1
+${testCaseName}                     SasaTestCase2
+${TestPlanManagementName}           SasaPlan
 ${TestPlanManagementDescription}    NewDescriptionSasa
-${buildName}                        buildNameSasa
+${buildName}                        SasaBuildName
 ${Description}                      Descriptione
-${KeywordName}                      key
+
 
 
 *** Test Cases ***
 
-Delete test case
-    desktopPage.Go to Test Specification (mainframe)
-    testSpecificationPage.Select test case ${testCaseName} node and click action button
-    testSpecificationPage.Delete Test Case ${testCaseName}
-    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
-    testSpecificationPage.Delete Test Case ${testCaseNameNew}
-    testSpecificationPage.Select test case ${testCaseName1} node
-    testSpecificationPage.Delete Test Step
-
+Execute Test
+    testlink.Execute Test Suite
