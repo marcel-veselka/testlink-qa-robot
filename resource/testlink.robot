@@ -770,6 +770,7 @@ Controll Warning Message And Create Test Suite
 
 Create Test Suite
     [Tags]  tp86
+    headerPage.Go to index page and change testproject
     desktopPage.Go to Test Specification (mainframe)
     testSpecificationPage.Create Test Suite Button
     testSpecificationPage.Fill In The Fields
@@ -886,12 +887,6 @@ Check All Actions Buttons For Test Case
 Show Execution History
     [Tags]  90
     headerPage.Go to index page
-    desktopPage.Go to Execute Tests
-    desktopPage.Check Execute Tests
-    testSpecificationPage.Expand tree
-    testSpecificationPage.Select test case ${testCaseNameNew} node
-    executeTestsPage.Execute Test Case
-    headerPage.Go to index page
     desktopPage.Go to Test Specification (mainframe)
     testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
     testSpecificationPage.Click On Execution History
@@ -899,6 +894,14 @@ Show Execution History
     wait until page contains  Test Case npnp-2 : testCaseNameNew
     close window
     Select Window  TestLink 1.9.14 (Padawan)
+
+Execute Test
+    headerPage.Go to index page
+    desktopPage.Go to Execute Tests
+    desktopPage.Check Execute Tests
+    testSpecificationPage.Expand tree
+    testSpecificationPage.Select test case ${testCaseNameNew} node
+    executeTestsPage.Execute Test Case
 
 Add Test Case To the Test Plan
     [Tags]  56
@@ -925,3 +928,14 @@ Edit And Check Test Plan
     [Tags]  56
     testPlanManagement_detail.Edit Test Plan
     testPlanManagement_detail.Check Updated Test Plan
+
+Keywords
+    [Tags]  89
+    headerPage.Go to index page
+    desktopPage.Go to Keyword Management
+    assignKeywords.Create Keyword
+    assignKeywords.Check Keyword Was Created
+    assignKeywords.Click Assign Keyword to Test Case
+    testSpecificationPage.Select test case ${testCaseName} node
+    assignKeywords.Assign Keywords
+

@@ -42,7 +42,7 @@ Execute Test Case
     select from list by value  xpath=//div/form/div/table/tbody/tr/td/div/select  p
     input text  execution_duration  1010
     click element  xpath=//div/form/div/table/tbody/tr/td/div/input[@type="submit"]
-    wait until page contains element  xpath=//div/form/div/div[contains(text(),"Build")][contains(text(),"NewBuild")]
-    page should contain element  xpath=//div/form/div/div[contains(text(),"Build")][contains(text(),"NewBuild")]
+    wait until page contains element  xpath=//div/form/div/div[contains(text(),"Build")][contains(text(),"${buildName}")]
+    page should contain element  xpath=//div/form/div/div[contains(text(),"Build")][contains(text(),"${buildName}")]
     unselect frame
 
