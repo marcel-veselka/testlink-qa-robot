@@ -17,8 +17,6 @@ ${ERROR URL}                http://${SERVER}/login.php
 ${BROWSER}                  ff
 ${testSuiteName}            suiteTest
 
-Změna variables - označujte variables tak abychom poznali o jaký TC se jedná
-
 
 *** Keywords ***
 I am here
@@ -196,17 +194,7 @@ Create Another Test Suite For Move Or Copy
     click element  name=add_testsuite_button
     unselect frame
 
-Edit New Test Suite
-    select frame  mainframe
-    select frame  treeframe
-    wait until page contains element  name=expand_tree
-    click button  name=expand_tree
-    unselect frame
-    select frame  mainframe
-    select frame  treeframe
-    wait until page contains element  xpath=//a[span/span[contains(text(),"${testSuiteName}")]]
-    click element  xpath=//a[span/span[contains(text(),"${testSuiteName}")]]
-    unselect frame
+Edit Test Suite
     select frame  mainframe
     select frame  workframe
     wait until page contains element  xpath=//img[@title="Actions"]
@@ -219,15 +207,21 @@ Edit New Test Suite
     wait until page contains element  name=container_name
     wait until page contains element  name=update_testsuite
     wait until page contains element  cke_8
-    input text  container_name  ${testSuiteName} ${testSuiteCopy}
-    click element  cke_8
-    input text  xpath=//*[@id="cke_contents_details"]/textarea  ${testDescription} ${testDescriptionCopy}
+    input text  container_name  ${testSuiteCopy}
+    wait until page contains element  xpath=//iframe[@title="Rich text editor, details"]
+    mouse down  xpath=//iframe[@title="Rich text editor, details"]
+    mouse up  xpath=//iframe[@title="Rich text editor, details"]
+    select frame  xpath=//iframe[@title="Rich text editor, details"]
+    input text  xpath=//body  ${testDescription}
+    unselect frame
+    select frame  mainframe
+    select frame  workframe
     click element  name=update_testsuite
     unselect frame
     select frame  mainframe
     select frame  workframe
     wait until page contains  updated!
-    page should contain element  xpath=//p[contains(text(),"Test Suite suiteTest copyFile")][contains(text(),"was successfully")][contains(text(),"updated!")]
+    page should contain element  xpath=//p[contains(text(),"Test Suite ${testSuiteCopy}")][contains(text(),"was successfully")][contains(text(),"updated!")]
     unselect frame
 
 Copy Test Suite
@@ -242,28 +236,22 @@ Copy Test Suite
     select frame  workframe
     wait until page contains element  xpath=//*[@id="containerID_chosen"]
     wait until page contains element  name=do_copy
-    execute javascript  document.getElementById("containerID").style.display = "initial";
-    select from list by label  containerID  copyFile
+    wait until page contains element  xpath=//div/b
+    click element  xpath=//div/b
+    wait until page contains  ${newTestProjectName}
+    wait until page contains element  xpath=//ul[@class="chosen-results"]/li[text()="${newTestProjectName}"]
+    #execute javascript  document.getElementById("containerID").style.display = "initial";
+    #select from list by label  containerID  copyFile
     #input text  xpath=//*[@id="containerID_chosen"]/div/div/input  ${testSuiteCopy}
     #click element  xpath=//*[@id="containerID_chosen"]
     click element  name=do_copy
     unselect frame
     select frame  mainframe
     select frame  workframe
-    wait until page contains element  xpath=//p[contains(text(),"Test Suite suiteTest copyFile")][contains(text(),"has been copied inside")][contains(text(),"copyFile")]
+    wait until page contains element  xpath=//p[contains(text(),"Test Suite ${testSuiteCopy}")][contains(text(),"has been copied inside")][contains(text(),"${newTestProjectName}")]
     unselect frame
 
 Move Test Suite
-    select frame  mainframe
-    select frame  treeframe
-    wait until page contains element  name=expand_tree
-    click button  name=expand_tree
-    unselect frame
-    select frame  mainframe
-    select frame  treeframe
-    wait until page contains element  xpath=//a[span/span[contains(text(),"${testSuiteName} ${testSuiteCopy} (")]]
-    double click element  xpath=//a[span/span[contains(text(),"${testSuiteName} ${testSuiteCopy} (")]]
-    unselect frame
     select frame  mainframe
     select frame  workframe
     wait until page contains element  xpath=//img[@title="Actions"]
@@ -274,9 +262,12 @@ Move Test Suite
     select frame  mainframe
     select frame  workframe
     wait until page contains element  xpath=//*[@id="containerID_chosen"]
-    wait until page contains element  name=do_move
-    execute javascript  document.getElementById("containerID").style.display = "initial";
-    select from list by label  containerID  copyFile
+    wait until page contains element  name=do_copy
+    wait until page contains element  xpath=//div/b
+    click element  xpath=//div/b
+    wait until page contains  ${newTestProjectName}
+    wait until page contains element  xpath=//ul[@class="chosen-results"]/li[2]
+    click element  xpath=//ul[@class="chosen-results"]/li[2]
     click element  name=do_move
     unselect frame
 
@@ -285,11 +276,10 @@ Check Move And Copy Action
     select frame  treeframe
     wait until page contains element  name=expand_tree
     click button  name=expand_tree
-    unselect frame
-    select frame  mainframe
-    select frame  treeframe
-    sleep  2
-    xpath should match x times  //a[span/span[contains(text(),"${testSuiteName} ${testSuiteCopy} (")]]  2
+    wait until element contains  tree_div  ${testSuiteCopy}
+    wait until element contains  tree_div  20  #20160414:14:20:55 prefix
+    xpath should match x times  //div/ul/li/ul/li/div/a/span[contains(.,"${testSuiteCopy}")]  1
+    xpath should match x times  //div/ul/li/ul/li/ul/li/div/a/span[contains(.,"${testSuiteCopy}")]  1
     unselect frame
 
 Delete Another New Test Suite
@@ -379,7 +369,7 @@ Select test suite ${testSuiteName} node
     testSpecificationPage.Expand tree
     select frame  mainframe
     select frame  treeframe
-    wait until page contains  ${testSuiteName}
+    wait until element contains  tree_div  ${testSuiteName}
     click element  xpath=//ul/li/ul/li[contains(.,"${testSuiteName}")]/div/a
     unselect frame
 
@@ -475,8 +465,8 @@ Move suite ${from} to suite ${target}
     wait until page contains  ${newTestProjectName}
     wait until page contains  ${from}
     wait until page contains  ${target}
-    wait until page contains  super-1:tc1
-    wait until page contains  super-2:tc2
+    wait until page contains  ${newTestProjectPrefix}-1:${tc1}
+    wait until page contains  ${newTestProjectPrefix}-2:${tc2}
     #mouse down  xpath=//ul/li/ul/li[contains(.,"${from}")]/div/img[2]
     #mouse over  xpath=//ul/li/ul/li[contains(.,"${target}")]/div/img[2]
     #mouse up  xpath=//ul/li/ul/li[contains(.,"${target}")]/div/img[2]
@@ -539,8 +529,8 @@ Select test case ${testCaseName} node
     testSpecificationPage.Expand tree
     select frame  mainframe
     select frame  treeframe
+    wait until page contains  ${testCaseName}
     wait until page contains element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName}")]/div/a
-    page should contain element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName}")]/div/a
     double click element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName}")]/div/a
     unselect frame
 
@@ -568,9 +558,9 @@ Check New Sibling Was Created
     unselect frame
 
 
-Select test case ${testCaseNameNew} node and click action button
+Select test case ${testCaseName} node and click action button
 
-    testSpecificationPage.Select test case ${testCaseNameNew} node
+    testSpecificationPage.Select test case ${testCaseName} node
     testSpecificationPage.Click Actions button
 
 
@@ -639,8 +629,8 @@ Click On Add To Test Plans
     unselect frame
     select frame  mainframe
     select frame  workframe
-    wait until page contains element  xpath=//table[tbody[tr/td[contains(text(),"${TestPlanManagementName}")]]]
-    page should contain element  xpath=//table[tbody[tr/td[contains(text(),"${TestPlanManagementName}")]]]
+    wait until page contains element  xpath=//table[tbody[tr/td[contains(text(),"${TestPlanName}")]]]
+    page should contain element  xpath=//table[tbody[tr/td[contains(text(),"${TestPlanName}")]]]
     unselect frame
 
 Click On Execution History

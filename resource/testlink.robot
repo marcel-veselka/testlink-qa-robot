@@ -185,7 +185,7 @@ Start creating new test project (enchanced features)
 
 
 Fill information to create test (enchanced feautures)
-    createTestProjectPage.Wait until page contains all elements
+    createTestProjectPage.I am here
     select frame  mainframe
     createTestProjectPage.Fill Test Project Name  ${newTestProjectName}
     createTestProjectPage.Fill Test Project Prefix  ${newTestProjectPrefix}
@@ -210,7 +210,7 @@ No warning about existing projects
     createTestProjectPage.Warning message is not here
 
 Fill information to create test with template OFF
-    createTestProjectPage.Wait until page contains all elements
+    createTestProjectPage.I am here
     select frame  mainframe
     createTestProjectPage.Choose no template
     createTestProjectPage.Fill Test Project Name  ${newTestProjectName}
@@ -219,7 +219,7 @@ Fill information to create test with template OFF
 
 
 Fill information to create test with template ON
-    createTestProjectPage.Wait until page contains all elements
+    createTestProjectPage.I am here
     select frame  mainframe
     createTestProjectPage.Choose template from created project
     createTestProjectPage.Fill Test Project Name  ${newTestProjectName2}
@@ -492,13 +492,13 @@ Create Test Plan Management AS COPY Unselect all checkboxes
 
 
 Delete Test Plan Management
-     [Arguments]  ${TestPlanManagementNameToDelete}
+     [Arguments]  ${TestPlanNameToDelete}
      headerPage.Go to index page
      desktopPage.Go to Test Plan Management
      desktopPage.Check Test Plan Management
-     testPlanManagement_detail.Click Button Delete Test Plan Management  ${TestPlanManagementNameToDelete}
+     testPlanManagement_detail.Click Button Delete Test Plan Management  ${TestPlanNameToDelete}
      testPlanManagement_detail.Confirm Delete Test Plan Management
-     testPlanManagement_detail.Check Test Plan Management Deleted  ${TestPlanManagementNameToDelete}
+     testPlanManagement_detail.Check Test Plan Management Deleted  ${TestPlanNameToDelete}
 
 
 Edit Requirement Operations
@@ -841,14 +841,17 @@ Create and check role ${role} in user management
 
 Edit Test Suite Move It Copy It
     [Tags]  tp81
-    testSpecificationPage.Create Another Test Suite For Move Or Copy
-    testSpecificationPage.Edit New Test Suite
+    #testSpecificationPage.Create Another Test Suite For Move Or Copy
+    testSpecificationPage.Select test suite ${testSuiteName} node
+    testSpecificationPage.Edit Test Suite
+    testSpecificationPage.Select test suite ${testSuiteCopy} node
     testSpecificationPage.Copy Test Suite
+    testSpecificationPage.Select test suite ${testSuiteCopy} node
     testSpecificationPage.Move Test Suite
     testSpecificationPage.Check Move And Copy Action
 
 Edit Build Info and Save Changes
-    buildsReleases.Fill in the details of the Build ${NewBuildName}
+    buildsReleases.Fill in the details of the Build ${buildName2}
     buildsReleases.Add Release Date
     buildsReleases.Save Build after Editing
 
@@ -907,7 +910,7 @@ Add Test Case To the Test Plan
     [Tags]  56
     headerPage.Go to index page
     desktopPage.Go to Test Specification (mainframe)
-    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Select test case ${testCaseName} node and click action button
     testSpecificationPage.Click On Add To Test Plans
 
 Order By Test Case, Name, Build In Test Plan Management

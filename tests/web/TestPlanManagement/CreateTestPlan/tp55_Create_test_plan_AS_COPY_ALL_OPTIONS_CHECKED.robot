@@ -14,7 +14,7 @@ Test Setup  Run keywords    testlink.Login as admin correct
 
 
 Test Teardown  Run keywords  testlink.Delete Test Plan Management  ${TestPlanName}
-...             AND         testlink.Delete Test Plan Management  ${TestPlanName2}
+...             AND          testlink.Delete Test Plan Management  ${TestPlanName2}
 ...             AND          testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 ...             AND          testlink.Check that test has been deleted
 ...             AND          headerPage.Go to index page

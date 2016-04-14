@@ -9,7 +9,7 @@ Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         testlink.Create test suite ${testSuiteName} in test project ${newTestProjectName}
 ...             AND         testlink.Create test case ${testCaseName} in ${testSuiteName}
 ...             AND         testlink.Create test case ${testCaseName1} in ${testSuiteName}
-...             AND         testlink.Create New Test Plan ${TestPlanManagementName}
+...             AND         testlink.Create New Test Plan ${TestPlanName}
 ...             AND         testlink.Create Platform ${PlatformName}
 ...             AND         testlink.Create Platform ${PlatformName1}
 ...             AND         testlink.Add Platform to Test Plan

@@ -7,6 +7,7 @@ Resource       ../../../../resource/testlink.robot
 
 Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         headerPage.Go to index page and change testproject
+...             AND         testlink.Create test suite ${testSuiteName} in test project ${newTestProjectName}
 
 
 Test Teardown  Run keywords     testlink.Delete Another New Test Suite
@@ -26,8 +27,11 @@ ${testSuiteCopy}  tsuite81_1
 *** Test Cases ***
 
 Rename Test Suite Easy
-        testlink.Controll Warning Message And Create Test Suite
-        testlink.Check New Test Suite
+        #testlink.Controll Warning Message And Create Test Suite
+        #testlink.Check New Test Suite
+        testlink.Go to index Page
+        desktopPage.Go to Test Specification (mainframe)
+        testSpecificationPage.I am here
         testlink.Edit Test Suite Move It Copy It
 
 

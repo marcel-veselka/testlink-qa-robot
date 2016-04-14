@@ -13,6 +13,8 @@ Test Teardown  Run keywords     testlink.Delete Test Suite
 
 *** Variables ***
 
+${newTestProjectName}  testProject41
+${newTestProjectPrefix}  tp41
 ${dokumentID}   newdokumentid41
 ${title}        newtitle41
 
