@@ -6,8 +6,8 @@ Test Teardown  Run keywords  testlink.Delete Requirement Specification
 ...            AND           Close browser
 *** Variables ***
 
-${dokumentID}   newdokumentid
-${title}        newtitle
+${dokumentID}   newdokumentid40
+${title}        newtitle40
 
 
 

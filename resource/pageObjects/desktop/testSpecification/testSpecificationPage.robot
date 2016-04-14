@@ -15,16 +15,9 @@ ${LOGIN URL}                http://${SERVER}/login.php
 ${WELCOME URL}              http://${SERVER}/index.php?caller=login
 ${ERROR URL}                http://${SERVER}/login.php
 ${BROWSER}                  ff
-${dokumentID}               newdokumentid
-${title}                    newtitle
 ${testSuiteName}            suiteTest
-${testDescription}          testDescription
-${testSuiteCopy}            copyFile
-${testDescriptionCopy}      copyDescrition
-${newTestProjectName}       NewNamedProject
-${newTestProjectPrefix}     nnp
-${testCaseNameNew}
-${testCaseName}
+
+Změna variables - označujte variables tak abychom poznali o jaký TC se jedná
 
 
 *** Keywords ***
@@ -383,7 +376,7 @@ Fill name for ts: ${testSuiteName} and submit
     unselect frame
 
 Select test suite ${testSuiteName} node
-    Expand tree
+    testSpecificationPage.Expand tree
     select frame  mainframe
     select frame  treeframe
     wait until page contains  ${testSuiteName}

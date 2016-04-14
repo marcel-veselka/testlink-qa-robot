@@ -18,11 +18,11 @@ Test Teardown  Run keywords    testlink.Go to index page
 
 *** Variables ***
 
-${newTestProjectName}  NewNamedProjectVoj
-${newTestProjectPrefix}  voj
-${testSuiteName}    suiteTestt
-${testDescription}  testDescriptionn
-${testCaseName}     TestCase1
+${newTestProjectName}  testProject86
+${newTestProjectPrefix}  tp86
+${testSuiteName}    tsuite86
+${testDescription}  testDescription86
+${testCaseName}     tc86
 
 
 

@@ -18,17 +18,16 @@ Test Teardown  Run keywords         testlink.Go to index page
 
 *** Variables ***
 
-${newTestProjectName}  NewNamedProjectRen
-${newTestProjectPrefix}  prfRen
-${testSuiteName}    suiteRen
-${testDescription}  testDescrRen
-${testCaseName}     TCRen
-${testCaseNameNew}  TCRen
-${testCaseNameEdit}  TCRenEdit
+${newTestProjectName}  testProject87
+${newTestProjectPrefix}  tp87
+${testSuiteName}    tsuite87
+${testDescription}  DescriptionOfTest87
+${testCaseName}     tc87
+${testCaseNameEdit}  tc87_1
 
 *** Test Cases ***
 
 Edit test case
-    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Select test case ${testCaseName} node and click action button
     testSpecificationPage.Edit Test Case
 

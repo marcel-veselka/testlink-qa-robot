@@ -9,8 +9,8 @@ Test Teardown  Delete Test Project  ${newTestProjectName}  ${newtestprojectprefi
 
 *** Variables ***
 
-${newTestProjectName}  ProjectName1
-${newtestprojectprefix}  122
+${newTestProjectName}  testProject13
+${newtestprojectprefix}  tp13
 
 
 *** Test Cases ***

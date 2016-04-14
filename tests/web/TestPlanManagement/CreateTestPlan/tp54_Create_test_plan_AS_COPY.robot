@@ -6,20 +6,20 @@ Documentation  A test suite with a single test for creating a new Custom Field. 
 Resource       ../../../../resource/testlink.robot
 
 Test Setup  Run keywords    testlink.Login as admin correct
-...             AND         testlink.Create New Test Plan ${TestPlanManagementName}
+...             AND         testlink.Create New Test Plan ${TestPlanName}
 ...             AND         Close Browser
 
 
-Test Teardown  Run keywords  testlink.Delete Test Plan Management  ${TestPlanManagementName2}
-...             AND          testlink.Delete Test Plan Management  ${TestPlanManagementName}
+Test Teardown  Run keywords  testlink.Delete Test Plan Management  ${TestPlanName2}
+...             AND          testlink.Delete Test Plan Management  ${TestPlanName}
 ...             AND          Close browser
 
 
 *** Variables ***
 
-${TestPlanManagementName}  TestplanNumberOne
-${TestPlanManagementName2}  TestplanNumbertwoCOPY
-${TestPlanManagementDescription}  DescriptionDescription
+${TestPlanName}  testPlan54
+${TestPlanName2}  testPlan54_1
+${TestPlanDescription}  DescriptionOfTestPlan54
 
 *** Test Cases ***
 

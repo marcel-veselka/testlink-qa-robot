@@ -6,8 +6,8 @@ Resource       ../../../resource/testlink.robot
 Test Teardown  close browser
 
 *** Variables ***
-${newTestProjectPrefix}  NEMAZAT
-${newTestProjectName}  TENTO TEST PROJECT
+${newTestProjectPrefix}  tp5
+${newTestProjectName}  testProject5
 #blabla
 
 *** Test Cases ***

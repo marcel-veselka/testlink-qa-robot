@@ -24,16 +24,16 @@ Test Teardown  Run keywords     testlink.Delete test project  ${newTestProjectNa
 
 *** Variables ***
 
-${newTestProjectName}               NewProjectNewProject
-${newTestProjectPrefix}             npnp
-${TestPlanManagementName}           NewTestPlanManagement
-${TestPlanManagementDescription}    This is New Descritoin, baby
-${buildName}                        NewBuild
-${Description}                      Another Description, baby
-${testSuiteName}                    suiteTest
-${testDescription}                  testDescription
-${testCaseName}                     testCaseName
-${testCaseNameNew}                  testCaseNameNew
+${newTestProjectName}               testProject90
+${newTestProjectPrefix}             tp90
+${TestPlanName}           testPlan90
+${TestPlanDescription}    DescriptionOfTestPlan90
+${buildName}                        buildName90
+${buildDescription}  DescriptionOfBuild90
+${testSuiteName}                    tsuite90
+${testDescription}                  testDescription90
+${testCaseName}                     tc90
+${testCaseNameNew}                  tc90_1
 
 *** Test Cases ***
 

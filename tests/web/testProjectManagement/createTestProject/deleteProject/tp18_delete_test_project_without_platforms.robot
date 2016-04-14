@@ -5,8 +5,8 @@ Test Setup  Create new Test Project
 Test Teardown  close browser
 *** Variables ***
 
-${newTestProjectName}  newtestprojectname
-${newTestProjectPrefix}  newtestprojectpr
+${newTestProjectName}  testProject18
+${newTestProjectPrefix}  tp18
 
 
 *** Test Cases ***

@@ -10,11 +10,11 @@ Test Setup  Run keywords    testlink.Login as admin correct
 ...             AND         testlink.Fill information to create test without conflict
 ...             AND         testlink.Submit and check new test project
 ...             AND         headerPage.Go to index page
-...             AND         testlink.Create New Test Plan ${TestPlanManagementName}
+...             AND         testlink.Create New Test Plan ${TestPlanName}
 
 
-Test Teardown  Run keywords  testlink.Delete Test Plan Management  ${TestPlanManagementName}
-...             AND         testlink.Delete Test Plan Management  ${TestPlanManagementName2}
+Test Teardown  Run keywords  testlink.Delete Test Plan Management  ${TestPlanName}
+...             AND         testlink.Delete Test Plan Management  ${TestPlanName2}
 ...             AND          testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 ...             AND          testlink.Check that test has been deleted
 ...             AND          headerPage.Go to index page
@@ -23,11 +23,11 @@ Test Teardown  Run keywords  testlink.Delete Test Plan Management  ${TestPlanMan
 
 *** Variables ***
 
-${TestPlanManagementName}  TestplanNumberOne
-${TestPlanManagementDescription}  DescriptionDescription
-${newTestProjectName}  testProjectName
-${newTestProjectPrefix}  128
-${TestPlanManagementName2}  testPlanNumberTwo
+${TestPlanName}  testPlan55
+${TestPlanDescription}  DescriptionOfTestPlan55
+${newTestProjectName}  testProject55
+${newTestProjectPrefix}  tp55
+${TestPlanName2}  testPlan55_1
 
 *** Test Cases ***
 

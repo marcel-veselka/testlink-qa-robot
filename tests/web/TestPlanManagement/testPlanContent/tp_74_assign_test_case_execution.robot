@@ -20,20 +20,21 @@ Test Setup  Run keywords    testlink.Create new Test Project
 #Test Teardown  Run keywords    testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 #...             AND             close browser
 *** Variables ***
-${newTestProjectName}  TestoProjektoUno
-${newTestProjectPrefix}  Prefixo
-${newTestProjectDescription}  DesctiptioneOfTestoProjektoUno
-${testSuiteName}  TestoSuito
-${testCaseName}  TestoCaso1
-${testCaseName1}  TestoCaso2
-${TestPlanManagementName}  TestoPlanoSupero
-${TestPlanManagementDescription}  TestoPlaneDescriptione
-${PlatformName}  Platformissimo
-${PlatformName1}  Platformissimo1
-${buildName}        BuildoNamo
+${newTestProjectName}  testProject74
+${newTestProjectPrefix}  tp74
+${newTestProjectDescription}  DesctiptioneOfTestProject74
+${testSuiteName}  tsuite74
+${testCaseName}  tc74
+${testCaseName1}  tc74_1
+${TestPlanName}  testPlan74
+${TestPlanDescription}  DescriptionOfTestPlan74
+${PlatformName}  Platform74
+${PlatformName1}  Platform74_1
+${buildName}        buildName74
 ${Username}     renat.kulalov
 ${Username1}     jan.pippal
-${Description}    Descriptione
+${buildDescription}  DescriptionOfBuild74
+
 *** Test Cases ***
 
 Assign Test Case Execution

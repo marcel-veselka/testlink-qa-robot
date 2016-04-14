@@ -199,7 +199,7 @@ Start creating new test project without conflict
     testProjectManagement.Click Create
 
 Fill information to create test without conflict
-    createTestProjectPage.Wait until page contains all elements
+    createTestProjectPage.I am here
     select frame  mainframe
     createTestProjectPage.Fill Test Project Name  ${newTestProjectName}
     createTestProjectPage.Fill Test Project Prefix  ${newTestProjectPrefix}
@@ -430,7 +430,7 @@ Edit user
     userManagement.Check all fields for editing user are availiable
     userManagement.Fill inputs for editing user and submit
 
-Create New Test Plan ${TestPlanManagementName}
+Create New Test Plan ${TestPlanName}
     [Tags]  tp53_Create_test_plan_no_conflict  tp_61
 
     headerPage.Go to index page
@@ -438,12 +438,12 @@ Create New Test Plan ${TestPlanManagementName}
     desktopPage.Go to Test Plan Management
     desktopPage.Check Test Plan Management
     testPlanManagement.Create Test Plan Management
-    testPlanManagement_detail.Input Name  ${TestPlanManagementName}
+    testPlanManagement_detail.Input Name  ${TestPlanName}
     testPlanManagement_detail.Input Description
     testPlanManagement_detail.Select Checkbox Active
     testPlanManagement_detail.Select Checkbox Public
     testPlanManagement_detail.Click Create button to finish Test Plan Management
-    testPlanManagement.Check Test Plan Management is Created  ${TestPlanManagementName}
+    testPlanManagement.Check Test Plan Management is Created  ${TestPlanName}
 
 Create Test Plan Management AS COPY
      [Tags]  tp54
@@ -452,10 +452,10 @@ Create Test Plan Management AS COPY
     desktopPage.Go to Test Plan Management
     desktopPage.Check Test Plan Management
     testPlanManagement.Create Test Plan Management
-    testPlanManagement_detail.Input Name  ${TestPlanManagementName2}
+    testPlanManagement_detail.Input Name  ${TestPlanName2}
     testPlanManagement_detail.Create from existing Test Plan?
     testPlanManagement_detail.Click Create button to finish Test Plan Management
-    testPlanManagement.Check Test Plan Management is Created  ${TestPlanManagementName2}
+    testPlanManagement.Check Test Plan Management is Created  ${TestPlanName2}
 
 Click on Test Plan Management
     [Tags]  tp55
@@ -469,14 +469,14 @@ Create Test Plan Management AS COPY NOK
     [Tags]  tp55
 
     testPlanManagement.Create Test Plan Management
-    testPlanManagement_detail.Input Name  ${TestPlanManagementName}
+    testPlanManagement_detail.Input Name  ${TestPlanName}
     testPlanManagement_detail.Click Create button to finish Test Plan Management
     testPlanManagement_detail.Warning Message Creating Same Test Plan Management
 
 Create Test Plan Management AS COPY Unselect all checkboxes
     [Tags]  tp55
 
-    testPlanManagement_detail.Input Name  ${TestPlanManagementName2}
+    testPlanManagement_detail.Input Name  ${TestPlanName2}
     testPlanManagement_detail.Create from existing Test Plan?
     wait until page contains all checkboxes from existing Test Plan
     testPlanManagement_detail.unselect checkbox Copy User Roles
@@ -488,7 +488,7 @@ Create Test Plan Management AS COPY Unselect all checkboxes
     testPlanManagement_detail.unselect checkbox Active
     testPlanManagement_detail.unselect checkbox Public
     testPlanManagement_detail.Click Create button to finish Test Plan Management
-    testPlanManagement.Check Test Plan Management is Created  ${TestPlanManagementName2}
+    testPlanManagement.Check Test Plan Management is Created  ${TestPlanName2}
 
 
 Delete Test Plan Management
@@ -999,18 +999,5 @@ Execute Test Suite
     testSpecificationPage.Select test case ${testCaseName} node and click action button
     testSpecificationPage.Click On Add To Test Plans
 
-Check this testcase structure after movement
-    testSpecificationPage.Expand tree
-    select frame  mainframe
-    select frame  treeframe
-    wait until page contains  suite1
-    wait until page contains  suite2
-    wait until page contains  suite3
-    wait until page contains  tc1
-    wait until page contains  tc2
-    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite1")]
-    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite2")]
-    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite2")]/ul/li[contains(.,"tc1")]
-    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"suite3")]/ul/li[contains(.,"suite2")]/ul/li[contains(.,"tc2")]
-    unselect frame
+
     #sdf

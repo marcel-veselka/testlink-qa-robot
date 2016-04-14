@@ -5,9 +5,9 @@ Test Teardown  Run keywords  Delete test project  ${newTestProjectName}  ${newTe
 ...            AND           Close browser
 
 *** Variables ***
-${newTestProjectName}  newTestProject78
-${newTestProjectPrefix}  newProjectPrefix78
-${newTestProjectDescription}  Description of new test project
+${newTestProjectName}  testProject7
+${newTestProjectPrefix}  tp7
+${newTestProjectDescription}  Description of new test project7
 
 *** Test Cases ***
 Create new Test Project with template off

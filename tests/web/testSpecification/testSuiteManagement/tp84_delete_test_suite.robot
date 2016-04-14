@@ -14,14 +14,14 @@ Test Setup  Run keywords    testlink.Create new Test Project
 Test Teardown  Run keywords    testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 ...             AND             close browser
 *** Variables ***
-${newTestProjectName}  ProjectRenat
-${newTestProjectPrefix}  RenatPRF
-${newTestProjectDescription}  DesctiptionRenat
-${testSuiteName}  RenatTS
-${tc1}  RenatTC1
-${tc2}  RenatTC2
-${TestPlanManagementName}  TestplanRenat
-${TestPlanManagementDescription}  DRenat
+${newTestProjectName}  testProject84
+${newTestProjectPrefix}  tp84
+${newTestProjectDescription}  DescriptionRenat84
+${testSuiteName}  tsuite84
+${tc1}  tc84
+${tc2}  tc84_1
+${TestPlanName}  testPlan84
+${TestPlanDescription}  DescriptionOfTestPlan84
 
 *** Test Cases ***
 

@@ -7,24 +7,24 @@ Resource       ../../../../resource/testlink.robot
 
 Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         headerPage.Go to index page and change testproject
-...             AND         testlink.Create New Test Plan ${TestPlanManagementName}
+...             AND         testlink.Create New Test Plan ${TestPlanName}
 
 
 
 Test Teardown  Run keywords  testlink.Delete Build ${buildName}
-...            AND           testlink.Delete Test Plan Management  ${TestPlanManagementName}
+...            AND           testlink.Delete Test Plan Management  ${TestPlanName}
 ...            AND           testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 ...            AND           Close browser
 
 
 *** Variables ***
 
-${buildName}  BuildName
-${Description}  Description
-${TestPlanManagementName}  TestplanNumberOne
-${newTestProjectName}  testProjectNameMM
-${newTestProjectPrefix}  12822
-${TestPlanManagementDescription}  DescriptionDescription
+${buildName}  buildName61
+${buildDescription}  DescriptionOfBuild61
+${TestPlanName}  testPlan61
+${newTestProjectName}  testProject61
+${newTestProjectPrefix}  tp61
+${TestPlanDescription}  DescriptionOfTestPlan61
 
 *** Test Cases ***
 
