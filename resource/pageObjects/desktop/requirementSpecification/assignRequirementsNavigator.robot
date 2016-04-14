@@ -29,7 +29,9 @@ Select Test Suite
     unselect frame
     select frame  mainframe
     select frame  treeframe
-    sleep  2
+    wait until page contains element  expand_tree
+    click element  expand_tree
+    wait until page contains  ${newTestProjectPrefix}-1:${title}
     wait until page contains element  xpath=//a[span[contains(text(),"${title} (")]]
     double click element  xpath=//a[span[contains(text(),"${title} (")]]
     unselect frame
@@ -64,22 +66,23 @@ Assign Requirements
 Check Assign Requirements
     select frame  mainframe
     select frame  treeframe
+    wait until page contains element  expand_tree
     click button  name=expand_tree
-    sleep  4
+    wait until page contains  ${newTestProjectPrefix}-1:${title} [1]
     wait until page contains element  xpath=//a[span[contains(text(),"${title} [1]")]]
     double click element  xpath=//a[span[contains(text(),"${title} [1]")]]
     unselect frame
     select frame  mainframe
     select frame  workframe
-    sleep  2
     wait until page contains element  xpath=//*[@id="div_assigned_req"]/table/tbody
     unselect frame
 
 Unassign Requirements And Check Availiable Requirements
     select frame  mainframe
     select frame  treeframe
+    wait until page contains element  expand_tree
     click button  name=expand_tree
-    sleep  4
+    wait until page contains  ${newTestProjectPrefix}-1:${title} [1]
     wait until page contains element  xpath=//a[span[contains(text(),"${title} [1]")]]
     double click element  xpath=//a[span[contains(text(),"${title} [1]")]]
     unselect frame
@@ -94,8 +97,7 @@ Unassign Requirements And Check Availiable Requirements
     select frame  mainframe
     select frame  workframe
     wait until page contains  Available Requirements
-    sleep  2
-    page should not contain  xpath=//*[@id="div_assigned_req"]/table
+    wait until page does not contain element  xpath=//*[@id="div_assigned_req"]/table
     unselect frame
     select frame  mainframe
     select frame  workframe

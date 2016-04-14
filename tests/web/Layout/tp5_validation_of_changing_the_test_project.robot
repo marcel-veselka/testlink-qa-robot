@@ -6,8 +6,8 @@ Resource       ../../../resource/testlink.robot
 Test Teardown  close browser
 
 *** Variables ***
-${newTestProjectPrefix}  tp5
-${newTestProjectName}  testProject5
+${newTestProjectPrefix}  tp
+${newTestProjectName}  testing project
 #blabla
 
 *** Test Cases ***

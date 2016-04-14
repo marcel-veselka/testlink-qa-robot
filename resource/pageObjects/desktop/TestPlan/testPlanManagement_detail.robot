@@ -146,7 +146,7 @@ Check Test Plan Management Deleted
     [Arguments]  ${TestPlanNameToDelete}
 
     select frame  mainframe
-    page should not contain  ${TestPlanNameToDelete}
+    wait until page does not contain  ${TestPlanNameToDelete}
     unselect frame
 
 Create from existing Test Plan?

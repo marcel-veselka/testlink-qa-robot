@@ -253,7 +253,7 @@ Delete More Than 1 Version Requirement
     wait until page contains element  ext-gen38
     wait until page contains  Yes
     click button  Yes
-    wait until page contains  Req: newdokumentid-newtitle Version 2 was successfully deleted
+    wait until page contains  Req: ${dokumentID}-${title} Version 2 was successfully deleted
     unselect frame
 
 Check Requirement Version
