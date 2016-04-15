@@ -1006,15 +1006,24 @@ Add Test Suite to Test Plan
     testSpecificationPage.Select test case ${testCaseName} node and click action button
     testSpecificationPage.Click On Add To Test Plans
 
-Execute Test Case ${testCaseName} as Passed
+Execute Test Suite
     [Tags]  91
     headerPage.Go to index page
+    desktopPage.Go to Execute Tests
+    testSpecificationPage.Expand tree
+    executeTestsPage.Select test case ${testCaseName} node
+    executeTestsPage.Execute Test Case Passed
+    executeTestsPage.Click on Save and move to next
+    executeTestsPage.Check That Passed Test Was Saved
+    executeTestsPage.Check Move to Next Function ${testCaseName2}
+    executeTestsPage.Execute Test Case Failed
+    executeTestsPage.Click on Save and move to next
+    executeTestsPage.Check That Failed Test Was Saved
+    executeTestsPage.Check Move to Next Function ${testCaseName3}
+    executeTestsPage.Execute Test Case Blocked
+    executeTestsPage.Click on Save execution button
+    executeTestsPage.Check That Blocked Test Was Saved
+    executeTestsPage.Check Test Suite Status
 
-Execute Test Case ${testCaseName2} as Failed
-    [Tags]  91
-    headerPage.Go to index page
 
-Execute Test Case ${testCaseName3} as
-    [Tags]  91
-    headerPage.Go to index page
 

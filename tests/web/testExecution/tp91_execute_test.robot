@@ -42,4 +42,5 @@ ${buildDescription}                 DescriptionOfBuild91
 
 Execute Test
     testlink.Add Test Suite to Test Plan
+    testlink.Execute Test Suite
 
