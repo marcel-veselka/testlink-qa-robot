@@ -28,8 +28,8 @@ ${CONFIGURATION}  <!-- Template bugzillaxmlrpcInterface -->
             ...  <priority>Normal</priority>
             ...  <platform>All</platform> -->
             ...  </issuetracker>
-${newTestProjectName}  newTestProject02
-${newTestProjectPrefix}  newProjectPrefix02
+${newTestProjectName}  testProject14
+${newTestProjectPrefix}  tp14
 
 
 

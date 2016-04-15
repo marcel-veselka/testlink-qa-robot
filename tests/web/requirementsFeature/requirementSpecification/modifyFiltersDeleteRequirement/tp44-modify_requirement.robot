@@ -10,9 +10,10 @@ Test Teardown  Run keywords     testlink.Delete Requirement Specification
 ...             AND             testlink.Check that test has been deleted
 ...             AND             Close browser
 *** Variables ***
-
-${dokumentID}   newdokumentid
-${title}        newtitle
+${newTestProjectName}  testProject44
+${newTestProjectPrefix}  tp44
+${dokumentID}   newdokumentid44
+${title}        newtitle44
 
 
 

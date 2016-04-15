@@ -49,7 +49,7 @@ Fill in the details of the Build ${buildName}
     mouse down  xpath=//iframe[@title="Rich text editor, notes"]
     mouse up  xpath=//iframe[@title="Rich text editor, notes"]
     select frame  xpath=//iframe[@title="Rich text editor, notes"]
-    input text  xpath=//body  ${Description}
+    input text  xpath=//body  ${buildDescription}
     unselect frame
 
 Save Build

@@ -7,8 +7,8 @@ Test Setup  testlink.Create new Test Project
 Test Teardown  close browser
 
 *** Variables ***
-${newTestProjectName}  testingProjectNew00
-${newTestProjectPrefix}  prefixNew00
+${newTestProjectName}  testProject17
+${newTestProjectPrefix}  tp17
 
 *** Test Cases ***
 Delete Test Project

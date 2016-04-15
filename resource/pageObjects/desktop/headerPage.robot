@@ -6,9 +6,6 @@ Library        Selenium2Library
 
 
 *** Variables ***
-${searchedTestCase}  4
-${newTestProjectPrefix}  prefixNew1
-${newTestProjectName}  tp:testing project
 
 *** Keywords ***
 I am here
@@ -41,8 +38,8 @@ Go to index page
 
 Go to index page and change testproject
     select frame  name=titlebar
-    wait until page contains element  xpath=/html/body/div[1]/a
-    click element  xpath=/html/body/div[1]/a
+    wait until page contains element  xpath=//img[@alt="Company logo"]
+    click element  xpath=//img[@alt="Company logo"]
     unselect frame
     select frame  name=titlebar
     wait until page contains element  testproject
@@ -97,12 +94,6 @@ Go to Events
     select frame  name=titlebar
     click element  xpath=//img[@title="Events"]
     unselect frame
-
-Input text into test case search
-    input text  targetTestCase  ${searchedTestCase}
-
-Start searching test case
-    click element  xpath=//img[@title="Search Test Case by ID"]
 
 Click test project dropdown
     select frame  name=titlebar

@@ -7,12 +7,10 @@ Test Teardown  Run keywords  Delete test project  ${newTestProjectName}  ${newTe
 ...            AND           Close all browsers
 
 *** Variables ***
-${newTestProjectName}  newTestProject
-${bla}                  bla
-${bla2}                 bla2
-${newTestProjectName2}  newTestProject2
-${newTestProjectPrefix}  newProjectPrefx
-${newTestProjectPrefix2}  newProjectPrefx2
+${newTestProjectName}  testProject8
+${newTestProjectName2}  testProject8_1
+${newTestProjectPrefix}  tp8
+${newTestProjectPrefix2}  tp8_1
 ${newTestProjectDescription}  Description of new test project
 
 *** Test Cases ***

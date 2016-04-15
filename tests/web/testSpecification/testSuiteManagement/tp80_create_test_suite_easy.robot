@@ -16,10 +16,10 @@ Test Teardown  Run keywords     testlink.Delete New Test Suite
 
 *** Variables ***
 
-${newTestProjectName}  NewNamedProjectNN
-${newTestProjectPrefix}  nnpnn
-${testSuiteName}    suiteTest
-${testDescription}  testDescription
+${newTestProjectName}  testProject80
+${newTestProjectPrefix}  tp80
+${testSuiteName}    tsuite80
+${testDescription}  testDescription80
 
 *** Test Cases ***
 

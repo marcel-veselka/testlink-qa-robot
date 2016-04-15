@@ -20,11 +20,11 @@ ${BROWSER}      ff
 *** Keywords ***
 
 Input Name
-    [Arguments]   ${TestPlanManagementName}
+    [Arguments]   ${TestPlanName}
 
     select frame  name=mainframe
     wait until page contains element  testplan_name
-    input text  testplan_name  ${TestPlanManagementName}
+    input text  testplan_name  ${TestPlanName}
     unselect frame
 
 Input Description
@@ -36,8 +36,8 @@ Input Description
     mouse up  xpath=//iframe[@title="Rich text editor, notes"]
     #click element  cke_8_label
     select frame  xpath=//iframe[@title="Rich text editor, notes"]
-    input text  xpath=//body  ${TestPlanManagementDescription}
-    #input text  xpath=//*[@id="cke_contents_notes"]/textarea  ${TestPlanManagementDescription}
+    input text  xpath=//body  ${TestPlanDescription}
+    #input text  xpath=//*[@id="cke_contents_notes"]/textarea  ${TestPlanDescription}
     unselect frame
 
 wait until page contains all checkboxes from existing Test Plan
@@ -129,11 +129,11 @@ Warning Message Creating Same Test Plan Management
     unselect frame
 
 Click Button Delete Test Plan Management
-    [Arguments]  ${TestPlanManagementNameToDelete}
+    [Arguments]  ${TestPlanNameToDelete}
 
     select frame  mainframe
-    wait until page contains  ${TestPlanManagementNameToDelete}
-    click element  xpath=//tr[td//text()[contains(.,'${TestPlanManagementNameToDelete}')]]/td[last()]/img[1]
+    wait until page contains  ${TestPlanNameToDelete}
+    click element  xpath=//tr[td//text()[contains(.,'${TestPlanNameToDelete}')]]/td[last()]/img[1]
     unselect frame
 
 Confirm Delete Test Plan Management
@@ -143,10 +143,10 @@ Confirm Delete Test Plan Management
     unselect frame
 
 Check Test Plan Management Deleted
-    [Arguments]  ${TestPlanManagementNameToDelete}
+    [Arguments]  ${TestPlanNameToDelete}
 
     select frame  mainframe
-    page should not contain  ${TestPlanManagementNameToDelete}
+    wait until page does not contain  ${TestPlanNameToDelete}
     unselect frame
 
 Create from existing Test Plan?
@@ -160,29 +160,29 @@ Create from existing Test Plan?
 Order By Name
     select frame  mainframe
     wait until page contains element  xpath=//*[@id="item_view"]/thead/tr/th[1]/img[2]
-    wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanManagementName}")][contains(text()," ")]
-    page should contain element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanManagementName}")][contains(text()," ")]
+    wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanName}")][contains(text()," ")]
+    page should contain element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanName}")][contains(text()," ")]
     click element  xpath=//*[@id="item_view"]/thead/tr/th[1]/img[2]
     unselect frame
     select frame  mainframe
-    wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanManagementName1}")][contains(text()," ")]
-    page should contain element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanManagementName1}")][contains(text()," ")]
+    wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanName1}")][contains(text()," ")]
+    page should contain element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanName1}")][contains(text()," ")]
     click element  xpath=//*[@id="item_view"]/thead/tr/th[1]/img[2]
     unselect frame
 
 Order By Test Case
     select frame  mainframe
     wait until page contains element  xpath=//*[@id="item_view"]/thead/tr/th[3]/img
-    wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanManagementName}")][contains(text()," ")]
+    wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanName}")][contains(text()," ")]
     wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td[@style="width:8%;"][contains(text(),"1")]
-    page should contain element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanManagementName}")][contains(text()," ")]
+    page should contain element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanName}")][contains(text()," ")]
     page should contain element  xpath=//div/div/form/div/table/tbody/tr/td[@style="width:8%;"][contains(text(),"1")]
     click element  xpath=//*[@id="item_view"]/thead/tr/th[3]/img
     unselect frame
     select frame  mainframe
-    wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanManagementName1}")][contains(text()," ")]
+    wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanName1}")][contains(text()," ")]
     wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td[@style="width:8%;"][contains(text(),"0")]
-    page should contain element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanManagementName1}")][contains(text()," ")]
+    page should contain element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanName1}")][contains(text()," ")]
     page should contain element  xpath=//div/div/form/div/table/tbody/tr/td[@style="width:8%;"][contains(text(),"0")]
     click element  xpath=//*[@id="item_view"]/thead/tr/th[3]/img
     unselect frame
@@ -190,42 +190,42 @@ Order By Test Case
 Order By Test Build
     select frame  mainframe
     wait until page contains element  xpath=//*[@id="item_view"]/thead/tr/th[4]/img
-    wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanManagementName}")][contains(text()," ")]
+    wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanName}")][contains(text()," ")]
     wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td[@style="width:6%;"][contains(text(),"1")]
-    page should contain element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanManagementName}")][contains(text()," ")]
+    page should contain element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanName}")][contains(text()," ")]
     page should contain element  xpath=//div/div/form/div/table/tbody/tr/td[@style="width:6%;"][contains(text(),"1")]
     click element  xpath=//*[@id="item_view"]/thead/tr/th[4]/img
     unselect frame
     select frame  mainframe
-    wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanManagementName1}")][contains(text()," ")]
+    wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanName1}")][contains(text()," ")]
     wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td[@style="width:6%;"][contains(text(),"0")]
-    page should contain element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanManagementName1}")][contains(text()," ")]
+    page should contain element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${TestPlanName1}")][contains(text()," ")]
     page should contain element  xpath=//div/div/form/div/table/tbody/tr/td[@style="width:6%;"][contains(text(),"0")]
     click element  xpath=//*[@id="item_view"]/thead/tr/th[4]/img
     unselect frame
 
 Check Test Plan Is Active
     select frame  mainframe
-    page should contain element  xpath=//tr[td//text()[contains(.,'${TestPlanManagementName}')]]/td[input[@title="Active (click to set inactive)"]]
-    page should contain element  xpath=//tr[td//text()[contains(.,'${TestPlanManagementName1}')]]/td[input[@title="Active (click to set inactive)"]]
+    page should contain element  xpath=//tr[td//text()[contains(.,'${TestPlanName}')]]/td[input[@title="Active (click to set inactive)"]]
+    page should contain element  xpath=//tr[td//text()[contains(.,'${TestPlanName1}')]]/td[input[@title="Active (click to set inactive)"]]
     unselect frame
 
 Click On Bulb Icon
     select frame  mainframe
-    click element  xpath=//tr[td//text()[contains(.,'${TestPlanManagementName}')]]/td[input[@title="Active (click to set inactive)"]]/input
+    click element  xpath=//tr[td//text()[contains(.,'${TestPlanName}')]]/td[input[@title="Active (click to set inactive)"]]/input
     unselect frame
     select frame  mainframe
-    wait until page contains element  xpath=//tr[td//text()[contains(.,'${TestPlanManagementName}')]]/td[input[@title="Inactive (click to set active)"]]/input
-    page should contain element  xpath=//tr[td//text()[contains(.,'${TestPlanManagementName}')]]/td[input[@title="Inactive (click to set active)"]]/input
-    click element  xpath=//tr[td//text()[contains(.,'${TestPlanManagementName1}')]]/td[input[@title="Active (click to set inactive)"]]/input
+    wait until page contains element  xpath=//tr[td//text()[contains(.,'${TestPlanName}')]]/td[input[@title="Inactive (click to set active)"]]/input
+    page should contain element  xpath=//tr[td//text()[contains(.,'${TestPlanName}')]]/td[input[@title="Inactive (click to set active)"]]/input
+    click element  xpath=//tr[td//text()[contains(.,'${TestPlanName1}')]]/td[input[@title="Active (click to set inactive)"]]/input
     unselect frame
     select frame  mainframe
-    wait until page contains element  xpath=//tr[td//text()[contains(.,'${TestPlanManagementName1}')]]/td[input[@title="Inactive (click to set active)"]]/input
-    page should contain element  xpath=//tr[td//text()[contains(.,'${TestPlanManagementName1}')]]/td[input[@title="Inactive (click to set active)"]]/input
-    click element  xpath=//tr[td//text()[contains(.,'${TestPlanManagementName}')]]/td[input[@title="Inactive (click to set active)"]]/input
+    wait until page contains element  xpath=//tr[td//text()[contains(.,'${TestPlanName1}')]]/td[input[@title="Inactive (click to set active)"]]/input
+    page should contain element  xpath=//tr[td//text()[contains(.,'${TestPlanName1}')]]/td[input[@title="Inactive (click to set active)"]]/input
+    click element  xpath=//tr[td//text()[contains(.,'${TestPlanName}')]]/td[input[@title="Inactive (click to set active)"]]/input
     unselect frame
     select frame  mainframe
-    click element  xpath=//tr[td//text()[contains(.,'${TestPlanManagementName1}')]]/td[input[@title="Inactive (click to set active)"]]/input
+    click element  xpath=//tr[td//text()[contains(.,'${TestPlanName1}')]]/td[input[@title="Inactive (click to set active)"]]/input
     unselect frame
 
 Edit Test Plan
@@ -234,9 +234,9 @@ Edit Test Plan
     click element  xpath=//*[@id="item_view"]/thead/tr/th[1]/img[1]
     unselect frame
     select frame  mainframe
-    wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td[span//text()[contains(.,"[ID:")]]/a[contains(text()," ")][contains(text(),"${TestPlanManagementName}")][contains(text()," ")]
-    wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td[span//text()[contains(.,"[ID:")]]/a[contains(text()," ")][contains(text(),"${TestPlanManagementName1}")][contains(text()," ")]
-    click element  xpath=//div/div/form/div/table/tbody/tr/td[span//text()[contains(.,"[ID:")]]/a[contains(text()," ")][contains(text(),"${TestPlanManagementName}")][contains(text()," ")]
+    wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td[span//text()[contains(.,"[ID:")]]/a[contains(text()," ")][contains(text(),"${TestPlanName}")][contains(text()," ")]
+    wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td[span//text()[contains(.,"[ID:")]]/a[contains(text()," ")][contains(text(),"${TestPlanName1}")][contains(text()," ")]
+    click element  xpath=//div/div/form/div/table/tbody/tr/td[span//text()[contains(.,"[ID:")]]/a[contains(text()," ")][contains(text(),"${TestPlanName}")][contains(text()," ")]
     unselect frame
     select frame  mainframe
     wait until page contains element  name=testplan_name

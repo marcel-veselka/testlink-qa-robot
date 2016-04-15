@@ -5,14 +5,12 @@ Library        Selenium2Library
 Library        BuiltIn
 
 *** Variables ***
-${newTestProjectDescription}  New test project description
-${issueTrackerName}
 
 
 *** Keywords ***
 
 
-Wait until page contains all elements
+I am here
     select frame  mainframe
     wait until page contains element  copy_from_tproject_id
     wait until page contains element  tprojectName
@@ -27,9 +25,6 @@ Wait until page contains all elements
     wait until page contains element  go_back
     wait until page contains element  doActionButton
     unselect frame
-
-Check Create Test Project page
-    Wait until page contains all elements
 
 Click Template
     click element  copy_from_tproject_id

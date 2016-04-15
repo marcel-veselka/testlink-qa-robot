@@ -12,10 +12,10 @@ Test Teardown  Run keywords     testlink.Delete Requirement Specification
 ...             AND             Close browser
 *** Variables ***
 
-${dokumentID}   newdokumentid
-${title}        newtitle
-${newTestProjectName}  NewNamedProject1
-${newTestProjectPrefix}  nnp1
+${dokumentID}   newdokumentid47
+${title}        newtitle47
+${newTestProjectName}  testProject47
+${newTestProjectPrefix}  tp47
 
 
 
