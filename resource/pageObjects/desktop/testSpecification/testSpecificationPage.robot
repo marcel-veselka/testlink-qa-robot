@@ -534,7 +534,7 @@ Select test case ${testCaseName} node
     double click element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName}")]/div/a
     unselect frame
 
-Create New Sibling ${testCaseNameNew}
+Create New Sibling ${testCaseName2}
     select frame  mainframe
     select frame  workframe
     wait until page contains element  name=new_tc
@@ -544,7 +544,7 @@ Create New Sibling ${testCaseNameNew}
     select frame  workframe
     wait until page contains element  name=testcase_name
     wait until page contains element  name=do_create_button
-    input text  testcase_name  ${testCaseNameNew}
+    input text  testcase_name  ${testCaseName2}
     click element  name=do_create_button
     unselect frame
 
@@ -553,8 +553,8 @@ Check New Sibling Was Created
     Expand tree
     select frame  mainframe
     select frame  treeframe
-    wait until page contains element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseNameNew}")]/div/a
-    page should contain element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseNameNew}")]/div/a
+    wait until page contains element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName2}")]/div/a
+    page should contain element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName2}")]/div/a
     unselect frame
 
 

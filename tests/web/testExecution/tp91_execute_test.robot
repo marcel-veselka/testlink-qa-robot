@@ -11,9 +11,9 @@ Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         testlink.Create Build with name ${buildName}
 ...             AND         testlink.Create Test Suite
 ...             AND         testlink.Check New Test Suite
-...             AND         testlink.Create test case ${testCaseNameNew} in ${testSuiteName}
 ...             AND         testlink.Create test case ${testCaseName} in ${testSuiteName}
-...             AND         testlink.Create test case ${testCaseName1} in ${testSuiteName}
+...             AND         testlink.Create test case ${testCaseName2} in ${testSuiteName}
+...             AND         testlink.Create test case ${testCaseName3} in ${testSuiteName}
 
 
 
@@ -28,17 +28,18 @@ ${newTestProjectName}               testProject91
 ${newTestProjectPrefix}             tp91
 ${testSuiteName}                    tsuite91
 ${testDescription}                  DescriptionOfTest91
-${testCaseNameNew}                  tc91
-${testCaseName1}                    tc91_1
-${testCaseName}                     tc91_2
-${TestPlanName}           testPlan91
-${TestPlanDescription}    DecriptionOfTestPlan91
+${testCaseName}                     tc91
+${testCaseName2}                    tc91_1
+${testCaseName3}                    tc91_2
+${TestPlanName}                     testPlan91
+${TestPlanDescription}              DecriptionOfTestPlan91
 ${buildName}                        buildName91
-${buildDescription}  DescriptionOfBuild91
+${buildDescription}                 DescriptionOfBuild91
 
 
 
 *** Test Cases ***
 
 Execute Test
-    testlink.Execute Test Suite
+    testlink.Add Test Suite to Test Plan
+

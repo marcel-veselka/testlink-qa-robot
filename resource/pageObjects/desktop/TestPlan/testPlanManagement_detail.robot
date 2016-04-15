@@ -70,48 +70,56 @@ Select Checkbox Public
 unselect checkbox Public
 
     select frame  name=mainframe
+    wait until page contains element  name=is_public
     unselect checkbox  is_public
     unselect frame
 
 unselect checkbox Active
 
     select frame  name=mainframe
+    wait until page contains element  name=active
     unselect checkbox  active
     unselect frame
 
 unselect checkbox Copy User Roles
 
     select frame  name=mainframe
+    wait until page contains element  name=copy_user_roles
     unselect checkbox  copy_user_roles
     unselect frame
 
 unselect checkbox Copy Test Cases
 
     select frame  name=mainframe
+    wait until page contains element  name=copy_tcases
     unselect checkbox  copy_tcases
     unselect frame
 
 unselect checkbox Copy Attachements
 
     select frame  name=mainframe
+    wait until page contains element  name=copy_attachments
     unselect checkbox  copy_attachments
     unselect frame
 
 unselect checkbox Copy Builds
 
     select frame  name=mainframe
+    wait until page contains element  name=copy_builds
     unselect checkbox  copy_builds
     unselect frame
 
 unselect checkbox Copy Platforms Links
 
     select frame  name=mainframe
+    wait until page contains element  name=copy_platforms_links
     unselect checkbox  copy_platforms_links
     unselect frame
 
 unselect checkbox Copy Milestones
 
     select frame  name=mainframe
+    wait until page contains element  name=copy_milestones
     unselect checkbox  copy_milestones
     unselect frame
 
@@ -153,8 +161,18 @@ Create from existing Test Plan?
 
     select frame  mainframe
     wait until page contains  Create from existing Test Plan?
-    click element  copy_from_tplan_id
-    click element  xpath=//*[@id="testplan_mgmt"]/table/tbody/tr[3]/td/select/option[2]
+    #click element  copy_from_tplan_id
+    click element  xpath=//div/form/table/tbody/tr/td/select/option[.='${TestPlanName}']
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  name=copy_milestones
+    wait until page contains element  name=copy_platforms_links
+    wait until page contains element  name=copy_builds
+    wait until page contains element  name=copy_attachments
+    wait until page contains element  name=copy_tcases
+    wait until page contains element  name=copy_user_roles
+    wait until page contains element  name=active
+    wait until page contains element  name=is_public
     unselect frame
 
 Order By Name
@@ -253,3 +271,4 @@ Check Updated Test Plan
     wait until page contains element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${EditTestPlanName}")][contains(text()," ")]
     page should contain element  xpath=//div/div/form/div/table/tbody/tr/td/a[contains(text()," ")][contains(text(),"${EditTestPlanName}")][contains(text()," ")]
     unselect frame
+

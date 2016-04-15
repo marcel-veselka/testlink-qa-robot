@@ -31,10 +31,10 @@ ${testDescription}                  DescriptionOfTest89
 ${testCaseName}                     tc89
 ${testCaseName2}                    tc89_1
 ${testCaseName3}                    tc89_2
-${TestPlanName}           testPlan89
-${TestPlanDescription}    DescriptionOfTestPlan89
+${TestPlanName}                     testPlan89
+${TestPlanDescription}              DescriptionOfTestPlan89
 ${buildName}                        buildName89
-${buildDescription}  DescriptionOfBuild89
+${buildDescription}                 DescriptionOfBuild89
 ${KeywordName}                      key89
 
 

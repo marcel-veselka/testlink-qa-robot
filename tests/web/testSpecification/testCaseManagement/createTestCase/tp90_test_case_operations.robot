@@ -26,22 +26,24 @@ Test Teardown  Run keywords     testlink.Delete test project  ${newTestProjectNa
 
 ${newTestProjectName}               testProject90
 ${newTestProjectPrefix}             tp90
-${TestPlanName}           testPlan90
-${TestPlanDescription}    DescriptionOfTestPlan90
+${TestPlanName}                     testPlan90
+${TestPlanDescription}              DescriptionOfTestPlan90
 ${buildName}                        buildName90
-${buildDescription}  DescriptionOfBuild90
+${buildDescription}                 DescriptionOfBuild90
 ${testSuiteName}                    tsuite90
 ${testDescription}                  testDescription90
 ${testCaseName}                     tc90
-${testCaseNameNew}                  tc90_1
+${testCaseName2}                    tc90_1
 
 *** Test Cases ***
 
 Test Case Operations
 
     desktopPage.Go to Test Specification (mainframe)
-    testlink.Create New Sibling ${testCaseNameNew}
+    testlink.Create New Sibling ${testCaseName2}
     testlink.Check All Actions Buttons For Test Case
+    testlink.Add Test Case To the Test Plan
+    testlink.Execute Test
     testlink.Show Execution History
 
 

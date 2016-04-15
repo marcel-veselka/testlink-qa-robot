@@ -475,10 +475,12 @@ Create Test Plan Management AS COPY NOK
 
 Create Test Plan Management AS COPY Unselect all checkboxes
     [Tags]  tp55
-
+    headerPage.Go to index page
+    desktopPage.Go to Test Plan Management
+    testPlanManagement.Create Test Plan Management
     testPlanManagement_detail.Input Name  ${TestPlanName2}
     testPlanManagement_detail.Create from existing Test Plan?
-    wait until page contains all checkboxes from existing Test Plan
+    #wait until page contains all checkboxes from existing Test Plan
     testPlanManagement_detail.unselect checkbox Copy User Roles
     testPlanManagement_detail.unselect checkbox Copy Attachements
     testPlanManagement_detail.unselect checkbox Copy Test Cases
@@ -865,36 +867,36 @@ Create New Sibling ${testCaseNameNew}
     [Tags]  tp90
     testSpecificationPage.Select test case ${testCaseName} node
     testSpecificationPage.Click Actions button
-    testSpecificationPage.Create New Sibling ${testCaseNameNew}
+    testSpecificationPage.Create New Sibling ${testCaseName2}
     testSpecificationPage.Check New Sibling Was Created
 
 Check All Actions Buttons For Test Case
     [Tags]  tp90
-    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    headerPage.Go to index page
+    desktopPage.Go to Test Specification (mainframe)
+    testSpecificationPage.Select test case ${testCaseName} node and click action button
     #testSpecificationPage.Click On Export Test Case
     #testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
     testSpecificationPage.Click On Print View Test Case
-    Select Window  Print Test Case: testCaseNameNew
-    wait until page contains  Test Case npnp-2: testCaseNameNew
+    Select Window  Print Test Case: ${testCaseName}
+    wait until page contains  Test Case ${newTestProjectPrefix}-1: ${testCaseName}
     close window
     Select Window  TestLink 1.9.14 (Padawan)
-    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Select test case ${testCaseName} node and click action button
     testSpecificationPage.Click On Create New Version
-    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Select test case ${testCaseName} node and click action button
     testSpecificationPage.Click On Deactivate This Version
-    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Select test case ${testCaseName} node and click action button
     testSpecificationPage.Click On Activate This Version
-    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
-    testSpecificationPage.Click On Add To Test Plans
 
 Show Execution History
     [Tags]  90
     headerPage.Go to index page
     desktopPage.Go to Test Specification (mainframe)
-    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Select test case ${testCaseName} node and click action button
     testSpecificationPage.Click On Execution History
     select window  TestLink
-    wait until page contains  Test Case npnp-2 : testCaseNameNew
+    wait until page contains  Test Case ${newTestProjectPrefix}-1 : ${testCaseName}
     close window
     Select Window  TestLink 1.9.14 (Padawan)
 
@@ -903,7 +905,7 @@ Execute Test
     desktopPage.Go to Execute Tests
     desktopPage.Check Execute Tests
     testSpecificationPage.Expand tree
-    testSpecificationPage.Select test case ${testCaseNameNew} node
+    testSpecificationPage.Select test case ${testCaseName} node
     executeTestsPage.Execute Test Case
 
 Add Test Case To the Test Plan
@@ -968,7 +970,7 @@ Assign TC ${testCaseName} to users ${Username}
     desktopPage.Go to Assign Test Case Execution
     desktopPage.Check Assign Test Case Execution
     #assignTestCaseExecution.Select platform ${PlatformName}
-    testSpecificationPage.Select test case ${testCaseName} node
+    testSpecificationPage.Select test case ${testCaseName2} node
     assignTestCaseExecution.Select User ${Username}
 
 
@@ -993,15 +995,26 @@ Keywords
     testSpecificationPage.Select test case ${testCaseName} node
     assignKeywords.Assign Keywords
 
-Execute Test Suite
+Add Test Suite to Test Plan
+    [Tags]  91
     headerPage.Go to index page
     desktopPage.Go to Test Specification (mainframe)
-    testSpecificationPage.Select test case ${testCaseNameNew} node and click action button
+    testSpecificationPage.Select test case ${testCaseName2} node and click action button
     testSpecificationPage.Click On Add To Test Plans
-    testSpecificationPage.Select test case ${testCaseName1} node and click action button
+    testSpecificationPage.Select test case ${testCaseName3} node and click action button
     testSpecificationPage.Click On Add To Test Plans
     testSpecificationPage.Select test case ${testCaseName} node and click action button
     testSpecificationPage.Click On Add To Test Plans
 
+Execute Test Case ${testCaseName} as Passed
+    [Tags]  91
+    headerPage.Go to index page
 
-    #sdf
+Execute Test Case ${testCaseName2} as Failed
+    [Tags]  91
+    headerPage.Go to index page
+
+Execute Test Case ${testCaseName3} as
+    [Tags]  91
+    headerPage.Go to index page
+

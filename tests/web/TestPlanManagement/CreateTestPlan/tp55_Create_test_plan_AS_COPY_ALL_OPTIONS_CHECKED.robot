@@ -9,16 +9,12 @@ Test Setup  Run keywords    testlink.Login as admin correct
 ...             AND         testlink.Start creating new test project
 ...             AND         testlink.Fill information to create test without conflict
 ...             AND         testlink.Submit and check new test project
-...             AND         headerPage.Go to index page
+...             AND         headerPage.Go to index page and change testproject
 ...             AND         testlink.Create New Test Plan ${TestPlanName}
 
 
-Test Teardown  Run keywords  testlink.Delete Test Plan Management  ${TestPlanName}
-...             AND          testlink.Delete Test Plan Management  ${TestPlanName2}
-...             AND          testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
-...             AND          testlink.Check that test has been deleted
-...             AND          headerPage.Go to index page
-...             AND          Close browser
+Test Teardown  Run keywords     testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
+...             AND             Close browser
 
 
 *** Variables ***
