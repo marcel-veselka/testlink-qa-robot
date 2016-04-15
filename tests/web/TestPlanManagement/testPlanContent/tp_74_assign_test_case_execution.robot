@@ -17,8 +17,8 @@ Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         headerPage.go to index page
 
 
-#Test Teardown  Run keywords    testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
-#...             AND             close browser
+Test Teardown  Run keywords    testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
+...             AND             close browser
 *** Variables ***
 ${newTestProjectName}  TestoProjektoUno
 ${newTestProjectPrefix}  Prefixo
@@ -29,7 +29,7 @@ ${testCaseName1}  TestoCaso2
 ${TestPlanManagementName}  TestoPlanoSupero
 ${TestPlanManagementDescription}  TestoPlaneDescriptione
 ${PlatformName}  Platformissimo
-${PlatformName1}  Platformissimo1
+${PlatformName1}  SpezialePlatformo
 ${buildName}        BuildoNamo
 ${Username}     renat.kulalov
 ${Username1}     jan.pippal
@@ -40,7 +40,7 @@ Assign Test Case Execution
     headerPage.go to index page
     desktopPage.go to Add/Remove Test Cases
     testlink.Add TC ${testCaseName} to a platform ${PlatformName}
-    testlink.Add TC ${testCaseName1} to a platform ${PlatformName1}
-    testlink.Assign TC ${testCaseName} from platform ${PlatformName} to users ${Username}
-    testlink.Assign TC ${testCaseName1} from platform ${PlatformName} to users ${Username1}
+    #testlink.Add TC ${testCaseName1} to a platform ${PlatformName1}
+    #testlink.Assign TC ${testCaseName} to users ${Username}
+    #testlink.Assign TC ${testCaseName1} to users ${Username1}
 

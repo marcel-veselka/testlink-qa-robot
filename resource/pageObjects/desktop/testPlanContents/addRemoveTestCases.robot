@@ -21,7 +21,9 @@ ${BROWSER}      ff
 Assign TC to platform ${PlatformName}
     select frame  mainframe
     select frame  workframe
-    click element  xpath=//tr[td//text()[contains(.,'${PlatformName}')]]/td[input[@type="checkbox"]]/input   /
+    #click element  xpath=//tr[td/span//text()[contains(.,'${testCaseName}')]]/tr[td//text()[contains(.,'${PlatformName}')]]/td[input[@type="checkbox"]]/input
+    select from list by value  select_platform  0
+    click element  xpath=//*[@id="header-wrap"]/div[2]/div/button[1]
     click button  doAddRemove
     unselect frame
 

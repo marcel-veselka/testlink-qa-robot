@@ -959,13 +959,14 @@ Add TC ${testCaseName} to a platform ${PlatformName}
     addRemoveTestCases.Assign TC to platform ${PlatformName}
 
 
-Assign TC ${testCaseName} from platform ${PlatformName} to users ${Username}
+
+Assign TC ${testCaseName} to users ${Username}
     headerPage.go to index page
     desktopPage.Go to Assign Test Case Execution
     desktopPage.Check Assign Test Case Execution
     #assignTestCaseExecution.Select platform ${PlatformName}
-    #testSpecificationPage.Select test case ${testCaseName} node
-    #assignTestCaseExecution.Select User ${Username}
+    testSpecificationPage.Select test case ${testCaseName} node
+    assignTestCaseExecution.Select User ${Username}
 
 
 Make all Test Plan Active/Inactive

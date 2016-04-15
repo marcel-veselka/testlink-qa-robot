@@ -22,13 +22,16 @@ Select platform ${PlatformName}
     select frame  mainframe
     select frame  treeframe
     click element  xpath=//*[@id="settings"]/table/tbody/tr[2]/td[2]/div
+    wait until page contains   ${PlatformName}
     click element  xpath=//*[@id="settings"]/table/tbody/tr[2]/td[2]/select/option[.='${PlatformName}']
     unselect frame
 
 Select User ${Username}
     select frame  mainframe
     select frame  workframe
-    click element  xpath//*[@id="tester_for_tcid_12218_18_chosen"]/ul/li/input
-    click element  xpath=//*[@id="tester_for_tcid_12218_18"]/option[.='${Username}']
+    click element  xpath=//*[@id="the-table-1"]/thead/tr/th/img
+    click element  id=bulk_tester_div_chosen
+    input text  xpath=//*[@id="bulk_tester_div_chosen"]/ul/li/input  ${Username}
+    click button  bulk_user_assignment
     click button  doActionButton
     unselect frame
