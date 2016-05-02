@@ -21,6 +21,7 @@ ${testSuiteName}            suiteTest
 *** Keywords ***
 I am here
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     wait until page contains element  xpath=//h1[text()="Navigator - Test Specification"]
     wait until page contains element  xpath=//span[contains(text(),"Settings")]

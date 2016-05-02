@@ -8,7 +8,6 @@ Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         headerPage.Go to index page and change testproject
 ...             AND         testlink.Create test suite ${testSuiteName} in test project ${newTestProjectName}
 ...             AND         testlink.Create test case ${testCaseName} in ${testSuiteName}
-...             AND         testlink.Create test case ${testCaseName1} in ${testSuiteName}
 ...             AND         testlink.Create New Test Plan ${TestPlanName}
 ...             AND         testlink.Create Platform ${PlatformName}
 ...             AND         testlink.Create Platform ${PlatformName1}
@@ -25,7 +24,6 @@ ${newTestProjectPrefix}  tp74
 ${newTestProjectDescription}  DesctiptioneOfTestProject74
 ${testSuiteName}  tsuite74
 ${testCaseName}  tc74
-${testCaseName1}  tc74_1
 ${TestPlanName}  testPlan74
 ${TestPlanDescription}  DescriptionOfTestPlan74
 ${PlatformName}  Platform74
@@ -40,9 +38,7 @@ ${buildDescription}  DescriptionOfBuild74
 Assign Test Case Execution
     headerPage.go to index page
     desktopPage.go to Add/Remove Test Cases
-    testlink.Add TC ${testCaseName} to a platform ${PlatformName}
-    #testlink.Add TC ${testCaseName1} to a platform ${PlatformName1}
+    testlink.Add TC ${testCaseName} to platform ${PlatformName} users ${Username}
     #testlink.Assign TC ${testCaseName} to users ${Username}
     #testlink.Assign TC ${testCaseName1} to users ${Username1}
 
-#ghjklfghfghf

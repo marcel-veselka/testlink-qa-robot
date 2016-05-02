@@ -956,21 +956,27 @@ Add Platform to Test Plan
     unselect frame
 
 
-Add TC ${testCaseName} to a platform ${PlatformName}
+#Add TC ${testCaseName} to a platform ${PlatformName}
+    #headerPage.go to index page
+    #desktopPage.Go to Add/Remove Test Cases
+    #desktopPage.Check Add/Remove Test Cases
+    #addRemoveTestCases.Show Test Cases
+    #addRemoveTestCases.Assign TC to platform ${PlatformName}
+
+Add TC ${testCaseName} to platform ${PlatformName} users ${Username}
     headerPage.go to index page
     desktopPage.Go to Add/Remove Test Cases
     desktopPage.Check Add/Remove Test Cases
     addRemoveTestCases.Show Test Cases
-    addRemoveTestCases.Assign TC to platform ${PlatformName}
-
-
+    addRemoveTestCases.Check Page Add/Remove TC
+    addRemoveTestCases.Assign TC to user ${Username}
 
 Assign TC ${testCaseName} to users ${Username}
     headerPage.go to index page
     desktopPage.Go to Assign Test Case Execution
     desktopPage.Check Assign Test Case Execution
     #assignTestCaseExecution.Select platform ${PlatformName}
-    testSpecificationPage.Select test case ${testCaseName2} node
+    testSpecificationPage.Select test case ${testCaseName} node
     assignTestCaseExecution.Select User ${Username}
 
 

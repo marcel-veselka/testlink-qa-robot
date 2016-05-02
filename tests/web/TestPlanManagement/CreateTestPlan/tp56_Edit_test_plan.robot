@@ -24,10 +24,10 @@ Test Teardown  Run keywords     testlink.Delete test project  ${newTestProjectNa
 
 ${newTestProjectName}               testProject56
 ${newTestProjectPrefix}             tp56
-${TestPlanName}           testPlan56
-${TestPlanName1}          testPlan56_1
+${TestPlanName}                     testPlan56
+${TestPlanName1}                    testPlan56_1
 ${EditTestPlanName}                 testPlan56_2
-${TestPlanDescription}    DescriptionOfTestPlan56
+${TestPlanDescription}              DescriptionOfTestPlan56
 ${buildDescription}                 DescriptionOfBuild56
 ${testCaseNameNew}                  tc56_1
 ${testCaseName}                     tc56

@@ -18,13 +18,19 @@ ${BROWSER}      ff
 
 
 *** Keywords ***
-Assign TC to platform ${PlatformName}
+Check Page Add/Remove TC
     select frame  mainframe
     select frame  workframe
-    #click element  xpath=//tr[td/span//text()[contains(.,'${testCaseName}')]]/tr[td//text()[contains(.,'${PlatformName}')]]/td[input[@type="checkbox"]]/input
-    select from list by value  select_platform  0
-    click element  xpath=//*[@id="header-wrap"]/div[2]/div/button[1]
-    click button  doAddRemove
+    wait until page contains element  xpath=//input[@name="doAddRemove"]
+    wait until page contains element  xpath=//tbody[tr/td[contains(text(),"${PlatformName}")]][tr/td[contains(text(),"${PlatformName1}")]]
+    wait until page contains element  testerID
+    unselect frame
+
+
+Assign TC to user ${Username}
+    select frame  mainframe
+    select frame  workframe
+    select from list by label  testerID  ${Username}
     unselect frame
 
 Show Test Cases
