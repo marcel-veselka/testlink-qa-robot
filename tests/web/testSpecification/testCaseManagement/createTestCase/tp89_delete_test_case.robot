@@ -9,7 +9,7 @@ Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         headerPage.Go to index page and change testproject
 ...             AND         testlink.Create New Test Plan ${TestPlanName}
 ...             AND         testlink.Create Build with name ${buildName}
-...             AND         testlink.Create Test Suite
+...             AND         testlink.Create test suite ${testSuiteName} in test project ${newTestProjectName}
 ...             AND         testlink.Check New Test Suite
 ...             AND         testlink.Create test case ${testCaseName} in ${testSuiteName}
 ...             AND         testlink.Create test case ${testCaseName2} in ${testSuiteName}

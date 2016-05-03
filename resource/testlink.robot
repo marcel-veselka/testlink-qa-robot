@@ -438,7 +438,7 @@ Create New Test Plan ${TestPlanName}
     headerPage.Go to index page
     wait until keyword succeeds  1min  0  desktopPage.I am here
     desktopPage.Go to Test Plan Management
-    desktopPage.Check Test Plan Management
+    wait until keyword succeeds  1min  0  desktopPage.Check Test Plan Management
     testPlanManagement.Create Test Plan Management
     testPlanManagement_detail.Input Name  ${TestPlanName}
     testPlanManagement_detail.Input Description
@@ -953,12 +953,9 @@ Create Platform ${PlatformName}
 
 
 Add Platform to Test Plan
-    select frame  name=titlebar
-    click element  xpath=//img[@title="logo"]
-    unselect frame
-    select frame  name=mainframe
-    click link  Add / Remove Platforms
-    unselect frame
+    headerPage.go to index page
+    wait until keyword succeeds  1min  0  desktopPage.Check Add/Remove Platforms
+    wait until keyword succeeds  1min  0  addRemovePlatforms.I Am Here
     select frame  name=mainframe
     click element  xpath=//tr/td[2]/img[1]
     click button  doAssignPlatforms
@@ -972,7 +969,7 @@ Add TC ${testCaseName} to platform ${PlatformName} users ${Username}
     desktopPage.Go to Add/Remove Test Cases
     desktopPage.Check Add/Remove Test Cases
     addRemoveTestCases.Show Test Cases
-    addRemoveTestCases.Check Page Add/Remove TC ${PlatformName}
+    wait until keyword succeeds  1min  0  addRemoveTestCases.Check Page Add/Remove TC ${PlatformName}
     addRemoveTestCases.Assign TC to user ${Username}
     addRemoveTestCases.Assign TC to platform ${PlatformName}
 
@@ -991,7 +988,7 @@ Unassign TC ${PlatformName}
     desktopPage.Go to Add/Remove Test Cases
     desktopPage.Check Add/Remove Test Cases
     addRemoveTestCases.Show Test Cases
-    addRemoveTestCases.Check Page Add/Remove TC ${PlatformName}
+    wait until keyword succeeds  1min  0  addRemoveTestCases.Check Page Add/Remove TC ${PlatformName}
     addRemoveTestCases.Check TC were Assigned
     addRemoveTestCases.Unassign TC from ${PlatformName}
 
