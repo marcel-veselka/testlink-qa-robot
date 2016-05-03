@@ -18,12 +18,12 @@ ${BROWSER}      ff
 
 
 *** Keywords ***
-Check Page Add/Remove TC
+Check Page Add/Remove TC ${PlatformName}
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//input[@name="doAddRemove"]
-    wait until page contains element  xpath=//tbody[tr/td[contains(text(),"${PlatformName}")]][tr/td[contains(text(),"${PlatformName1}")]]
+    wait until page contains element  xpath=//tbody[tr/td[contains(text(),"${PlatformName}")]]
     wait until page contains element  testerID
     unselect frame
 

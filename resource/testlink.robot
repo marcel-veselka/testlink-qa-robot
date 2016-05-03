@@ -35,6 +35,7 @@ Resource  ../resource/pageObjects/desktop/testExecution/reportsAndMetricsPage.ro
 Resource  ../resource/pageObjects/desktop/events/eventsPage.robot
 Resource  ../resource/pageObjects/desktop/testPlanContents/addRemoveTestCases.robot
 Resource  ../resource/pageObjects/desktop/testPlanContents/assignTestCaseExecution.robot
+Resource  ../resource/pageObjects/desktop/testPlanContents/updateLinkedTcVersion.robot
 
 *** Variables ***
 
@@ -447,7 +448,6 @@ Create New Test Plan ${TestPlanName}
 
 Create Test Plan Management AS COPY
      [Tags]  tp54
-
     desktopPage.Wait until page contains all elements
     desktopPage.Go to Test Plan Management
     desktopPage.Check Test Plan Management
@@ -889,6 +889,14 @@ Check All Actions Buttons For Test Case
     testSpecificationPage.Select test case ${testCaseName} node and click action button
     testSpecificationPage.Click On Activate This Version
 
+Create New Version Of TC
+    [Tags]  tp78
+    headerPage.Go to index page
+    desktopPage.Go to Test Specification (mainframe)
+    testSpecificationPage.Select test case ${testCaseName} node and click action button
+    testSpecificationPage.Click On Create New Version
+
+
 Show Execution History
     [Tags]  90
     headerPage.Go to index page
@@ -963,7 +971,7 @@ Add TC ${testCaseName} to platform ${PlatformName} users ${Username}
     desktopPage.Go to Add/Remove Test Cases
     desktopPage.Check Add/Remove Test Cases
     addRemoveTestCases.Show Test Cases
-    addRemoveTestCases.Check Page Add/Remove TC
+    addRemoveTestCases.Check Page Add/Remove TC ${PlatformName}
     addRemoveTestCases.Assign TC to user ${Username}
     addRemoveTestCases.Assign TC to platform ${PlatformName}
 
@@ -982,7 +990,7 @@ Unassign TC ${PlatformName}
     desktopPage.Go to Add/Remove Test Cases
     desktopPage.Check Add/Remove Test Cases
     addRemoveTestCases.Show Test Cases
-    addRemoveTestCases.Check Page Add/Remove TC
+    addRemoveTestCases.Check Page Add/Remove TC ${PlatformName}
     addRemoveTestCases.Check TC were Assigned
     addRemoveTestCases.Unassign TC from ${PlatformName}
 
@@ -1044,6 +1052,35 @@ Execute Test Suite
     executeTestsPage.Click on Save execution button
     executeTestsPage.Check That Blocked Test Was Saved
     executeTestsPage.Check Test Suite Status
+
+Update linked TC ${testCaseName} ${testSuiteName} version
+    [Tags]  tp78
+    headerPage.Go to index page
+    desktopPage.Go to Update Linked Test Case Versions
+    desktopPage.Check Update Linked Test Case Versions
+    updateLinkedTcVersion.I am here
+    updateLinkedTcVersion.Select Test Suite From The Tree ${testSuiteName}
+    updateLinkedTcVersion.Check Version Of The TC ${testCaseName}
+    updateLinkedTcVersion.Update to new version ${testCaseName}
+
+Check TC Version was changed ${testCaseName} ${testSuiteName} in Update Linked TC Version
+    [Tags]  tp78
+    headerPage.Go to index page
+    desktopPage.Go to Update Linked Test Case Versions
+    desktopPage.Check Update Linked Test Case Versions
+    updateLinkedTcVersion.I am here
+    updateLinkedTcVersion.Select Test Suite From The Tree ${testSuiteName}
+    updateLinkedTcVersion.Check TC Version was changed ${testCaseName}
+
+Check TC Version was changed ${testCaseName} ${testSuiteName} in Assign TC Execution
+    [Tags]  tp78
+    headerPage.go to index page
+    desktopPage.Go to Assign Test Case Execution
+    desktopPage.Check Assign Test Case Execution
+    assignTestCaseExecution.I am here
+    assignTestCaseExecution.Select Test Suite From The Tree ${testSuiteName}
+    assignTestCaseExecution.Check Updated Version of TC ${testCaseName}
+
 
 
 

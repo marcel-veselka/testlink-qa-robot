@@ -5,18 +5,21 @@ Documentation  A test suite with a single test for creating a new Custom Field. 
 
 Resource       ../../../../resource/testlink.robot
 
-Test Setup  Run keywords    testlink.Login as admin correct
+Test Setup  Run keywords    testlink.Create new Test Project
+...             AND         headerPage.Go to index page and change testproject
 ...             AND         testlink.Create New Test Plan ${TestPlanName}
-...             AND         Close Browser
+...             AND         headerPage.Go to index page
 
 
-Test Teardown  Run keywords  testlink.Delete Test Plan Management  ${TestPlanName2}
-...             AND          testlink.Delete Test Plan Management  ${TestPlanName}
-...             AND          Close browser
+Test Teardown  Run keywords    testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
+...             AND             close browser
 
 
 *** Variables ***
 
+${newTestProjectName}  testProject54
+${newTestProjectPrefix}  tp54
+${newTestProjectDescription}  DesctiptioneOfTestProject54
 ${TestPlanName}  testPlan54
 ${TestPlanName2}  testPlan54_1
 ${TestPlanDescription}  DescriptionOfTestPlan54
@@ -25,7 +28,6 @@ ${TestPlanDescription}  DescriptionOfTestPlan54
 
 Create test plan AS COPY
 
-     testlink.Login as admin correct
      testlink.Create Test Plan Management AS COPY
 
 

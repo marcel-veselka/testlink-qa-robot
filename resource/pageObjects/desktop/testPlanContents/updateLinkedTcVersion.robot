@@ -18,23 +18,6 @@ ${BROWSER}      ff
 
 
 *** Keywords ***
-Select platform ${PlatformName}
-    select frame  mainframe
-    select frame  treeframe
-    click element  xpath=//*[@id="settings"]/table/tbody/tr[2]/td[2]/div
-    wait until page contains   ${PlatformName}
-    click element  xpath=//*[@id="settings"]/table/tbody/tr[2]/td[2]/select/option[.='${PlatformName}']
-    unselect frame
-
-Select User ${Username}
-    select frame  mainframe
-    select frame  workframe
-    click element  xpath=//*[@id="the-table-1"]/thead/tr/th/img
-    click element  id=bulk_tester_div_chosen
-    input text  xpath=//*[@id="bulk_tester_div_chosen"]/ul/li/input  ${Username}
-    click button  bulk_user_assignment
-    click button  doActionButton
-    unselect frame
 
 I am here
     select frame  name=mainframe
@@ -58,25 +41,30 @@ Select Test Suite From The Tree ${testSuiteName}
     click element  xpath=//span[text()="${testSuiteName} (1)" ]
     unselect frame
 
-Check Test Cases Assigned Correctly ${Username} ${PlatformName}
+Check Version Of The TC ${testCaseName}
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    wait until page contains element  xpath=//tr[td[contains(.,"${Username}")]][td[text()="${PlatformName}"]]
+    wait until page contains element  xpath=//tr[td[contains(.,"${testCaseName}")]][td[contains(.,"2")]][td/select]
+    wait until page contains element  xpath=//tr[td[contains(.,"${testCaseName}")]]//input[@type="checkbox"]
+    wait until page contains element  xpath=//input[@id="update_btn"]
     unselect frame
 
-Check there is no assigned TC ${testSuiteName}
-    select frame  mainframe
-    wait until page contains element  treeframe
-    select frame  treeframe
-    page should not contain element  xpath=//span[text()="${testSuiteName} (1)" ]
-    unselect frame
-
-Check Updated Version of TC ${testCaseName}
+Update to new version ${testCaseName}
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    wait until page contains element  xpath=//tr[td[contains(.,"1")]][td[contains(.,"${testCaseName}")]]
-    page should contain element  xpath=//tr[td[contains(.,"1")]][td[contains(.,"${testCaseName}")]]
+    click element  xpath=//tr[td[contains(.,"${testCaseName}")]]//input[@type="checkbox"]
+    select from list by label  xpath=//tr[td[contains(.,"${testCaseName}")]]//select  1
+    click element  xpath=//input[@id="update_btn"]
+    unselect frame
+
+Check TC Version was changed ${testCaseName}
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    page should not contain element  xpath=//tr[td[contains(.,"${testCaseName}")]][td[contains(.,"2")]][td/select]
+    wait until page contains element  xpath=//tr[td[contains(.,"${testCaseName}")]][td[contains(.,"1")]][td/select]
+    page should contain element  xpath=//tr[td[contains(.,"${testCaseName}")]][td[contains(.,"1")]][td/select]
     unselect frame
 
