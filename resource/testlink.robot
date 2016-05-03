@@ -445,7 +445,7 @@ Create New Test Plan ${TestPlanName}
     testPlanManagement_detail.Select Checkbox Active
     testPlanManagement_detail.Select Checkbox Public
     testPlanManagement_detail.Click Create button to finish Test Plan Management
-    testPlanManagement.Check Test Plan Management is Created  ${TestPlanName}
+    wait until keyword succeeds  1min  0  testPlanManagement.Check Test Plan Management is Created  ${TestPlanName}
 
 Create Test Plan Management AS COPY
      [Tags]  tp54
@@ -712,13 +712,13 @@ Start creating build
 
     [Tags]  tp63
     desktopPage.Go to Builds/Releases
-    buildsReleases.Check Builds/Releases
+    wait until keyword succeeds  1min  0  buildsReleases.Check Builds/Releases
     buildsReleases.Create Build
 
 
 Create Build with name ${buildName}
     [Tags]  tp63
-    headerPage.Go to index page and change testproject
+    wait until keyword succeeds  1min  0  headerPage.Go to index page and change testproject
     testlink.Start creating build
     testlink.Add Details and Finish creating build ${buildName}
     testlink.Check that Build is created ${buildName}
@@ -774,7 +774,7 @@ Controll Warning Message And Create Test Suite
 
 Create Test Suite
     [Tags]  tp86
-    headerPage.Go to index page and change testproject
+    wait until keyword succeeds  1min  0  headerPage.Go to index page and change testproject
     desktopPage.Go to Test Specification (mainframe)
     testSpecificationPage.Create Test Suite Button
     testSpecificationPage.Fill In The Fields
@@ -834,7 +834,7 @@ Delete New Test Suite
 
 Check New Test Suite
     [Tags]  tp80
-    testSpecificationPage.Check If Test Suite Was Created
+    wait until keyword succeeds  1min  0  testSpecificationPage.Check If Test Suite Was Created
 
 Create and check role ${role} in user management
     wait until keyword succeeds  1min  0  headerPage.I am here
@@ -1058,7 +1058,7 @@ Update linked TC ${testCaseName} ${testSuiteName} version
     [Tags]  tp78
     headerPage.Go to index page
     desktopPage.Go to Update Linked Test Case Versions
-    desktopPage.Check Update Linked Test Case Versions
+    wait until keyword succeeds  1min  0  desktopPage.Check Update Linked Test Case Versions
     wait until keyword succeeds  1min  0  updateLinkedTcVersion.I am here
     updateLinkedTcVersion.Select Test Suite From The Tree ${testSuiteName}
     wait until keyword succeeds  1min  0  updateLinkedTcVersion.Check Version Of The TC ${testCaseName}
@@ -1068,7 +1068,7 @@ Check TC Version was changed ${testCaseName} ${testSuiteName} in Update Linked T
     [Tags]  tp78
     headerPage.Go to index page
     desktopPage.Go to Update Linked Test Case Versions
-    desktopPage.Check Update Linked Test Case Versions
+    wait until keyword succeeds  1min  0  desktopPage.Check Update Linked Test Case Versions
     wait until keyword succeeds  1min  0  updateLinkedTcVersion.I am here
     updateLinkedTcVersion.Select Test Suite From The Tree ${testSuiteName}
     wait until keyword succeeds  1min  0  updateLinkedTcVersion.Check TC Version was changed ${testCaseName}
@@ -1077,7 +1077,7 @@ Check TC Version was changed ${testCaseName} ${testSuiteName} in Assign TC Execu
     [Tags]  tp78
     headerPage.go to index page
     desktopPage.Go to Assign Test Case Execution
-    desktopPage.Check Assign Test Case Execution
+    wait until keyword succeeds  1min  0  desktopPage.Check Assign Test Case Execution
     wait until keyword succeeds  1min  0  assignTestCaseExecution.I am here
     assignTestCaseExecution.Select Test Suite From The Tree ${testSuiteName}
     wait until keyword succeeds  1min  0  assignTestCaseExecution.Check Updated Version of TC ${testCaseName}
@@ -1086,7 +1086,7 @@ Check There Is No Platforms Assigned
     [Tags]  tp19
     headerPage.go to index page
     desktopPage.Go to Add/Remove Platforms
-    desktopPage.Check Add/Remove Platforms
+    wait until keyword succeeds  1min  0  desktopPage.Check Add/Remove Platforms
     wait until keyword succeeds  1min  0  addRemovePlatforms.I Am Here
     addRemovePlatforms.Check there are no platforms assigned
 
