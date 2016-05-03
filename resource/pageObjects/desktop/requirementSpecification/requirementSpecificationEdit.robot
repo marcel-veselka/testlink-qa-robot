@@ -25,6 +25,7 @@ ${title1}        newtitle1
 
 Create New Requirement Specification (type URS)
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  name=new_req_spec
     click element  name=new_req_spec
@@ -40,18 +41,21 @@ Create New Requirement Specification (type URS)
 
 Choose Requirement Specification
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     sleep  2
     wait until page contains element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
     click element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//img[@title="Actions"]
     unselect frame
 
 Create Requirement Operations
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//img[@title="Actions"]
     click element  xpath=//img[@title="Actions"]
@@ -59,6 +63,7 @@ Create Requirement Operations
     click button  name=create_req
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  name=create_req
     wait until page contains element  req_title
@@ -72,6 +77,7 @@ Create Requirement Operations
     click element  name=create_req
     unselect frame
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     wait until page contains  ${dokumentID}:${title}
     unselect frame
@@ -80,12 +86,14 @@ Create Requirement Operations ${dokumentID} ${title}
 
 Create Another Requirement Operations
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     sleep  2
     wait until page contains element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
     double click element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//img[@title="Actions"]
     click element  xpath=//img[@title="Actions"]
@@ -93,6 +101,7 @@ Create Another Requirement Operations
     click button  name=create_req
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  name=create_req
     wait until page contains element  req_title
@@ -106,12 +115,14 @@ Create Another Requirement Operations
     click element  name=create_req
     unselect frame
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     wait until page contains  ${dokumentID1}:${title1}
     unselect frame
 
 Edit Requirement Operations
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     wait until page contains element  name=expand_tree
     click element  name=expand_tree
@@ -120,6 +131,7 @@ Edit Requirement Operations
     double click element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//img[@title="Actions"]
     click element  xpath=//img[@title="Actions"]
@@ -139,6 +151,7 @@ Edit Requirement Operations
 
 Check Edited Requirement Operations
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//table[tbody/tr[contains(.,"Version")]]
     wait until page contains  revision 2
@@ -146,6 +159,7 @@ Check Edited Requirement Operations
 
 Create Test Case From Requirement
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     sleep  2
     wait until page contains element  xpath=//a[span[contains(text(), "${dokumentID}:${title} ")]]
@@ -153,6 +167,7 @@ Create Test Case From Requirement
     #capture page screenshot
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//img[@title="Actions"]
     click element  xpath=//img[@title="Actions"]
@@ -167,11 +182,13 @@ Create Test Case From Requirement
 
 Delete Requirement Specification
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     wait until page contains element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
     click element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//img[@title="Actions"]
     click element  xpath=//img[@title="Actions"]
@@ -185,6 +202,7 @@ Delete Requirement Specification
 
 Create New Version Of Requirement
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     wait until page contains element  name=expand_tree
     wait until page contains element  name=collapse_tree
@@ -194,6 +212,7 @@ Create New Version Of Requirement
     double click element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//img[@title="Actions"]
     click element  xpath=//img[@title="Actions"]
@@ -212,6 +231,7 @@ Create New Version Of Requirement
 
 Delete Requirement Specification NO
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//img[@title="Actions"]
     click element  xpath=//img[@title="Actions"]
@@ -225,6 +245,7 @@ Delete Requirement Specification NO
 
 Select More Than 1 Version Requirement
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     wait until page contains element  name=expand_tree
     wait until page contains element  name=collapse_tree
@@ -234,6 +255,7 @@ Select More Than 1 Version Requirement
     double click element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//img[@title="Actions"]
     click element  xpath=//img[@title="Actions"]
@@ -248,6 +270,7 @@ Select More Than 1 Version Requirement
 
 Delete More Than 1 Version Requirement
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     click button  name=delete_req_version
     wait until page contains element  ext-gen38
@@ -258,6 +281,7 @@ Delete More Than 1 Version Requirement
 
 Check Requirement Version
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     wait until page contains element  name=expand_tree
     wait until page contains element  name=collapse_tree
@@ -267,6 +291,7 @@ Check Requirement Version
     double click element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//td[starts-with(text(), 'Version') and contains(text(), '1 revision')]
     unselect frame

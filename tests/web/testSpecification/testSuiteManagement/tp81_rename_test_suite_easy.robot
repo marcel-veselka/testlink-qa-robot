@@ -31,7 +31,7 @@ Rename Test Suite Easy
         #testlink.Check New Test Suite
         testlink.Go to index Page
         desktopPage.Go to Test Specification (mainframe)
-        testSpecificationPage.I am here
+        wait until keyword succeeds  1min  0  testSpecificationPage.I am here
         testlink.Edit Test Suite Move It Copy It
 
 

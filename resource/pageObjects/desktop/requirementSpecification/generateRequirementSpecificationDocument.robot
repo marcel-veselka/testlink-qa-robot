@@ -21,6 +21,7 @@ ${BROWSER}      ff
 
 Check Generate Requirement Specification Document
     select frame  name=mainframe
+    wait until page contains element  workframe
     select frame  name=workframe
     wait until page contains  Print Requirement Specification
     unselect frame

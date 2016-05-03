@@ -20,10 +20,12 @@ ${BROWSER}      ff
 
 I am here
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     wait until page contains element  xpath=//h1[text()="Reports and Metrics"]
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//h1[text()="Description of Test Reports and Metrics"]
     unselect frame

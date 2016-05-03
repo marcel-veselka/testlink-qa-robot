@@ -30,15 +30,16 @@ ${tc2}  tc82_1
 Drag drop
     headerPage.Go to index page and change testproject
     desktopPage.Go to link Test Specification
-    testSpecificationPage.I am here
+    wait until keyword succeeds  1min  0  testSpecificationPage.I am here
     testSpecificationPage.Move suite ${suite1} to suite ${suite3}
     testSpecificationPage.Move suite ${suite2} to suite ${suite3}
-    Check this testcase structure after movement
+    wait until keyword succeeds  1min  0  Check this testcase structure after movement
 
 *** Keywords ***
 Check this testcase structure after movement
     testSpecificationPage.Expand tree
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     wait until page contains  ${suite1}
     wait until page contains  ${suite2}

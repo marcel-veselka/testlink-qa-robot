@@ -20,6 +20,7 @@ ${BROWSER}      ff
 
 I am here
     select frame  name=mainframe
+    wait until page contains element  treeframe
     select frame  name=treeframe
     wait until page contains element  xpath=//h1[text()="Execute Tests"]
     wait until page contains element  xpath=//span[contains(text(),"Settings")]

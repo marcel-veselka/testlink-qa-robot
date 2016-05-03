@@ -23,7 +23,7 @@ I am here
     unselect frame
 
 I am here in full
-    headerPage.I am here
+    wait until keyword succeeds  1min  0  headerPage.I am here
     select frame  name=titlebar
     wait until page contains element  xpath=//img[@title="Requirement Specification"]
     wait until page contains element  xpath=//img[@title="Test Execution"]
@@ -31,7 +31,7 @@ I am here in full
     unselect frame
 
 Go to index page
-    headerPage.I am here
+    wait until keyword succeeds  1min  0  headerPage.I am here
     select frame  name=titlebar
     click element  xpath=//img[@title="logo"]
     unselect frame
@@ -47,50 +47,50 @@ Go to index page and change testproject
     unselect frame
 
 Go to My Settings
-    headerPage.I am here
+    wait until keyword succeeds  1min  0  headerPage.I am here
     select frame  name=titlebar
     click element  xpath=//a[img[@title="My Settings"]]
     unselect frame
 
 Go to Desktop (Project)
-    headerPage.I am here
+    wait until keyword succeeds  1min  0  headerPage.I am here
     select frame  name=titlebar
     click element  xpath=//img[@title="Project"]
     unselect frame
 
 Go to Requirement Specification (titlebar)
-    headerPage.I am here in full
+    wait until keyword succeeds  1min  0  headerPage.I am here in full
     select frame  name=titlebar
     click element  xpath=//img[@title="Requirement Specification"]
     unselect frame
 
 
 Go to Test Specification (titlebar)
-    headerPage.I am here
+    wait until keyword succeeds  1min  0  headerPage.I am here
     select frame  name=titlebar
     click element  xpath=//img[@title="Test Specification"]
     unselect frame
 
 Go to Test Execution
-    headerPage.I am here in full
+    wait until keyword succeeds  1min  0  headerPage.I am here in full
     select frame  name=titlebar
     click element  xpath=//img[@title="Test Execution"]
     unselect frame
 
 Go to Test Reports
-    headerPage.I am here in full
+    wait until keyword succeeds  1min  0  headerPage.I am here in full
     select frame  name=titlebar
     click element  xpath=//img[@title="Test Reports"]
     unselect frame
 
 Go to User Management
-    headerPage.I am here
+    wait until keyword succeeds  1min  0  headerPage.I am here
     select frame  name=titlebar
     click element  xpath=//img[@title="User Management"]
     unselect frame
 
 Go to Events
-    headerPage.I am here
+    wait until keyword succeeds  1min  0  headerPage.I am here
     select frame  name=titlebar
     click element  xpath=//img[@title="Events"]
     unselect frame

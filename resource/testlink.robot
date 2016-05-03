@@ -45,19 +45,19 @@ Resource  ../resource/pageObjects/desktop/testPlanContents/addRemovePlatforms.ro
 
 Login as admin correct
     loginPage.Open Browser To Login Page
-    loginPage.Wait until page contains all elements for login
+    wait until keyword succeeds  1min  0  loginPage.Wait until page contains all elements for login
     loginPage.Fill correct credentials and submit
     loginPage.Check there is no warning about login
 
 Login as admin incorrect
     loginPage.Open Browser To Login Page
-    loginPage.Wait until page contains all elements for login
+    wait until keyword succeeds  1min  0  loginPage.Wait until page contains all elements for login
     loginPage.Fill incorrect credentials and submit
     loginPage.Check there is a warning about login
 
 Login as admin with empty password field
     loginPage.Open Browser To Login Page
-    loginPage.Wait until page contains all elements for login
+    wait until keyword succeeds  1min  0  loginPage.Wait until page contains all elements for login
     loginPage.Fill correct Login input
     loginPage.Check that warning about empty field appears
 
@@ -156,23 +156,23 @@ Check desktop links
 
 Check header links
     headerPage.Change Test Project
-    headerPage.I am here in full
+    wait until keyword succeeds  1min  0  headerPage.I am here in full
     headerPage.Go to My Settings
-    mySettings.I am here
+    wait until keyword succeeds  1min  0  mySettings.I am here
     headerPage.Go to Desktop (Project)
-    desktopPage.I am here
+    wait until keyword succeeds  1min  0  desktopPage.I am here
     headerPage.Go to Requirement Specification (titlebar)
-    requirementSpecification(mainframe).I am here
+    wait until keyword succeeds  1min  0  requirementSpecification(mainframe).I am here
     headerPage.Go to Test Specification (titlebar)
-    testSpecificationPage.I am here
+    wait until keyword succeeds  1min  0  testSpecificationPage.I am here
     headerPage.Go to Test Execution
-    executeTestsPage.I am here
+    wait until keyword succeeds  1min  0  executeTestsPage.I am here
     headerPage.Go to Test Reports
-    reportsAndMetricsPage.I am here
+    wait until keyword succeeds  1min  0  reportsAndMetricsPage.I am here
     headerPage.Go to User Management
-    userManagement.I am here
+    wait until keyword succeeds  1min  0  userManagement.I am here
     headerPage.Go to Events
-    eventsPage.I am here
+    wait until keyword succeeds  1min  0  eventsPage.I am here
     headerPage.Go to index page
 
 Start creating new test project
@@ -187,7 +187,7 @@ Start creating new test project (enchanced features)
 
 
 Fill information to create test (enchanced feautures)
-    createTestProjectPage.I am here
+    wait until keyword succeeds  1min  0  createTestProjectPage.I am here
     select frame  mainframe
     createTestProjectPage.Fill Test Project Name  ${newTestProjectName}
     createTestProjectPage.Fill Test Project Prefix  ${newTestProjectPrefix}
@@ -201,7 +201,7 @@ Start creating new test project without conflict
     testProjectManagement.Click Create
 
 Fill information to create test without conflict
-    createTestProjectPage.I am here
+    wait until keyword succeeds  1min  0  createTestProjectPage.I am here
     select frame  mainframe
     createTestProjectPage.Fill Test Project Name  ${newTestProjectName}
     createTestProjectPage.Fill Test Project Prefix  ${newTestProjectPrefix}
@@ -221,7 +221,7 @@ Fill information to create test with template OFF
 
 
 Fill information to create test with template ON
-    createTestProjectPage.I am here
+    wait until keyword succeeds  1min  0  createTestProjectPage.I am here
     select frame  mainframe
     createTestProjectPage.Choose template from created project
     createTestProjectPage.Fill Test Project Name  ${newTestProjectName2}
@@ -295,9 +295,9 @@ Check Test Project Is Inactive
 Start creating new user
     [Tags]  tp-100_Create_New_User
     headerPage.Change Test Project
-    headerPage.I am here
+    wait until keyword succeeds  1min  0  headerPage.I am here
     headerPage.Go to User Management
-    userManagement.I am here
+    wait until keyword succeeds  1min  0  userManagement.I am here
     userManagement.Click create button
 
 Fill all info about user and submit
@@ -417,9 +417,9 @@ Delete EDITED Custom Field
 Start editing user
     [Tags]  tp-101_Modify_user
     headerPage.Change Test Project
-    headerPage.I am here
+    wait until keyword succeeds  1min  0  headerPage.I am here
     headerPage.Go to User Management
-    userManagement.I am here
+    wait until keyword succeeds  1min  0  userManagement.I am here
     userManagement.Wait until page contains view users content
     userManagement.Click desired user
 
@@ -436,7 +436,7 @@ Create New Test Plan ${TestPlanName}
     [Tags]  tp53_Create_test_plan_no_conflict  tp_61
 
     headerPage.Go to index page
-    desktopPage.I am here
+    wait until keyword succeeds  1min  0  desktopPage.I am here
     desktopPage.Go to Test Plan Management
     desktopPage.Check Test Plan Management
     testPlanManagement.Create Test Plan Management
@@ -983,7 +983,7 @@ Check Assigned TC to ${Username} and ${PlatformName}
     desktopPage.Check Assign Test Case Execution
     wait until keyword succeeds  1min  0  assignTestCaseExecution.I am here
     assignTestCaseExecution.Select Test Suite From The Tree ${testSuiteName}
-    assignTestCaseExecution.Check Test Cases Assigned Correctly ${Username} ${PlatformName}
+    wait until keyword succeeds  1min  0  assignTestCaseExecution.Check Test Cases Assigned Correctly ${Username} ${PlatformName}
 
 Unassign TC ${PlatformName}
     [Tags]  tp74
@@ -1001,7 +1001,7 @@ Check TC Are Not Assigned ${testSuiteName}
     desktopPage.Go to Assign Test Case Execution
     desktopPage.Check Assign Test Case Execution
     wait until keyword succeeds  1min  0  assignTestCaseExecution.I am here
-    assignTestCaseExecution.Check there is no assigned TC ${testSuiteName}
+    wait until keyword succeeds  1min  0  assignTestCaseExecution.Check there is no assigned TC ${testSuiteName}
 
 Make all Test Plan Active/Inactive
     [Tags]  56
@@ -1061,7 +1061,7 @@ Update linked TC ${testCaseName} ${testSuiteName} version
     desktopPage.Check Update Linked Test Case Versions
     wait until keyword succeeds  1min  0  updateLinkedTcVersion.I am here
     updateLinkedTcVersion.Select Test Suite From The Tree ${testSuiteName}
-    updateLinkedTcVersion.Check Version Of The TC ${testCaseName}
+    wait until keyword succeeds  1min  0  updateLinkedTcVersion.Check Version Of The TC ${testCaseName}
     updateLinkedTcVersion.Update to new version ${testCaseName}
 
 Check TC Version was changed ${testCaseName} ${testSuiteName} in Update Linked TC Version
@@ -1071,7 +1071,7 @@ Check TC Version was changed ${testCaseName} ${testSuiteName} in Update Linked T
     desktopPage.Check Update Linked Test Case Versions
     wait until keyword succeeds  1min  0  updateLinkedTcVersion.I am here
     updateLinkedTcVersion.Select Test Suite From The Tree ${testSuiteName}
-    updateLinkedTcVersion.Check TC Version was changed ${testCaseName}
+    wait until keyword succeeds  1min  0  updateLinkedTcVersion.Check TC Version was changed ${testCaseName}
 
 Check TC Version was changed ${testCaseName} ${testSuiteName} in Assign TC Execution
     [Tags]  tp78
@@ -1080,7 +1080,7 @@ Check TC Version was changed ${testCaseName} ${testSuiteName} in Assign TC Execu
     desktopPage.Check Assign Test Case Execution
     wait until keyword succeeds  1min  0  assignTestCaseExecution.I am here
     assignTestCaseExecution.Select Test Suite From The Tree ${testSuiteName}
-    assignTestCaseExecution.Check Updated Version of TC ${testCaseName}
+    wait until keyword succeeds  1min  0  assignTestCaseExecution.Check Updated Version of TC ${testCaseName}
 
 Check There Is No Platforms Assigned
     [Tags]  tp19

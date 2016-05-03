@@ -21,6 +21,7 @@ ${BROWSER}      ff
 
 Select Test Suite
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     wait until page contains element  name=filter_testcase_name
     wait until page contains element  name=doUpdateTree
@@ -28,6 +29,7 @@ Select Test Suite
     click button  name=doUpdateTree
     unselect frame
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     wait until page contains element  expand_tree
     click element  expand_tree
@@ -36,12 +38,14 @@ Select Test Suite
     double click element  xpath=//a[span[contains(text(),"${title} (")]]
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains  Requirements Specification Document
     unselect frame
 
 Assign Requirements
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  name=idSRS
     click element  name=idSRS
@@ -50,12 +54,14 @@ Assign Requirements
     click element  name=actionButton
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains  Please select a requirement
     wait until page contains element  xpath=//button[text()="OK"]
     click element  xpath=//button[text()="OK"]
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//tbody//img[@title="check/uncheck all"]
     wait until page contains element  name=actionButton
@@ -65,6 +71,7 @@ Assign Requirements
 
 Check Assign Requirements
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     wait until page contains element  expand_tree
     click button  name=expand_tree
@@ -73,12 +80,14 @@ Check Assign Requirements
     double click element  xpath=//a[span[contains(text(),"${title} [1]")]]
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//*[@id="div_assigned_req"]/table/tbody
     unselect frame
 
 Unassign Requirements And Check Availiable Requirements
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     wait until page contains element  expand_tree
     click button  name=expand_tree
@@ -87,6 +96,7 @@ Unassign Requirements And Check Availiable Requirements
     double click element  xpath=//a[span[contains(text(),"${title} [1]")]]
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//*[@id="div_assigned_req"]/table/tbody
     wait until page contains element  name=unassign
@@ -95,11 +105,13 @@ Unassign Requirements And Check Availiable Requirements
     click element  name=unassign
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains  Available Requirements
     wait until page does not contain element  xpath=//*[@id="div_assigned_req"]/table
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     page should contain element  div_free_req
     unselect frame

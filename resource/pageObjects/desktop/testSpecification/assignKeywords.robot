@@ -22,6 +22,7 @@ ${BROWSER}      ff
 
 Check Assign Keywords
     select frame  name=mainframe
+    wait until page contains element  workframe
     select frame  name=workframe
     wait until page contains  Keyword Assignment
     unselect frame
@@ -52,6 +53,7 @@ Click Assign Keyword to Test Case
 
 Assign Keywords
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=/html/body/div/div/form/div/table/tbody/tr/td[2]/img[1]
     wait until page contains element  name=assigntestcase
@@ -60,6 +62,7 @@ Assign Keywords
     click element  assigntestcase
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//div/div/p[contains(text(),"item")][contains(text()," ")][contains(text(),"was successfully")][contains(text()," ")][contains(text(),"updated!")]
     page should contain element  xpath=//div/div/p[contains(text(),"item")][contains(text()," ")][contains(text(),"was successfully")][contains(text()," ")][contains(text(),"updated!")]

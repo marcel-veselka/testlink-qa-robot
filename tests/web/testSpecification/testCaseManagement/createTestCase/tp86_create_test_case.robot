@@ -31,7 +31,7 @@ ${testCaseName}                 tc86
 Create Test Case
 
     desktopPage.Go to Test Specification (mainframe)
-    testSpecificationPage.I am here
+    wait until keyword succeeds  1min  0  testSpecificationPage.I am here
     testSpecificationPage.Select test suite ${testSuiteName} node
     testlink.Start Creating Test Case
     testlink.Fill informations test case and create

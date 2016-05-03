@@ -36,7 +36,7 @@ I am here
     unselect frame
 
 I am here in full
-    desktopPage.I am here
+    wait until keyword succeeds  1min  0  desktopPage.I am here
     select frame  mainframe
     wait until page contains  Requirement Specification
     wait until page contains  Requirement Overview
@@ -171,6 +171,7 @@ Go to Search Requirements
 
 Check Search Requirements
     select frame  name=mainframe
+    wait until page contains element  treeframe
     select frame  name=treeframe
     wait until page contains  Test Project
     unselect frame
@@ -183,6 +184,7 @@ Go to Search Requirement Specifications
 
 Check Search Requirement Specifications
     select frame  name=mainframe
+    wait until page contains element  treeframe
     select frame  name=treeframe
     wait until page contains  Search Requirement Specifications
     unselect frame
@@ -195,6 +197,7 @@ Go to Assign Requirements
 
 Check Assign Requirements
     select frame  name=mainframe
+    wait until page contains element  treeframe
     select frame  name=treeframe
     wait until page contains   Test Specification
     unselect frame
@@ -207,6 +210,7 @@ go to Generate Requirement Specification Document
 
 Check Generate Requirement Specification Document
     select frame  name=mainframe
+    wait until page contains element  treeframe
     select frame  name=treeframe
     wait until page contains   Test Plan
     unselect frame
@@ -219,6 +223,7 @@ Go to Test Specification (mainframe)
 
 Check Test Specification (mainframe)
     select frame  name=mainframe
+    wait until page contains element  treeframe
     select frame  name=treeframe
     wait until page contains   Test Specification
     unselect frame
@@ -242,6 +247,7 @@ Go to Assign Keywords
 
 Check Assign Keywords
     select frame  name=mainframe
+    wait until page contains element  treeframe
     select frame  name=treeframe
     wait until page contains   Test Specification
     unselect frame
@@ -313,6 +319,7 @@ Go to Execute Tests
 
 Check Execute Tests
     select frame  name=mainframe
+    wait until page contains element  treeframe
     select frame  name=treeframe
     wait until page contains  Execute Tests
     unselect frame
@@ -336,6 +343,7 @@ Go to Test Reports and Metrics
 
 Check Test Reports and Metrics
     select frame  name=mainframe
+    wait until page contains element  treeframe
     select frame  name=treeframe
     wait until page contains  Reports and Metrics
     unselect frame
@@ -370,6 +378,7 @@ Go to Add/Remove Test Cases
 
 Check Add/Remove Test Cases
     select frame  name=mainframe
+    wait until page contains element  treeframe
     select frame  name=treeframe
     wait until page contains  Add/Remove Test Cases
     unselect frame
@@ -382,6 +391,7 @@ Go to Assign Test Case Execution
 
 Check Assign Test Case Execution
     select frame  name=mainframe
+    wait until page contains element  treeframe
     select frame  name=treeframe
     wait until page contains  Assign Test Case Execution
     unselect frame
@@ -394,6 +404,7 @@ Go to Set Urgent Tests
 
 Check Set Urgent Tests
     select frame  name=mainframe
+    wait until page contains element  treeframe
     select frame  name=treeframe
     wait until page contains  Set Urgent Tests
     unselect frame
@@ -406,6 +417,7 @@ Go to Update Linked Test Case Versions
 
 Check Update Linked Test Case Versions
     select frame  name=mainframe
+    wait until page contains element  treeframe
     select frame  name=treeframe
     wait until page contains  Update Linked Test Case Versions
     unselect frame

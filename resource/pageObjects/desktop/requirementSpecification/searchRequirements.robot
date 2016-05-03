@@ -21,6 +21,7 @@ ${BROWSER}      ff
 
 Check Search Requirements
     select frame  name=mainframe
+    wait until page contains element  workframe
     select frame  name=workframe
     wait until page contains  Requirement Search Page
     unselect frame
