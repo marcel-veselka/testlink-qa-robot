@@ -7,7 +7,7 @@ Resource       ../../../../../resource/testlink.robot
 
 Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         headerPage.Go to index page and change testproject
-...             AND         testlink.Create Test Suite
+...             AND         testlink.Create test suite ${testSuiteName} in test project ${newTestProjectName}
 ...             AND         testlink.Check New Test Suite
 ...             AND         testlink.Create test case ${testCaseName} in ${testSuiteName}
 
@@ -28,6 +28,8 @@ ${testCaseNameEdit}             tc87_1
 *** Test Cases ***
 
 Edit test case
+    headerPage.Go to Index Page
+    desktopPage.Go to Test Specification (mainframe)
     testSpecificationPage.Select test case ${testCaseName} node and click action button
     testSpecificationPage.Edit Test Case
 

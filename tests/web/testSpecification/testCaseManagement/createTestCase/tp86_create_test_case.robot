@@ -7,7 +7,7 @@ Resource       ../../../../../resource/testlink.robot
 
 Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         headerPage.Go to index page and change testproject
-...             AND         testlink.Create Test Suite
+...             AND         testlink.Create test suite ${testSuiteName} in test project ${newTestProjectName}
 ...             AND         testlink.Check New Test Suite
 ...             AND         testlink.Go to index page
 
