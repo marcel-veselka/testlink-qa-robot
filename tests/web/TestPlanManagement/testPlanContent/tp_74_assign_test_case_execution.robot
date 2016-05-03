@@ -38,7 +38,6 @@ ${buildDescription}  DescriptionOfBuild74
 *** Test Cases ***
 
 Assign Test Case Execution
-    headerPage.go to index page
     desktopPage.go to Add/Remove Test Cases
     testlink.Add TC ${testCaseName} to platform ${PlatformName} users ${Username}
     testlink.Add TC ${testCaseName} to platform ${PlatformName1} users ${Username1}

@@ -19,6 +19,8 @@ ${BROWSER}      ff
 
 *** Keywords ***
 
+
+
 I am here
     select frame  name=mainframe
     wait until page contains element  treeframe
@@ -63,7 +65,6 @@ Check TC Version was changed ${testCaseName}
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    page should not contain element  xpath=//tr[td[contains(.,"${testCaseName}")]][td[contains(.,"2")]][td/select]
     wait until page contains element  xpath=//tr[td[contains(.,"${testCaseName}")]][td[contains(.,"1")]][td/select]
     page should contain element  xpath=//tr[td[contains(.,"${testCaseName}")]][td[contains(.,"1")]][td/select]
     unselect frame

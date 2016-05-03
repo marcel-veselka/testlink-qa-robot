@@ -36,6 +36,7 @@ Resource  ../resource/pageObjects/desktop/events/eventsPage.robot
 Resource  ../resource/pageObjects/desktop/testPlanContents/addRemoveTestCases.robot
 Resource  ../resource/pageObjects/desktop/testPlanContents/assignTestCaseExecution.robot
 Resource  ../resource/pageObjects/desktop/testPlanContents/updateLinkedTcVersion.robot
+Resource  ../resource/pageObjects/desktop/testPlanContents/addRemovePlatforms.robot
 
 *** Variables ***
 
@@ -517,11 +518,11 @@ Check Test Specification
     desktopPage.Go to Test Specification (mainframe)
     testSpecificationPage.Add Filters Test Case Title Test Specification
 
-Delete Test Case
-    [Tags]  tp41_requirement_operation_creare_tc
-    headerPage.Go to index page
-    desktopPage.Go to Test Specification (mainframe)
-    testSpecificationPage.Delete Test Case
+#Delete Test Case
+    #[Tags]  tp41_requirement_operation_creare_tc
+    #headerPage.Go to index page
+    #desktopPage.Go to Test Specification (mainframe)
+    #testSpecificationPage.Delete Test Case ${NameTestCase}
 
 
 Go to Test Specification (mainframe)
@@ -604,9 +605,9 @@ Delete Issue Tracker ${ISSUETRACKER}
 
 Validate settings fields
     [Tags]  tp96
-    headerPage.I am here
+    wait until keyword succeeds  1min  0  headerPage.I am here
     headerPage.Go to My Settings
-    mySettings.I am here
+    wait until keyword succeeds  1min  0  mySettings.I am here
     select frame  mainframe
     mySettings.Email Adress Empty
     mySettings.Check Email field must be filled
@@ -798,14 +799,14 @@ Create Step in test case: ${testCaseName}
     [Tags]  tp86
     headerPage.Go to index page
     headerPage.Go to Test Specification (titlebar)
-    testSpecificationPage.I am here
+    wait until keyword succeeds  1min  0  testSpecificationPage.I am here
     testSpecificationPage.Select test case ${testCaseName} node
     testSpecificationPage.Create Step
 
 Create test suite ${testSuiteName} in test project ${newTestProjectName}
     headerPage.Go to Index Page
     headerPage.Go to Test Specification (titlebar)
-    testSpecificationPage.I am here
+    wait until keyword succeeds  1min  0  testSpecificationPage.I am here
     testSpecificationPage.Select test project ${newTestProjectName} node
     testSpecificationPage.Click Actions button
     testSpecificationPage.Click new test suite
@@ -815,7 +816,7 @@ Create test suite ${testSuiteName} in test project ${newTestProjectName}
 Create test case ${testCaseName} in ${testSuiteName}
     headerPage.Go to Index Page
     headerPage.Go to Test Specification (titlebar)
-    testSpecificationPage.I am here
+    wait until keyword succeeds  1min  0  testSpecificationPage.I am here
     testSpecificationPage.Select test suite ${testSuiteName} node
     testSpecificationPage.Click Actions button
     testSpecificationPage.Click new test case
@@ -836,7 +837,7 @@ Check New Test Suite
     testSpecificationPage.Check If Test Suite Was Created
 
 Create and check role ${role} in user management
-    headerPage.I am here
+    wait until keyword succeeds  1min  0  headerPage.I am here
     headerPage.Go to User Management
     userManagement.Click bookmark View roles
     userManagement.Create role ${role}
@@ -980,7 +981,7 @@ Check Assigned TC to ${Username} and ${PlatformName}
     headerPage.go to index page
     desktopPage.Go to Assign Test Case Execution
     desktopPage.Check Assign Test Case Execution
-    assignTestCaseExecution.I am here
+    wait until keyword succeeds  1min  0  assignTestCaseExecution.I am here
     assignTestCaseExecution.Select Test Suite From The Tree ${testSuiteName}
     assignTestCaseExecution.Check Test Cases Assigned Correctly ${Username} ${PlatformName}
 
@@ -999,7 +1000,7 @@ Check TC Are Not Assigned ${testSuiteName}
     headerPage.go to index page
     desktopPage.Go to Assign Test Case Execution
     desktopPage.Check Assign Test Case Execution
-    assignTestCaseExecution.I am here
+    wait until keyword succeeds  1min  0  assignTestCaseExecution.I am here
     assignTestCaseExecution.Check there is no assigned TC ${testSuiteName}
 
 Make all Test Plan Active/Inactive
@@ -1058,7 +1059,7 @@ Update linked TC ${testCaseName} ${testSuiteName} version
     headerPage.Go to index page
     desktopPage.Go to Update Linked Test Case Versions
     desktopPage.Check Update Linked Test Case Versions
-    updateLinkedTcVersion.I am here
+    wait until keyword succeeds  1min  0  updateLinkedTcVersion.I am here
     updateLinkedTcVersion.Select Test Suite From The Tree ${testSuiteName}
     updateLinkedTcVersion.Check Version Of The TC ${testCaseName}
     updateLinkedTcVersion.Update to new version ${testCaseName}
@@ -1068,7 +1069,7 @@ Check TC Version was changed ${testCaseName} ${testSuiteName} in Update Linked T
     headerPage.Go to index page
     desktopPage.Go to Update Linked Test Case Versions
     desktopPage.Check Update Linked Test Case Versions
-    updateLinkedTcVersion.I am here
+    wait until keyword succeeds  1min  0  updateLinkedTcVersion.I am here
     updateLinkedTcVersion.Select Test Suite From The Tree ${testSuiteName}
     updateLinkedTcVersion.Check TC Version was changed ${testCaseName}
 
@@ -1077,9 +1078,17 @@ Check TC Version was changed ${testCaseName} ${testSuiteName} in Assign TC Execu
     headerPage.go to index page
     desktopPage.Go to Assign Test Case Execution
     desktopPage.Check Assign Test Case Execution
-    assignTestCaseExecution.I am here
+    wait until keyword succeeds  1min  0  assignTestCaseExecution.I am here
     assignTestCaseExecution.Select Test Suite From The Tree ${testSuiteName}
     assignTestCaseExecution.Check Updated Version of TC ${testCaseName}
+
+Check There Is No Platforms Assigned
+    [Tags]  tp19
+    headerPage.go to index page
+    desktopPage.Go to Add/Remove Platforms
+    desktopPage.Check Add/Remove Platforms
+    wait until keyword succeeds  1min  0  addRemovePlatforms.I Am Here
+    addRemovePlatforms.Check there are no platforms assigned
 
 
 
