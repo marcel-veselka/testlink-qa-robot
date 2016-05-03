@@ -18,6 +18,8 @@ Test Setup  Run keywords    testlink.Create new Test Project
 
 Test Teardown  Run keywords    testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 ...             AND             close browser
+
+
 *** Variables ***
 ${newTestProjectName}  testProject74
 ${newTestProjectPrefix}  tp74
@@ -39,6 +41,18 @@ Assign Test Case Execution
     headerPage.go to index page
     desktopPage.go to Add/Remove Test Cases
     testlink.Add TC ${testCaseName} to platform ${PlatformName} users ${Username}
-    #testlink.Assign TC ${testCaseName} to users ${Username}
-    #testlink.Assign TC ${testCaseName1} to users ${Username1}
+    testlink.Add TC ${testCaseName} to platform ${PlatformName1} users ${Username1}
+    testlink.Check Assigned TC to ${Username} and ${PlatformName}
+    testlink.Check Assigned TC to ${Username1} and ${PlatformName1}
+    testlink.Unassign TC ${PlatformName}
+    testlink.Unassign TC ${PlatformName1}
+    testlink.Add TC ${testCaseName} to platform ${PlatformName} users ${Username1}
+    testlink.Add TC ${testCaseName} to platform ${PlatformName1} users ${Username}
+    testlink.Check Assigned TC to ${Username} and ${PlatformName1}
+    testlink.Check Assigned TC to ${Username1} and ${PlatformName}
+    testlink.Unassign TC ${PlatformName}
+    testlink.Unassign TC ${PlatformName1}
+    testlink.Check TC Are Not Assigned ${testSuiteName}
+
+
 

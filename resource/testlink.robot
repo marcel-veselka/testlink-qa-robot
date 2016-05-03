@@ -956,29 +956,43 @@ Add Platform to Test Plan
     unselect frame
 
 
-#Add TC ${testCaseName} to a platform ${PlatformName}
-    #headerPage.go to index page
-    #desktopPage.Go to Add/Remove Test Cases
-    #desktopPage.Check Add/Remove Test Cases
-    #addRemoveTestCases.Show Test Cases
-    #addRemoveTestCases.Assign TC to platform ${PlatformName}
 
 Add TC ${testCaseName} to platform ${PlatformName} users ${Username}
+    [Tags]  tp74
     headerPage.go to index page
     desktopPage.Go to Add/Remove Test Cases
     desktopPage.Check Add/Remove Test Cases
     addRemoveTestCases.Show Test Cases
     addRemoveTestCases.Check Page Add/Remove TC
     addRemoveTestCases.Assign TC to user ${Username}
+    addRemoveTestCases.Assign TC to platform ${PlatformName}
 
-Assign TC ${testCaseName} to users ${Username}
+Check Assigned TC to ${Username} and ${PlatformName}
+    [Tags]  tp74
     headerPage.go to index page
     desktopPage.Go to Assign Test Case Execution
     desktopPage.Check Assign Test Case Execution
-    #assignTestCaseExecution.Select platform ${PlatformName}
-    testSpecificationPage.Select test case ${testCaseName} node
-    assignTestCaseExecution.Select User ${Username}
+    assignTestCaseExecution.I am here
+    assignTestCaseExecution.Select Test Suite From The Tree ${testSuiteName}
+    assignTestCaseExecution.Check Test Cases Assigned Correctly ${Username} ${PlatformName}
 
+Unassign TC ${PlatformName}
+    [Tags]  tp74
+    headerPage.go to index page
+    desktopPage.Go to Add/Remove Test Cases
+    desktopPage.Check Add/Remove Test Cases
+    addRemoveTestCases.Show Test Cases
+    addRemoveTestCases.Check Page Add/Remove TC
+    addRemoveTestCases.Check TC were Assigned
+    addRemoveTestCases.Unassign TC from ${PlatformName}
+
+Check TC Are Not Assigned ${testSuiteName}
+    [Tags]  tp74
+    headerPage.go to index page
+    desktopPage.Go to Assign Test Case Execution
+    desktopPage.Check Assign Test Case Execution
+    assignTestCaseExecution.I am here
+    assignTestCaseExecution.Check there is no assigned TC ${testSuiteName}
 
 Make all Test Plan Active/Inactive
     [Tags]  56

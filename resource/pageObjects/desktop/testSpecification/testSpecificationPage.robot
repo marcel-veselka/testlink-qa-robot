@@ -454,8 +454,8 @@ Add Step after created first step
 Click on save & exit
     select frame  mainframe
     select frame  workframe
-    wait until page contains element  do_update_step_and_exit
-    click button  do_update_step_and_exit
+    wait until page contains element  xpath=//input[@id="do_update_step_and_exit"]
+    click button  xpath=//input[@id="do_update_step_and_exit"]
     unselect frame
 
 Move suite ${from} to suite ${target}

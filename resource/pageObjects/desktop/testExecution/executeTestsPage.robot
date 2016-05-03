@@ -57,6 +57,7 @@ Select test case ${testCaseName} node
 Execute Test Case Passed
     executeTestsPage.Select test case ${testCaseName} node
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     xpath should match x times  //div/form/div/div/table/tbody/tr/td/select  2
     wait until page contains element  xpath=//div/form/div/table/tbody/tr/td/div[@class="resultBox"]
@@ -101,6 +102,7 @@ Check That Passed Test Was Saved
 Execute Test Case Failed
     executeTestsPage.Select test case ${testCaseName2} node
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//div/form/div/div/table/tbody/tr/td/select
     xpath should match x times  //div/form/div/div/table/tbody/tr/td/select  2
@@ -125,6 +127,7 @@ Check That Failed Test Was Saved
 Execute Test Case Blocked
     executeTestsPage.Select test case ${testCaseName3} node
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=//div/form/div/div/table/tbody/tr/td/select
     xpath should match x times  //div/form/div/div/table/tbody/tr/td/select  2
