@@ -798,14 +798,14 @@ Fill informations test case and create
 Create Step in test case: ${testCaseName}
     [Tags]  tp86
     headerPage.Go to index page
-    headerPage.Go to Test Specification (titlebar)
+    desktopPage.Go to Test Specification (mainframe)
     wait until keyword succeeds  1min  0  testSpecificationPage.I am here
     testSpecificationPage.Select test case ${testCaseName} node
     testSpecificationPage.Create Step
 
 Create test suite ${testSuiteName} in test project ${newTestProjectName}
     headerPage.Go to Index Page
-    headerPage.Go to Test Specification (titlebar)
+    desktopPage.Go to Test Specification (mainframe)
     wait until keyword succeeds  1min  0  testSpecificationPage.I am here
     testSpecificationPage.Select test project ${newTestProjectName} node
     testSpecificationPage.Click Actions button
@@ -815,7 +815,7 @@ Create test suite ${testSuiteName} in test project ${newTestProjectName}
 
 Create test case ${testCaseName} in ${testSuiteName}
     headerPage.Go to Index Page
-    headerPage.Go to Test Specification (titlebar)
+    desktopPage.Go to Test Specification (mainframe)
     wait until keyword succeeds  1min  0  testSpecificationPage.I am here
     testSpecificationPage.Select test suite ${testSuiteName} node
     testSpecificationPage.Click Actions button

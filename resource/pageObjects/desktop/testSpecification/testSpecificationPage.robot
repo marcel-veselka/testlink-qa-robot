@@ -437,7 +437,6 @@ Fill name for tc: ${testCaseName} and submit
     wait until page contains element  testcase_name
     wait until page contains element  do_create_button
     input text  testcase_name  ${testCaseName}
-
     click element  do_create_button
     unselect frame
 
