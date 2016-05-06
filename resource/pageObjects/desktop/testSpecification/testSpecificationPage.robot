@@ -483,9 +483,9 @@ Add Step after created first step
     wait until page contains element  xpath=//*[@id="cke_contents_steps"]/iframe
     mouse down  xpath=//*[@id="cke_contents_steps"]/iframe
     mouse up  xpath=//*[@id="cke_contents_steps"]/iframe
+    unselect frame
     select frame  xpath=//*[@id="cke_contents_steps"]/iframe
     input text  xpath=//body  StepAction
-    unselect frame
     unselect frame
     select frame  mainframe
     wait until page contains element  workframe
@@ -494,9 +494,9 @@ Add Step after created first step
     wait until page contains element  xpath=//*[@id="cke_contents_expected_results"]/iframe
     mouse down  xpath=//*[@id="cke_contents_expected_results"]/iframe
     mouse up  xpath=//*[@id="cke_contents_expected_results"]/iframe
+    unselect frame
     select frame  xpath=//*[@id="cke_contents_expected_results"]/iframe
     input text  xpath=//body  Expect.Results
-    unselect frame
     unselect frame
     select frame  mainframe
     wait until page contains element  workframe
@@ -518,7 +518,7 @@ Click on save & exit
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    click element  xpath=(//div/input[@id="do_update_step_and_exit"])[2]
+    click element  xpath=(//input[@id="do_update_step_and_exit"])[2]
     unselect frame
 
 
