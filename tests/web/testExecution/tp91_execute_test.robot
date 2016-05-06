@@ -41,6 +41,7 @@ ${buildDescription}                 DescriptionOfBuild91
 *** Test Cases ***
 
 Execute Test
+    [Tags]  controll
     testlink.Add Test Suite to Test Plan
     testlink.Execute Test Suite
 

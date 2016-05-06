@@ -60,11 +60,8 @@ Execute Test Case Passed
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    xpath should match x times  //div/form/div/div/table/tbody/tr/td/select  2
-    wait until page contains element  xpath=//div/form/div/table/tbody/tr/td/div[@class="resultBox"]
-    wait until page contains element  xpath=//div/form/div/table/tbody/tr/td/div/input[@type="submit"]
-    wait until page contains element  xpath=//div/form/div/table/tbody/tr/td/div/input[@value="Save and move to next"]
-    wait until page contains element  xpath=//div/form/div/table/tbody/tr/td/div/input[@value="Save execution"]
+    wait until keyword succeeds  1min  0  executeTestsPage.I am here Execute Tests Frame
+    #xpath should match x times  //div/form/div/div/table/tbody/tr/td/select  2
     select from list by value  xpath=//div/form/div/table/tbody/tr/td/div/select  p
     input text  execution_duration  1010
     select from list by value  xpath=//div/form/div/div/table/tbody/tr[7]/td/select  p
@@ -105,12 +102,8 @@ Execute Test Case Failed
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    wait until page contains element  xpath=//div/form/div/div/table/tbody/tr/td/select
-    xpath should match x times  //div/form/div/div/table/tbody/tr/td/select  2
-    wait until page contains element  xpath=//div/form/div/table/tbody/tr/td/div[@class="resultBox"]
-    wait until page contains element  xpath=//div/form/div/table/tbody/tr/td/div/input[@type="submit"]
-    wait until page contains element  xpath=//div/form/div/table/tbody/tr/td/div/input[@value="Save and move to next"]
-    wait until page contains element  xpath=//div/form/div/table/tbody/tr/td/div/input[@value="Save execution"]
+    wait until keyword succeeds  1min  0  executeTestsPage.I am here Execute Tests Frame
+    #xpath should match x times  //div/form/div/div/table/tbody/tr/td/select  2
     select from list by value  xpath=//div/form/div/table/tbody/tr/td/div/select  f
     input text  execution_duration  1010
     select from list by value  xpath=//div/form/div/div/table/tbody/tr[7]/td/select  f
@@ -130,12 +123,8 @@ Execute Test Case Blocked
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    wait until page contains element  xpath=//div/form/div/div/table/tbody/tr/td/select
-    xpath should match x times  //div/form/div/div/table/tbody/tr/td/select  2
-    wait until page contains element  xpath=//div/form/div/table/tbody/tr/td/div[@class="resultBox"]
-    wait until page contains element  xpath=//div/form/div/table/tbody/tr/td/div/input[@type="submit"]
-    wait until page contains element  xpath=//div/form/div/table/tbody/tr/td/div/input[@value="Save and move to next"]
-    wait until page contains element  xpath=//div/form/div/table/tbody/tr/td/div/input[@value="Save execution"]
+    wait until keyword succeeds  1min  0  executeTestsPage.I am here Execute Tests Frame
+    #xpath should match x times  //div/form/div/div/table/tbody/tr/td/select  2
     select from list by value  xpath=//div/form/div/table/tbody/tr/td/div/select  b
     input text  execution_duration  1010
     select from list by value  xpath=//div/form/div/div/table/tbody/tr[7]/td/select  b
@@ -155,3 +144,10 @@ Check Test Suite Status
     wait until page contains element  xpath=//span[contains(.,"${newTestProjectName} / ${TestPlanName}")][span[@class="light_passed"]][span[@class="light_failed"]][span[@class="light_blocked"]]
     page should contain element  xpath=//span[contains(.,"${newTestProjectName} / ${TestPlanName}")][span[@class="light_passed"]][span[@class="light_failed"]][span[@class="light_blocked"]]
     unselect frame
+
+I am here Execute Tests Frame
+    wait until page contains element  xpath=//div/form/div/div/table/tbody/tr/td/select
+    wait until page contains element  xpath=//div/form/div/table/tbody/tr/td/div[@class="resultBox"]
+    wait until page contains element  xpath=//div/form/div/table/tbody/tr/td/div/input[@type="submit"]
+    wait until page contains element  xpath=//div/form/div/table/tbody/tr/td/div/input[@value="Save and move to next"]
+    wait until page contains element  xpath=//div/form/div/table/tbody/tr/td/div/input[@value="Save execution"]
