@@ -513,8 +513,12 @@ Click on save & exit
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    wait until page contains element  xpath=(//input[@id="do_update_step_and_exit"])[2]
-    click element  xpath=(//input[@id="do_update_step_and_exit"])[2]
+    wait until page contains element  xpath=(//div/input[@id="do_update_step_and_exit"])[2]
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    click element  xpath=(//div/input[@id="do_update_step_and_exit"])[2]
     unselect frame
 
 

@@ -28,6 +28,7 @@ ${testCaseNameEdit}             tc87_1
 *** Test Cases ***
 
 Edit test case
+    [Tags]  controll
     headerPage.Go to Index Page
     desktopPage.Go to Test Specification (mainframe)
     testSpecificationPage.Select test case ${testCaseName} node and click action button

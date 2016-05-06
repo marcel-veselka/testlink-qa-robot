@@ -29,7 +29,7 @@ ${testCaseName}                 tc86
 *** Test Cases ***
 
 Create Test Case
-    [Tags]  controll1
+    [Tags]  controll
     desktopPage.Go to Test Specification (mainframe)
     wait until keyword succeeds  1min  0  testSpecificationPage.I am here
     testSpecificationPage.Select test suite ${testSuiteName} node
