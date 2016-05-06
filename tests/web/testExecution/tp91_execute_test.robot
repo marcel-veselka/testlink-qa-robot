@@ -16,7 +16,7 @@ Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         testlink.Create test case ${testCaseName3} in ${testSuiteName}
 
 
-
+#checkcheckcheck
 
 Test Teardown  Run keywords         testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 ...             AND                 testlink.Check that test has been deleted
