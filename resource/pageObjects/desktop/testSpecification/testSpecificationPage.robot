@@ -355,6 +355,7 @@ Delete Another New Test Suite
 Drag and drop test suite
     select frame  name=treeframe
     drag and drop
+    unselect frame
 
 Click Test Case Button
 
@@ -511,11 +512,8 @@ Click on save & exit
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    wait until page contains element  xpath=(//div/input[@id="do_update_step_and_exit"])[2]
-    unselect frame
-    select frame  mainframe
-    wait until page contains element  workframe
-    select frame  workframe
+    #wait until page contains element  xpath=(//div/input[@id="do_update_step_and_exit"])[2]
+    wait until page contains  Save & exit
     click button  do_update_step_and_exit
     unselect frame
 
