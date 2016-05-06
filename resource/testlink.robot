@@ -823,7 +823,7 @@ Create test case ${testCaseName} in ${testSuiteName}
     testSpecificationPage.Fill name for tc: ${testCaseName} and submit
     testlink.Create Step in test case: ${testCaseName}
     testSpecificationPage.Add Step after created first step
-    testSpecificationPage.Click on save & exit
+    wait until keyword succeeds  1min  0  testSpecificationPage.Click on save & exit
 
 
 Delete New Test Suite
@@ -955,6 +955,7 @@ Create Platform ${PlatformName}
 Add Platform to Test Plan
     headerPage.go to index page
     wait until keyword succeeds  1min  0  desktopPage.Check Add/Remove Platforms
+    desktopPage.Go to Add/Remove Platforms
     wait until keyword succeeds  1min  0  addRemovePlatforms.I Am Here
     select frame  name=mainframe
     click element  xpath=//tr/td[2]/img[1]

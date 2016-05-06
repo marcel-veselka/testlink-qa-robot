@@ -509,11 +509,11 @@ Add Step after created first step
 
 Click on save & exit
     select frame  mainframe
-    wait until page contains element  workframe
     select frame  workframe
     wait until page contains element  xpath=(//input[@id="do_update_step_and_exit"])[2]
-    click button  xpath=(//input[@id="do_update_step_and_exit"])[2]
+    click element  xpath=(//input[@id="do_update_step_and_exit"])[2]
     unselect frame
+
 
 Move suite ${from} to suite ${target}
     [Tags]  tp82
