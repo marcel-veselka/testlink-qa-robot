@@ -14,3 +14,4 @@ Edit user test case
     testlink.Login as admin correct
     testlink.Start editing user
     testlink.Edit user
+# zkuska
