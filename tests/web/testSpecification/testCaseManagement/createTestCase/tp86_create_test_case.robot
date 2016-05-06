@@ -37,6 +37,6 @@ Create Test Case
     testlink.Fill informations test case and create
     testlink.Create Step in test case: ${testCaseName}
     testSpecificationPage.Add Step after created first step
-    testSpecificationPage.Click on save & exit
+    #testSpecificationPage.Click on save & exit
 
 

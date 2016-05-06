@@ -823,7 +823,7 @@ Create test case ${testCaseName} in ${testSuiteName}
     testSpecificationPage.Fill name for tc: ${testCaseName} and submit
     testlink.Create Step in test case: ${testCaseName}
     testSpecificationPage.Add Step after created first step
-    wait until keyword succeeds  1min  0  testSpecificationPage.Click on save & exit
+    #wait until keyword succeeds  1min  0  testSpecificationPage.Click on save & exit
 
 
 Delete New Test Suite
