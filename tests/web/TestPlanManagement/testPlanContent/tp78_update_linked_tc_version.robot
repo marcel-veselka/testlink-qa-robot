@@ -36,6 +36,7 @@ ${Username}
 *** Test Cases ***
 
 Update Linked TC version
+    [Tags]  controll
     testlink.Update linked TC ${testCaseName} ${testSuiteName} version
     testlink.Check TC Version was changed ${testCaseName} ${testSuiteName} in Update Linked TC Version
     testlink.Check TC Version was changed ${testCaseName} ${testSuiteName} in Assign TC Execution
