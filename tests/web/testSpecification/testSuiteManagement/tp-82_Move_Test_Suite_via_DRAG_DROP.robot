@@ -28,7 +28,7 @@ ${tc2}  tc82_1
 
 *** Test Cases ***
 Drag drop
-    [Tags]  controll
+    [Tags]  controll1
     headerPage.Go to index page and change testproject
     desktopPage.Go to link Test Specification
     wait until keyword succeeds  1min  0  testSpecificationPage.I am here
