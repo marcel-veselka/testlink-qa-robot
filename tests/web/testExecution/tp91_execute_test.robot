@@ -18,9 +18,9 @@ Test Setup  Run keywords    testlink.Create new Test Project
 
 
 
-Test Teardown  Run keywords         testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
-...             AND                 testlink.Check that test has been deleted
-...             AND                 Close browser
+#Test Teardown  Run keywords         testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
+#...             AND                 testlink.Check that test has been deleted
+#...             AND                 Close browser
 
 *** Variables ***
 
@@ -41,7 +41,7 @@ ${buildDescription}                 DescriptionOfBuild91
 *** Test Cases ***
 
 Execute Test
-    [Tags]  controll
+    [Tags]  controll1
     testlink.Add Test Suite to Test Plan
     testlink.Execute Test Suite
 
