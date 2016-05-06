@@ -37,6 +37,7 @@ ${buildName}                        buildName56
 *** Test Cases ***
 
 Edit Test Plan
+    [Tags]  controll
     testlink.Order By Test Case, Name, Build In Test Plan Management
     testlink.Make all Test Plan Active/Inactive
     testlink.Edit And Check Test Plan

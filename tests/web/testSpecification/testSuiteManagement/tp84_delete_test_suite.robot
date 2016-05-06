@@ -26,6 +26,7 @@ ${TestPlanDescription}  DescriptionOfTestPlan84
 *** Test Cases ***
 
 Delete Test Suite
+    [Tags]  controll1
     headerPage.Go to index page and change testproject
     desktopPage.Go to Test Specification (mainframe)
     testSpecificationPage.Delete New Test Suite
