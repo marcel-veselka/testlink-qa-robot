@@ -27,6 +27,7 @@ Resource  ../resource/pageObjects/desktop/testProject/createTestProjectPage.robo
 Resource  ../resource/pageObjects/desktop/testProject/testProjectEdit.robot
 Resource  ../resource/pageObjects/desktop/userManagement/userManagement.robot
 Resource  ../resource/pageObjects/desktop/TestPlan/testPlanManagement.robot
+Resource  ../resource/pageObjects/desktop/TestPlan/assignRolesForTP.robot
 Resource  ../resource/pageObjects/desktop/TestPlan/testPlanManagement_detail.robot
 Resource  ../resource/pageObjects/desktop/mySettings/mySettings.robot
 Resource  ../resource/pageObjects/desktop/TestPlan/buildsReleases.robot
@@ -232,7 +233,7 @@ Fill information to create test with template ON
 Submit and check new test project
     createTestProjectPage.Click Create
     No warning about existing projects
-    testProjectManagement.Check new project exists  ${newTestProjectName}
+    testProjectManagement.Check new project exists
 
 Check unique test project name and prefix
 
@@ -1101,6 +1102,24 @@ Leave empty TP name and prefix
     testProjectManagement.Add Test Project Name
     testProjectManagement.Add Prefix
     testProjectManagement.Create Test Project
+
+
+Assign Roles
+    [Tags]  tp59
+    headerPage.go to index page
+    desktopPage.Go to Test Plan Management
+    testPlanManagement_detail.Click Button Assign Roles Test Plan Management  ${TestPlanName}
+    wait until keyword succeeds  1min  0  assignRolesForTP.I am here ASSIGN ROLES
+    assignRolesForTP.Assign Roles for TP
+
+
+Check That Roles Were Assigned
+    [Tags]  tp59
+    headerPage.go to index page
+    desktopPage.Go to Test Plan Management
+    testPlanManagement_detail.Click Button Assign Roles Test Plan Management  ${TestPlanName}
+    wait until keyword succeeds  1min  0  assignRolesForTP.I am here ASSIGN ROLES
+    assignRolesForTP.Check That Roles Were Chnanged
 
 Fill and Valid
     [Arguments]  ${newTestProjectName}
