@@ -92,6 +92,7 @@ Check Move to Next Function ${testCaseName}
 
 Check That Passed Test Was Saved
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     wait until page contains element  xpath=//span[@class="light_passed"][contains(text(),"${testCaseName}")]
     page should contain element  xpath=//span[@class="light_passed"][contains(text(),"${testCaseName}")]
@@ -113,6 +114,7 @@ Execute Test Case Failed
 
 Check That Failed Test Was Saved
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     wait until page contains element  xpath=//span[@class="light_failed"][contains(text(),"${testCaseName2}")]
     page should contain element  xpath=//span[@class="light_failed"][contains(text(),"${testCaseName2}")]
@@ -133,6 +135,7 @@ Execute Test Case Blocked
 
 Check That Blocked Test Was Saved
     select frame  mainframe
+    wait until page contains element  treeframe
     select frame  treeframe
     wait until page contains element  xpath=//span[@class="light_blocked"][contains(text(),"${testCaseName3}")]
     page should contain element  xpath=//span[@class="light_blocked"][contains(text(),"${testCaseName3}")]

@@ -202,6 +202,7 @@ Start creating new test project without conflict
     testProjectManagement.Click Create
 
 Fill information to create test without conflict
+
     wait until keyword succeeds  1min  0  createTestProjectPage.I am here
     select frame  mainframe
     createTestProjectPage.Fill Test Project Name  ${newTestProjectName}
@@ -1099,7 +1100,7 @@ Leave empty TP name and prefix
     [Tags]  tp12
     testProjectManagement.Add Test Project Name
     testProjectManagement.Add Prefix
-    testProjectManagement.Create Test Project
+    testProjectManagement.Check Warning message
 
 
 Assign Roles

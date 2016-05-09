@@ -56,6 +56,17 @@ Filled the valid name and prefix
     Click Button  doActionButton
     unselect frame
 
+Check Warning message
+    select frame  mainframe
+    execute javascript  var imput = document.getElementsByName('tprojectName'); imput[0].required = false;
+    execute javascript  var imput = document.getElementsByName('tcasePrefix'); imput[0].required = false;
+    click button  Save
+    wait until page contains  Project name cannot be empty!
+    wait until page contains  Warning!!
+    wait until page contains  OK
+    click button    OK
+    unselect frame
+
 
 Check new project exists
     [Arguments]  ${newTestProjectName}
