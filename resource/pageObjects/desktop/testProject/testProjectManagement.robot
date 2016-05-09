@@ -33,9 +33,12 @@ Click Create
 Add Test Project Name
     select frame  name=mainframe
     input text  tprojectName  ${testprojectname}
+    unselect frame
 
 Add Prefix
+    select frame  mainframe
     input text  tcasePrefix  ${testprojectprefix}
+    unselect frame
 
 Create Test Project
     select frame  mainframe

@@ -11,7 +11,7 @@ ${DELAY}         0
 ${LOGIN URL}     http://${SERVER}/login.php
 ${WELCOME URL}   http://${SERVER}/index.php?caller=login
 ${ERROR URL}     http://${SERVER}/login.php
-${BROWSER}      chrome
+${BROWSER}      ff
 
 
 *** Keywords ***
@@ -53,7 +53,7 @@ I am here
 
 Fill correct Login input
     clear element text  login
-    input text  login
+    input text  login  renat.kulalov
 
 
 
