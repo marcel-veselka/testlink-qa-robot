@@ -14,5 +14,4 @@ Create new Custom Field
 
     testlink.Login as admin correct
     testlink.Start creating Define Custom Fields
-    testlink.Fill information to create Custom Field
-    testlink.Submit and check Define Custom Field
+

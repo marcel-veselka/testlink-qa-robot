@@ -31,3 +31,9 @@ I Am Here
     wait until page contains element  doAssignPlatforms
     wait until page contains element  xpath=//tr[td[contains(.,"Available platforms")]][td[contains(.,"Assigned platforms")]]
     unselect frame
+
+Check there is platform assigned
+    select frame  mainframe
+    page should contain element  xpath=//td[contains(.,"Assigned platforms")][//option[contains(.,"Platform20")]]
+    page should not contain element  xpath=//td[contains(.,"Avaliable platforms")]//option
+    unselect frame

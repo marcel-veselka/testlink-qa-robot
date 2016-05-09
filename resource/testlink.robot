@@ -376,9 +376,12 @@ Change and check test project with RS control
 
 Start creating Define Custom Fields
     [Tags]  tp105
+    headerPage.Go to index page
     desktopPage.Go to Define Custom Fields
     defineCustomFields.Check Define Custom Fields
     defineCustomFields.Click create Custom Field
+    defineCustomFields.Input information about Custom Field
+    defineCustomFields.Create and check custom field
 
 Go to Define Custom Fields
     [Tags]  tp106
@@ -387,11 +390,6 @@ Go to Define Custom Fields
 Edit information Custom Field
     defineCustomFields.Select Custom Field
     defineCustomFields.Edit Custom Fields
-
-Fill information to create Custom Field
-    [Tags]  tp105
-    defineCustomFields.Input information about Custom Field
-
 
 Submit and check Define Custom Field
     [Tags]  tp105
@@ -1125,3 +1123,29 @@ Fill and Valid
    [Arguments]  ${newTestProjectName}
    testProjectManagement.Filled the valid name and prefix
    testProjectManagement.Check new project exists  ${newTestProjectName}
+
+Assign Custom Fields
+    [Tags]  tp20
+    headerPage.go to index page
+    desktopPage.Go to Assign Custom Fields
+    assignCustomFields.Check Page Contains Custom Fields
+    assignCustomFields.Assign Custom Fields
+    assignCustomFields.Check Custom Field Was Assigned
+
+Check Keyword Exists
+    [Tags]  tp20
+    headerPage.go to index page
+    desktopPage.Go to Keyword Management
+    assignKeywords.Check Keyword
+
+Check there is platform assigned
+    [Tags]  tp20
+    headerPage.go to index page
+    desktopPage.Go to Add/Remove Platforms
+    addRemovePlatforms.Check there is platform assigned
+
+Check Custom Fields Are Visible
+    [Tags]  tp20
+    headerPage.go to index page
+    desktopPage.Go to Test Specification (mainframe)
+    testSpecificationPage.Check Custom Fields

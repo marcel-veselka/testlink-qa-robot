@@ -67,3 +67,8 @@ Assign Keywords
     wait until page contains element  xpath=//div/div/p[contains(text(),"item")][contains(text()," ")][contains(text(),"was successfully")][contains(text()," ")][contains(text(),"updated!")]
     page should contain element  xpath=//div/div/p[contains(text(),"item")][contains(text()," ")][contains(text(),"was successfully")][contains(text()," ")][contains(text(),"updated!")]
     unselect frame
+
+Check Keyword
+    select frame  mainframe
+    wait until page contains element  xpath=//table[//tbody/tr[contains(.,"${KeywordName}")]]
+    unselect frame

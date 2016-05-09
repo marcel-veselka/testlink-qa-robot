@@ -782,3 +782,13 @@ Delete Test Step
     wait until page contains element  xpath=//*[@id="step_row_2"]
     page should not contain element  xpath=//*[@id="step_row_1"]
     unselect frame
+
+Check Custom Fields
+    select frame  mainframe
+    wait until page contains element  treeframe
+    select frame  treeframe
+    wait until page contains element  xpath=//input[@id="doToggleCF"]
+    page should contain element  xpath=//input[@id="doToggleCF"]
+    wait until page contains element  xpath=//table[tbody/tr/td[contains(.,"${CFLABEL}")]]
+    page should contain element  xpath=//table[tbody/tr/td[contains(.,"${CFLABEL}")]]
+    unselect frame
