@@ -24,7 +24,7 @@ ${newtestprojectprefix1}    tp12_1
 Rename test project
     testlink.Go to Test Project And Select It
     testlink.Leave empty TP name and prefix
-    testlink.Fill and Valid
+    testlink.Fill and Valid  ${newTestProjectName1}
 
 
 #pybot -d results tests\web\testProjectManagement\createTestProject\modifyProject\tp12_Rename_Test_Project_NO_NAME_CONFLICT.robot
