@@ -97,3 +97,11 @@ Check Issue Tracker has been added to the Test Project
     wait until page contains element  xpath=//table[@id="item_view"]
     element should contain  xpath=//table[@id="item_view"]  ${ISSUETRACKER}
     unselect frame
+
+Wait Until Page Contains TP and Click It
+    select frame  mainframe
+    wait until page contains element  xpath=//a[contains(.,"${newTestProjectName}")]
+    click element  xpath=//a[contains(.,"${newTestProjectName}")]
+    unselect frame
+
+

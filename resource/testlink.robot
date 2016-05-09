@@ -1088,6 +1088,15 @@ Check There Is No Platforms Assigned
     wait until keyword succeeds  1min  0  addRemovePlatforms.I Am Here
     addRemovePlatforms.Check there are no platforms assigned
 
+Go to Test Project And Select It
+    [Tags]  tp12
+    headerPage.go to index page
+    desktopPage.Go to Test Project Management
+    testProjectManagement.Wait Until Page Contains TP and Click It
 
 
-
+Leave empty TP name and prefix
+    [Tags]  tp12
+    testProjectManagement.Add Test Project Name
+    testProjectManagement.Add Prefix
+    testProjectManagement.Create Test Project

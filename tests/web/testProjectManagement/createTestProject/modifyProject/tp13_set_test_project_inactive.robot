@@ -7,6 +7,7 @@ Resource        ../../../../../resource/testlink.robot
 Test Setup  Create new Test Project
 Test Teardown  Delete Test Project  ${newTestProjectName}  ${newtestprojectprefix}
 
+
 *** Variables ***
 
 ${newTestProjectName}  testProject13

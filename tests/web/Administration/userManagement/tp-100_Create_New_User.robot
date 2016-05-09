@@ -11,6 +11,8 @@ ${pass}  vojta123
 ${email}  vojtech.svoboda@tesena.com
 
 *** Test Cases ***
+
+
 #Create new user test case
     #testlink.Login as admin correct
     #testlink.Start creating new user

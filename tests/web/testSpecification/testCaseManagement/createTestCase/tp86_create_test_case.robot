@@ -11,8 +11,7 @@ Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         testlink.Check New Test Suite
 ...             AND         testlink.Go to index page
 
-Test Teardown  Run keywords    testlink.Go to index page
-...             AND              testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
+Test Teardown  Run keywords    testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 ...             AND             testlink.Check that test has been deleted
 ...             AND              Close browser
 
