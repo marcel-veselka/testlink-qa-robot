@@ -14,7 +14,7 @@ ${DELAY}         0
 ${LOGIN URL}     http://${SERVER}/login.php
 ${WELCOME URL}   http://${SERVER}/index.php?caller=login
 ${ERROR URL}     http://${SERVER}/login.php
-${BROWSER}      ff
+${BROWSER}      chrome
 
 
 *** Keywords ***
@@ -45,7 +45,21 @@ Create Test Project
     click button  doActionButton
     unselect frame
 
+Filled the valid name and prefix
+    select frame  mainframe
+
+    wait until page contains element  xpath=//*[@id="item_view"]/tbody/tr[1]/td[2]/input
+    wait until page contains element  xpath=//*[@id="item_view"]/tbody/tr[2]/td[2]/input
+    input text  xpath=//*[@id="item_view"]/tbody/tr[1]/td[2]/input  ${newTestProjectName1}
+    input text  xpath=//*[@id="item_view"]/tbody/tr[2]/td[2]/input   ${newtestprojectprefix1}
+    #page should contain element   xpath=//*[@id="item_view"]/tbody/tr[1]/td[2]/input  ${newTestProjectName1}
+    #page should contain element  xpath=//*[@id="item_view"]/tbody/tr[2]/td[2]/input   ${newtestprojectprefix1}
+    Click Button  doActionButton
+    unselect frame
+
+
 Check new project exists
+    [Arguments]  ${newTestProjectName}
     select frame  mainframe
     element should contain  xpath=//table[@id="item_view"]  ${newTestProjectName}
     unselect frame

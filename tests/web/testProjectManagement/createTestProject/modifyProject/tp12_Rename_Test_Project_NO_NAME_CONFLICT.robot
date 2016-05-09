@@ -7,7 +7,8 @@ Resource        ../../../../../resource/testlink.robot
 Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         headerPage.Go to index page and change testproject
 
-Test Teardown  Delete Test Project  ${newTestProjectName1}  ${newtestprojectprefix1}
+Test Teardown  Run keywords  Delete Test Project  ${newTestProjectName1}  ${newtestprojectprefix1}
+...             AND         close browser
 
 *** Variables ***
 
@@ -23,9 +24,7 @@ ${newtestprojectprefix1}    tp12_1
 Rename test project
     testlink.Go to Test Project And Select It
     testlink.Leave empty TP name and prefix
+    testlink.Fill and Valid
 
 
-
-
-
-
+#pybot -d results tests\web\testProjectManagement\createTestProject\modifyProject\tp12_Rename_Test_Project_NO_NAME_CONFLICT.robot

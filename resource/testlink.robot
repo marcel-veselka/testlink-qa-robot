@@ -232,7 +232,7 @@ Fill information to create test with template ON
 Submit and check new test project
     createTestProjectPage.Click Create
     No warning about existing projects
-    testProjectManagement.Check new project exists
+    testProjectManagement.Check new project exists  ${newTestProjectName}
 
 Check unique test project name and prefix
 
@@ -1095,8 +1095,14 @@ Go to Test Project And Select It
     testProjectManagement.Wait Until Page Contains TP and Click It
 
 
+
 Leave empty TP name and prefix
     [Tags]  tp12
     testProjectManagement.Add Test Project Name
     testProjectManagement.Add Prefix
     testProjectManagement.Create Test Project
+
+Fill and Valid
+    [Arguments]  ${newTestProjectName}
+   testProjectManagement.Filled the valid name and prefix
+   testProjectManagement.Check new project exists  ${newTestProjectName1}
