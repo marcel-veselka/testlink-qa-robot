@@ -47,7 +47,6 @@ Create Test Project
 
 Filled the valid name and prefix
     select frame  mainframe
-
     wait until page contains element  xpath=//*[@id="item_view"]/tbody/tr[1]/td[2]/input
     wait until page contains element  xpath=//*[@id="item_view"]/tbody/tr[2]/td[2]/input
     input text  xpath=//*[@id="item_view"]/tbody/tr[1]/td[2]/input  ${newTestProjectName1}

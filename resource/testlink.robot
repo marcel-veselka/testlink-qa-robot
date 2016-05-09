@@ -233,7 +233,7 @@ Fill information to create test with template ON
 Submit and check new test project
     createTestProjectPage.Click Create
     No warning about existing projects
-    testProjectManagement.Check new project exists
+    testProjectManagement.Check new project exists  ${newTestProjectName}
 
 Check unique test project name and prefix
 
@@ -1122,6 +1122,6 @@ Check That Roles Were Assigned
     assignRolesForTP.Check That Roles Were Chnanged
 
 Fill and Valid
-    [Arguments]  ${newTestProjectName}
+   [Arguments]  ${newTestProjectName}
    testProjectManagement.Filled the valid name and prefix
-   testProjectManagement.Check new project exists  ${newTestProjectName1}
+   testProjectManagement.Check new project exists  ${newTestProjectName}
