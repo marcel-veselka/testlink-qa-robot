@@ -506,11 +506,8 @@ Add Step after created first step
     wait until page contains element  workframe
     select frame  workframe
     wait until page contains  Step number:
-    unselect frame
-    select frame  mainframe
-    wait until page contains element  workframe
-    select frame  workframe
-    click button  do_update_step_and_exit
+    wait until page contains element  name=do_update_step_and_exit
+    wait until keyword succeeds  1min  0  testSpecificationPage.Click IT
     unselect frame
 
 Click on save & exit
@@ -523,10 +520,8 @@ Click on save & exit
     unselect frame
 
 Click IT
-    select frame  mainframe
-    select frame  workframe
     click button  name=do_update_step_and_exit
-    unselect frame
+
 
 Move suite ${from} to suite ${target}
     [Tags]  tp82

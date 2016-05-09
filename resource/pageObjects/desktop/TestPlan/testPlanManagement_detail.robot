@@ -144,6 +144,14 @@ Click Button Delete Test Plan Management
     click element  xpath=//tr[td//text()[contains(.,'${TestPlanNameToDelete}')]]/td[last()]/img[1]
     unselect frame
 
+Click Button Assign Roles Test Plan Management
+    [Arguments]  ${TestPlanName}
+
+    select frame  mainframe
+    wait until page contains  ${TestPlanName}
+    click element  xpath=//tr[td//text()[contains(.,'${TestPlanName}')]]/td/a/img[@title="Assign roles"]
+    unselect frame
+
 Confirm Delete Test Plan Management
 
     select frame  mainframe
