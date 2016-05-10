@@ -43,8 +43,11 @@ after_script: zip -r build.zip /home/travis/build/marcel-veselka/testlink-qa-rob
 addons:
   artifacts:
     bucket: "tesena-s3"
-    endpoint: "tesena-s3.s3-website-us-west-2.amazonaws.com"
-    s3_region: "us-west-2" # defaults to "us-east-1"
+    #endpoint: "tesena-s3.s3-website-us-west-2.amazonaws.com"
+    #s3_region: "us-west-2" # defaults to "us-east-1"
+
+    key: ARTIFACTS_KEY
+    secret: ARTIFACTS_SECRET
 
 #notifications:
   #email:
