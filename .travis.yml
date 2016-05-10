@@ -37,7 +37,7 @@ env:
 after_script:
 - zip -r build.zip /home/travis/build/marcel-veselka/testlink-qa-robot/*
 #cd /home/travis/build/marcel-veselka/testlink-qa-robot/
-#- mail -s "Pokus" qkola01@4iz110.vse.cz < /home/travis/build/marcel-veselka/testlink-qa-robot/log.html
+- mail -s "Pokus" qkola01@4iz110.vse.cz < /home/travis/build/marcel-veselka/testlink-qa-robot/log.html
 #
 # todo: upload instead of individual files info s3 bucket
 
