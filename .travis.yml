@@ -43,7 +43,7 @@ env:
 
 after_script:
    - zip -r build.zip /home/travis/build/marcel-veselka/testlink-qa-robot/*
-   - mail -s "Pokus" alexandra.kolpakova@tesena.com
+   - mail -s "Pokus" alexandra.kolpakova@tesena.com <<< 'This is the message'
 # todo: upload instead of individual files info s3 bucket
 
 addons:
