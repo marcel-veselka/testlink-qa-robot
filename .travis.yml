@@ -10,7 +10,8 @@ install:
   - pip install robotframework-selenium2library
   - pip install decorator
   - pip install docutils
-  - apt-get install mailutils
+  - sudo chmod -R 777
+  - sudo apt-get install mailutils
   #- gem install s3
   #- "if [[ ${BROWSER} == 'ie' ]]; then pip install ie_only_pkg; fi"
 
