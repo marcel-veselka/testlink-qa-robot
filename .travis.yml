@@ -10,8 +10,9 @@ install:
   - pip install robotframework-selenium2library
   - pip install decorator
   - pip install docutils
-  - sudo dpkg --add-architecture i386
-  - sudo apt-get install mailutils
+  #- sudo dpkg --add-architecture i386
+  #- sudo apt-get install mailutils
+  - sudo apt-get -qq install mailutils exim4
   #- gem install s3
   #- "if [[ ${BROWSER} == 'ie' ]]; then pip install ie_only_pkg; fi"
 
