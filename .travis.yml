@@ -17,9 +17,11 @@ install:
   #- "if [[ ${BROWSER} == 'ie' ]]; then pip install ie_only_pkg; fi"
 
 before_script:
-  - "sudo apt-get install -qq mailutils"
+
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
+  #- "sudo apt-get install -qq mailutils"
+  - "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
 
 script:
   #- "firefox --version"
