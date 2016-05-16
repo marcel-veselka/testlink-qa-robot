@@ -14,7 +14,7 @@ Test Setup  Run keywords    testlink.Create new Test Project
 Test Teardown  Run keywords  testlink.Delete Build ${buildName}
 ...            AND           testlink.Delete Build ${buildName2}
 ...            AND           testlink.Delete Test Plan Management  ${TestPlanName}
-...             AND          testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
+...            AND           testlink.Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 ...            AND           Close browser
 
 
