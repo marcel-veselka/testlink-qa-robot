@@ -218,7 +218,13 @@ Create Another Test Suite For Move Or Copy
     input text  xpath=//*[@id="cke_contents_details"]/textarea  ${testDescriptionCopy}
     click element  name=add_testsuite_button
     unselect frame
-
+check test project and tsuite
+    select frame  mainframe
+    wait until page contains element  treeframe
+    select frame  treeframe
+    wait until page contains element  xpath=//a[span[contains(text(),"${newTestProjectName} (")]]
+    wait until page contains element  xpath=//a[span/span[contains(text(),"${testSuiteName}")]]
+    unselect frame
 Edit Test Suite
     select frame  mainframe
     wait until page contains element  workframe
@@ -419,6 +425,7 @@ Select test suite ${testSuiteName} node
     wait until page contains element  treeframe
     select frame  treeframe
     wait until element contains  tree_div  ${testSuiteName}
+    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"${testSuiteName}")]/div/a
     click element  xpath=//ul/li/ul/li[contains(.,"${testSuiteName}")]/div/a
     unselect frame
 
@@ -547,7 +554,31 @@ Expand tree
     wait until page contains element  expand_tree
     click element  expand_tree
     unselect frame
+select Collapse tree
+    select frame  name=mainframe
+    wait until page contains element  treeframe
+    select frame  name=treeframe
+    click element  collapse_tree
+    page should not contain  ${testSuiteName}
+    unselect frame
 
+Click on arrow to unfold
+    select frame  name=mainframe
+    wait until page contains element  treeframe
+    select frame  treeframe
+    wait until element is visible  xpath=//*[@id="extdd-1"]/img[1]
+   # wait until page contains element  xpath=(//span[contains(text(),"tsuite109_1 (0)")])[1]
+    click element  xpath=//*[@id="extdd-1"]/img[1]
+    unselect frame
+
+check Expand tree
+    select frame  name=mainframe
+    page should contain element  treeframe
+    select frame  treeframe
+    wait until page contains element  xpath=(//span[contains(text(),"${testSuiteName}")])[1]
+    wait until page contains element  xpath=(//span[contains(text(),"tsuite109_1")])[1]
+    wait until page contains element  xpath=(//span[contains(text(),"tp109-1:tc109")])[1]
+    unselect frame
 
 Fill in title test case name ${testCaseName}
 
@@ -792,3 +823,15 @@ Check Custom Fields
     wait until page contains element  xpath=//table[tbody/tr/td[contains(.,"${CFLABEL}")]]
     page should contain element  xpath=//table[tbody/tr/td[contains(.,"${CFLABEL}")]]
     unselect frame
+
+Navigator tree expands by one branch
+     select frame  mainframe
+     wait until page contains element  treeframe
+     select frame  treeframe
+     wait until page contains element  xpath=//*[@id="extdd-1"]/img[1]
+     wait until page contains element  xpath=//*[@id="extdd-6"]/span
+     wait until page contains element   xpath=//*[@id="extdd-9"]/span
+     click element   xpath=//*[@id="extdd-1"]/img[1]
+     page should contain element  xpath=//*[@id="extdd-6"]/span
+     page should contain element  xpath=//*[@id="extdd-9"]/span
+     unselect frame
