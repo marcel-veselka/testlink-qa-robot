@@ -1,6 +1,6 @@
 *** Settings ***
 
-Documentation  A test case for creating project without conflict (no existing project)
+Documentation  A test case for creating a new test project.
 
 Resource       ../../../resource/testlink.robot
 
@@ -15,10 +15,11 @@ ${newTestProjectDescription}  Description of new test project czechTestDemo
 
 *** Test Cases ***
 
-Create new Test Project with template off
+Create new Test Project
     testlink.Login as admin correct
     testlink.Start creating new test project
     testlink.Fill information to create test with template OFF
     testlink.Submit and check new test project
 
 #pybot -d results tests/web/czechTestDemo/czechtest_demo.robot
+#slfdh
