@@ -3,8 +3,6 @@
 Documentation  This is the resource file containing all methods based part of desktop which contains header
 Library        Selenium2Library
 
-
-
 *** Variables ***
 
 *** Keywords ***
@@ -29,6 +27,8 @@ I am here in full
     wait until page contains element  xpath=//img[@title="Test Execution"]
     wait until page contains element  xpath=//img[@title="Test Reports"]
     unselect frame
+
+
 
 Go to index page
     wait until keyword succeeds  1min  0  headerPage.I am here

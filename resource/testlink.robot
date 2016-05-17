@@ -1150,3 +1150,21 @@ Check Custom Fields Are Visible
     headerPage.go to index page
     desktopPage.Go to Test Specification (mainframe)
     testSpecificationPage.Check Custom Fields
+
+
+Click on Expand tree
+    testSpecificationPage.Expand tree
+    testSpecificationPage.check Expand tree
+
+Click on Collapse tree
+    testSpecificationPage.select Collapse tree
+    testSpecificationPage.Click on arrow to unfold
+
+Check tree expanded
+    testSpecificationPage.check test project and tsuite
+
+Click on the white arrow on the left side of the Test Project
+
+    testSpecificationPage.Navigator tree expands by one branch
+
+
