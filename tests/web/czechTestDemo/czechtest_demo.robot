@@ -23,5 +23,3 @@ Create new Test Project
 
 
 #pybot -d results tests/web/czechTestDemo/czechtest_demo.robot
-#sfdjksf
-#sldsldkjhs
