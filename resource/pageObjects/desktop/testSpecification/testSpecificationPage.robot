@@ -880,5 +880,5 @@ Check white arrow
      wait until page contains    ${testSuiteName1}
      #click element   xpath=//*[@id="extdd-1"]/img[1]
      #page should contain element  xpath=//*[@id="extdd-6"]/span
-
+     #page should contain element  xpath=//*[@id="extdd-9"]/span
      unselect frame
