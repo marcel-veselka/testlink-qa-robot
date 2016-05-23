@@ -872,7 +872,7 @@ Check black arrow
      unselect frame
 Check white arrow
      select frame  mainframe
-     #wait until page contains element  treeframe
+
      select frame  treeframe
      wait until page contains element  xpath=//*[@id="extdd-1"]/img[1]
      wait until page contains   ${newTestProjectName}
