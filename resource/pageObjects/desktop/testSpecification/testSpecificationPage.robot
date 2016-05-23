@@ -16,8 +16,9 @@ ${WELCOME URL}              http://${SERVER}/index.php?caller=login
 ${ERROR URL}                http://${SERVER}/login.php
 ${BROWSER}                  ff
 ${testSuiteName}            suiteTest
-
-
+${newTestProjectName}       testProject109
+${testSuiteName}                    tsuite109
+${testSuiteName1}                   tsuite109_1
 *** Keywords ***
 I am here
     select frame  mainframe
@@ -570,14 +571,22 @@ Click on arrow to unfold
    # wait until page contains element  xpath=(//span[contains(text(),"tsuite109_1 (0)")])[1]
     click element  xpath=//*[@id="extdd-1"]/img[1]
     unselect frame
-
+Check Collapse tree
+    select frame  mainframe
+    select frame  treeframe
+    wait until page contains   ${newTestProjectName}
+    page should not contain  ${testSuiteName}
+    page should not contain  ${testSuiteName1}
+    unselect frame
 check Expand tree
     select frame  name=mainframe
     page should contain element  treeframe
     select frame  treeframe
     wait until page contains element  xpath=(//span[contains(text(),"${testSuiteName}")])[1]
-    wait until page contains element  xpath=(//span[contains(text(),"tsuite109_1")])[1]
-    wait until page contains element  xpath=(//span[contains(text(),"tp109-1:tc109")])[1]
+    wait until page contains element  xpath=(//span[contains(text(),"${testSuiteName1}")])[1]
+    #wait until page contains element  xpath=(//span[contains(text(),"tsuite109_1")])[1]
+    #wait until page contains element  xpath=(//span[contains(text(),"tp109-1:tc109")])[1]
+    wait until page contains element  xpath=(//span[contains(text(),"tp109-1:${testCaseName}")])[1]
     unselect frame
 
 Fill in title test case name ${testCaseName}
@@ -826,12 +835,50 @@ Check Custom Fields
 
 Navigator tree expands by one branch
      select frame  mainframe
-     wait until page contains element  treeframe
+     #wait until page contains element  treeframe
      select frame  treeframe
      wait until page contains element  xpath=//*[@id="extdd-1"]/img[1]
-     wait until page contains element  xpath=//*[@id="extdd-6"]/span
-     wait until page contains element   xpath=//*[@id="extdd-9"]/span
+     wait until page contains   ${newTestProjectName}
+     #wait until page contains element   xpath=//*[@id="extdd-9"]/span
      click element   xpath=//*[@id="extdd-1"]/img[1]
-     page should contain element  xpath=//*[@id="extdd-6"]/span
-     page should contain element  xpath=//*[@id="extdd-9"]/span
+     #page should contain element  xpath=//*[@id="extdd-6"]/span
+     #page should contain element  xpath=//*[@id="extdd-9"]/span
+     unselect frame
+Click on black arrow
+     select frame  mainframe
+     #wait until page contains element  treeframe
+     select frame  treeframe
+     wait until page contains element  xpath=//*[@id="extdd-1"]/img[1]
+     wait until page contains   ${newTestProjectName}
+     #wait until page contains element   xpath=//*[@id="extdd-9"]/span
+     #page should contain element  xpath=//*[@id="extdd-6"]/span
+     #page should contain element  xpath=//*[@id="extdd-9"]/span
+     wait until page contains    ${testSuiteName}
+     wait until page contains    ${testSuiteName1}
+     click element   xpath=//*[@id="extdd-1"]/img[1]
+     unselect frame
+Check black arrow
+     select frame  mainframe
+     #wait until page contains element  treeframe
+     select frame  treeframe
+     wait until page contains element  xpath=//*[@id="extdd-1"]/img[1]
+     wait until page contains   ${newTestProjectName}
+     #wait until page contains element   xpath=//*[@id="extdd-9"]/span
+     page should not contain   ${testSuiteName}
+     page should not contain  ${testSuiteName1}
+    # wait until page contains    ${testSuiteName}
+    # wait until page contains    ${testSuiteName1}
+     #click element   xpath=//*[@id="extdd-1"]/img[1]
+     unselect frame
+Check white arrow
+     select frame  mainframe
+     #wait until page contains element  treeframe
+     select frame  treeframe
+     wait until page contains element  xpath=//*[@id="extdd-1"]/img[1]
+     wait until page contains   ${newTestProjectName}
+     wait until page contains    ${testSuiteName}
+     wait until page contains    ${testSuiteName1}
+     #click element   xpath=//*[@id="extdd-1"]/img[1]
+     #page should contain element  xpath=//*[@id="extdd-6"]/span
+     #page should contain element  xpath=//*[@id="extdd-9"]/span
      unselect frame
