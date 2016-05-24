@@ -16,3 +16,6 @@ Validation of changing the Test Project
     testlink.Choose test project from dropdown
     testlink.Change and check test project
 
+    #testlink.Login as admin correct
+    #testlink.Choose test project from dropdown
+    #testlink.Change and check test project
