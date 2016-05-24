@@ -35,8 +35,7 @@ Navigator tree
     testlink.Check Collapse tree
     testlink.Click on the white arrow on the left side of the Test Project
     testlink.Click on the black arrow on the left side of the Test Project
-    #testlink.Click on the black arrow on the left side of the Test Project
-    #testlink.Check Collapse tree
+
 
 
 
