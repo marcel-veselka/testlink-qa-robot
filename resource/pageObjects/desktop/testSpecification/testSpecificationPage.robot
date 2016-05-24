@@ -556,9 +556,11 @@ Expand tree
     click element  expand_tree
     unselect frame
 select Collapse tree
-    select frame  name=mainframe
-    wait until page contains element  treeframe
-    select frame  name=treeframe
+    #select frame  name=mainframe
+    select frame  mainframe
+    #wait until page contains element  treeframe
+   # select frame  name=treeframe
+    select frame  treeframe
     click element  collapse_tree
     page should not contain  ${testSuiteName}
     unselect frame
@@ -575,6 +577,8 @@ Check Collapse tree
     select frame  mainframe
     select frame  treeframe
     wait until page contains   ${newTestProjectName}
+    wait until page contains element  xpath=//*[@id="extdd-1"]/img[1]
+    page should contain element  xpath=//*[@id="extdd-1"]/img[1]
     page should not contain  ${testSuiteName}
     page should not contain  ${testSuiteName1}
     unselect frame
@@ -872,12 +876,14 @@ Check black arrow
      unselect frame
 Check white arrow
      select frame  mainframe
-
      select frame  treeframe
      wait until page contains element  xpath=//*[@id="extdd-1"]/img[1]
      wait until page contains   ${newTestProjectName}
-     wait until page contains    ${testSuiteName}
-     wait until page contains    ${testSuiteName1}
+     page should contain  ${newTestProjectName}
+     page should not contain  ${testSuiteName}
+     #wait until page contains    ${testSuiteName}
+     page should not contain  ${testSuiteName1}
+     #wait until page contains    ${testSuiteName1}
      #click element   xpath=//*[@id="extdd-1"]/img[1]
      #page should contain element  xpath=//*[@id="extdd-6"]/span
 
