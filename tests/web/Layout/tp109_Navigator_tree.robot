@@ -41,9 +41,7 @@ Navigator tree
     #testlink.Click on Expand tree
     #testlink.Check tree expanded
     #testlink.Click on Collapse tree
-    #testlink.Check Collapse tree
-    #testlink.Click on the white arrow on the left side of the Test Project
-    #testlink.Click on the black arrow on the left side of the Test Project
+
 
 
 
