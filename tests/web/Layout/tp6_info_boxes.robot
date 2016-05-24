@@ -16,3 +16,9 @@ Resource       ../../../resource/testlink.robot
    # Change Test Project
    # Check info
    # [Teardown]  close browser
+   # Open Browser To Login Page
+    #Login as Admin
+    #Submit Credentials
+   # Change Test Project
+   # Check info
+   # [Teardown]  close browser
