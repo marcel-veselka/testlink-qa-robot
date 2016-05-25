@@ -21,6 +21,6 @@ Create new test plan
      testlink.Login as admin correct
      testlink.Create New Test Plan ${TestPlanName}
      #testlink.Create New Test Plan ${TestPlanName} ---commented by mohammed
-
+     #testlink.Login as admin correct
 
 
