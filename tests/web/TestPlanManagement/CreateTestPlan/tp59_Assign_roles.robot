@@ -31,3 +31,4 @@ Assign Roles
     [Tags]  controll
     testlink.Assign Roles
     testlink.Check That Roles Were Assigned
+    #testlink.Check That Roles Were Assigned -- commented by mohammed
