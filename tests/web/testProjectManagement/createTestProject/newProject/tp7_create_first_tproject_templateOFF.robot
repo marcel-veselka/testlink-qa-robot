@@ -1,6 +1,8 @@
 *** Settings ***
 Documentation  A test case for creating project without conflict (no existing project)
+
 Resource       ../../../../../resource/testlink.robot
+
 Test Teardown  Run keywords  Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 ...            AND           Close browser
 
@@ -18,3 +20,4 @@ Create new Test Project with template off
 
 
 
+#pybot -d results tests/web/testProjectManagement/createTestProject/newProject/tp7_create_first_tproject_templateOFF.robot
