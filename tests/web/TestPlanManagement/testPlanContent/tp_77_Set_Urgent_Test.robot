@@ -15,28 +15,18 @@ Test Setup  Run keywords    testlink.Create new Test Project
 
 *** Variables ***
 
-${newTestProjectName}       testProject109
-${newtestprojectprefix}     tp109
+${newTestProjectName}       testProject77
+${newtestprojectprefix}     tp77
 ${testprojectname}
 ${testprojectprefix}
-${testSuiteName}                    tsuite109
-${testSuiteName1}                   tsuite109_1
-${testCaseName}                     tc109
+${testSuiteName}                    tsuite77
+${testSuiteName1}                   tsuite77_1
+${testCaseName}                     tc77
 
 
 
 *** Test Cases ***
-Navigator tree
+Set Urgent Test
     testlink.Go to index page
-    testlink.Go to Test Specification (mainframe)
-    testlink.Click on Expand tree
-    testlink.Check tree expanded
-    testlink.Click on Collapse tree
-    testlink.Click on the white arrow on the left side of the Test Project
 
 
-    #testlink.Leave empty TP name and prefix
-    #testlink.Fill and Valid  ${newTestProjectName1}
-
-
-#pybot -d results tests\web\testProjectManagement\createTestProject\modifyProject\tp12_Rename_Test_Project_NO_NAME_CONFLICT.robot
