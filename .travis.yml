@@ -37,8 +37,8 @@ script:
   #- find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \;
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/testProjectManagement/createTestProject/modifyProject/tp12_Rename_Test_Project_NO_NAME_CONFLICT.robot
 
-  #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/Layout/tp109_Navigator_tree.robot
-   - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/czechTestDemo/czechtest_demo.robot
+  - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/Layout/tp109_Navigator_tree.robot
+  - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/czechTestDemo/czechtest_demo.robot
 
 
 env:
