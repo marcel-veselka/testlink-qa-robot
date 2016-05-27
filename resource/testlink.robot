@@ -1158,7 +1158,10 @@ Click on Expand tree
 
 Click on Collapse tree
     testSpecificationPage.select Collapse tree
+
     testSpecificationPage.Click on arrow to unfold
+Check Collapse tree
+    testSpecificationPage.Check Collapse tree
 
 Check tree expanded
     testSpecificationPage.check test project and tsuite
@@ -1166,5 +1169,8 @@ Check tree expanded
 Click on the white arrow on the left side of the Test Project
 
     testSpecificationPage.Navigator tree expands by one branch
+    testSpecificationPage.Check white arrow
 
-
+Click on the black arrow on the left side of the Test Project
+    testSpecificationPage.Click on black arrow
+    testSpecificationPage.Check black arrow
