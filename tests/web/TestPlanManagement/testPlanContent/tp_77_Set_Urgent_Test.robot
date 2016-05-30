@@ -2,7 +2,7 @@
 Documentation  A test suite with a single test for creating a new Test Project. This test has
 ...            a workflow that is created using keywords from the resource file.
 
-Resource        ../../../resource/testlink.robot
+Resource        ../../../../resource/testlink.robot
 
 Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         headerPage.Go to index page and change testproject
