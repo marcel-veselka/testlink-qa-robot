@@ -52,6 +52,12 @@ env:
   - BROWSER=firefox
   #- BROWSER=ie # will be added later
   #- BROWSER=safari # will be added later
+  - travis encrypt "FOO=6\\&a\\(5\\!1Ab\\\\"
+  - travis encrypt KNOWN_HOSTS=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDF3RdFEeCo7dG6CCXFBW2D7iZoeizw5TLJUDMWb5tk4X3KxOAM+Qt9BQp+Kq28lk9WLGz2o34C0uDxmovHetgAJfwadA/sxZoQHv9t84HI06SW84LG1lgxkdr2Iu5maU/K05J5SWExh/svjfaHzVL8/s0czo1zpd1vJ9DfUwHElUMG6lLYWMAP7tDZjTwYG93wdORNi/ziSQuLLE8LQRVg7PtpVusfRa7HKNaH1L1+dimRlEHM2OE8+Rv4adFP88AOurSYu+d+B95yxeZja7ocfUL7wB4/ppTB6h00dqU9LSuag5J1QCVQQRnOyu0sEbymnehbIt6uAbVmAVKcsQSr ubuntu@ip-172-31-42-192
+
+
+
+
 
 after_script:
    - zip -r build.zip /home/travis/build/marcel-veselka/testlink-qa-robot/*
