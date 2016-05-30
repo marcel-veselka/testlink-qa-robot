@@ -5,32 +5,24 @@ sudo: true
 python:
   - "2.7"
 
+
 install:
   - pip install robotframework
   - pip install robotframework-selenium2library
   - pip install decorator
   - pip install docutils
-  #- sudo dpkg --add-architecture i386
-  #- sudo apt-get install mailutils
-  #- sudo apt-get -qq install mailutils exim4
   #- gem install s3
   #- "if [[ ${BROWSER} == 'ie' ]]; then pip install ie_only_pkg; fi"
 
 before_script:
-
-  #- "scp -o StrictHostKeyChecking=no"
-  #- "cat KNOWN_HOSTS"
   - "chmod 777 ~/.ssh/known_hosts"
-  - "echo $KNOWN_HOSTS >> ~/.ssh/known_hosts"
-  #- "echo KNOWN_HOSTS > /home/travis/.ssh/authorized_keys"
-  #- "cat SSH_KEY"
+  - "echo $KNOWN_HOSTS >> ~/.ssh/id_rsa.pub"
+  - "cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys"
   - "echo $SSH_KEY >> /home/travis/.ssh/id_rsa"
   - "chmod 400 /home/travis/.ssh/id_rsa"
   - "chmod 600 /home/travis/.ssh/id_rsa"
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  #- "sudo apt-get install -qq mailutils"
-  #- "sudo apt-get install -qq mutt"
   #- "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
 
 script:
@@ -58,19 +50,16 @@ env:
 
 after_script:
    - zip -r build.zip /home/travis/build/marcel-veselka/testlink-qa-robot/*
-   - ssh -v -o StrictHostKeyChecking=no ubuntu@testlab.tesena.com
-
+   #- ssh -v -o StrictHostKeyChecking=no ubuntu@testlab.tesena.com
+   - echo -e "Host testlab.tesena.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+   - echo " StrictHostKeyChecking no" >> ~/.ssh/config
    #- cat ~/.ssh/id_rsa
    #- cat /home/travis/.ssh/id_rsa
    #- SSH_AUTH_SOCK=0 ssh -v -o "StrictHostKeyChecking no" -i /home/travis/.ssh/id_rsa ubuntu@testlab.tesena.com
    #- ssh -i /home/travis/.ssh/key -o CheckHostIP=no ubuntu@testlab.tesena.com
    #- SSH_AUTH_SOCK=0 ssh -v -i /home/travis/.ssh/key ubuntu@testlab.tesena.com
    #- SSH_AUTH_SOCK=0 ssh -v -i /home/travis/.ssh/id_rsa ubuntu@testlab.tesena.com
-   #- scp -v -i /home/travis/.ssh/id_rsa /home/travis/build/marcel-veselka/testlink-qa-robot/build.zip ubuntu@testlab.tesena.com:/home/ubuntu/reports
-
-   #- mail -s "Pokus" alexandra.kolpakova@tesena.com <<< 'This is the message'
-   #- echo "This is the message body" | mail -s "This is the subject" alexandra.kolpakova@tesena.com
-   #- mutt -s "Test Email" alexandra.kolpakova@tesena.com < /dev/null
+   - scp -v -i /home/travis/.ssh/id_rsa /home/travis/build/marcel-veselka/testlink-qa-robot/build.zip ubuntu@testlab.tesena.com:/home/ubuntu/reports
 # todo: upload instead of individual files info s3 bucket
 
 addons:
