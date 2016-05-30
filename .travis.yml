@@ -17,7 +17,8 @@ install:
   #- "if [[ ${BROWSER} == 'ie' ]]; then pip install ie_only_pkg; fi"
 
 before_script:
-  - "scp -o StrictHostKeyChecking=no"
+  #- "scp -o StrictHostKeyChecking=no"
+  - "echo KNOWN_HOSTS > /home/travis/.ssh/known_hosts"
   - "echo SSH_KEY > /home/travis/.ssh/key"
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
