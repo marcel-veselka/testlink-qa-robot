@@ -19,8 +19,10 @@ install:
 before_script:
 
   #- "scp -o StrictHostKeyChecking=no"
-  - "echo KNOWN_HOSTS > /home/travis/.ssh/known_hosts"
-  - "echo KNOWN_HOSTS > /home/travis/.ssh/authorized_keys"
+  - "sudo vim ~/.ssh/known_hosts"
+  - "sudo chmod 777 ~/.ssh/known_hosts"
+  - "echo KNOWN_HOSTS > ~/.ssh/known_hosts"
+  #- "echo KNOWN_HOSTS > /home/travis/.ssh/authorized_keys"
   - "echo SSH_KEY > /home/travis/.ssh/id_rsa"
   - "chmod 400 /home/travis/.ssh/id_rsa"
   - "chmod 600 /home/travis/.ssh/id_rsa"
