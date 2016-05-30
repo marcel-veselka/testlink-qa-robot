@@ -19,11 +19,11 @@ install:
 before_script:
 
   #- "scp -o StrictHostKeyChecking=no"
-  - "cat KNOWN_HOSTS"
+  #- "cat KNOWN_HOSTS"
   - "chmod 777 ~/.ssh/known_hosts"
   - "cat KNOWN_HOSTS > ~/.ssh/known_hosts"
   #- "echo KNOWN_HOSTS > /home/travis/.ssh/authorized_keys"
-  - "cat SSH_KEY"
+  #- "cat SSH_KEY"
   - "cat SSH_KEY > /home/travis/.ssh/id_rsa"
   - "chmod 400 /home/travis/.ssh/id_rsa"
   - "chmod 600 /home/travis/.ssh/id_rsa"
