@@ -17,12 +17,13 @@ install:
   #- "if [[ ${BROWSER} == 'ie' ]]; then pip install ie_only_pkg; fi"
 
 before_script:
-  - "chmod 400 /home/travis/.ssh/key"
-  - "chmod 600 /home/travis/.ssh/key"
+
   #- "scp -o StrictHostKeyChecking=no"
   - "echo KNOWN_HOSTS > /home/travis/.ssh/known_hosts"
   - "echo KNOWN_HOSTS > /home/travis/.ssh/authorized_keys"
   - "echo SSH_KEY > /home/travis/.ssh/key"
+  - "chmod 400 /home/travis/.ssh/key"
+  - "chmod 600 /home/travis/.ssh/key"
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   #- "sudo apt-get install -qq mailutils"
