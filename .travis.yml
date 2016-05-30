@@ -58,7 +58,7 @@ env:
 
 after_script:
    - zip -r build.zip /home/travis/build/marcel-veselka/testlink-qa-robot/*
-   - ssh -v -o StrictHostKeyChecking=no
+   - ssh -v -o StrictHostKeyChecking=no ubuntu@testlab.tesena.com
 
    #- cat ~/.ssh/id_rsa
    #- cat /home/travis/.ssh/id_rsa
