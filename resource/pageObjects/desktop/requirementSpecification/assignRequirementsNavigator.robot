@@ -15,11 +15,14 @@ ${LOGIN URL}     http://${SERVER}/login.php
 ${WELCOME URL}   http://${SERVER}/index.php?caller=login
 ${ERROR URL}     http://${SERVER}/login.php
 ${BROWSER}      ff
-
-
+${title}        tct77
+${newTestProjectPrefix}   ntpx77
+${dokumentID}   did77
+${testSuiteName}                    tsuite77
 *** Keywords ***
 
 Select Test Suite
+
     select frame  mainframe
     wait until page contains element  treeframe
     select frame  treeframe
@@ -42,6 +45,60 @@ Select Test Suite
     select frame  workframe
     wait until page contains  Requirements Specification Document
     unselect frame
+
+Click and Select Test Suite
+    select frame  name=mainframe
+    select frame  treeframe
+    wait until page contains element  filter_toplevel_testsuite
+    page should contain element  filter_toplevel_testsuite
+    click element  filter_toplevel_testsuite
+    double click element  xpath=//td[2]/select/option[2]
+    wait until page contains element  xpath=//td[2]/select/option[2]
+    page should contain element  xpath=//td[2]/select/option[2]
+
+    wait until page contains element  xpath=//select[@name="filter_priority"]
+    page should contain element  xpath=//select[@name="filter_priority"]
+    click element  xpath=//select[@name="filter_priority"]
+    #double click element  xpath=//*[@id="filter_importance"]/option[2]
+    wait until page contains element  xpath=//tr[4]/td[2]/select/option[2]
+    page should contain element  xpath=//tr[4]/td[2]/select/option[2]
+    click element  xpath=//tr[4]/td[2]/select/option[2]
+    wait until page contains element  name=doUpdateTree
+    page should contain element  name=doUpdateTree
+    click element  name=doUpdateTree
+    unselect frame
+
+
+
+Filter or select Test Case
+    select frame  mainframe
+    wait until page contains element  treeframe
+    select frame  treeframe
+    wait until page contains element   name=filter_toplevel_testsuite
+    click element  xpath=//select[@name="filter_toplevel_testsuite"]
+    select from list by label  ${testSuiteName}
+    unselect frame
+
+Select Test Case
+    select frame  mainframe
+    wait until page contains element  treeframe
+    select frame  treeframe
+    #wait until page contains element  xpath=//*[@id="ext-gen24"]/div/a/span/span
+    wait until page contains  xpath=//*[@id="ext-gen24"]/div/a
+    click link  xpath=//*[@id="ext-gen24"]/div/a
+    #click element  xpath=//*[@id="ext-gen24"]/div/a/span/span
+    unselect frame
+
+Adding and Added selected
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    wait until page contains element   xpath=//*[@id="header-wrap"]/div/div/button[1]
+    click element  xpath=//*[@id="header-wrap"]/div/div/button[1]
+    wait until page contains element  xpath=//*[@id="header-wrap"]/div/input[2]
+    click element  xpath=//*[@id="header-wrap"]/div/input[2]
+    unselect frame
+
 
 Assign Requirements
     select frame  mainframe

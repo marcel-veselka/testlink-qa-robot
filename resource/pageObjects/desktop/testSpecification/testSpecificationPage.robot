@@ -880,9 +880,9 @@ Check white arrow
      wait until page contains element  xpath=//*[@id="extdd-1"]/img[1]
      wait until page contains   ${newTestProjectName}
      page should contain  ${newTestProjectName}
-     page should not contain  ${testSuiteName}
+     page should contain  ${testSuiteName}
      #wait until page contains    ${testSuiteName}
-     page should not contain  ${testSuiteName1}
+     page should contain  ${testSuiteName1}
      #wait until page contains    ${testSuiteName1}
      #click element   xpath=//*[@id="extdd-1"]/img[1]
      #page should contain element  xpath=//*[@id="extdd-6"]/span

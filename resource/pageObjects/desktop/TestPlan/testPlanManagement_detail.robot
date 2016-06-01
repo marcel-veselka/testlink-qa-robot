@@ -15,8 +15,10 @@ ${LOGIN URL}     http://${SERVER}/login.php
 ${WELCOME URL}   http://${SERVER}/index.php?caller=login
 ${ERROR URL}     http://${SERVER}/login.php
 ${BROWSER}      ff
-
-
+${TestPlanDescription}  tpd
+${TestPlanName}   tpln
+${TestPlanName1}   tpln1
+${EditTestPlanName}  etpn
 *** Keywords ***
 
 Input Name

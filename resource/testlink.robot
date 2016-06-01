@@ -692,6 +692,11 @@ Select Test Suite
     [Tags]  tp47
     assignRequirementsNavigator.Select Test Suite
 
+Click and Select Test Suite
+    [Tags]  tp77
+    assignRequirementsNavigator.Click and Select Test Suite
+
+
 Assign Requirements
     [Tags]  tp47
     assignRequirementsNavigator.Assign Requirements
@@ -1174,3 +1179,28 @@ Click on the white arrow on the left side of the Test Project
 Click on the black arrow on the left side of the Test Project
     testSpecificationPage.Click on black arrow
     testSpecificationPage.Check black arrow
+
+Click on Set Urgent Tests
+    #desktopPage.Go to Set Urgent Tests
+    desktopPage.Go to click and Set UT
+    #desktopPage.Click On Test Suite
+
+Filter and select test case
+     assignRequirementsNavigator.Filter or select Test Case
+
+Go to add or remove TC
+     desktopPage.Go to Set Urgent Tests
+
+Go Add or Remove TC
+     desktopPage.Go to Set Urgent Tests
+
+
+Go to select test case
+     desktopPage.Click On Test Suite
+
+
+Check adding and select buttons
+     assignRequirementsNavigator.Adding and Added selected
+
+Go check proiority
+     desktopPage.Go and check high

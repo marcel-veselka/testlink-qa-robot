@@ -12,7 +12,7 @@ ${LOGIN URL}     http://${SERVER}/login.php
 ${WELCOME URL}   http://${SERVER}/index.php?caller=login
 ${ERROR URL}     http://${SERVER}/login.php
 ${BROWSER}      chrome
-
+${testSuiteName}                    tsuite77
 
 
 
@@ -398,8 +398,41 @@ Check Assign Test Case Execution
 
 Go to Set Urgent Tests
     select frame  name=mainframe
-    wait until page contains  Set Urgent Tests
-    click link  Set Urgent Tests
+    #select frame  name=workframe
+    wait until page contains element  xpath=//*[@id="testplan_contents_topics"]/a[2]
+    page should contain element  xpath=//*[@id="testplan_contents_topics"]/a[2]
+    click link  xpath=//*[@id="testplan_contents_topics"]/a[2]
+    unselect frame
+
+
+Go to click and Set Urgent Tests
+    select frame  mainframe
+    wait until page contains element  xpath=//*[@id="testplan_contents_topics"]/a[4]
+    page should contain element  xpath=//*[@id="testplan_contents_topics"]/a[4]
+    click link  xpath=//*[@id="testplan_contents_topics"]/a[4]
+    unselect frame
+
+Go to click and Set UT
+    select frame  mainframe
+    wait until page contains element  xpath=//*[@id="testplan_contents_topics"]/a[4]
+    page should contain element  xpath=//*[@id="testplan_contents_topics"]/a[4]
+    click link  xpath=//*[@id="testplan_contents_topics"]/a[4]
+    unselect frame
+
+Click On Test Suite
+    select frame  mainframe
+    wait until page contains element  treeframe
+    select frame  treeframe
+    wait until page contains element  xpath=//span[text()="${testSuiteName} (1)" ]
+    click element  xpath=//span[text()="${testSuiteName} (1)" ]
+    unselect frame
+
+check if Checkbox high is selected
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    checkbox should be selected  xpath=//*[@id="set_urgency_tc"]/table/tbody/tr[2]/td[4]/input
+    #click element  xpath=//td[4]/input/@value["3"]
     unselect frame
 
 Check Set Urgent Tests
@@ -431,4 +464,15 @@ Go to Show Test Cases Newest Versions
 Check Show Test Cases Newest Versions
     select frame  name=mainframe
     wait until page contains  Newest versions
+    unselect frame
+
+Go and check high
+    select frame  name=mainframe
+    wait until page contains element  name=workframe
+    select frame  name=workframe
+    wait until page contains element  name=high_urgency
+    #page should contain element  name=high_urgency
+    click element  high_urgency
+    wait until page contains element  xpath=//*[@id="set_urgency_tc"]/div/input
+    click element  xpath=//*[@id="set_urgency_tc"]/div/input
     unselect frame
