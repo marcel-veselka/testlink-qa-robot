@@ -431,8 +431,10 @@ check if Checkbox high is selected
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    checkbox should be selected  xpath=//*[@id="set_urgency_tc"]/table/tbody/tr[2]/td[4]/input
-    #click element  xpath=//td[4]/input/@value["3"]
+    #element should be visible  xpath=//table/tbody/tr[2]/td[4]/input/@value["3"]
+    #page should contain element  xpath=//table/tbody/tr[2]/td[4]/input/@value["3"]
+    page should contain element  xpath=//*[@id="set_urgency_tc"]/table/tbody/tr[2]/td[4]/input
+    click element  xpath=//*[@id="set_urgency_tc"]/table/tbody/tr[2]/td[4]/input
     unselect frame
 
 Check Set Urgent Tests
