@@ -52,4 +52,4 @@ Set Urgent Test
     desktopPage.check if Checkbox high is selected
     testlink.Go to index page
     #testlink.Go Add or Remove TC
-    #testlink.Filter and select test case
+
