@@ -31,7 +31,7 @@ ${CONFIGURATION}  <!-- Template bugzillaxmlrpcInterface -->
 
 Edit Issue Tracker Test Case
     [Tags]  control2
-    testlink.Login as admin correct
+    #testlink.Login as admin correct
     testlink.Get to Issue Tracker Management
     testlink.Click created Issue Tracker with name ${ISSUETRACKER}
     testlink.Modify name and type of Issue Tracker
