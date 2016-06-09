@@ -585,15 +585,15 @@ Create Issue Tracker
 Click created Issue Tracker with name ${ISSUETRACKER}
     [Tags]  tp108
     select frame  mainframe
-    wait until page contains element  xpath=//a[contains(text(),"${ISSUETRACKER}")]
+    wait until page contains  ${ISSUETRACKER}
     click element  xpath=//a[contains(text(),"${ISSUETRACKER}")]
     unselect frame
 
 Modify name and type of Issue Tracker
     [Tags]  tp108
-    editIssueTracker.Modify name and type of Issue Tracker newIssueTracker
-    issueTrackerManagement.Check Issue Tracker named newIssueTracker
-    testlink.Click created Issue Tracker with name newIssueTracker
+    editIssueTracker.Modify name and type of Issue Tracker ${NEWISSUETRACKER}
+    issueTrackerManagement.Check Issue Tracker named ${NEWISSUETRACKER}
+    testlink.Click created Issue Tracker with name ${NEWISSUETRACKER}
     editIssueTracker.Modify name and type of Issue Tracker ${ISSUETRACKER}
     issueTrackerManagement.Check Issue Tracker named ${ISSUETRACKER}
 

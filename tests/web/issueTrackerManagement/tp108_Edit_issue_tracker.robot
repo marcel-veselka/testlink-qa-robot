@@ -7,6 +7,7 @@ Test Teardown  Close all browsers
 
 *** Variables ***
 ${ISSUETRACKER}  IssueTrackerName
+${NEWISSUETRACKER}  newIssueTracker
 ${CONFIGURATION}  <!-- Template bugzillaxmlrpcInterface -->
             ...  <issuetracker>
             ...  <username>USERNAME</username>
