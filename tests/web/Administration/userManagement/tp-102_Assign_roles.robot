@@ -4,8 +4,9 @@ Resource       ../../../../resource/testlink.robot
 Test Setup  Run Keywords
 ...             testlink.Login as admin correct    AND
 ...             testlink.Create and check role ${role} in user management
-Test Teardown  userManagement.Delete role novaRole
-...            AND           Close all browsers
+Test Teardown  Run Keywords  userManagement.Delete role ${role}
+...             AND             Close all browsers
+
 
 *** Variables ***
 ${role}  novaRole
