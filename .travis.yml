@@ -78,9 +78,9 @@ env:
 after_script:
    - zip -r build.zip /home/travis/build/marcel-veselka/testlink-qa-robot/*
 
-   - sed -e 's/\s\+/\n/g' ~/.ssh/test > ~/.ssh/test1
+   - sed -e 's/\s\+/\n/g' ~/.ssh/test > ~/.ssh/test
    - echo -----BEGIN RSA PRIVATE KEY----- > /home/travis/.ssh/key
-   - cat ~/.ssh/test1 >> ~/.ssh/key
+   - cat ~/.ssh/test >> ~/.ssh/key
    - echo -----END RSA PRIVATE KEY----- >> /home/travis/.ssh/key
    #- cat ~/.ssh/key
    #- ssh -v -o StrictHostKeyChecking=no ubuntu@testlab.tesena.com
