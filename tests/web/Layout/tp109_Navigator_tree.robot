@@ -10,8 +10,8 @@ Test Setup  Run keywords    testlink.Create new Test Project
 ...             AND         testlink.Create test suite ${testSuiteName1} in test project ${newTestProjectName}
 ...             AND         testlink.Create test case ${testCaseName} in ${testSuiteName}
 
-#Test Teardown  Run keywords  Delete Test Project  ${newTestProjectName}  ${newtestprojectprefix}
-#...             AND          close browser
+Test Teardown  Run keywords  Delete Test Project  ${newTestProjectName}  ${newtestprojectprefix}
+...             AND          close browser
 
 *** Variables ***
 
