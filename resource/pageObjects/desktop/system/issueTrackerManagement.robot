@@ -150,7 +150,7 @@ Check created issue trackers
 
 Check Issue Tracker named ${ISSUETRACKER}
     select frame  name=mainframe
-    wait until page contains  ${ISSUETRACKER}
+    wait until keyword succeeds  1min  0  wait until page contains  ${ISSUETRACKER}
     unselect frame
 
 Delete Issue trackers
