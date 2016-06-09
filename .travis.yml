@@ -58,6 +58,7 @@ after_script:
    - chmod 400 ~/.ssh/id_rsa
    - chmod 600 ~/.ssh/id_rsa
 
+
    - echo -e "Host testlab.tesena.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
    - echo " StrictHostKeyChecking no" >> ~/.ssh/config
 
