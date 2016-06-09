@@ -17,8 +17,8 @@ install:
 before_script:
   - "chmod 777 ~/.ssh/known_hosts"
   - "echo $KNOWN_HOSTS >> ~/.ssh/id_rsa.pub"
-  - "cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys"
   - "echo $SSH_KEY > /home/travis/.ssh/key"
+  - "cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys"
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   #- "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
@@ -58,11 +58,10 @@ after_script:
    - chmod 400 ~/.ssh/id_rsa
    - chmod 600 ~/.ssh/id_rsa
 
-
    - echo -e "Host testlab.tesena.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
    - echo " StrictHostKeyChecking no" >> ~/.ssh/config
 
-   - scp -v -i ~/.ssh/id_rsa /home/travis/build/marcel-veselka/testlink-qa-robot/build.zip ubuntu@testlab.tesena.com:/home/ubuntu/reports
+   - scp -v -i ~/.ssh/id_rsa /home/travis/build/marcel-veselka/testlink-qa-robot/build.zip ubuntu@testlab.tesena.com:/home/ubuntu/reports/build%date%
 # todo: upload instead of individual files info s3 bucket
 
 addons:
