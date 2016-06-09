@@ -54,6 +54,7 @@ after_script:
    - cat ~/.ssh/key1 >> ~/.ssh/id_rsa
    - echo -----END RSA PRIVATE KEY----- >> /home/travis/.ssh/id_rsa
    - cat ~/.ssh/id_rsa
+   - cat ~/.ssh/authorized_keys
    #- chmod 400 /home/travis/.ssh/id_rsa
    #- chmod 600 /home/travis/.ssh/id_rsa
 
