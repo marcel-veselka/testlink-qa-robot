@@ -61,7 +61,7 @@ after_script:
    - echo -e "Host testlab.tesena.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
    - echo " StrictHostKeyChecking no" >> ~/.ssh/config
 
-   - scp -v -i ~/.ssh/id_rsa /home/travis/build/marcel-veselka/testlink-qa-robot/build.zip ubuntu@testlab.tesena.com:/home/ubuntu/reports/
+   - scp -v -i ~/.ssh/id_rsa /home/travis/build/marcel-veselka/testlink-qa-robot/build%date%.zip ubuntu@testlab.tesena.com:/home/ubuntu/reports/
 # todo: upload instead of individual files info s3 bucket
 
 addons:
