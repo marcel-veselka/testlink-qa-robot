@@ -18,36 +18,7 @@ before_script:
   - "chmod 777 ~/.ssh/known_hosts"
   - "echo $KNOWN_HOSTS >> ~/.ssh/id_rsa.pub"
   - "cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys"
-  - "echo $SSH_KEY > /home/travis/.ssh/test"
-  - "echo $SSH_KEY1 > /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY2 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY3 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY4 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY5 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY6 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY7 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY8 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY9 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY10 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY11 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY12 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY13 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY14 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY15 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY16 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY17 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY18 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY19 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY20 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY21 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY22 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY23 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY24 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY25 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY26 >> /home/travis/.ssh/id_rsa"
-  - "echo $SSH_KEY27 >> /home/travis/.ssh/id_rsa"
-
-
+  - "echo $SSH_KEY > /home/travis/.ssh/key"
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   #- "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
@@ -78,10 +49,10 @@ env:
 after_script:
    - zip -r build.zip /home/travis/build/marcel-veselka/testlink-qa-robot/*
 
-   - sed -e 's/\s\+/\n/g' ~/.ssh/test > ~/.ssh/test
-   - echo -----BEGIN RSA PRIVATE KEY----- > /home/travis/.ssh/key
-   - cat ~/.ssh/test >> ~/.ssh/key
-   - echo -----END RSA PRIVATE KEY----- >> /home/travis/.ssh/key
+   - sed -e 's/\s\+/\n/g' ~/.ssh/key > ~/.ssh/key1
+   - echo -----BEGIN RSA PRIVATE KEY----- > /home/travis/.ssh/id_rsa
+   - cat ~/.ssh/key1 >> ~/.ssh/id_rsa
+   - echo -----END RSA PRIVATE KEY----- >> /home/travis/.ssh/id_rsa
    #- cat ~/.ssh/key
    #- ssh -v -o StrictHostKeyChecking=no ubuntu@testlab.tesena.com
    #- cat ~/.ssh/id_rsa
@@ -89,11 +60,13 @@ after_script:
    #- ssh -i /home/travis/.ssh/key -o CheckHostIP=no ubuntu@testlab.tesena.com
    #- SSH_AUTH_SOCK=0 ssh -v -i /home/travis/.ssh/key ubuntu@testlab.tesena.com
    #- SSH_AUTH_SOCK=0 ssh -v -i /home/travis/.ssh/id_rsa ubuntu@testlab.tesena.com
-   - chmod 400 /home/travis/.ssh/key
-   - chmod 600 /home/travis/.ssh/key
+   - chmod 400 /home/travis/.ssh/id_rsa
+   - chmod 600 /home/travis/.ssh/id_rsa
+
    - echo -e "Host testlab.tesena.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
    - echo " StrictHostKeyChecking no" >> ~/.ssh/config
-   - scp -v -i /home/travis/.ssh/key /home/travis/build/marcel-veselka/testlink-qa-robot/build.zip ubuntu@testlab.tesena.com:/home/ubuntu/reports
+
+   - scp -v -i /home/travis/.ssh/id_rsa /home/travis/build/marcel-veselka/testlink-qa-robot/build.zip ubuntu@testlab.tesena.com:/home/ubuntu/reports
 # todo: upload instead of individual files info s3 bucket
 
 addons:
