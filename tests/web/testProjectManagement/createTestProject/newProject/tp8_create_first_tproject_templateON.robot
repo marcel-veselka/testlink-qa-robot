@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation  A test case for creating project without conflict (no existing project)
 Resource       ../../../../../resource/testlink.robot
-Test Setup  Create new Test Project
+#Test Setup  Create new Test Project
 Test Teardown  Run keywords  Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 ...            AND           Delete test project  ${newTestProjectName2}  ${newTestProjectPrefix2}
 ...            AND           Close all browsers
