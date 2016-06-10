@@ -981,7 +981,7 @@ Check Assigned TC to ${Username} and ${PlatformName}
     desktopPage.Check Assign Test Case Execution
     wait until keyword succeeds  1min  0  assignTestCaseExecution.I am here
     assignTestCaseExecution.Select Test Suite From The Tree ${testSuiteName}
-    wait until keyword succeeds  1min  0  assignTestCaseExecution.Check Test Cases Assigned Correctly ${Username} ${PlatformName}
+    assignTestCaseExecution.Check Test Cases Assigned Correctly ${Username} ${PlatformName}
 
 Unassign TC ${PlatformName}
     [Tags]  tp74
