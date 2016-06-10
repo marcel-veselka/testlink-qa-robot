@@ -38,7 +38,7 @@ ${testCaseName2}                    tc90_1
 *** Test Cases ***
 
 Test Case Operations
-    [Tags]  controll
+    [Tags]  control2
     desktopPage.Go to Test Specification (mainframe)
     testlink.Create New Sibling ${testCaseName2}
     testlink.Check All Actions Buttons For Test Case

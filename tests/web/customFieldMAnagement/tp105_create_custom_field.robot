@@ -11,7 +11,7 @@ ${CFNAME}   DEFCUS
 ${CFLABEL}  FIELD
 *** Test Cases ***
 Create new Custom Field
-
+    [Tags]  control2
     testlink.Login as admin correct
     testlink.Start creating Define Custom Fields
 

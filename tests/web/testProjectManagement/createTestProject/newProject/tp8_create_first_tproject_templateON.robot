@@ -15,6 +15,7 @@ ${newTestProjectDescription}  Description of new test project
 
 *** Test Cases ***
 Create new Test Project with template ON
+    [Tags]  control2
     testlink.Login as admin correct
     testlink.Start creating new test project
     testlink.Fill information to create test with template ON

@@ -44,7 +44,7 @@ ${CFLABEL}                      fieldLabel20
 *** Test Cases ***
 
 Delete test project WORST CASE
-    [Tags]  controll
+    [Tags]  control2
     testlink.Assign Custom Fields
     testlink.Check Keyword Exists
     testlink.Check there is platform assigned

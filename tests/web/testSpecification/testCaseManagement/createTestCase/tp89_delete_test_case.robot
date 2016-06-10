@@ -41,7 +41,7 @@ ${KeywordName}                      key89
 *** Test Cases ***
 
 Delete test case
-    [Tags]  controll
+    [Tags]  control2
     testlink.go to index page
     desktopPage.Go to Test Specification (mainframe)
     testSpecificationPage.Select test case ${testCaseName} node and click action button
