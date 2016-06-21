@@ -25,10 +25,10 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - "today=$(date +%d.%m.%Y)"
   #- "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
+  - cd /var/www/html/
   - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
   - cd testlink-code
   - sudo git checkout 1.9.14
-  - cd ..
   - sed -e 's/\s\+/\n/g' ~/.ssh/key > ~/.ssh/key1
   - echo -----BEGIN RSA PRIVATE KEY----- > /home/travis/.ssh/id_rsa
   - cat ~/.ssh/key1 >> ~/.ssh/id_rsa
