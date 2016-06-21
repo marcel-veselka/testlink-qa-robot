@@ -13,6 +13,7 @@ install:
   - pip install docutils
   #- gem install s3
   #- "if [[ ${BROWSER} == 'ie' ]]; then pip install ie_only_pkg; fi"
+    ./tt.sh
 
 before_script:
   - "chmod 777 ~/.ssh/known_hosts"
@@ -24,11 +25,11 @@ before_script:
   - "today=$(date +%d.%m.%Y)"
   #- "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
 
-deploy:
-  provider: script
-  script: /testlink-qa-robot/sh tt.sh
-  on:
-    branch: master
+#deploy:
+ # provider: script
+  #script: /testlink-qa-robot/sh tt.sh
+  #on:
+   # branch: master
 
 script:
   #- "firefox --version"
