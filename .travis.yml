@@ -23,6 +23,7 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - "today=$(date +%d.%m.%Y)"
   #- "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
+  - "sh deployTestlink.txt"
 
 script:
   #- "firefox --version"
