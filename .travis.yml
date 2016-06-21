@@ -29,6 +29,7 @@ before_script:
   - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
   - cd testlink-code
   - sudo git checkout 1.9.14
+  - cd ~
 
 
 
