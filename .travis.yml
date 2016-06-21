@@ -40,6 +40,8 @@ before_script:
   - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
   - cd testlink-code
   - sudo git checkout 1.9.14
+  - echo -e "Host testlab.tesena.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - echo " StrictHostKeyChecking no" >> ~/.ssh/config
   - scp -v -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/config_db.inc.php /home/travis/build/marcel-veselka/testlink-qa-robot/testlink-code
   - sudo chown -R www-data:www-data ../testlink-code
 
