@@ -24,18 +24,18 @@ before_script:
   - "today=$(date +%d.%m.%Y)"
   #- "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
 
-deploy:
-  provider: script
-  script: /testlink-qa-robot/sh tt.sh
-  on:
-    branch: master
+#deploy:
+  #provider: script
+  #script: /testlink-qa-robot/sh tt.sh
+  #on:
+    #branch: master
 
 script:
   #- "firefox --version"
   #- "python test/run_tests.py python $BROWSER --noncritical known_issue_-_travisci"
   #- "python demo/rundemo.py python $BROWSER --noncritical known_issue_-_travisci"
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/login/
-  - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web
+  #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD -i control2 tests/web
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/customFieldMAnagement
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/testProjectManagement/createTestProject/deleteProject
