@@ -2,7 +2,8 @@
 Resource  ../../resource/testlink.robot
 
 *** Variables ***
-*** Keywords ***
+*** Test Cases ***
+
 test
     open browser  http://localhost/testlink-code  ff
     Title Should Be  TestLink
