@@ -13,7 +13,7 @@ install:
   - pip install docutils
   #- gem install s3
   #- "if [[ ${BROWSER} == 'ie' ]]; then pip install ie_only_pkg; fi"
-    ./tt.sh
+  -  ./tt.sh
 
 before_script:
   - "chmod 777 ~/.ssh/known_hosts"
