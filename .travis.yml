@@ -26,13 +26,11 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - "today=$(date +%d.%m.%Y)"
   #- "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
+  - sudo git clone -b $BRANCH https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
+  - cd testlink-code
+  - sudo git checkout 1.9.14
 
 
-deploy:
-  provider: script
-  script: /testlink-qa-robot/sh tt.sh
-  on:
-    branch: master
 
 script:
   #- "firefox --version"
