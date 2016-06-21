@@ -40,7 +40,7 @@ before_script:
   - scp -v -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/config_db.inc.php /home/travis/build/marcel-veselka/testlink-qa-robot/testlink-code/config_db.inc.php
   #- sudo chown -R /home/travis/build/marcel-veselka/testlink-qa-robot/testlink-code/config_db.inc
 
-  - chmod 777 /home/travis/build/marcel-veselka/testlink-qa-robot/testlink-code/config_db.inc
+  - sudo chmod 777 /home/travis/build/marcel-veselka/testlink-qa-robot/testlink-code/config_db.inc
   - mysql -u root -p testlab -e 'CREATE DATABASE testlink_qa CHARACTER SET utf8 COLLATE utf8_general_ci;';
   - mysql -u root -p testlab testlink_qa < install/sql/mysql/testlink_create_tables.sql;
   - mysql -u root -p testlab testlink_qa < install/sql/mysql/testlink_create_default_data.sql
