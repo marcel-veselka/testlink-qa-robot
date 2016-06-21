@@ -25,7 +25,7 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - "today=$(date +%d.%m.%Y)"
   #- "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
-  - cd /var/www/html/
+  #- cd /var/www/html/
   - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
   - cd testlink-code
   - sudo git checkout 1.9.14
@@ -37,8 +37,8 @@ before_script:
   - chmod 600 ~/.ssh/id_rsa
   - echo -e "Host testlab.tesena.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - echo " StrictHostKeyChecking no" >> ~/.ssh/config
-  - sudo scp -v -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/config_db.inc.php /home/travis/build/marcel-veselka/testlink-qa-robot/testlink-code/config_db.inc
-  - sudo chown -R /home/travis/build/marcel-veselka/testlink-qa-robot/testlink-code/config_db.inc
+  - sudo scp -v -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/config_db.inc.php /home/travis/testlink-code/config_db.inc
+  - sudo chown -R /home/travis/testlink-code/config_db.inc
 
   #- sudo chmod 777 /home/travis/build/marcel-veselka/testlink-qa-robot/testlink-code/config_db.inc
   - mysql -u root -p testlab -e 'CREATE DATABASE testlink_qa CHARACTER SET utf8 COLLATE utf8_general_ci;';
