@@ -29,7 +29,13 @@ before_script:
   - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
   - cd testlink-code
   - sudo git checkout 1.9.14
+  - sudo cp testlink-qa-robot/config_db.inc.php config_db.inc.php
+  - sudo chown -R www-data:www-data ../testlink-code
+  - mysql -u root -p$DB_PSWD -e 'CREATE DATABASE testlink_qa CHARACTER SET utf8 COLLATE utf8_general_ci;';
+  - mysql -u root -p$DB_PSWD testlink_qa < install/sql/mysql/testlink_create_tables.sql;
+  - mysql -u root -p$DB_PSWD testlink_qa < install/sql/mysql/testlink_create_default_data.sql
   - cd ..
+
 
 
 
