@@ -5,6 +5,17 @@ sudo: true
 python:
   - "2.7"
 
+before install:
+   - sed -e 's/\s\+/\n/g' ~/.ssh/key > ~/.ssh/key1
+   - echo -----BEGIN RSA PRIVATE KEY----- > /home/travis/.ssh/id_rsa
+   - cat ~/.ssh/key1 >> ~/.ssh/id_rsa
+   - echo -----END RSA PRIVATE KEY----- >> /home/travis/.ssh/id_rsa
+   - chmod 400 ~/.ssh/id_rsa
+   - chmod 600 ~/.ssh/id_rsa
+
+   - echo -e "Host testlab.tesena.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+   - echo " StrictHostKeyChecking no" >> ~/.ssh/config
+
 
 install:
   - pip install robotframework
@@ -29,14 +40,12 @@ before_script:
   - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
   - cd testlink-code
   - sudo git checkout 1.9.14
-  #- cd ..
-  #- sudo cp testlink-qa-robot/config_db.inc.php config_db.inc.php
+  - scp -v -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/config_db.inc.php /home/travis/build/marcel-veselka/testlink-qa-robot/testlink-code
   - sudo chown -R www-data:www-data ../testlink-code
-  #- cd testlink-code
 
-  - mysql -u root -ptestlab -e 'CREATE DATABASE testlink_qa CHARACTER SET utf8 COLLATE utf8_general_ci;';
-  - mysql -u root -ptestlab testlink_qa < install/sql/mysql/testlink_create_tables.sql;
-  - mysql -u root -ptestlab testlink_qa < install/sql/mysql/testlink_create_default_data.sql
+  - mysql -u root -p testlab -e 'CREATE DATABASE testlink_qa CHARACTER SET utf8 COLLATE utf8_general_ci;';
+  - mysql -u root -p testlab testlink_qa < install/sql/mysql/testlink_create_tables.sql;
+  - mysql -u root -p testlab testlink_qa < install/sql/mysql/testlink_create_default_data.sql
   - cd ..
 
 
