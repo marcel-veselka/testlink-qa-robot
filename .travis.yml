@@ -36,7 +36,7 @@ before_script:
   - chmod 600 ~/.ssh/id_rsa
   - echo -e "Host testlab.tesena.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - echo " StrictHostKeyChecking no" >> ~/.ssh/config
-  - scp -v -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/config_db.inc.php /home/travis/build/marcel-veselka/testlink-qa-robot/testlink-code
+  - cp -v -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/config_db.inc.php /home/travis/build/marcel-veselka/testlink-qa-robot/testlink-code
   - sudo chown -R www-data:www-data ../testlink-code
 
   - mysql -u root -p testlab -e 'CREATE DATABASE testlink_qa CHARACTER SET utf8 COLLATE utf8_general_ci;';
