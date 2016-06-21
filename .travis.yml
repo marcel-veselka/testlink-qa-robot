@@ -28,7 +28,7 @@ before_script:
   #- "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
   #- cd /var/www/html/
   - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
-  - cd testlink-code
+  #- cd testlink-code
   - sudo git checkout 1.9.14
   - ls -a
   - sed -e 's/\s\+/\n/g' ~/.ssh/key > ~/.ssh/key1
@@ -39,8 +39,8 @@ before_script:
   - chmod 600 ~/.ssh/id_rsa
   - echo -e "Host testlab.tesena.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - echo " StrictHostKeyChecking no" >> ~/.ssh/config
-  - scp -v -r -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/config_db.inc.php testlink-code/config_db.inc.php
-  - sudo chown -R /home/travis/testlink-code/config_db.inc
+  - scp -v -r -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/config_db.inc.php ~/testlink-code/
+  - sudo chown -R ~/testlink-code/config_db.inc.php
 
   #- sudo chmod 777 /home/travis/build/marcel-veselka/testlink-qa-robot/testlink-code/config_db.inc
   - mysql -u root -p testlab -e 'CREATE DATABASE testlink_qa CHARACTER SET utf8 COLLATE utf8_general_ci;';
