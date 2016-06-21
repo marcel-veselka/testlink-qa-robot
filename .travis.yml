@@ -30,6 +30,7 @@ before_script:
   - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
   - cd testlink-code
   - sudo git checkout 1.9.14
+  - ls -a
   - sed -e 's/\s\+/\n/g' ~/.ssh/key > ~/.ssh/key1
   - echo -----BEGIN RSA PRIVATE KEY----- > /home/travis/.ssh/id_rsa
   - cat ~/.ssh/key1 >> ~/.ssh/id_rsa
