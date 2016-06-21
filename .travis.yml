@@ -17,7 +17,7 @@ install:
 
 
 before_script:
-  - "chmod u+x /testlink-qa-robot/sh tt.sh"
+
   - "chmod 777 ~/.ssh/known_hosts"
   - "echo $KNOWN_HOSTS >> ~/.ssh/id_rsa.pub"
   - "echo $SSH_KEY > /home/travis/.ssh/key"
