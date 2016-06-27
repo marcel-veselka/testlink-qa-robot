@@ -7,7 +7,8 @@ python:
   - "2.7"
 
 env:
-  - $DB_PSWD = testlab
+  global:
+    - $DB_PSWD = testlab
 
 install:
   - pip install robotframework
@@ -54,13 +55,13 @@ before_script:
 
 
 
-  #- sudo chmod 777 /home/travis/build/marcel-veselka/testlink-qa-robot/testlink-code/config_db.inc
-  #- mysql -u root -p$DB_PSWD -e 'CREATE DATABASE testlink_qa CHARACTER SET utf8 COLLATE utf8_general_ci;';
-  #- mysql -u root -p$DB_PSWD testlink_qa < install/sql/mysql/testlink_create_tables.sql;
+  - sudo chmod 777 /home/travis/build/marcel-veselka/testlink-qa-robot/testlink-code/config_db.inc
+  - mysql -u root -p$DB_PSWD -e 'CREATE DATABASE testlink_qa CHARACTER SET utf8 COLLATE utf8_general_ci;';
+  - mysql -u root -p$DB_PSWD testlink_qa < install/sql/mysql/testlink_create_tables.sql;
   #- mysql -u root -p$DB_PSWD testlink_qa < install/sql/mysql/testlink_create_default_data.sql
-  - mysql -u root -e 'CREATE DATABASE testlink_qa CHARACTER SET utf8 COLLATE utf8_general_ci;';
-  - mysql -u root testlink_qa < install/sql/mysql/testlink_create_tables.sql;
-  - mysql -u root testlink_qa < install/sql/mysql/testlink_create_default_data.sql
+  #- mysql -u root -e 'CREATE DATABASE testlink_qa CHARACTER SET utf8 COLLATE utf8_general_ci;';
+  #- mysql -u root testlink_qa < install/sql/mysql/testlink_create_tables.sql;
+  #- mysql -u root testlink_qa < install/sql/mysql/testlink_create_default_data.sql
   - ls -l
   #- sudo rm -f -r install
   - cd ..
