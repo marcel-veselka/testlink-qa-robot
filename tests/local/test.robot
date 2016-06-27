@@ -12,7 +12,7 @@ test
     Log    ${TextFileContent}
     ${ip}=	Get Line  ${TextFileContent}	0
     ${stripped}=	Strip String	${SPACE}${ip}${SPACE}
-    open browser  http://${stripped}/testlink-code  ff
+    open browser  http://${stripped}/testlink-code/login.php  ff
     Title Should Be  TestLink
 
     close browser
