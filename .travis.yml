@@ -60,7 +60,8 @@ before_script:
   - mysql -u root testlink_qa < install/sql/mysql/testlink_create_default_data.sql
   - ls -l
   - sudo rm -f -r install
-  - sudo hostname -I
+  - sudo hostname -I > ip.txt
+  - ls -l
   - cd ..
 
 
