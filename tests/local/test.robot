@@ -2,7 +2,7 @@
 Resource  ../../resource/testlink.robot
 
 *** Variables ***
-${HOSTNAME}  ../ip.txt
+${HOSTNAME}  /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
 *** Test Cases ***
 
 test
