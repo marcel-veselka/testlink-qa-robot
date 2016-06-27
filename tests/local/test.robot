@@ -5,6 +5,6 @@ Resource  ../../resource/testlink.robot
 *** Test Cases ***
 
 test
-    open browser  http://localhost/testlink-code/login.php  ff
+    open browser  http://127.0.0.1/testlink-code  ff
     Title Should Be  TestLink
     close browser
