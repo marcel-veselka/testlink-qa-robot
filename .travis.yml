@@ -43,7 +43,8 @@ before_script:
   - echo " StrictHostKeyChecking no" >> ~/.ssh/config
   - scp -v -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/config_db.inc.php /home/travis/
   - ls -l
-  - sudo chown -R /home/travis/config_db.inc.php
+  - sudo chown -R www-data:www-data ../testlink-code
+
 
 
   #- sudo chmod 777 /home/travis/build/marcel-veselka/testlink-qa-robot/testlink-code/config_db.inc
