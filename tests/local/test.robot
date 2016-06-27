@@ -10,8 +10,9 @@ test
 
     ${TextFileContent}=    Get File  ip.txt
     Log    ${TextFileContent}
-    ${ip} =	Get Line	${TextFileContent}	0
-    open browser  http://${ip}/testlink-code  ff
+    ${ip}=	Get Line  ${TextFileContent}	0
+    ${stripped}=	Strip String	${SPACE}${ip}${SPACE}
+    open browser  http://${stripped}/testlink-code  ff
     Title Should Be  TestLink
 
     close browser
