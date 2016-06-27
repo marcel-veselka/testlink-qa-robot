@@ -61,6 +61,7 @@ before_script:
   - ls -l
   - sudo rm -f -r install
   - cd ..
+  - sudo hostname -I
   - sudo hostname -I > ip.txt
   - ls -l
 
