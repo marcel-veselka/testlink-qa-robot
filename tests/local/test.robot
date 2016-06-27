@@ -7,4 +7,5 @@ Resource  ../../resource/testlink.robot
 test
     open browser  http://52.22.60.255/32  ff
     Title Should Be  TestLink
+
     close browser
