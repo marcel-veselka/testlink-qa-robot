@@ -5,6 +5,6 @@ Resource  ../../resource/testlink.robot
 *** Test Cases ***
 
 test
-    open browser  http://52.22.60.255/32/home/travis/build/marcel-veselka/testlink-qa-robot/testlink-code/  ff
+    open browser  http://52.22.60.255/32/testlink-code/  ff
     Title Should Be  TestLink
     close browser
