@@ -9,7 +9,7 @@ test
 
     ${TextFileContent}=    Get File  ip.txt
     Log    ${TextFileContent}
-    open browser  http://${TextFileContent}/testlink-code/login.php  ff
+    open browser  ${TextFileContent}/testlink-code  ff
     Title Should Be  TestLink
 
     close browser
