@@ -2,7 +2,7 @@
 Resource  ../../resource/testlink.robot
 
 *** Variables ***
-${HOSTNAME}  ip.txt
+${HOSTNAME}  ../ip.txt
 *** Test Cases ***
 
 test
