@@ -14,5 +14,5 @@ test
     ${stripped}=	Strip String	${SPACE}${ip}${SPACE}
     open browser  http://${stripped}/testlink-code  ff
     Title Should Be  TestLink
-
+    capture page screenshot
     close browser
