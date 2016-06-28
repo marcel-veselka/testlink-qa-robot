@@ -33,8 +33,8 @@ before_script:
 
 
 
-  #- cd ~
-  #- ls -l
+  - cd ~
+  - ls -l
   #- cd builds
   - cd /var/www/html/
   - ls -l
