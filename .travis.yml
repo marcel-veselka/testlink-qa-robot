@@ -81,6 +81,7 @@ before_script:
   - ifconfig eth0 | grep inet | awk '{ print $2 }'
   - sudo hostname -I
   - sudo hostname -I > /home/travis/ip.txt
+  - /home/travis/build/marcel-veselka/testlink-qa-robot
   - ls -l
 
 
