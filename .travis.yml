@@ -27,9 +27,9 @@ before_script:
   - "today=$(date +%d.%m.%Y)"
   #- "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
 
-  - apt-get install apache2
-  - apt-get install php5 php-pear php5-mysql
-  - service apache2 restart
+  - sudo apt-get install apache2
+  - sudo apt-get install php5 php-pear php5-mysql
+  - sudo service apache2 restart
 
 
 
