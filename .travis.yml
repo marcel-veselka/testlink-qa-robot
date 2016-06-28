@@ -42,6 +42,10 @@ before_script:
   - ls -l
   - cd var
   - ls -l
+  - cd www
+  - ls -l
+  - cd html
+  - ls -l
   - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
   - cd testlink-code
   - sudo git checkout 1.9.14
@@ -56,7 +60,7 @@ before_script:
   - chmod 600 ~/.ssh/id_rsa
   - echo -e "Host testlab.tesena.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - echo " StrictHostKeyChecking no" >> ~/.ssh/config
-  - scp -v -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/config_db.inc.php /home/travis/
+  - scp -v -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/config_db.inc.php /var/www/html
   - sudo cp config_db.inc.php testlink-code/config_db.inc.php
   - ls -l
   - cd testlink-code
