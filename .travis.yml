@@ -80,7 +80,7 @@ before_script:
   - cd ..
   - ifconfig eth0 | grep inet | awk '{ print $2 }'
   - sudo hostname -I
-  - sudo hostname -I > /home/travis/ip.txt
+  - sudo hostname -I > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
   - cd /home/travis/build/marcel-veselka/testlink-qa-robot
   - ls -l
 
