@@ -26,10 +26,25 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - "today=$(date +%d.%m.%Y)"
   #- "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
-  - cd ~
-  - ls -l
-  - cd builds
-  #- cd /var/www/html/
+  - sudo apt-get install apache2
+  - sudo a2enmod actions
+  - sudo a2enmod rewrite
+  - echo "export PATH=/home/vagrant/.phpenv/bin:$PATH" | sudo tee -a /etc/apache2/envvars > /dev/null
+  - echo "$(curl -fsSL https://gist.github.com/roderik/16d751c979fdeb5a14e3/raw/gistfile1.txt)" | sudo tee /etc/apache2/conf.d/phpconfig > /dev/null
+  - echo "$(curl -fsSL https://gist.github.com/roderik/2eb301570ed4a1f4c33d/raw/gistfile1.txt)" | sed -e "s,PATH,`pwd`/web,g" | sudo tee /etc/apache2/sites-available/default > /dev/null
+  - sudo service apache2 restart
+  - mysql -u root -e "CREATE USER 'myproject'@'localhost' IDENTIFIED BY 'mypass'"
+  - mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'myproject'@'localhost' WITH GRANT OPTION;"
+  - bin/vendors install
+  - app/console doctrine:database:create
+  - app/console doctrine:schema:update --force
+  - app/console doctrine:fixtures:load
+
+
+  #- cd ~
+  #- ls -l
+  #- cd builds
+  - cd /var/www/html/
   - ls -l
   - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
   - cd testlink-code
@@ -63,7 +78,8 @@ before_script:
   - ls -l
   #- sudo rm -f -r install
   - cd ..
-  #- sudo hostname -I
+  - ifconfig eth0 | grep inet | awk '{ print $2 }'
+  - sudo hostname -I
   - sudo hostname -I > ip.txt
   - ls -l
 
