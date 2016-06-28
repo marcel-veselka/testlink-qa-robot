@@ -60,8 +60,8 @@ before_script:
   - chmod 600 ~/.ssh/id_rsa
   - echo -e "Host testlab.tesena.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - echo " StrictHostKeyChecking no" >> ~/.ssh/config
-  - scp -v -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/config_db.inc.php /var/www/config_db.inc.php
-  - sudo cp config_db.inc.php testlink-code/config_db.inc.php
+  - scp -v -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/config_db.inc.php /home/travis/config_db.inc.php
+  - sudo cp /home/travis/config_db.inc.php /var/www/testlink-code/config_db.inc.php
   - ls -l
   - cd testlink-code
   - ls -l
