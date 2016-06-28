@@ -35,7 +35,8 @@ before_script:
 
   - cd ~
   - ls -l
-  #- cd builds
+  - cd build
+  - ls -l
   - cd /var/www/html/
   - ls -l
   - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
