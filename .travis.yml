@@ -26,7 +26,10 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - "today=$(date +%d.%m.%Y)"
   #- "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
-  #- cd /var/www/html/
+  - cd ~
+  - ls -l
+  - cd /var/www/html/
+  - ls -l
   - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
   - cd testlink-code
   - sudo git checkout 1.9.14
