@@ -81,6 +81,7 @@ before_script:
   #- sudo dpkg-reconfigure mysql-server-5.5
   - SET PASSWORD FOR root@localhost=PASSWORD('');
 
+
   - ls -l
   - sudo rm -f -r install
   - cd ..
