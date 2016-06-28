@@ -28,7 +28,8 @@ before_script:
   #- "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
   - cd ~
   - ls -l
-  - cd /var/www/html/
+  - cd builds
+  #- cd /var/www/html/
   - ls -l
   - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
   - cd testlink-code
