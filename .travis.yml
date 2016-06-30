@@ -91,9 +91,9 @@ before_script:
   #- sudo wget http://ipinfo.io/ip -qO - > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
 
   #- npm -g install browserstack-runner
-  - wget http://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip
-  - unzip BrowserStackLocal-linux-x64.zip
-  - ./BrowserStackLocal $BROWSERSTACK_KEY localhost,8001,0 > /dev/null &
+  - sudo wget http://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip
+  - sudo unzip BrowserStackLocal-linux-x64.zip
+  - sudo ./BrowserStackLocal $BROWSERSTACK_KEY localhost,8001,0 > /dev/null &
   - sleep 10
 
 
