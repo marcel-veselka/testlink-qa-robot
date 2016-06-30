@@ -87,8 +87,11 @@ before_script:
   - cd ..
   - ifconfig eth0 | grep inet | awk '{ print $2 }'
   - sudo hostname -I
-  #- sudo hostname -I > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
-  - sudo wget http://ipinfo.io/ip -qO - > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
+  - sudo hostname -I > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
+  #- sudo wget http://ipinfo.io/ip -qO - > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
+
+  - npm -g install browserstack-runner
+
   - cd /home/travis/build/marcel-veselka/testlink-qa-robot
   - ls -l
 
@@ -110,11 +113,15 @@ script:
 
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/Layout/tp109_Navigator_tree.robot
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/czechTestDemo/czechtest_demo.robot
+   - browserstack-runner
+
    - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/local/test.robot
    - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/local/test1.robot
 
 env:
-
+  global:
+    $ export BROWSERSTACK_USERNAME=blablablabla4
+    $ export BROWSERSTACK_KEY=vKrBzZzpUjEZuSyWn844
   matrix:
   - BROWSER=firefox
   #- BROWSER=ie # will be added later
