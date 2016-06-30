@@ -89,6 +89,7 @@ before_script:
   - sudo hostname -I
   #- sudo hostname -I > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
   - sudo wget http://ipinfo.io/ip -qO - > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
+  - /sbin/ifconfig |grep -B1 "inet addr" |awk '{ if ( $1 == "inet" ) { print $2 } else if ( $2 == "Link" ) { printf "%s:" ,$1 } }' |awk -F: '{ print $1 ": " $3 }'
 
 
   - cd /home/travis/build/marcel-veselka/testlink-qa-robot
