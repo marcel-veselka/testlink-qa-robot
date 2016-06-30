@@ -93,7 +93,7 @@ before_script:
   #- npm -g install browserstack-runner
   - sudo wget http://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip
   - sudo unzip BrowserStackLocal-linux-x64.zip
-  - sudo ./BrowserStackLocal vKrBzZzpUjEZuSyWn844 localhost,80,0
+  - sudo ./BrowserStackLocal vKrBzZzpUjEZuSyWn844 localhost,80,0 > /dev/null
   - sleep 10
 
 
