@@ -16,7 +16,7 @@ test
     log    ${TextFileContent}
     ${ip}=	Get Line  ${TextFileContent}	0
     ${stripped}=	Strip String	${SPACE}${ip}${SPACE}
-    open browser  http://${stripped}/testlink-code  desired_capabilities=${DESIRED_CAPABILITIES}
+    open browser  https://${stripped}/testlink-code  remote_url=${REMOTE_URL}  desired_capabilities=${DESIRED_CAPABILITIES}
     maximize browser window
     title should be  TestLink
     capture page screenshot
