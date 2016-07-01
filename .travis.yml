@@ -86,6 +86,7 @@ before_script:
   - cd apache2
   - ls -l
   - sudo cat apache2.conf
+  - sudo cat conf.d
   #- sudo cat hosts.allow
   #- sudo -i
   #- sudo sed -i "15i ALL: 192.168.1." hosts.allow
