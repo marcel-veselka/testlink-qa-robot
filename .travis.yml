@@ -74,8 +74,11 @@ before_script:
   - ls -l
   - sudo rm -f -r install
   - cd ..
-  - sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
-  - sudo iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+  #- sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+  #- sudo iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+  - sudo iptables -I INPUT 4 -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
+  - sudo /etc/init.d/iptables save
+
   - cd ~
   - ls -l
   - cd ..
