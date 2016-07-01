@@ -102,7 +102,7 @@ before_script:
 
   #- sudo hostname -I > hosts.allow \n sshd: ALL: ALLOW
 
-  - sudo echo 'sshd: ALL: ALLOW \n ALL: 192.168.1.' > hosts.allow
+  - sudo echo sshd: ALL: ALLOW \n ALL: 192.168.1. > hosts.allow
   - sudo cat hosts.allow
   #- sudo cat /etc/httpd/conf/httpd.conf
   - ifconfig eth0 | grep inet | awk '{ print $2 }'
