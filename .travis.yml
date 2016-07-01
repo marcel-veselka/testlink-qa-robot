@@ -87,9 +87,9 @@ before_script:
   - ls -l
   - cd etc
   - ls -l
-  - cd apache2
-  - ls -l
-  - sudo cat apache2.conf
+  #- cd apache2
+  #- ls -l
+  #- sudo cat apache2.conf
   #- sudo cat conf.d
   #- sudo cat hosts.allow
   #- sudo -i
