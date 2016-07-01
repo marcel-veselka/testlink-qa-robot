@@ -103,8 +103,10 @@ before_script:
   #- sudo hostname -I > hosts.allow
 
   #- echo "ALL: ALLOW" > hosts.allow
-  - sudo cat hosts.allow > /home/travis/build/marcel-veselka/testlink-qa-robot/allow.txt
+  #- sudo cat hosts.allow > /home/travis/build/marcel-veselka/testlink-qa-robot/allow.txt
   #- sudo cat /etc/httpd/conf/httpd.conf
+  - sudo echo /home/travis/build/marcel-veselka/testlink-qa-robot/allow.txt > hosts.allow
+  - sudo cat hosts.allow
   - ifconfig eth0 | grep inet | awk '{ print $2 }'
   - sudo hostname -I
   - sudo wget http://ipinfo.io/ip -qO -
