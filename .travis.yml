@@ -101,7 +101,6 @@ before_script:
   #- sudo service apache2 start
 
   #- sudo hostname -I > hosts.allow
-  #- sudo sed  '/\[sshd: ALL: ALLOW\]/a ALL: 192.168.1.' hosts.allow
   - sudo cat hosts.allow
   #- sudo cat /etc/httpd/conf/httpd.conf
   - ifconfig eth0 | grep inet | awk '{ print $2 }'
