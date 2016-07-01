@@ -25,4 +25,4 @@
 
 sshd: ALL: ALLOW
 
-ALL: ALL @192.168.
+ALL: ALL: ALLOW
