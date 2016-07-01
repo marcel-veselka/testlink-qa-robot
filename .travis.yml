@@ -86,6 +86,7 @@ before_script:
   - ls -l
   - cd etc
   - ls -l
+  - cat hosts.allow
   - cd httpd
   - ls -l
   - cd conf
