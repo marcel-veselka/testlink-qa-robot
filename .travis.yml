@@ -46,9 +46,6 @@ before_script:
   - ls -l
   - cd www
   - ls -l
-  - sudo mkdir html
-  - cd html
-  - ls -l
   - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
   - cd testlink-code
   - sudo git checkout 1.9.14
@@ -88,11 +85,12 @@ before_script:
   - ls -l
   - cd apache2
   - ls -l
-  - sudo cat hosts.allow
-  - sudo -i
-  - sudo sed -i "15i ALL: 192.168.1." hosts.allow
-  - sudo cat hosts.allow
-  - sudo cat /etc/httpd/conf/httpd.conf
+  - sudo cat apache2.conf
+  #- sudo cat hosts.allow
+  #- sudo -i
+  #- sudo sed -i "15i ALL: 192.168.1." hosts.allow
+  #- sudo cat hosts.allow
+  #- sudo cat /etc/httpd/conf/httpd.conf
   - ifconfig eth0 | grep inet | awk '{ print $2 }'
   - sudo hostname -I
   - sudo wget http://ipinfo.io/ip -qO -
