@@ -75,6 +75,7 @@ before_script:
   - sudo rm -f -r install
   - cd ..
   - sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+  - sudo iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
   - cd ~
   - ls -l
   - cd ..
@@ -86,7 +87,7 @@ before_script:
   - cd apache2
   - ls -l
   - sudo cat apache2.conf
-  - sudo cat conf.d
+  #- sudo cat conf.d
   #- sudo cat hosts.allow
   #- sudo -i
   #- sudo sed -i "15i ALL: 192.168.1." hosts.allow
