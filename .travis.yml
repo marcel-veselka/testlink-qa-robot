@@ -77,6 +77,7 @@ before_script:
   - ls -l
   - sudo rm -f -r install
   - cd ..
+  - sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
   - ifconfig eth0 | grep inet | awk '{ print $2 }'
   - sudo hostname -I
   - sudo wget http://ipinfo.io/ip -qO -
