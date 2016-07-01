@@ -87,7 +87,8 @@ before_script:
   - cd etc
   - ls -l
   - sudo cat hosts.allow
-  - sudo sed -i "15i15 ALL: 192.168.1." hosts.allow
+  - sudo -i
+  - sudo sed -i "15i ALL: 192.168.1." hosts.allow
   - sudo cat hosts.allow
   - sudo cat /etc/httpd/conf/httpd.conf
   - ifconfig eth0 | grep inet | awk '{ print $2 }'
