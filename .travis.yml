@@ -100,7 +100,7 @@ before_script:
   #- sudo sed -i "15i ALL: 192.168.1." hosts.allow
   #- sudo service apache2 start
 
-  #- sudo hostname -I > hosts.allow \n sshd: ALL: ALLOW
+  #- sudo hostname -I > hosts.allow
 
   - sudo echo sshd: ALL: ALLOW \n ALL: 192.168.1. > hosts.allow
   - sudo cat hosts.allow
