@@ -76,8 +76,8 @@ before_script:
   - cd ..
   #- sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
   #- sudo iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
-  - sudo iptables -I INPUT 4 -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
-  - sudo /etc/init.d/iptables save
+  #- sudo iptables -I INPUT 4 -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
+  #- sudo /etc/init.d/iptables save
 
   - cd ~
   - ls -l
@@ -93,7 +93,7 @@ before_script:
   #- sudo cat conf.d
   #- sudo cat hosts.allow
   #- sudo -i
-  #- sudo sed -i "15i ALL: 192.168.1." hosts.allow
+  - sudo sed -i "15i ALL: 192.168.1." hosts.allow
   #- sudo cat hosts.allow
   #- sudo cat /etc/httpd/conf/httpd.conf
   - ifconfig eth0 | grep inet | awk '{ print $2 }'
