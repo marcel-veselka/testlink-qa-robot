@@ -79,7 +79,7 @@ before_script:
   #- sudo iptables -I INPUT 4 -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
   #- sudo /etc/init.d/iptables save
   - sudo ifconfig
-  - sudo iptables -F
+  #- sudo iptables -F
 
   #- sudo iptables -P INPUT DROP
   #- sudo iptables -P FORWARD DROP
