@@ -81,9 +81,9 @@ before_script:
   - sudo ifconfig
   - sudo iptables -F
 
-  - sudo iptables -P INPUT DROP
-  - sudo iptables -P FORWARD DROP
-  - sudo iptables -P OUTPUT DROP
+  #- sudo iptables -P INPUT DROP
+  #- sudo iptables -P FORWARD DROP
+  #- sudo iptables -P OUTPUT DROP
   - sudo iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 -m state --state NEW,ESTABLISHED -j ACCEPT
   - sudo iptables -A OUTPUT -o eth0 -p tcp -m multiport --sports 22,80,443 -m state --state ESTABLISHED -j ACCEPT
   - sudo iptables -A OUTPUT -p udp -o eth0 --dport 53 -j ACCEPT
