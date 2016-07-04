@@ -87,7 +87,15 @@ before_script:
   - sudo iptables -A OUTPUT -o eth0 -p tcp -m multiport --sports 22,80,443 -m state --state ESTABLISHED -j ACCEPT
   - sudo iptables -A OUTPUT -p udp -o eth0 --dport 53 -j ACCEPT
   - sudo iptables -A INPUT -p udp -i eth0 --sport 53 -j ACCEPT
-
+  - iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
+  - iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
+  - iptables -A OUTPUT -p icmp --icmp-type echo-request -j ACCEPT
+  - iptables -A INPUT -p icmp --icmp-type echo-reply -j ACCEPT
+  - iptables -A INPUT -i lo -j ACCEPT
+  - iptables -A OUTPUT -o lo -j ACCEPT
+  - iptables -A FORWARD -i eth0 -o eth1 -j ACCEPT
+  - iptables -A OUTPUT -p udp -o eth0 --dport 53 -j ACCEPT
+  - iptables -A INPUT -p udp -i eth0 --sport 53 -j ACCEPT
   - cd ~
   - ls -l
   - cd ..
