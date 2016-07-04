@@ -78,6 +78,13 @@ before_script:
   #- sudo iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
   #- sudo iptables -I INPUT 4 -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
   #- sudo /etc/init.d/iptables save
+  - sudo ifconfig
+  - sudo iptables -F
+  - sudo iptables -P INPUT DROP
+  - sudo iptables -P FORWARD DROP
+  - sudo iptables -P OUTPUT DROP
+  - sudo iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 -m state --state NEW,ESTABLISHED -j ACCEPT
+  - sudo iptables -A OUTPUT -o eth0 -p tcp -m multiport --sports 22,80,443 -m state --state ESTABLISHED -j ACCEPT
 
   - cd ~
   - ls -l
@@ -93,8 +100,8 @@ before_script:
   #- sudo cat conf.d
   #- sudo cat hosts.allow
   #- sudo -i
-  - sudo chmod 777 hosts.allow
-  - sudo cat hosts.allow
+  #- sudo chmod 777 hosts.allow
+  #- sudo cat hosts.allow
   - ls -l
   #- sudo service apache2 stop
   #- sudo sed -i "15i ALL: 192.168.1." hosts.allow
@@ -105,16 +112,16 @@ before_script:
   #- echo "ALL: ALLOW" > hosts.allow
   #- sudo cat hosts.allow > /home/travis/build/marcel-veselka/testlink-qa-robot/allow.txt
   #- sudo cat /etc/httpd/conf/httpd.conf
-  - sudo cat /home/travis/build/marcel-veselka/testlink-qa-robot/allow.txt > hosts.allow
-  - sudo cat hosts.allow
-  - ifconfig eth0 | grep inet | awk '{ print $2 }'
-  - sudo hostname -I
+  #- sudo cat /home/travis/build/marcel-veselka/testlink-qa-robot/allow.txt > hosts.allow
+  #- sudo cat hosts.allow
+  #- ifconfig eth0 | grep inet | awk '{ print $2 }'
+  #- sudo hostname -I
   - sudo wget http://ipinfo.io/ip -qO -
 
 
   #- sudo hostname -I > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
-  -sudo ifconfig eth0 | grep inet | awk '{ print $2 }' > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
-  #- sudo wget http://ipinfo.io/ip -qO - > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
+  #-sudo ifconfig eth0 | grep inet | awk '{ print $2 }' > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
+  - sudo wget http://ipinfo.io/ip -qO - > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
   #- sudo /sbin/ifconfig |grep -B1 "inet addr" |awk '{ if ( $1 == "inet" ) { print $2 } else if ( $2 == "Link" ) { printf "%s:" ,$1 } }' |awk -F: '{ print $1 ": " $3 }'
 
 
