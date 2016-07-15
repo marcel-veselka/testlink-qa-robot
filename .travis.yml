@@ -45,10 +45,10 @@ before_script:
   #- cd var
   #- ls -l
   #- cd www
-  - cd /var/www
-  - ls -l
-  - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
-  - cd testlink-code
+  #- cd /var/www
+  #- ls -l
+  #- sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
+  #- cd testlink-code
   - sudo git checkout 1.9.14
   - ls -l
   - cd ..
@@ -79,37 +79,37 @@ before_script:
   #- sudo iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
   #- sudo iptables -I INPUT 4 -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
   #- sudo /etc/init.d/iptables save
-  - sudo ifconfig
+  #- sudo ifconfig
   #- sudo iptables -F
 
   #- sudo iptables -P INPUT DROP
   #- sudo iptables -P FORWARD DROP
   #- sudo iptables -P OUTPUT DROP
-  - sudo iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 -m state --state NEW,ESTABLISHED -j ACCEPT
-  - sudo iptables -A OUTPUT -o eth0 -p tcp -m multiport --sports 22,80,443 -m state --state ESTABLISHED -j ACCEPT
-  - sudo iptables -A OUTPUT -o eth0 -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
-  - sudo iptables -A INPUT -i eth0 -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
-  - sudo iptables -A OUTPUT -o eth0 -p tcp --dport 443 -m state --state NEW,ESTABLISHED -j ACCEPT
-  - sudo iptables -A INPUT -i eth0 -p tcp --sport 443 -m state --state ESTABLISHED -j ACCEPT
-  - sudo iptables -A OUTPUT -p udp -o eth0 --dport 53 -j ACCEPT
-  - sudo iptables -A INPUT -p udp -i eth0 --sport 53 -j ACCEPT
-  - sudo iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
-  - sudo iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
-  - sudo iptables -A OUTPUT -p icmp --icmp-type echo-request -j ACCEPT
-  - sudo iptables -A INPUT -p icmp --icmp-type echo-reply -j ACCEPT
-  - sudo iptables -A INPUT -i lo -j ACCEPT
-  - sudo iptables -A OUTPUT -o lo -j ACCEPT
-  - sudo iptables -A FORWARD -i eth0 -o eth1 -j ACCEPT
-  - sudo iptables -A OUTPUT -p udp -o eth0 --dport 53 -j ACCEPT
-  - sudo iptables -A INPUT -p udp -i eth0 --sport 53 -j ACCEPT
-  - cd ~
-  - ls -l
-  - cd ..
-  - ls -l
-  - cd ..
-  - ls -l
-  - cd etc
-  - ls -l
+  #- sudo iptables -A INPUT -i eth0 -p tcp -m multiport --dports 22,80,443 -m state --state NEW,ESTABLISHED -j ACCEPT
+  #- sudo iptables -A OUTPUT -o eth0 -p tcp -m multiport --sports 22,80,443 -m state --state ESTABLISHED -j ACCEPT
+  #- sudo iptables -A OUTPUT -o eth0 -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+  #- sudo iptables -A INPUT -i eth0 -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
+  #- sudo iptables -A OUTPUT -o eth0 -p tcp --dport 443 -m state --state NEW,ESTABLISHED -j ACCEPT
+  #- sudo iptables -A INPUT -i eth0 -p tcp --sport 443 -m state --state ESTABLISHED -j ACCEPT
+  #- sudo iptables -A OUTPUT -p udp -o eth0 --dport 53 -j ACCEPT
+  #- sudo iptables -A INPUT -p udp -i eth0 --sport 53 -j ACCEPT
+  #- sudo iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
+  #- sudo iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
+  #- sudo iptables -A OUTPUT -p icmp --icmp-type echo-request -j ACCEPT
+  #- sudo iptables -A INPUT -p icmp --icmp-type echo-reply -j ACCEPT
+  #- sudo iptables -A INPUT -i lo -j ACCEPT
+  #- sudo iptables -A OUTPUT -o lo -j ACCEPT
+  #- sudo iptables -A FORWARD -i eth0 -o eth1 -j ACCEPT
+  #- sudo iptables -A OUTPUT -p udp -o eth0 --dport 53 -j ACCEPT
+  #- sudo iptables -A INPUT -p udp -i eth0 --sport 53 -j ACCEPT
+  #- cd ~
+  #- ls -l
+  #- cd ..
+  #- ls -l
+  #- cd ..
+  #- ls -l
+  #- cd etc
+  #- ls -l
   #- cd apache2
   #- ls -l
   #- sudo cat apache2.conf
@@ -118,7 +118,7 @@ before_script:
   #- sudo -i
   #- sudo chmod 777 hosts.allow
   #- sudo cat hosts.allow
-  - ls -l
+  #- ls -l
   #- sudo service apache2 stop
   #- sudo sed -i "15i ALL: 192.168.1." hosts.allow
   #- sudo service apache2 start
@@ -164,8 +164,8 @@ script:
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/czechTestDemo/czechtest_demo.robot
  #  - browserstack-runner
 
-   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/local/test.robot
-   - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/local/test1.robot
+   - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/local/test.robot
+   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/local/test1.robot
    #- pybot tests/local/test.robot
 
 env:
