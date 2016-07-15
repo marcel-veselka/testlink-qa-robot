@@ -103,11 +103,11 @@ before_script:
   #- sudo iptables -A OUTPUT -p udp -o eth0 --dport 53 -j ACCEPT
   #- sudo iptables -A INPUT -p udp -i eth0 --sport 53 -j ACCEPT
   #- cd ~
-  #- ls -l
-  #- cd ..
-  #- ls -l
-  #- cd ..
-  #- ls -l
+  - ls -l
+  - cd ..
+  - ls -l
+  - cd ..
+  - ls -l
   #- cd etc
   #- ls -l
   #- cd apache2
