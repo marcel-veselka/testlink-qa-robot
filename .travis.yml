@@ -103,11 +103,11 @@ before_script:
   #- sudo iptables -A OUTPUT -p udp -o eth0 --dport 53 -j ACCEPT
   #- sudo iptables -A INPUT -p udp -i eth0 --sport 53 -j ACCEPT
   #- cd ~
-  - ls -l
-  - cd ..
-  - ls -l
-  - cd ..
-  - ls -l
+  #- ls -l
+  #- cd ..
+  #- ls -l
+  #- cd ..
+  #- ls -l
   #- cd etc
   #- ls -l
   #- cd apache2
@@ -132,12 +132,12 @@ before_script:
   #- sudo cat hosts.allow
   #- ifconfig eth0 | grep inet | awk '{ print $2 }'
   #- sudo hostname -I
-  - sudo wget http://ipinfo.io/ip -qO -
+  #- sudo wget http://ipinfo.io/ip -qO -
 
 
-  #- sudo hostname -I > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
+  - sudo hostname -I > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
   #-sudo ifconfig eth0 | grep inet | awk '{ print $2 }' > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
-  - sudo wget http://ipinfo.io/ip -qO - > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
+  #- sudo wget http://ipinfo.io/ip -qO - > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
   #- sudo /sbin/ifconfig |grep -B1 "inet addr" |awk '{ if ( $1 == "inet" ) { print $2 } else if ( $2 == "Link" ) { printf "%s:" ,$1 } }' |awk -F: '{ print $1 ": " $3 }'
 
 
@@ -166,7 +166,7 @@ script:
 
    #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/local/test.robot
    #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/local/test1.robot
-   #- pybot tests/local/test.robot
+   - pybot tests/local/test.robot
 
 env:
   matrix:
