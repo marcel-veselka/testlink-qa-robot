@@ -45,10 +45,10 @@ before_script:
   #- cd var
   #- ls -l
   #- cd www
-  #- cd /var/www
-  #- ls -l
-  #- sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
-  #- cd testlink-code
+  - cd /var/www
+  - ls -l
+  - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
+  - cd testlink-code
   - sudo git checkout 1.9.14
   - ls -l
   - cd ..
