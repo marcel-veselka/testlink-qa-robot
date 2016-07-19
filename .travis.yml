@@ -32,7 +32,7 @@ before_script:
   - sudo apt-get install apache2
   - sudo apt-get install php5 php-pear php5-mysql
   - sudo service apache2 restart
-  - sudo pip install -U robotframework-requests
+  - sudo install -U robotframework-requests
   - ls -l
 
 
