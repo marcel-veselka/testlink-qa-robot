@@ -11,7 +11,6 @@ python:
 install:
   - pip install robotframework
   - pip install robotframework-selenium2library
-  - pip install robotframework-requests
   - pip install decorator
   - pip install docutils
   #- gem install s3
@@ -33,6 +32,7 @@ before_script:
   - sudo apt-get install apache2
   - sudo apt-get install php5 php-pear php5-mysql
   - sudo service apache2 restart
+  - sudo pip install -U robotframework-requests
   - ls -l
 
 
