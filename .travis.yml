@@ -11,7 +11,7 @@ python:
 install:
   - pip install robotframework
   - pip install robotframework-selenium2library
-  - pip install Requests
+  - pip install robotframework-requests
   - pip install decorator
   - pip install docutils
   #- gem install s3
