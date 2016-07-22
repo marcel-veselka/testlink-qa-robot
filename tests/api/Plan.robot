@@ -34,4 +34,4 @@ Create Test Plan to Project with name ${testprojectname}
 
    ${resp}=  Post Request  httpbin  /post  data=${TextFileContent}  # headers=${headers}
    Create File	${ReportsPath}XMLreportCreatePlan.xml	 ${resp.content}
-  should contain  ${resp.content}     Success!
+   should contain  ${resp.content}     Success!

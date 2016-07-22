@@ -1,5 +1,5 @@
 <methodCall>
-	<methodName>tl.deleteTestProject</methodName>
+	<methodName>tl.getTestProject</methodName>
 	<params>
 		<param>
 			<value>
