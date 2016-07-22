@@ -12,11 +12,12 @@ ${DESIRED_CAPABILITIES} =  name:WIN8 + IE10, platform:WIN8,browserName:internet 
 
 test
 
-    ${TextFileContent}=    Get File  ip.txt
-    log    ${TextFileContent}
-    ${ip}=	Get Line  ${TextFileContent}	0
-    ${stripped}=	Strip String	${SPACE}${ip}${SPACE}
-    open browser  https://${stripped}/testlink-code  remote_url=${REMOTE_URL}  desired_capabilities=${DESIRED_CAPABILITIES}
+    #${TextFileContent}=    Get File  ip.txt
+    #log    ${TextFileContent}
+    #${ip}=	Get Line  ${TextFileContent}	0
+    #${stripped}=	Strip String	${SPACE}${ip}${SPACE}
+    #open browser  https://${stripped}/testlink-code  remote_url=${REMOTE_URL}  desired_capabilities=${DESIRED_CAPABILITIES}
+    open browser  https://www.google.com  remote_url=${REMOTE_URL}  desired_capabilities=${DESIRED_CAPABILITIES}
     maximize browser window
     title should be  TestLink
     capture page screenshot
