@@ -8,20 +8,42 @@ Library        Selenium2Library
 
 
 *** Variables ***
-
-${SERVER}        testlab.tesena.com/testlink
-${DELAY}         0
-${LOGIN URL}     http://${SERVER}/login.php
-${WELCOME URL}   http://${SERVER}/index.php?caller=login
-${ERROR URL}     http://${SERVER}/login.php
-${BROWSER}      ff
-
-
+${keywordName}  keywordtest
 *** Keywords ***
 
 
+Creating Keyword Management
+    keywordManagement.Check Keyword Management
+    keywordManagement.Click Create keyword
+    keywordManagement.Input information about keyword
+    keywordManagement.Check keyword
+
+
 Check Keyword Management
-    select frame  name=mainframe
+
+    select frame  mainframe
     wait until page contains  Keyword Management
-    wait until page contains element  create_keyword
+    unselect frame
+
+
+Click Create keyword
+
+    select frame  mainframe
+    click element  xpath=//*[@id="create_keyword"]
+    unselect frame
+
+
+Input information about keyword
+
+    select frame  mainframe
+    input text  keyword  ${keywordName}
+    input text  notes  descriptiontest
+    click element  create_req
+    unselect frame
+
+
+Check keyword
+
+    select frame  mainframe
+    page should contain  ${keywordName}
     unselect frame

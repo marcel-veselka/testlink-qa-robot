@@ -9,18 +9,36 @@ Library        Selenium2Library
 
 *** Variables ***
 
-${SERVER}        testlab.tesena.com/testlink
-${DELAY}         0
-${LOGIN URL}     http://${SERVER}/login.php
-${WELCOME URL}   http://${SERVER}/index.php?caller=login
-${ERROR URL}     http://${SERVER}/login.php
-${BROWSER}      ff
-
+${elementTCID}              TCID
+${buttonDoSearch}           doSearch
+${textSearchTC}             Search Test Cases
+${textTCID}                 Test Case ID
+${textTitle}                Title
+${elementTitle}             name
 
 *** Keywords ***
 
-
-Check Search Test Cases
-    select frame  name=mainframe
-    wait until page contains  Search Test Cases
+I am here
+    select frame  mainframe
+    wait until page contains  ${textSearchTC}
+    wait until page contains element  ${buttonDoSearch}
+    wait until page contains element  ${elementTCID}
+    wait until page contains  ${textTCID}
+    wait until page contains  ${textTitle}
+    wait until page contains element  ${elementTitle}
     unselect frame
+
+Search TC by ${element} ${text}
+    select frame  mainframe
+    input text  ${element}  ${text}
+    click element  ${buttonDoSearch}
+    unselect frame
+
+Check TC ${testCaseName} was selected
+    select frame  mainframe
+    wait until page contains element  tl_table_test_case_search_target
+    wait until page contains element  xpath=//div/div[contains(., "${testCaseName}")][a/img[@title="Execution history"]]
+    page should contain element  xpath=//div/div[contains(., "${testCaseName}")][a/img[@title="Execution history"]]
+    unselect frame
+
+

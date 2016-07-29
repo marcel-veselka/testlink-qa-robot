@@ -5,110 +5,55 @@ Library        Selenium2Library
 
 *** Variables ***
 
+${mySettings}               xpath=//img[@title="My Settings"]
+${desktop}                  xpath=//img[@title="Project"]
+${requirementSpec}          xpath=//img[@title="Requirement Specification"]
+${testSpec}                 xpath=//img[@title="Test Specification"]
+${testExecution}            xpath=//img[@title="Test Execution"]
+${testReports}              xpath=//img[@title="Test Reports"]
+${userManagement}           xpath=//img[@title="User Management"]
+${events}                   xpath=//img[@title="Events"]
+${indexPage}                xpath=//img[@title="logo"]
+${testProject}              xpath=//select[@name="testproject"]
+${logout}                   xpath=//img[@title="Logout"]
+${searchTC}                 xpath=//img[@title="Search Test Case by ID"]
+${targetTC}                 targetTestCase
+
 *** Keywords ***
 I am here
-    select frame  name=titlebar
-    wait until page contains element  xpath=//img[@alt="Company logo"]
-    wait until page contains element  xpath=//img[@title="My Settings"]
-    wait until page contains element  xpath=//img[@title="Logout"]
-    wait until page contains element  xpath=//img[@title="Project"]
-    wait until page contains element  xpath=//img[@title="Test Specification"]
-    wait until page contains element  xpath=//img[@title="User Management"]
-    wait until page contains element  xpath=//img[@title="Events"]
-    wait until page contains element  name=targetTestCase
-    wait until page contains element  xpath=//img[@title="Search Test Case by ID"]
-    wait until page contains element  xpath=//select[@name="testproject"]
+    select frame  titlebar
+    wait until page contains element  ${indexPage}
+    wait until page contains element  ${mySettings}
+    wait until page contains element  ${logout}
+    wait until page contains element  ${desktop}
+    wait until page contains element  ${testSpec}
+    wait until page contains element  ${userManagement}
+    wait until page contains element  ${events}
+    wait until page contains element  ${targetTC}
+    wait until page contains element  ${searchTC}
+    wait until page contains element  ${testProject}
     unselect frame
 
 I am here in full
     wait until keyword succeeds  1min  0  headerPage.I am here
-    select frame  name=titlebar
-    wait until page contains element  xpath=//img[@title="Requirement Specification"]
-    wait until page contains element  xpath=//img[@title="Test Execution"]
-    wait until page contains element  xpath=//img[@title="Test Reports"]
+    select frame  titlebar
+    wait until page contains element  ${requirementSpec}
+    wait until page contains element  ${testExecution}
+    wait until page contains element  ${testReports}
     unselect frame
 
-
-
-Go to index page
+HeaderPage Go to ${link}
+    select frame  titlebar
+    wait until page contains element  ${indexPage}
+    click element  ${indexPage}
+    unselect frame
     wait until keyword succeeds  1min  0  headerPage.I am here
-    select frame  name=titlebar
-    click element  xpath=//img[@title="logo"]
+    select frame  titlebar
+    click element  ${link}
     unselect frame
-
-Go to index page and change testproject
-    select frame  name=titlebar
-    wait until page contains element  xpath=//img[@alt="Company logo"]
-    click element  xpath=//img[@alt="Company logo"]
-    unselect frame
-    select frame  name=titlebar
-    wait until page contains element  testproject
-    select from list by label  xpath=//select[@name="testproject"]  ${newTestProjectPrefix}:${newTestProjectName}
-    unselect frame
-
-Go to My Settings
-    wait until keyword succeeds  1min  0  headerPage.I am here
-    select frame  name=titlebar
-    click element  xpath=//a[img[@title="My Settings"]]
-    unselect frame
-
-Go to Desktop (Project)
-    wait until keyword succeeds  1min  0  headerPage.I am here
-    select frame  name=titlebar
-    click element  xpath=//img[@title="Project"]
-    unselect frame
-
-Go to Requirement Specification (titlebar)
-    wait until keyword succeeds  1min  0  headerPage.I am here in full
-    select frame  name=titlebar
-    click element  xpath=//img[@title="Requirement Specification"]
-    unselect frame
-
-
-Go to Test Specification (titlebar)
-    wait until keyword succeeds  1min  0  headerPage.I am here
-    select frame  name=titlebar
-    click element  xpath=//img[@title="Test Specification"]
-    unselect frame
-
-Go to Test Execution
-    wait until keyword succeeds  1min  0  headerPage.I am here in full
-    select frame  name=titlebar
-    click element  xpath=//img[@title="Test Execution"]
-    unselect frame
-
-Go to Test Reports
-    wait until keyword succeeds  1min  0  headerPage.I am here in full
-    select frame  name=titlebar
-    click element  xpath=//img[@title="Test Reports"]
-    unselect frame
-
-Go to User Management
-    wait until keyword succeeds  1min  0  headerPage.I am here
-    select frame  name=titlebar
-    click element  xpath=//img[@title="User Management"]
-    unselect frame
-
-Go to Events
-    wait until keyword succeeds  1min  0  headerPage.I am here
-    select frame  name=titlebar
-    click element  xpath=//img[@title="Events"]
-    unselect frame
-
-Click test project dropdown
-    select frame  name=titlebar
-    click element  xpath=//select[@name="testproject"]
-    unselect frame
-
 
 Choose test project from dropdown
-    select frame  name=titlebar
-    select from list by label  xpath=//select[@name="testproject"]  ${newTestProjectPrefix}:${newTestProjectName}
+    select frame  titlebar
+    select from list by label  ${testProject}  ${newTestProjectPrefix}:${newTestProjectName}
     unselect frame
 
-
-Change Test Project
-    select frame  name=titlebar
-    wait until page contains element  xpath=//select[@name="testproject"]
-    select from list by label  xpath=//select[@name="testproject"]  tp:testing project
-    unselect frame

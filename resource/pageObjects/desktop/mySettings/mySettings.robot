@@ -6,18 +6,20 @@ Library        Selenium2Library
 
 *** Variables ***
 
-${SERVER}        testlab.tesena.com/testlink
-${DELAY}         0
-${LOGIN URL}     http://${SERVER}/login.php
-${WELCOME URL}   http://${SERVER}/index.php?caller=login
-${ERROR URL}     http://${SERVER}/login.php
-${BROWSER}      chrome
 ${Name}         renat
 ${LastName}     kulalov
 ${emailAdress}  renat.kulalov@tesena.com
 ${Password}     renat123
-
-
+${inputFirstName}  firstName
+${inputLastName}  lastName
+${inputEmail}  emailAddress
+${buttonSave}  Save
+${textWarning}  Warning!!
+${elementOldPassword}  oldpassword
+${elementNewPassword}  newpassword
+${elementNewPasswordCheck}  newpassword_check
+${buttonChangePassword}  Change password
+${textPasswordChanged}  Your password was changed succesfully
 
 
 
@@ -36,90 +38,85 @@ I am here
 
 Set Personal data back to normal
     select frame  mainframe
-    input text  firstName  ${Name}
-    input text  lastName   ${LastName}
-    input text  emailAddress  ${emailAdress}
-    click button    Save
+    input text  ${inputFirstName}  ${Name}
+    input text  ${inputLastName}   ${LastName}
+    input text  ${inputEmail}  ${emailAdress}
+    click button    ${buttonSave}
     wait until page contains  Personal data changed
     unselect frame
 
-First Name Empty
-
-    clear element text  firstName
-
-Check Page
-    select frame  mainframe
-    wait until page contains  Personal data
-    wait until page contains  Personal password
-
-Email Adress Empty
-    clear element text  emailAddress
-
-Last Name Empty
-
-    clear element text  lastName
-
-Click Save Button
-
-    click button  Save
-    wait until page contains  Personal data changed
-
 Check Email field must be filled
-
     execute javascript  var imput = document.getElementsByName('emailAddress'); imput[0].required = false;
-    click button  Save
-    wait until page contains  Warning!!
+    click button  ${buttonSave}
+    wait until page contains  ${textWarning}
     wait until page contains  OK
     click button    OK
-
-Input Email Adress
-
-    input text  emailAddress  ${NewTestEmailAdress}
 
 Check Last Name field must be filled
-
     execute javascript  var imput = document.getElementsByName('lastName'); imput[0].required = false;
-    click button  Save
-    wait until page contains  Warning!!
+    click button  ${buttonSave}
+    wait until page contains  ${textWarning}
     wait until page contains  OK
     click button    OK
 
-Input Last Name
+Input Data in Settings
+    [Tags]  tp96
+    select frame  mainframe
+    input text  ${inputFirstName}  ${NewTestFirstName}
+    input text  ${inputLastName}  ${NewTestLastName}
+    input text  ${inputEmail}  ${NewTestEmailAdress}
+    click button  ${buttonSave}
+    wait until page contains  Personal data changed
+    unselect frame
 
-    input text  lastName  ${NewTestLastName}
+Validate
+    select frame  mainframe
+    clear element text  ${inputEmail}
+    Check Email field must be filled
+    unselect frame
+    select frame  mainframe
+    clear element text  ${inputFirstName}
+    Check First Name field must be filled
+    unselect frame
+    select frame  mainframe
+    clear element text  ${inputLastName}
+    Check Last Name field must be filled
+    unselect frame
 
 Check First Name field must be filled
-
     execute javascript  var imput = document.getElementsByName('firstName'); imput[0].required = false;
-    click button  Save
-    wait until page contains  Warning!!
+    click button  ${buttonSave}
+    wait until page contains  ${textWarning}
     wait until page contains  OK
     click button    OK
-
-Input First Name
-
-    input text  firstName  ${NewTestFirstName}
 
 Change Password
     select frame  mainframe
-    wait until page contains element  oldpassword
-    wait until page contains element  newpassword
-    wait until page contains element  newpassword_check
-    input text  oldpassword  ${Password}
-    input text  newpassword  ${NewTestPassword}
-    input text  newpassword_check   ${NewTestPassword}
-    click button  Change password
+    wait until page contains element  ${elementOldPassword}
+    wait until page contains element  ${elementNewPassword}
+    wait until page contains element  ${elementNewPasswordCheck}
+    input text  ${elementOldPassword}  ${Password}
+    input text  ${elementNewPassword}  ${NewTestPassword}
+    input text  ${elementNewPasswordCheck}   ${NewTestPassword}
+    click button  ${buttonChangePassword}
     unselect frame
     select frame  mainframe
-    wait until page contains  Your password was changed succesfully
+    wait until page contains  ${textPasswordChanged}
     unselect frame
 
 Change Password back
     select frame  mainframe
-    input text  oldpassword  ${NewTestPassword}
-     input text  newpassword  ${Password}
-    input text  newpassword_check   ${Password}
-    click button  Change password
-    wait until page contains  Your password was changed succesfully
+    input text  ${elementOldPassword}  ${NewTestPassword}
+    input text  ${elementNewPassword}  ${Password}
+    input text  ${elementNewPasswordCheck}   ${Password}
+    click button  ${buttonChangePassword}
+    wait until page contains  ${textPasswordChanged}
     unselect frame
 
+Set My Personal Data
+    mySettings.Set Personal data back to normal
+    mySettings.Change Password back
+
+Wait and Validate
+    wait until keyword succeeds  1min  0  mySettings.I am here
+    mySettings.Validate

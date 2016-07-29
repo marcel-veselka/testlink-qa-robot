@@ -9,29 +9,7 @@ Library        Selenium2Library
 
 *** Variables ***
 
-${SERVER}        testlab.tesena.com/testlink
-${DELAY}         0
-${LOGIN URL}     http://${SERVER}/login.php
-${WELCOME URL}   http://${SERVER}/index.php?caller=login
-${ERROR URL}     http://${SERVER}/login.php
-${BROWSER}      ff
-
-
 *** Keywords ***
-
-
-Check Assign Custom Fields
-    select frame  name=mainframe
-    wait until page contains  Assign custom fields
-    wait until page contains element  doAssign
-    unselect frame
-
-Check Page Contains Custom Fields
-    select frame  mainframe
-    wait until page contains element  xpath=//input[@name="doAssign"]
-    wait until page contains element  xpath=//tr[contains(.,"${CFNAME}")]
-    wait until page contains element  xpath=//tr[contains(.,"${CFNAME}")]//td/input[@type="checkbox"]
-    unselect frame
 
 Assign Custom Fields
     select frame  mainframe

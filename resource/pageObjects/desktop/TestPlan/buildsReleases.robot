@@ -9,69 +9,88 @@ Library        Selenium2Library
 
 *** Variables ***
 
-${SERVER}        testlab.tesena.com/testlink
-${DELAY}         0
-${LOGIN URL}     http://${SERVER}/login.php
-${WELCOME URL}   http://${SERVER}/index.php?caller=login
-${ERROR URL}     http://${SERVER}/login.php
-${BROWSER}      ff
-
+${buttonCreateBuild}                create_build
+${elementBuildDoCreate}             do_create
+${xpathButtonOK}                    xpath=//button[text()="OK"]
+${elementBuildName}                 build_name
+${xpathTextEditor}                  xpath=//iframe[@title="Rich text editor, notes"]
+${elementCopyTesterAssignment}      copy_tester_assignments
+${elementSourceBuildID}             source_build_id
+${blank}
 
 *** Keywords ***
 
 Check Builds/Releases
-    select frame  name=mainframe
+    select frame  mainframe
     wait until page contains  Build management
     unselect frame
 
 Create Build
-    select frame  name=mainframe
-    wait until page contains element  create_build
-    click button  create_build
+    wait until keyword succeeds  1min  0  buildsReleases.Check Builds/Releases
+    select frame  mainframe
+    wait until page contains element  ${buttonCreateBuild}
+    click button  ${buttonCreateBuild}
     unselect frame
 
 Check if warning message appears
-    select frame  name=mainframe
+    select frame  mainframe
     execute javascript  var imput = document.getElementsByName('build_name'); imput[0].required = false;
-    wait until page contains element  do_create
-    click element  do_create
+    wait until page contains element  ${elementBuildDoCreate}
+    click element  ${elementBuildDoCreate}
     wait until page contains  Please enter a name for the Build!
-    wait until page contains element  xpath=//button[text()="OK"]
-    click element  xpath=//button[text()="OK"]
+    wait until page contains element  ${xpathButtonOK}
+    click element  ${xpathButtonOK}
     unselect frame
 
 Fill in the details of the Build ${buildName}
-    #[Arguments]  ${BuildName}  ${Description}
-    select frame  name=mainframe
-    wait until page contains element  build_name
-    input text  build_name  ${buildName}
-    wait until page contains element  xpath=//iframe[@title="Rich text editor, notes"]
-    mouse down  xpath=//iframe[@title="Rich text editor, notes"]
-    mouse up  xpath=//iframe[@title="Rich text editor, notes"]
-    select frame  xpath=//iframe[@title="Rich text editor, notes"]
+    select frame  mainframe
+    wait until page contains element  ${elementBuildName}
+    input text  ${elementBuildName}  ${buildName}
+    wait until page contains element  ${xpathTextEditor}
+    mouse down  ${xpathTextEditor}
+    mouse up  ${xpathTextEditor}
+    select frame  ${xpathTextEditor}
     input text  xpath=//body  ${buildDescription}
     unselect frame
 
+Check Warning Message
+    select frame  mainframe
+    execute javascript  var imput = document.getElementsByName('build_name'); imput[0].required = false;
+    click element  do_update
+    wait until page contains  Please enter a name for the Build!
+    wait until page contains  Warning!!
+    click button  OK
+    unselect frame
+
+Save Build with Warning Message
+    select frame  mainframe
+    wait until page contains element  do_update
+    click button  Save
+    unselect frame
+    select frame  mainframe
+    wait until page contains  There is already a build with this identifier -
+    unselect frame
+
 Save Build
-    select frame  name=mainframe
-    wait until page contains element  do_create
-    click button  Create
+    select frame  mainframe
+    wait until page contains element  ${elementBuildDoCreate}
+    click element  ${elementBuildDoCreate}
     unselect frame
 
 Save Build after Editing
     [Tags]  tp64
-    select frame  name=mainframe
+    select frame  mainframe
     wait until page contains element  do_update
     click button  Save
     unselect frame
 
 Check if Build was created ${buildName}
-    select frame  name=mainframe
+    select frame  mainframe
     wait until page contains element  xpath=//a[contains(text(),"${buildName}")]
     unselect frame
 
-Delete Build ${buildName}
-    select frame  name=mainframe
+Delete ${buildName} Build
+    select frame  mainframe
     click element  xpath=//tr[td//text()[contains(.,'${buildName}')]]/td[last()]/img
     wait until page contains  You are going to delete: ${buildName}
     wait until page contains  Yes
@@ -79,15 +98,16 @@ Delete Build ${buildName}
     unselect frame
 
 Add Release Date
-    select frame  name=mainframe
-    wait until page contains element  name=release_date
+    select frame  mainframe
+    wait until page contains element  release_date
     click element  xpath=//img[@title="Show Calender"]
     wait until page contains  Today
     click button  Today
     unselect frame
 
 Select Build ${buildName}
-    select frame  name=mainframe
+    [Tags]  64
+    select frame  mainframe
     wait until page contains element  xpath=//a[contains(text(),"${buildName}")]
     click link  ${buildName}
     wait until page contains  A build is identified by its title
@@ -95,8 +115,34 @@ Select Build ${buildName}
 
 Choose template ${FromBuild}
     select frame  mainframe
-    wait until page contains element  name=copy_tester_assignments
-    select checkbox  name=copy_tester_assignments
-    wait until page contains element  name=source_build_id
-    select from list by label  name=source_build_id  ${FromBuild} (0)
+    wait until page contains element  ${elementCopyTesterAssignment}
+    select checkbox  ${elementCopyTesterAssignment}
+    wait until page contains element  ${elementSourceBuildID}
+    select from list by label  ${elementSourceBuildID}  ${FromBuild} (0)
     unselect frame
+
+Add Details and Finish creating build ${buildName}
+    [Tags]  tp61
+    buildsReleases.Fill in the details of the Build ${buildName}
+    buildsReleases.Save Build
+
+Create Build With Release Date And Save ${buildName}
+    [Tags]  tp62
+    buildsReleases.Fill in the details of the Build ${buildName}
+    buildsReleases.Add release date
+    buildsReleases.Save Build
+
+Edit Build Info and Save Changes ${buildName}
+    [Tags]  64
+    buildsReleases.Fill in the details of the Build ${blank}
+    buildsReleases.Check Warning Message
+    buildsReleases.Fill in the details of the Build ${buildName5}
+    buildsReleases.Save Build with Warning Message
+    buildsReleases.Fill in the details of the Build ${buildName}
+    buildsReleases.Add Release Date
+    buildsReleases.Save Build after Editing
+
+Fill info and choose template ${NewNameBuild} ${FromBuild}
+    buildsReleases.Fill in the details of the Build ${NewNameBuild}
+    buildsReleases.Choose template ${FromBuild}
+    buildsReleases.Save Build

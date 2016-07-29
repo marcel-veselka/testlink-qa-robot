@@ -9,22 +9,14 @@ Library        Selenium2Library
 
 *** Variables ***
 
-${SERVER}        testlab.tesena.com/testlink
-${DELAY}         0
-${LOGIN URL}     http://${SERVER}/login.php
-${WELCOME URL}   http://${SERVER}/index.php?caller=login
-${ERROR URL}     http://${SERVER}/login.php
-${BROWSER}      ff
-
+${xpathInputBtn}  xpath=//input[@id="update_btn"]
 
 *** Keywords ***
 
-
-
 I am here
-    select frame  name=mainframe
+    select frame  mainframe
     wait until page contains element  treeframe
-    select frame  name=treeframe
+    select frame  treeframe
     wait until page contains element  xpath=//span[contains(text(),"Settings")]
     wait until page contains element  xpath=//span[contains(text(),"Filters")]
     wait until page contains element  xpath=//input[@value="Apply"]
@@ -49,7 +41,7 @@ Check Version Of The TC ${testCaseName}
     select frame  workframe
     wait until page contains element  xpath=//tr[td[contains(.,"${testCaseName}")]][td[contains(.,"2")]][td/select]
     wait until page contains element  xpath=//tr[td[contains(.,"${testCaseName}")]]//input[@type="checkbox"]
-    wait until page contains element  xpath=//input[@id="update_btn"]
+    wait until page contains element  ${xpathInputBtn}
     unselect frame
 
 Update to new version ${testCaseName}
@@ -58,10 +50,10 @@ Update to new version ${testCaseName}
     select frame  workframe
     click element  xpath=//tr[td[contains(.,"${testCaseName}")]]//input[@type="checkbox"]
     select from list by label  xpath=//tr[td[contains(.,"${testCaseName}")]]//select  1
-    click element  xpath=//input[@id="update_btn"]
+    click element  ${xpathInputBtn}
     unselect frame
 
-Check TC Version was changed ${testCaseName}
+Check changed TC Version ${testCaseName}
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
@@ -69,3 +61,13 @@ Check TC Version was changed ${testCaseName}
     page should contain element  xpath=//tr[td[contains(.,"${testCaseName}")]][td[contains(.,"1")]][td/select]
     unselect frame
 
+Update New Version of Test Case
+    wait until keyword succeeds  1min  0  updateLinkedTcVersion.I am here
+    updateLinkedTcVersion.Select Test Suite From The Tree ${testSuiteName}
+    wait until keyword succeeds  1min  0  updateLinkedTcVersion.Check Version Of The TC ${testCaseName}
+    updateLinkedTcVersion.Update to new version ${testCaseName}
+
+UpdateLinkedTcVersion Check TC Was Changed
+    wait until keyword succeeds  1min  0  updateLinkedTcVersion.I am here
+    updateLinkedTcVersion.Select Test Suite From The Tree ${testSuiteName}
+    wait until keyword succeeds  1min  0  updateLinkedTcVersion.Check changed TC Version ${testCaseName}

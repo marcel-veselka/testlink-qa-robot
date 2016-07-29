@@ -9,31 +9,33 @@ Library        Selenium2Library
 
 *** Variables ***
 
-${SERVER}        testlab.tesena.com/testlink
-${DELAY}         0
-${LOGIN URL}     http://${SERVER}/login.php
-${WELCOME URL}   http://${SERVER}/index.php?caller=login
-${ERROR URL}     http://${SERVER}/login.php
-${BROWSER}      ff
-
+${elementFilterTC}                  filter_testcase_name
+${elementDoUpdateTree}              doUpdateTree
+${elementExpandTree}                expand_tree
+${elementIDSRS}                     idSRS
+${elementActionButton}              actionButton
+${elementUnassign}                  unassign
+${xpathCheckUncheck}                xpath=//tbody//img[@title="check/uncheck all"]
+${xpathButtonOK}                    xpath=//button[text()="OK"]
+${xpathAssignReqTable}              xpath=//*[@id="div_assigned_req"]/table/tbody
+${xpathAssignReqCheckUncheck}       xpath=//*[@id="div_assigned_req"]//tbody//img[@title="check/uncheck all"]
 
 *** Keywords ***
 
-Select Test Suite
+Select Test Suite ${title}
     select frame  mainframe
     wait until page contains element  treeframe
     select frame  treeframe
-    wait until page contains element  name=filter_testcase_name
-    wait until page contains element  name=doUpdateTree
-    input text  name=filter_testcase_name  ${title}
-    click button  name=doUpdateTree
+    wait until page contains element  ${elementFilterTC}
+    wait until page contains element  ${elementDoUpdateTree}
+    input text  ${elementFilterTC}  ${title}
+    click button  ${elementDoUpdateTree}
     unselect frame
     select frame  mainframe
     wait until page contains element  treeframe
     select frame  treeframe
-    wait until page contains element  expand_tree
-    click element  expand_tree
-    wait until page contains  ${newTestProjectPrefix}-1:${title}
+    wait until page contains element  ${elementExpandTree}
+    click element  ${elementExpandTree}
     wait until page contains element  xpath=//a[span[contains(text(),"${title} (")]]
     double click element  xpath=//a[span[contains(text(),"${title} (")]]
     unselect frame
@@ -43,75 +45,67 @@ Select Test Suite
     wait until page contains  Requirements Specification Document
     unselect frame
 
-Assign Requirements
+Assign Requirements ${dokumentID} ${title}
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    wait until page contains element  name=idSRS
-    click element  name=idSRS
-    select from list by label  idSRS  [${dokumentID}] - ${title}
-    wait until page contains element  name=actionButton
-    click element  name=actionButton
+    wait until page contains element  ${elementIDSRS}
+    click element  ${elementIDSRS}
+    select from list by label  ${elementIDSRS}  [${dokumentID}] - ${title}
+    wait until page contains element  ${elementActionButton}
+    click element  ${elementActionButton}
     unselect frame
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
     wait until page contains  Please select a requirement
-    wait until page contains element  xpath=//button[text()="OK"]
-    click element  xpath=//button[text()="OK"]
+    wait until page contains element  ${xpathButtonOK}
+    click element  ${xpathButtonOK}
     unselect frame
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    wait until page contains element  xpath=//tbody//img[@title="check/uncheck all"]
-    wait until page contains element  name=actionButton
-    click element  xpath=//tbody//img[@title="check/uncheck all"]
-    click element  name=actionButton
+    wait until page contains element  ${xpathCheckUncheck}
+    wait until page contains element  ${elementActionButton}
+    click element  ${xpathCheckUncheck}
+    click element  ${elementActionButton}
     unselect frame
 
-Check Assign Requirements
+Check Assigned Requirements ${title}
     select frame  mainframe
     wait until page contains element  treeframe
     select frame  treeframe
-    wait until page contains element  expand_tree
-    click button  name=expand_tree
-    wait until page contains  ${newTestProjectPrefix}-1:${title} [1]
+    wait until page contains element  ${elementExpandTree}
+    click button  ${elementExpandTree}
     wait until page contains element  xpath=//a[span[contains(text(),"${title} [1]")]]
     double click element  xpath=//a[span[contains(text(),"${title} [1]")]]
     unselect frame
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    wait until page contains element  xpath=//*[@id="div_assigned_req"]/table/tbody
+    wait until page contains element  ${xpathAssignReqTable}
     unselect frame
 
-Unassign Requirements And Check Availiable Requirements
+Unassign Requirements ${title}
     select frame  mainframe
-    wait until page contains element  treeframe
     select frame  treeframe
-    wait until page contains element  expand_tree
-    click button  name=expand_tree
-    wait until page contains  ${newTestProjectPrefix}-1:${title} [1]
+    click button  ${elementExpandTree}
     wait until page contains element  xpath=//a[span[contains(text(),"${title} [1]")]]
-    double click element  xpath=//a[span[contains(text(),"${title} [1]")]]
+    click element  xpath=//a[span[contains(text(),"${title} [1]")]]
     unselect frame
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    wait until page contains element  xpath=//*[@id="div_assigned_req"]/table/tbody
-    wait until page contains element  name=unassign
-    wait until page contains element  xpath=//*[@id="div_assigned_req"]//tbody//img[@title="check/uncheck all"]
-    click element  xpath=//*[@id="div_assigned_req"]//tbody//img[@title="check/uncheck all"]
-    click element  name=unassign
+    wait until page contains element  ${elementUnassign}
+    wait until page contains element  ${xpathAssignReqCheckUncheck}
+    click element  ${xpathAssignReqCheckUncheck}
+    click element  ${elementUnassign}
     unselect frame
+
+Check Availiable Requirements
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
     wait until page contains  Available Requirements
-    wait until page does not contain element  xpath=//*[@id="div_assigned_req"]/table
-    unselect frame
-    select frame  mainframe
-    wait until page contains element  workframe
-    select frame  workframe
-    page should contain element  div_free_req
+    wait until page contains element  div_free_req
     unselect frame

@@ -9,50 +9,48 @@ Library        Selenium2Library
 
 *** Variables ***
 
-${SERVER}        testlab.tesena.com/testlink
-${DELAY}         0
-${LOGIN URL}     http://${SERVER}/login.php
-${WELCOME URL}   http://${SERVER}/index.php?caller=login
-${ERROR URL}     http://${SERVER}/login.php
-${BROWSER}      ff
-
+${inputCFName}  cf_name
+${xpathDoUpdate}  xpath=//input[@name="do_update"]
+${xpathCreateCF}  xpath=//input[@name="create_cfield"]
 
 *** Keywords ***
 
 Check Define Custom Fields
-    select frame  name=mainframe
+    select frame  mainframe
     wait until page contains  Custom fields
     unselect frame
 
 Click create Custom Field
-    select frame  name=mainframe
-    Click Button  create_cfield
+    select frame  mainframe
+    double click element  ${xpathCreateCF}
     unselect frame
 
 Input information about Custom Field
-    select frame  name=mainframe
-    input text  cf_name  ${CFNAME}
+    select frame  mainframe
+    input text  ${inputCFName}  ${CFNAME}
     input text  cf_label  ${CFLABEL}
+    double click element  ${xpathDoUpdate}
     unselect frame
 
-Create and check custom field
-    select frame  name=mainframe
-    Click Button  do_update
+Check custom field
+    select frame  mainframe
     page should contain  ${CFNAME}
     unselect frame
 
 Check edited custom field
-    Click Button  do_update
+    select frame  mainframe
+    wait until page contains  ${NEWCFNAME}
     page should contain  ${NEWCFNAME}
+    unselect frame
 
 Select Custom Field
-    select frame  name=mainframe
+    select frame  mainframe
     click link  ${CFNAME}
     unselect frame
 
 Edit Custom Fields
-    select frame  name=mainframe
-    input text  cf_name  ${NEWCFNAME}
+    select frame  mainframe
+    input text  ${inputCFName}  ${NEWCFNAME}
     #change (Available for)
     click element  xpath=//*[@id="combo_cf_node_type_id"]
     click element  xpath=//*[@id="combo_cf_node_type_id"]/option[3]
@@ -62,17 +60,14 @@ Edit Custom Fields
     #change[Display on test execution]
     click element  xpath=//*[@id="cf_show_on_execution"]
     click element  xpath=//*[@id="cf_show_on_execution"]/option[2]
-
-Select and delete EDITED Custom Field
-    select frame  name=mainframe
-    click link  ${NEWCFNAME}
-    click button  do_delete
-    wait until page contains  Yes
-    click button  Yes
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  ${xpathDoUpdate}
+    double click element  ${xpathDoUpdate}
     unselect frame
 
-Select and delete Custom Field
-    select frame  name=mainframe
+Select and delete Custom Field ${CFNAME}
+    select frame  mainframe
     click link  ${CFNAME}
     click button  do_delete
     wait until page contains  Yes
@@ -80,11 +75,23 @@ Select and delete Custom Field
     unselect frame
 
 Check if Custom Field has been deleted
-    select frame  name=mainframe
+    select frame  mainframe
     page should not contain  ${CFNAME}
     unselect frame
 
-Check if EDITED Custom Field has been deleted
-    select frame  name=mainframe
-    page should not contain  ${NEWCFNAME}
-    unselect frame
+Creating Define Custom Fields
+    defineCustomFields.Check Define Custom Fields
+    defineCustomFields.Click create Custom Field
+    defineCustomFields.Input information about Custom Field
+    defineCustomFields.Check custom field
+
+Edit information CF and Check New CF
+    defineCustomFields.Check Define Custom Fields
+    defineCustomFields.Select Custom Field
+    defineCustomFields.Edit Custom Fields
+    defineCustomFields.Check Define Custom Fields
+    defineCustomFields.Check edited custom field
+
+Delete CF ${CFNAME}
+    defineCustomFields.Select and delete Custom Field ${CFNAME}
+    defineCustomFields.Check if Custom Field has been deleted

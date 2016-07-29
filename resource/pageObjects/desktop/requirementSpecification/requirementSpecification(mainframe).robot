@@ -9,21 +9,12 @@ Library        Selenium2Library
 
 *** Variables ***
 
-${SERVER}        testlab.tesena.com/testlink
-${DELAY}         0
-${LOGIN URL}     http://${SERVER}/login.php
-${WELCOME URL}   http://${SERVER}/index.php?caller=login
-${ERROR URL}     http://${SERVER}/login.php
-${BROWSER}      ff
-
-
 *** Keywords ***
 
-
 I am here
-    select frame  name=mainframe
+    select frame  mainframe
     wait until page contains element  treeframe
-    select frame  name=treeframe
+    select frame  treeframe
     wait until page contains element  xpath=//h1[text()="Navigator - Requirement Specifications"]
     wait until page contains element  xpath=//span[contains(text(),"Settings")]
     wait until page contains element  xpath=//span[contains(text(),"Filters")]
