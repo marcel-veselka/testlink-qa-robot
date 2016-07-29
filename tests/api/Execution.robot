@@ -20,7 +20,7 @@ Resource  Build.robot
 ${DevKey}  445f3c920c0431a2b3d793114378d4dd
 ${session}   http://testlab.tesena.com/testlink/lib/api/xmlrpc/v1/xmlrpc.php
 ${prefix}  89
-${testprojectname}  ProjectnameRF#7
+${testprojectname}  ProjectnameRF#8
 ${TestSuite}   TestSuita4
 ${TestCase}  TC#Uno
 ${TestBuild}  BuildTry
