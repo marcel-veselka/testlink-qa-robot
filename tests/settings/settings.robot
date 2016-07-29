@@ -24,7 +24,9 @@ ${loginSubmit}          login_submit
 ${indexPage}            xpath=//img[@title="logo"]
 ${elementPassword}      tl_password
 ${css}                  css=div.messages_rounded
-${HOSTNAME}             home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
+${HOSTNAME}               home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
+${newTestProjectName}     tryit
+${newTestProjectPrefix}   tryit
 
 *** Test Cases ***
 
@@ -32,6 +34,10 @@ Login as admin default
     loginPage.Open Browser To Login Page TRAVIS
     wait until keyword succeeds  1min  0  loginPage.Wait until page contains all elements for login
     Fill credentials and submit ${LOGIN} ${PASSWORD}
+
+Create TP
+    Fill information to create test without conflict ${newTestProjectName} ${newTestProjectPrefix}
+    Submit and check new test project ${newTestProjectName}
 
 Create new user
     HeaderPage Go to ${indexPage}
