@@ -11,7 +11,7 @@ Resource  DevKey.robot
 *** Variables ***
 
 
-${Reportssaved}  tests/api/Reports/
+#${Reportssaved}  tests/api/Reports/
 ${xmlssaved}     tests/api/xmls/
 
 
