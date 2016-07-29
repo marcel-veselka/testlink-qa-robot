@@ -19,7 +19,7 @@ ${PASSWORD}                         renat123
 ${newTestProjectName}               testSuite
 ${newTestProjectPrefix}             management
 ${newTestProjectDescription}        Description
-${testSuiteName1}                   tsuite80
+${testSuiteName1}                   tsuite88
 ${suiteDescription}                 Description
 ${testDescription}                  testDescription
 ${testSuiteName2}                   tsuite81
@@ -63,13 +63,9 @@ ${testCaseName2}                    tc82_1
 124 Move or Copy test Suite
 
     Preconditions for tc124
-
     Change Test Project and go to ${testSpecification} ${checkTestSpecification}
-
     wait until keyword succeeds  1min  0  testSpecificationPage.I am here
-
-    testSpecificationPage.Test Suite ${testSuiteName1} select node
-
+    Test Suite ${testSuiteName1} select node
     Copy Test Suite ${testSuiteName1}
 
 
