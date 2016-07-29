@@ -25,6 +25,13 @@ ${HOSTNAME}             home/travis/build/marcel-veselka/testlink-qa-robot/ip.tx
 *** Keywords ***
 
 Open Browser To Login Page
+    Open Browser  ${LOGIN URL}  ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed  ${DELAY}
+    Title Should Be  TestLink
+
+
+Open Browser To Login Page TRAVIS
     ${TextFileContent}=    Get File  ip.txt
     Log    ${TextFileContent}
     ${ip}=	Get Line  ${TextFileContent}	0
@@ -76,7 +83,7 @@ Check that warning about empty field appears
 
 
 Login as admin ${LOGIN} ${PASSWORD}
-    loginPage.Open Browser To Login Page
+    loginPage.Open Browser To Login Page TRAVIS
     wait until keyword succeeds  1min  0  loginPage.Wait until page contains all elements for login
     Fill credentials and submit ${LOGIN} ${PASSWORD}
 
