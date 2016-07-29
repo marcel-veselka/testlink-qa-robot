@@ -24,4 +24,22 @@ Login as admin default
 Create new user
     HeaderPage Go to ${indexPage}
     HeaderPage Go to ${userManagement}
+    wait until page contains element  doCreate
+    click element  doCreate
+    wait until page contains element  lastName
+    input text  lastName  renat.kulalov
+    wait until page contians element  password
+    input text  password  renat123
+    wait until page contains element  rights_id
+    select from list by label  rights_id  admin
+    wait until page contains element  locale
+    select from list by label  locale  English (wide/UK)
+    wait until page contains element  authentication
+    select from list by label  authentication  Default(DB)
+    select checkbox  user_is_active
+    wait until page contains element  do_update
+    click element  do_update
+    close browser
+
+
 

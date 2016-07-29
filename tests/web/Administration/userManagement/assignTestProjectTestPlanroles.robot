@@ -20,8 +20,8 @@ Suite Teardown  Run keywords     HeaderPage Go to ${userManagement}
 
 *** Variables ***
 
-${LOGIN}                            admin
-${PASSWORD}                         admin
+${LOGIN}                            renat.kulalov
+${PASSWORD}                         renat123
 ${user}                             vojta.svoboda
 ${fname}                            karel
 ${lname}                            karel
