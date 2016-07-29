@@ -28,9 +28,11 @@ Create Test Plan to Project with name ${testprojectname}
   ${newxml}=  replace string  ${xml}  ${Projectname}  ${testprojectname}
   save xml  ${newxml}  ${xmlssaved}CreatePlan.xml
 
+
    Create Session  httpbin  ${session}
    ${TextFileContent}=    OperatingSystem.Get File  ${xmlssaved}CreatePlan.xml
    Log    ${TextFileContent}
+
 
    ${resp}=  Post Request  httpbin  /post  data=${TextFileContent}  # headers=${headers}
    Create File	${ReportsPath}XMLreportCreatePlan.xml	 ${resp.content}
