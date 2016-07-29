@@ -36,7 +36,7 @@ Login as admin default
     Fill credentials and submit ${LOGIN} ${PASSWORD}
 
 Create TP
-    Fill information to create test without conflict ${newTestProjectName} ${newTestProjectPrefix}
+    createTestProjectPage.Fill all information about ${newTestProjectName} ${newTestProjectPrefix}
     Submit and check new test project ${newTestProjectName}
 
 Create new user
@@ -46,7 +46,7 @@ Create new user
     click element  doCreate
     wait until page contains element  lastName
     input text  lastName  renat.kulalov
-    wait until page contians element  password
+    wait until page contains element  password
     input text  password  renat123
     wait until page contains element  rights_id
     select from list by label  rights_id  admin
