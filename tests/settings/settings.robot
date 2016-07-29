@@ -13,6 +13,18 @@ Resource       ../../resource/helper/desktopHeaderHelper.robot
 
 ${LOGIN}                            admin
 ${PASSWORD}                         admin
+${SERVER}               testlab.tesena.com/testlink
+${DELAY}                0
+${LOGIN URL}            http://${SERVER}/login.php
+${WELCOME URL}          http://${SERVER}/index.php?caller=login
+${ERROR URL}            http://${SERVER}/login.php
+${BROWSER}              ff
+${elementLogin}         login
+${loginSubmit}          login_submit
+${indexPage}            xpath=//img[@title="logo"]
+${elementPassword}      tl_password
+${css}                  css=div.messages_rounded
+${HOSTNAME}             home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
 
 *** Test Cases ***
 
