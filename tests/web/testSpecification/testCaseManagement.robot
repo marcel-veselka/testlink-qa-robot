@@ -14,8 +14,8 @@ Suite Setup  Run keywords    Login and Create new Test Project ${newTestProjectN
 ...             AND          Create Build with name ${buildName}
 ...             AND          Create test suite ${testSuiteName} in test project ${newTestProjectName}
 
-#Suite Teardown  Run keywords     Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
-#...             AND              Close browser
+Suite Teardown  Run keywords     Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
+...             AND              Close browser
 
 
 *** Variables ***
