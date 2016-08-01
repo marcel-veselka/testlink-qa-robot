@@ -36,8 +36,12 @@ Login as admin default
     Fill credentials and submit ${LOGIN} ${PASSWORD}
 
 Create TP
-    createTestProjectPage.Fill all information about ${newTestProjectName} ${newTestProjectPrefix}
-    Submit and check new test project ${newTestProjectName}
+    select frame  mainframe
+    input text  ${elementTPProject}  ${newTestProjectName}
+    input text  ${elementTCPrefix}  ${newTestProjectPrefix}
+    select checkbox  ${elementOptReq}
+    select checkbox  ${elementOptInventory}
+    unselect frame
 
 Create new user
     HeaderPage Go to ${indexPage}
