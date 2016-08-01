@@ -59,17 +59,20 @@ Create TP
     select checkbox  ${elementOptInventory}
     click button  Create
     unselect frame
+    select frame  mainframe
     sleep  2
     capture page screenshot
+    unselect frame
 
 Create new user
-    capture page screenshot
     select frame  titlebar
     wait until page contains element  ${indexPage}
     click element  ${indexPage}
     unselect frame
+    select frame  mainframe
     sleep  2
     capture page screenshot
+    unselect frame
     select frame  titlebar
     click element  ${userManagement}
     sleep  2
