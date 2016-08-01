@@ -30,53 +30,49 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - "today=$(date +%d.%m.%Y_%H:%M)"
   #- "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
+###
+  #- sudo apt-get install apache2
+  #- sudo apt-get install php5 php-pear php5-mysql
+  #- sudo service apache2 restart
+  #- ls -l
+###
 
-  - sudo apt-get install apache2
-  - sudo apt-get install php5 php-pear php5-mysql
-  - sudo service apache2 restart
-  - ls -l
-
-
-  #- cd ~
+###
+  #- cd /var/www
+###
+  #- ls -l
+###
+  #- sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
+  #- cd testlink-code
+  #- sudo git checkout 1.9.14
+###
   #- ls -l
   #- cd ..
-  #- cd build
   #- ls -l
+###
+  #- sed -e 's/\s\+/\n/g' ~/.ssh/key > ~/.ssh/key1
+  #- echo -----BEGIN RSA PRIVATE KEY----- > /home/travis/.ssh/id_rsa
+  #- cat ~/.ssh/key1 >> ~/.ssh/id_rsa
+  #- echo -----END RSA PRIVATE KEY----- >> /home/travis/.ssh/id_rsa
+  #- chmod 400 ~/.ssh/id_rsa
+  #- chmod 600 ~/.ssh/id_rsa
+  #- echo -e "Host testlab.tesena.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  #- echo " StrictHostKeyChecking no" >> ~/.ssh/config
+  #- scp -v -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/travisconfigfile/config_db.inc.php /home/travis/config_db.inc.php
+  #- sudo cp /home/travis/config_db.inc.php /var/www/testlink-code/config_db.inc.php
+  #- ls -l
+  #- cd testlink-code
+  #- ls -l
+
+  #- sudo chown -R www-data:www-data ../testlink-code
+
+  #- mysql -u root -e 'CREATE DATABASE testlink_qa CHARACTER SET utf8 COLLATE utf8_general_ci;';
+  #- mysql -u root testlink_qa < install/sql/mysql/testlink_create_tables.sql;
+  #- mysql -u root testlink_qa < install/sql/mysql/testlink_create_default_data.sql
+  #- ls -l
+  #- sudo rm -f -r install
   #- cd ..
-  #- ls -l
-  #- cd var
-  #- ls -l
-  #- cd www
-  - cd /var/www
-  - ls -l
-  - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
-  - cd testlink-code
-  - sudo git checkout 1.9.14
-  - ls -l
-  - cd ..
-  - ls -l
-  - sed -e 's/\s\+/\n/g' ~/.ssh/key > ~/.ssh/key1
-  - echo -----BEGIN RSA PRIVATE KEY----- > /home/travis/.ssh/id_rsa
-  - cat ~/.ssh/key1 >> ~/.ssh/id_rsa
-  - echo -----END RSA PRIVATE KEY----- >> /home/travis/.ssh/id_rsa
-  - chmod 400 ~/.ssh/id_rsa
-  - chmod 600 ~/.ssh/id_rsa
-  - echo -e "Host testlab.tesena.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-  - echo " StrictHostKeyChecking no" >> ~/.ssh/config
-  - scp -v -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/travisconfigfile/config_db.inc.php /home/travis/config_db.inc.php
-  - sudo cp /home/travis/config_db.inc.php /var/www/testlink-code/config_db.inc.php
-  - ls -l
-  - cd testlink-code
-  - ls -l
-
-  - sudo chown -R www-data:www-data ../testlink-code
-
-  - mysql -u root -e 'CREATE DATABASE testlink_qa CHARACTER SET utf8 COLLATE utf8_general_ci;';
-  - mysql -u root testlink_qa < install/sql/mysql/testlink_create_tables.sql;
-  - mysql -u root testlink_qa < install/sql/mysql/testlink_create_default_data.sql
-  - ls -l
-  - sudo rm -f -r install
-  - cd ..
+###
   #- sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
   #- sudo iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
   #- sudo iptables -I INPUT 4 -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
@@ -136,16 +132,17 @@ before_script:
   #- sudo hostname -I
   #- sudo wget http://ipinfo.io/ip -qO -
 
-
-  - sudo hostname -I > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
+###
+  #- sudo hostname -I > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
+###
   #-sudo ifconfig eth0 | grep inet | awk '{ print $2 }' > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
   #- sudo wget http://ipinfo.io/ip -qO - > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
   #- sudo /sbin/ifconfig |grep -B1 "inet addr" |awk '{ if ( $1 == "inet" ) { print $2 } else if ( $2 == "Link" ) { printf "%s:" ,$1 } }' |awk -F: '{ print $1 ": " $3 }'
 
-
-  - cd /home/travis/build/marcel-veselka/testlink-qa-robot
-  - ls -l
-
+###
+  #- cd /home/travis/build/marcel-veselka/testlink-qa-robot
+  #- ls -l
+###
 
 
 
@@ -153,22 +150,12 @@ script:
   #- "firefox --version"
   #- "python test/run_tests.py python $BROWSER --noncritical known_issue_-_travisci"
   #- "python demo/rundemo.py python $BROWSER --noncritical known_issue_-_travisci"
-  - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/settings
-  #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/Administration
+  #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/settings
+  - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD  tests/web/requirementsFeature/requirementsRelations/tp48_relations_between_requirements_and_test_cases.robot
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/customFieldMAnagement
-  #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/testProjectManagement/createTestProject/deleteProject
-  #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/TestPlanManagement/testPlanContent/tp78_update_linked_tc_version.robot
-  #- find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \;
-  #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/testProjectManagement/createTestProject/modifyProject/tp12_Rename_Test_Project_NO_NAME_CONFLICT.robot
+  - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/api
 
-  #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/Layout/tp109_Navigator_tree.robot
-  #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/czechTestDemo/czechtest_demo.robot
-  #- browserstack-runner
-
-  #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/api
-  # - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/local/test1.robot
-   #- pybot tests/local/test.robot
 
 env:
   matrix:
@@ -200,7 +187,3 @@ addons:
     bucket: "tesena-s3"
     endpoint: "tesena-s3.s3-website-us-west-2.amazonaws.com"
     s3_region: "us-west-2" # defaults to "us-east-1"
-
-#notifications:
-  #email:
-   # - alexandra.kolpakova@tesena.com

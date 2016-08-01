@@ -72,3 +72,14 @@ Unassign platform and its testCases ${PlatformName}
     wait until keyword succeeds  1min  0  addRemoveTestCases.Check Page Add/Remove TC ${PlatformName}
     addRemoveTestCases.Check TC were Assigned
     addRemoveTestCases.Unassign TC from ${PlatformName}
+
+Assign All TC to Platform ${PlatformName}
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    wait until page contains element  select_platform
+    wait until page contains element  xpath=//button[contains(text(),"adding")]
+    select from list by label  select_platform  ${PlatformName}
+    click element  xpath=//button[contains(text(),"adding")]
+    click element  ${xpathInputDoAddRemove}
+    unselect frame

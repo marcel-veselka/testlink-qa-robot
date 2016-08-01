@@ -17,6 +17,16 @@ Update linked TC ${testCaseName} ${testSuiteName} version
     Change Test Project and go to ${updateTCVersion} ${updateTCVersion}
     updateLinkedTcVersion.Update New Version of Test Case
 
+Update all TC's versions to the latest one
+    Change Test Project and go to ${updateTCVersion} ${updateTCVersion}
+    updateLinkedTcVersion.Bulk Update to latest version
+
+Check changes were saved all TCs ${testCaseName} ${testCaseName1} are updated
+    updateLinkedTcVersion.Check all Tests were Linked to latest version
+    Change Test Project and go to ${assignTCExecution} ${assignTCExecution}
+    updateLinkedTcVersion.Select Test Suite From The Tree ${testSuiteName}
+    assignTestCaseExecution.Check Latest Version of Test Suite with ${testCaseName} ${testCaseName1}
+
 Check TC Version was changed ${testCaseName} ${testSuiteName} in Update Linked TC Version
     [Tags]  tp78
     Change Test Project and go to ${updateTCVersion} ${updateTCVersion}
@@ -63,3 +73,14 @@ Check TC Are Not Assigned ${testSuiteName}
     Change Test Project and go to ${assignTCExecution} ${assignTCExecution}
     wait until keyword succeeds  1min  0  assignTestCaseExecution.I am here
     wait until keyword succeeds  1min  0  assignTestCaseExecution.Check there is no assigned TC ${testSuiteName}
+
+Assign to another user ${Username} and ${PlatformName} ${newUser}
+    [Tags]  tp74
+    Change Test Project and go to ${assignTCExecution} ${assignTCExecution}
+    assignTestCaseExecution.Add another user ${newUser} assigned ${PlatformName} ${Username}
+
+Assign all test cases to ${PlatformName}
+    [Tags]  tp78
+    Change Test Project and go to ${addRemoveTestCases} ${checkAddRemoveTestCases}
+    addRemoveTestCases.Show Test Cases
+    addRemoveTestCases.Assign All TC to Platform ${PlatformName}

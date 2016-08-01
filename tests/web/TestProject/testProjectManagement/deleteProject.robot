@@ -58,7 +58,7 @@ Preconditions for tc20
     Create Build with name ${buildName}
     Create test suite ${testSuiteName} in test project ${newTestProjectName}
     Create test case ${testCaseName} in ${testSuiteName}
-    Create New Version Of TC
+    Create New Version Of TC ${testCaseName}
     Add TC ${testCaseName} to platform ${PlatformName} users ${Username}
     Keywords ${testCaseName}
     Start creating Define Custom Fields

@@ -47,10 +47,15 @@ Create single Keyword ${testCaseName}
     assignKeywords.Create Keyword
     assignKeywords.Check Keyword Was Created
 
-Create New Version Of TC
+Create New Keyword
+    Change Test Project and go to ${keywordManagement} ${keywordManagement}
+    assignKeywords.Create Keyword
+    assignKeywords.Check Keyword Was Created
+
+Create New Version Of TC ${testCaseName}
     [Tags]  tp78
     Change Test Project and go to ${testSpecification} ${checkTestSpecification}
-    testSpecificationPage.Create New Version of TestCase
+    testSpecificationPage.Create New Version of TestCase ${testCaseName}
 
 Add Test Case ${testCaseName} To the Test Plan ${TestPlanName}
     [Tags]  56
@@ -75,24 +80,24 @@ Controll Warning Message And Create Test Suite ${testSuiteName} ${testDescriptio
     testSpecificationPage.Controll Warning Message
     testSpecificationPage.Fill In The Fields ${testSuiteName} ${testDescription}
 
-Move Copy Edit ${testSuiteName} ${suite2}
+Leave fileds blanked ${testSuiteName1}, rename ${testSuiteName2} test suite ${testSuiteName3}
     [Tags]  tp81
     Change Test Project and go to ${testSpecification} ${checkTestSpecification}
     wait until keyword succeeds  1min  0  testSpecificationPage.I am here
-    testSpecificationPage.Test Suite ${testSuiteName} select node
-    testSpecificationPage.Edit Test Suite ${suite2}
-    testSpecificationPage.Test Suite ${suite2} select node
-    testSpecificationPage.Copy Test Suite ${suite2}
-    testSpecificationPage.Test Suite ${suite2} select node
-    testSpecificationPage.Move Test Suite
-    testSpecificationPage.Check Move And Copy Action ${suite2}
+    testSpecificationPage.Test Suite ${testSuiteName3} select node
+    testSpecificationPage.Click Actions button
+    testSpecificationPage.Edit Test Suite ${testSuiteName1}
+    testSpecificationPage.Controll Warning Message
+    testSpecificationPage.Test Suite ${testSuiteName3} select node
+    testSpecificationPage.Click Actions button
+    testSpecificationPage.Edit Test Suite ${testSuiteName2}
+    testSpecificationPage.Submit and check test suite ${testSuiteName2} was changed
 
 Assign Keyword using blue arrow
     [Tags]  tp133
     Change Test Project and go to ${AssignKeywords} ${checkAssignKeywords}
     testSpecificationPage.Select test case ${testCaseName} node
     Assign Keywords single arrow and save
-
 
 Create Step in test case: ${testCaseName}
     [Tags]  tp86

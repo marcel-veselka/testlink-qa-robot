@@ -47,3 +47,16 @@ Check keyword
     select frame  mainframe
     page should contain  ${keywordName}
     unselect frame
+
+Delete New ${KeywordName}
+    select frame  mainframe
+    wait until page contains  ${KeywordName}
+    page should contain  ${KeywordName}
+    wait until page contains element  xpath=//img[@title="Delete keyword?"]
+    click element  xpath=//img[@title="Delete keyword?"]
+    wait until page contains  Yes
+    click button  Yes
+    unselect frame
+    select frame  mainframe
+    page should not contain  ${KeywordName}
+    unselect frame

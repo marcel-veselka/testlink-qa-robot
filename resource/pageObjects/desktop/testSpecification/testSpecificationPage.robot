@@ -22,7 +22,7 @@ ${elementck8}                           cke_8
 ${xpathCkeTextarea}                     xpath=//*[@id="cke_contents_details"]/textarea
 ${xpathButtonOK}                        xpath=//button[text()="OK"]
 ${elementEditTestSuite}                 edit_testsuite
-${elementUpdateTestSuite}               update_testsuite
+${elementUpdateTestSuite}               edit_testsuite
 ${xpathRichTextEditor}                  xpath=//iframe[@title="Rich text editor, details"]
 ${xpathInputBody}                       xpath=//body
 ${elementMoveTSViewer}                  move_testsuite_viewer
@@ -203,10 +203,20 @@ Controll Warning Message
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    wait until page contains element  ${elementAddTestSuiteButton}
     execute javascript  document.getElementById('name').required = false;
     click button  Save
     wait until page contains  Please give a name to Test Suite
+    wait until page contains element  ${xpathButtonOK}
+    click element  ${xpathButtonOK}
+    unselect frame
+
+Check Warning Message TC title
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    execute javascript  document.getElementById('testcase_name').required = false;
+    click button  Save
+    wait until page contains  Please give a title to Test Case
     wait until page contains element  ${xpathButtonOK}
     click element  ${xpathButtonOK}
     unselect frame
@@ -260,28 +270,7 @@ Create Another Test Suite For Move Or Copy
     click element  ${elementAddTestSuiteButton}
     unselect frame
 
-Edit Test Suite ${suite2}
-    select frame  mainframe
-    wait until page contains element  workframe
-    select frame  workframe
-    wait until page contains element  ${elementImageActions}
-    click element  ${elementImageActions}
-    wait until page contains element  ${elementEditTestSuite}
-    click element  ${elementEditTestSuite}
-    unselect frame
-    select frame  mainframe
-    wait until page contains element  workframe
-    select frame  workframe
-    wait until page contains element  ${elementContainerName}
-    wait until page contains element  ${elementUpdateTestSuite}
-    wait until page contains element  ${elementck8}
-    input text  ${elementContainerName}  ${suite2}
-    wait until page contains element  ${xpathRichTextEditor}
-    mouse down  ${xpathRichTextEditor}
-    mouse up  ${xpathRichTextEditor}
-    select frame  ${xpathRichTextEditor}
-    input text  ${xpathInputBody}  ${testDescription}
-    unselect frame
+Edit Test Suite ${testSuiteName}
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
@@ -290,8 +279,22 @@ Edit Test Suite ${suite2}
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    wait until page contains  updated!
-    page should contain element  xpath=//p[contains(text(),"Test Suite ${suite2}")][contains(text(),"was successfully")][contains(text(),"updated!")]
+    wait until page contains element  ${elementName}
+    input text  ${elementName}   ${testSuiteName}
+    unselect frame
+
+Submit and check test suite ${testSuiteName} was changed
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    wait until page contains element  update_testsuite
+    click element  update_testsuite
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  treeframe
+    select frame  treeframe
+    wait until page contains element  xpath=//ul/li/ul/li[contains(.,"${testSuiteName}")]/div/a
+    page should contain element  xpath=//ul/li/ul/li[contains(.,"${testSuiteName}")]/div/a
     unselect frame
 
 Copy Test Suite ${suite2}
@@ -426,6 +429,30 @@ Click new test case
     click element  ${elementCreateTC}
     unselect frame
 
+Add keyword to TC
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    wait until page contains element  xpath=//td/img[1]
+    click element  xpath=//td/img[1]
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    wait until page contains element  xpath=//td[contains(.,"Assigned Keywords")][//option[contains(.,"${KeywordName}")]]
+    page should contain element  xpath=//td[contains(.,"Assigned Keywords")][//option[contains(.,"${KeywordName}")]]
+    unselect frame
+
+Leave fields blanked for TC and check control warning message
+    Start editing Test Case
+    Edit Test Case ${blank}
+    Check Warning Message TC title
+
+Edit TC's ${testCaseName2} name, preconditions, keywords
+    Edit Test Case ${testCaseName2}
+    Add keyword to TC
+    Save changes
+
 Fill name for tc: ${testCaseName} and submit
     select frame  mainframe
     wait until page contains element  workframe
@@ -435,6 +462,68 @@ Fill name for tc: ${testCaseName} and submit
     input text  ${elementTCName}  ${testCaseName}
     click element  ${elementDoCreateButton}
     unselect frame
+
+Choose Step
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    wait until page contains element  xpath=//tr[@id="step_row_1"]//td[p[contains(.,"StepAction")]]
+    click element  xpath=//tr[@id="step_row_1"]//td[p[contains(.,"StepAction")]]
+    unselect frame
+
+Edit Step with ${newText}
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    wait until page contains  ${elementStepActions}
+    wait until page contains element  ${xpathCKEContentsSteps}
+    mouse down  ${xpathCKEContentsSteps}
+    mouse up  ${xpathCKEContentsSteps}
+    select frame  ${xpathCKEContentsSteps}
+    input text  ${xpathInputBody}  ${newText}
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    click button  ${elementDoUpdateStep&Exit}
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    wait until page contains  ${textStepNumber}
+    unselect frame
+
+Resequence Step Button
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    wait until page contains element  resequence_steps
+    wait until page contains element  xpath=//tr[@id="step_row_1"]
+    wait until page contains element  xpath=//tr[@id="step_row_2"]
+    wait until page contains element  xpath=//tr[@id="step_row_3"]
+    click element  xpath=//tr[@id="step_row_2"]//img[@title="Delete step"]
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    page should not contain  xpath=//tr[@id="step_row_2"]
+    click element  resequence_steps
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    wait until page contains element  xpath=//tr[@id="step_row_1"]
+    wait until page contains element  xpath=//tr[@id="step_row_2"]
+    page should contain element  xpath=//tr[@id="step_row_1"]
+    page should contain element  xpath=//tr[@id="step_row_2"]
+    page should not contain element  xpath=//tr[@id="step_row_3"]
+    unselect frame
+
+Edit Step ${newText} of Test Case ${testCaseName}
+    Select test case ${testCaseName} node
+    Choose Step
+    Edit Step with ${newText}
+    Create Step
 
 Create Step
     select frame  mainframe
@@ -717,18 +806,22 @@ Click On Execution History
     unselect frame
 
 Edit Test Case ${testCaseNameEdit}
-    select frame  mainframe
-    wait until page contains element  workframe
-    select frame  workframe
-    click button  edit_tc
-    unselect frame
     testSpecificationPage.Fill in title test case name ${testCaseNameEdit}
     testSpecificationPage.Fill in Summary test case
     testSpecificationPage.Fill in Preconditions test case
+
+Save changes
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
     click button  do_update
+    unselect frame
+
+Start editing Test Case
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    click button  edit_tc
     unselect frame
 
 Delete Test Case ${NameTestCase}
@@ -841,6 +934,10 @@ Check Black Arrow
     testSpecificationPage.Click on black arrow
     testSpecificationPage.Control black arrow
 
+Add TC to the Test Plan
+    testSpecificationPage.Select test case ${testCaseName1} node and click action button
+    testSpecificationPage.Click On Add To Test Plans ${TestPlanName}
+
 Add Test Cases to the Test Plan
     testSpecificationPage.Select test case ${testCaseName2} node and click action button
     testSpecificationPage.Click On Add To Test Plans ${TestPlanName}
@@ -849,7 +946,7 @@ Add Test Cases to the Test Plan
     testSpecificationPage.Select test case ${testCaseName} node and click action button
     testSpecificationPage.Click On Add To Test Plans ${TestPlanName}
 
-Create New Version of TestCase
+Create New Version of TestCase ${testCaseName}
     testSpecificationPage.Select test case ${testCaseName} node and click action button
     testSpecificationPage.Click On Create New Version
 
@@ -869,3 +966,7 @@ Create New Sibling ${testCaseNameNew} For ${testCaseName2}
     testSpecificationPage.Click Actions button
     testSpecificationPage.Generate new Sibling ${testCaseNameNew}
     testSpecificationPage.Check New Sibling Was Created ${testCaseNameNew}
+
+Use Resequence Step Button ${testCaseName}
+    testSpecificationPage.Select test case ${testCaseName} node
+    testSpecificationPage.Resequence Step Button

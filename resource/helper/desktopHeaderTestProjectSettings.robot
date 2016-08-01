@@ -100,7 +100,7 @@ Execute Test Suite
 Execute Test ${testCaseName}
     Change Test Project and go to ${executeTests} ${executeTests}
     executeTestsPage.Expanding tree
-    executeTestsPage.Select test case ${testCaseName} node
+    executeTestsPage.Select ${testCaseName} test case node
     executeTestsPage.Execute Test Case
 
 Edit Requirement Operations ${dokumentID} ${title}
@@ -114,6 +114,9 @@ Edit Requirement Operations ${dokumentID} ${title}
     Change Requirement Status and Type ${dokumentID} ${title}
     Fill the Log
 
+Delete Keyword ${KeywordName}
+    Change Test Project and go to ${keywordManagement} ${keywordManagement}
+    Delete New ${KeywordName}
 
 Assing and check custom field
     Change Test Project and go to ${AssignCustomFields} ${checkAssignCustomFields}

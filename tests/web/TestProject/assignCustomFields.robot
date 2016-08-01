@@ -27,8 +27,6 @@ ${newTestProjectPrefix}             custom
 ${newTestProjectDescription}        Test suite customFieldManagement: tp105, tp 106
 ${TestPlanName}                     testPlanforCF
 ${TestPlanDescription}              testPlandescriptionforCF
-${AssignCustomFields}               Assign Custom Fields
-${checkAssignCustomFields}          Available custom fields
 
 *** Test Cases ***
 
@@ -41,5 +39,3 @@ ${checkAssignCustomFields}          Available custom fields
     Assing and check custom field
     Delete CF ${CFNAME}
 
-
-*** Keywords ***

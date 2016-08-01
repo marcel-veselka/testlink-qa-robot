@@ -10,6 +10,7 @@ Library        Selenium2Library
 *** Variables ***
 
 ${xpathInputBtn}  xpath=//input[@id="update_btn"]
+${buttonDoBulk}   doBulkUpdateToLatest
 
 *** Keywords ***
 
@@ -31,8 +32,8 @@ Select Test Suite From The Tree ${testSuiteName}
     select frame  mainframe
     wait until page contains element  treeframe
     select frame  treeframe
-    wait until page contains element  xpath=//span[text()="${testSuiteName} (1)" ]
-    click element  xpath=//span[text()="${testSuiteName} (1)" ]
+    wait until page contains element  xpath=//span[contains(text(),"${testSuiteName}") ]
+    click element  xpath=//span[contains(text(),"${testSuiteName}") ]
     unselect frame
 
 Check Version Of The TC ${testCaseName}
@@ -71,3 +72,26 @@ UpdateLinkedTcVersion Check TC Was Changed
     wait until keyword succeeds  1min  0  updateLinkedTcVersion.I am here
     updateLinkedTcVersion.Select Test Suite From The Tree ${testSuiteName}
     wait until keyword succeeds  1min  0  updateLinkedTcVersion.Check changed TC Version ${testCaseName}
+
+### Method for checking function of Bulk Update to latest version button, which updates all TCs in test suite at once ###
+Bulk Update to latest version
+    select frame  mainframe
+    wait until page contains element  treeframe
+    select frame  treeframe
+    wait until page contains element  ${buttonDoBulk}
+    click element  ${buttonDoBulk}
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    wait until page contains element  ${xpathInputBtn}
+    click element  ${xpathInputBtn}
+    unselect frame
+
+### Control that Bulk Update to latest version method worked correctly as it must ###
+Check all Tests were Linked to latest version
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    wait until page contains  All linked Test Case Versions are current
+    unselect frame

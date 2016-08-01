@@ -52,7 +52,7 @@ Execute Test Case
     page should contain element  xpath=//div/form/div/div[contains(text(),"Build")][contains(text(),"${buildName}")]
     unselect frame
 
-Select test case ${testCaseName} node
+Select ${testCaseName} test case node
     select frame  mainframe
     select frame  treeframe
     wait until page contains  ${testCaseName}
@@ -61,7 +61,7 @@ Select test case ${testCaseName} node
     unselect frame
 
 Execute Test Case Passed
-    executeTestsPage.Select test case ${testCaseName} node
+    executeTestsPage.Select ${testCaseName} test case node
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
@@ -102,7 +102,7 @@ Check That Passed Test Was Saved
     unselect frame
 
 Execute Test Case Failed
-    executeTestsPage.Select test case ${testCaseName2} node
+    executeTestsPage.Select ${testCaseName2} test case node
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
@@ -122,7 +122,7 @@ Check That Failed Test Was Saved
     unselect frame
 
 Execute Test Case Blocked
-    executeTestsPage.Select test case ${testCaseName3} node
+    executeTestsPage.Select ${testCaseName3} test case node
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
@@ -165,7 +165,7 @@ Expanding tree
 
 Execute Test Cases
     executeTestsPage.Expanding tree
-    executeTestsPage.Select test case ${testCaseName} node
+    executeTestsPage.Select ${testCaseName} test case node
     executeTestsPage.Execute Test Case Passed
     executeTestsPage.Click on Save and move to next
     executeTestsPage.Check That Passed Test Was Saved
