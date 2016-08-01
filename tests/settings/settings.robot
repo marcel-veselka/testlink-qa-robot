@@ -34,6 +34,8 @@ ${elementOptReq}                optReq
 ${elementOptPriority}           optPriority
 ${elementOptAutomation}         optAutomation
 ${elementOptInventory}          optInventory
+${userManagement}           xpath=//img[@title="User Management"]
+${indexPage}                xpath=//img[@title="logo"]
 
 *** Test Cases ***
 
@@ -57,12 +59,22 @@ Create TP
     select checkbox  ${elementOptInventory}
     click button  Create
     unselect frame
+    sleep  2
     capture page screenshot
 
 Create new user
     capture page screenshot
-    HeaderPage Go to ${indexPage}
-    HeaderPage Go to ${userManagement}
+    select frame  titlebar
+    wait until page contains element  ${indexPage}
+    click element  ${indexPage}
+    unselect frame
+    sleep  2
+    capture page screenshot
+    select frame  titlebar
+    click element  ${userManagement}
+    sleep  2
+    capture page screenshot
+    unselect frame
     wait until page contains element  doCreate
     click element  doCreate
     wait until page contains element  lastName
