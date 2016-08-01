@@ -22,9 +22,15 @@ Check TC Version was changed ${testCaseName} ${testSuiteName} in Update Linked T
     Change Test Project and go to ${updateTCVersion} ${updateTCVersion}
     updateLinkedTcVersion.UpdateLinkedTcVersion Check TC Was Changed
 
-Add Platform to Test Plan
+Add single Platform to Test Plan
+    [Tags]  tp130
     Change Test Project and go to ${addRemovePlatforms} ${addRemovePlatforms}
-    addRemovePlatforms.Add Platform
+    addRemovePlatforms.Add single Platform
+
+Add Platform to Test Plan
+    [Tags]  tp130
+    Change Test Project and go to ${addRemovePlatforms} ${addRemovePlatforms}
+    addRemovePlatforms.Add Platforms
 
 Check There Is No Platforms Assigned
     [Tags]  tp19

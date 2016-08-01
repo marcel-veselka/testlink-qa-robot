@@ -25,11 +25,11 @@ ${PASSWORD}                         renat123
 ${newTestProjectName}               KWProject
 ${newTestProjectPrefix}             KWmngmnt
 ${newTestProjectDescription}        Description
-${testSuiteName}                    tsuite133
+${testSuiteName}                    tsuite132
 ${suiteDescription}                 Description
 ${testDescription}                  testDescription
-${testCaseName}                     tc133
-${TestPlanName}                     Tesptplan133
+${testCaseName}                     tc132
+${TestPlanName}                     Tesptplan132
 ${TestPlanDescription}              testPlandescriptionforCF
 ${AssignKeywords}                   Assign Keywords
 ${checkAssignKeywords}              keywordtest
@@ -45,7 +45,3 @@ ${Keyword}                          ${checkAssignKeywords}
     Search by ${TestCaseID} ${testCaseName} with ${newTestProjectPrefix}-
     Search by ${Title} ${testCaseName} with ${testCaseName}
     Search by selecting Keyword ${Keyword}
-
-
-
-*** Keywords ***

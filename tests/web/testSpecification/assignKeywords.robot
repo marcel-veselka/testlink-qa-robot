@@ -40,6 +40,3 @@ ${checkAssignKeywords}              keywordtest
 133 Assign Keywords
 
     Assign Keyword using blue arrow
-
-
-*** Keywords ***
