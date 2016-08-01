@@ -43,12 +43,19 @@ Login as admin default
     Fill credentials and submit ${LOGIN} ${PASSWORD}
 
 Create TP
+    select frame  mainframe
+    wait until page contains element  ${elementTPProject}
+    wait until page contains element  ${elementTCPrefix}
+    wait until page contains element  ${elementOptReq}
+    wait until page contains element  ${elementOptInventory}
+    unselect frame
     capture page screenshot
     select frame  mainframe
     input text  ${elementTPProject}  ${newTestProjectName}
     input text  ${elementTCPrefix}  ${newTestProjectPrefix}
     select checkbox  ${elementOptReq}
     select checkbox  ${elementOptInventory}
+    click button  Create
     unselect frame
     capture page screenshot
 
