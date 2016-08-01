@@ -27,6 +27,13 @@ ${css}                  css=div.messages_rounded
 ${HOSTNAME}               home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
 ${newTestProjectName}     tryit
 ${newTestProjectPrefix}   tryit
+${elementCopyFromTP}            copy_from_tproject_id
+${elementTPProject}             tprojectName
+${elementTCPrefix}              tcasePrefix
+${elementOptReq}                optReq
+${elementOptPriority}           optPriority
+${elementOptAutomation}         optAutomation
+${elementOptInventory}          optInventory
 
 *** Test Cases ***
 
@@ -36,14 +43,17 @@ Login as admin default
     Fill credentials and submit ${LOGIN} ${PASSWORD}
 
 Create TP
+    capture page screenshot
     select frame  mainframe
     input text  ${elementTPProject}  ${newTestProjectName}
     input text  ${elementTCPrefix}  ${newTestProjectPrefix}
     select checkbox  ${elementOptReq}
     select checkbox  ${elementOptInventory}
     unselect frame
+    capture page screenshot
 
 Create new user
+    capture page screenshot
     HeaderPage Go to ${indexPage}
     HeaderPage Go to ${userManagement}
     wait until page contains element  doCreate
