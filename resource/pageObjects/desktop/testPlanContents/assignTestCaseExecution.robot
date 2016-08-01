@@ -65,3 +65,7 @@ AssignTCExecution Check TC Was Corrected
     wait until keyword succeeds  1min  0  assignTestCaseExecution.I am here
     assignTestCaseExecution.Select Test Suite From The Tree ${testSuiteName}
     assignTestCaseExecution.Check Test Cases Assigned Correctly ${Username} ${PlatformName}
+
+Add another user ${user} assigned
+    wait until keyword succeeds  1min  0  assignTestCaseExecution.I am here
+    assignTestCaseExecution.Select Test Suite From The Tree ${testSuiteName}

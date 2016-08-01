@@ -19,8 +19,8 @@ Suite Setup   Run keywords  Login and Create new Test Project ${newTestProjectNa
 ...             AND         Add Platform to Test Plan
 ...             AND         Create Build with name ${buildName}
 
-Suite Teardown  Run keywords    Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
-...             AND             Close browser
+#Suite Teardown  Run keywords    Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
+#...             AND             Close browser
 
 *** Variables ***
 
@@ -48,12 +48,12 @@ ${buildDescription}             DescriptionOfBuild
     Add TC ${testCaseName} to platform ${PlatformName1} users ${Username1}
     Check Assigned TC to ${Username} and ${PlatformName}
     Check Assigned TC to ${Username1} and ${PlatformName1}
-    Unassign TC ${PlatformName}
-    Unassign TC ${PlatformName1}
-    Add TC ${testCaseName} to platform ${PlatformName} users ${Username1}
-    Add TC ${testCaseName} to platform ${PlatformName1} users ${Username}
-    Check Assigned TC to ${Username} and ${PlatformName1}
-    Check Assigned TC to ${Username1} and ${PlatformName}
-    Unassign TC ${PlatformName}
-    Unassign TC ${PlatformName1}
-    Check TC Are Not Assigned ${testSuiteName}
+
+
+    #Check Assigned TC to ${Username} and ${PlatformName}
+    #Check Assigned TC to ${Username1} and ${PlatformName}
+    #Check Assigned TC to ${Username} and ${PlatformName1}
+    #Check Assigned TC to ${Username1} and ${PlatformName1}
+    #Unassign TC ${PlatformName}
+    #Unassign TC ${PlatformName1}
+    #Check TC Are Not Assigned ${testSuiteName}
