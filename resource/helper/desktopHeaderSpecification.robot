@@ -41,6 +41,12 @@ Keywords ${testCaseName}
     testSpecificationPage.Select test case ${testCaseName} node
     assignKeywords.Assign Keywords
 
+Create single Keyword ${testCaseName}
+    [Tags]  133
+    Change Test Project and go to ${keywordManagement} ${keywordManagement}
+    assignKeywords.Create Keyword
+    assignKeywords.Check Keyword Was Created
+
 Create New Version Of TC
     [Tags]  tp78
     Change Test Project and go to ${testSpecification} ${checkTestSpecification}
@@ -81,7 +87,10 @@ Move Copy Edit ${testSuiteName} ${suite2}
     testSpecificationPage.Move Test Suite
     testSpecificationPage.Check Move And Copy Action ${suite2}
 
-
+Assign Keyword using blue arrow
+    [Tags]  tp133
+    testSpecificationPage.Select test case ${testCaseName} node
+    Assign Keywords single arrow and save
 
 
 Create Step in test case: ${testCaseName}
