@@ -14,7 +14,8 @@ ${buttonDoSearch}           doSearch
 ${textSearchTC}             Search Test Cases
 ${textTCID}                 Test Case ID
 ${textTitle}                Title
-${elementTitle}             name
+
+
 
 *** Keywords ***
 
@@ -25,12 +26,18 @@ I am here
     wait until page contains element  ${elementTCID}
     wait until page contains  ${textTCID}
     wait until page contains  ${textTitle}
-    wait until page contains element  ${elementTitle}
     unselect frame
 
 Search TC by ${element} ${text}
     select frame  mainframe
     input text  ${element}  ${text}
+    click element  ${buttonDoSearch}
+    unselect frame
+
+Click dropdown Keyword ${Keyword}
+    select frame  mainframe
+    click element  xpath=//*[@id="ext-gen3"]/div[1]/form/table/tbody/tr[8]/td[2]/select
+    click element  xpath=//*[@id="ext-gen3"]/div[1]/form/table/tbody/tr[8]/td[2]/select/option[.='${Keyword}']
     click element  ${buttonDoSearch}
     unselect frame
 

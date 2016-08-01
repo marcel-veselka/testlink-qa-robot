@@ -1,6 +1,6 @@
 *** Settings ***
 
-Documentation  There is just one test about assigning Keywords in the test specification using blue arrow
+Documentation  Testing searching engine testing 3 values, searching by: ID, Title and keyword
 
 Resource       ../../../resource/helper/desktopHeaderTestProjectSettings.robot
 Resource       ../../../resource/helper/desktopHeaderSpecification.robot
@@ -12,6 +12,8 @@ Suite Setup  Run keywords       Login and Create new Test Project ${newTestProje
 ...             AND             Create test suite ${testSuiteName} in test project ${newTestProjectName}
 ...             AND             Create test case ${testCaseName} in ${testSuiteName}
 ...             AND             Create single Keyword ${testCaseName}
+...             AND             Assign Keyword using blue arrow
+
 
 Suite Teardown  Run keywords    Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
 ...             AND             Close Browser
@@ -31,15 +33,19 @@ ${TestPlanName}                     Tesptplan133
 ${TestPlanDescription}              testPlandescriptionforCF
 ${AssignKeywords}                   Assign Keywords
 ${checkAssignKeywords}              keywordtest
-
-
+${TestCaseID}                       TCID
+${Title}                            name
+${Keyword}                          ${checkAssignKeywords}
 
 
 *** Test Cases ***
 
-133 Assign Keywords
+132 Search Test Cases
 
-    Assign Keyword using blue arrow
+    Search by ${TestCaseID} ${testCaseName} with ${newTestProjectPrefix}-
+    Search by ${Title} ${testCaseName} with ${testCaseName}
+    Search by selecting Keyword ${Keyword}
+
 
 
 *** Keywords ***

@@ -89,6 +89,7 @@ Move Copy Edit ${testSuiteName} ${suite2}
 
 Assign Keyword using blue arrow
     [Tags]  tp133
+    Change Test Project and go to ${AssignKeywords} ${checkAssignKeywords}
     testSpecificationPage.Select test case ${testCaseName} node
     Assign Keywords single arrow and save
 
@@ -135,4 +136,9 @@ Search by ${element} ${testCaseName} with ${text}
     HeaderPage Go to ${searchTC}
     searchTestCases.I am here
     Search TC by ${element} ${text}
+    Check TC ${testCaseName} was selected
+
+Search by selecting Keyword ${Keyword}
+    searchTestCases.I am here
+    searchTestCases.Click dropdown Keyword ${Keyword}
     Check TC ${testCaseName} was selected
