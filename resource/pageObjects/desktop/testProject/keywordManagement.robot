@@ -52,5 +52,5 @@ Delete New ${KeywordName}
     click button  Yes
     unselect frame
     select frame  mainframe
-    page should not contain  ${KeywordName}
+    page should not contain  xpath=//tr[td//text()[contains(.,'${KeywordName}')]]
     unselect frame
