@@ -43,8 +43,8 @@ Delete New ${KeywordName}
     select frame  mainframe
     wait until page contains  ${KeywordName}
     page should contain  ${KeywordName}
-    wait until page contains element  xpath=//tr/td/img
-    click element  xpath=//tr/td/img
+    wait until page contains element  Delete keyword?
+    click element  Delete keyword?
     wait until page contains  Yes
     click button  Yes
     unselect frame

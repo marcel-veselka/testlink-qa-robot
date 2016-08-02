@@ -63,7 +63,7 @@ ${newText}                          NewStepAction
     Leave fields blanked for TC and check control warning message
     Edit TC's ${testCaseName2} name, preconditions, keywords
     Edit Step ${newText} of Test Case ${testCaseName2}
-    #Use Resequence Step Button ${testCaseName}
+    Use Resequence Step Button ${testCaseName}
     Delete Keyword ${KeywordName}
 
 89 Delete test case
