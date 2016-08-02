@@ -17,7 +17,7 @@ Suite Setup   Run keywords  Login and Create new Test Project ${newTestProjectNa
 ...             AND         Create New Version Of TC ${testCaseName1}
 ...             AND         Create New Test Plan ${TestPlanName}
 ...             AND         Create Platform ${PlatformName}
-...             AND         Add Platform to Test Plan
+...             AND         Add single Platform to Test Plan
 ...             AND         Create Build with name ${buildName}
 ...             AND         Assign all test cases to ${PlatformName}
 

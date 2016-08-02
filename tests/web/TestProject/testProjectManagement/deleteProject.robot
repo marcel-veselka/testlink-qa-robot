@@ -54,7 +54,7 @@ Preconditions for tc20
     Go to index page and change testproject
     Create New Test Plan ${TestPlanName}
     Create Platform ${PlatformName}
-    Add Platform to Test Plan
+    Add single Platform to Test Plan
     Create Build with name ${buildName}
     Create test suite ${testSuiteName} in test project ${newTestProjectName}
     Create test case ${testCaseName} in ${testSuiteName}
