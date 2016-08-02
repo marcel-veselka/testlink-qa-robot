@@ -8,7 +8,6 @@ Resource       ../../../resource/helper/desktopHeaderTestProjectSettings.robot
 Resource       ../../../resource/helper/desktopHeaderTestPlan.robot
 
 Suite Setup  Run keywords    Login and Create new Test Project ${newTestProjectName} ${newTestProjectPrefix}
-...             AND          Go to index page and change testproject
 ...             AND          Create New Test Plan ${TestPlanName}
 
 Suite Teardown  Run keywords  Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}

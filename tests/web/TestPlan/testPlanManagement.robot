@@ -10,11 +10,11 @@ Resource       ../../../resource/helper/desktopHeaderTestPlan.robot
 Resource       ../../../resource/helper/desktopHeaderSpecification.robot
 Resource       ../../../resource/helper/desktopHeaderPlanContent.robot
 
-Suite Setup  Run keywords    Login and Create new Test Project ${newTestProjectName} ${newTestProjectPrefix}
-...             AND          Go to index page and change testproject
+Suite Setup                      Login and Create new Test Project ${newTestProjectName} ${newTestProjectPrefix}
+
 
 Suite Teardown  Run keywords    Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
-...             AND            close browser
+...             AND             close browser
 
 *** Variables ***
 
