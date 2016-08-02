@@ -39,7 +39,7 @@ Check keyword
     page should contain  ${keywordName}
     unselect frame
 
-Delete New ${KeywordName}
+New ${KeywordName} Delete
     select frame  mainframe
     wait until page contains  ${KeywordName}
     page should contain  ${KeywordName}

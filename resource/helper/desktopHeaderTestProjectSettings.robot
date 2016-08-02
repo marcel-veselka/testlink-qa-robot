@@ -116,7 +116,7 @@ Edit Requirement Operations ${dokumentID} ${title}
 
 Delete Keyword ${KeywordName}
     Change Test Project and go to ${keywordManagement} ${keywordManagement}
-    Delete New ${KeywordName}
+    New ${KeywordName} Delete
 
 Assing and check custom field
     Change Test Project and go to ${AssignCustomFields} ${checkAssignCustomFields}
