@@ -14,8 +14,8 @@ Suite Setup  Run keywords    Login and Create new Test Project ${newTestProjectN
 ...             AND          Create Build with name ${buildName}
 ...             AND          Create test suite ${testSuiteName} in test project ${newTestProjectName}
 
-Suite Teardown  Run keywords     Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
-...             AND              Close browser
+#Suite Teardown  Run keywords     Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
+#...             AND              Close browser
 
 
 *** Variables ***
@@ -63,7 +63,7 @@ ${newText}                          NewStepAction
     Leave fields blanked for TC and check control warning message
     Edit TC's ${testCaseName2} name, preconditions, keywords
     Edit Step ${newText} of Test Case ${testCaseName2}
-    Use Resequence Step Button ${testCaseName}
+    Use Resequence Step Button ${testCaseName2}
     Delete Keyword ${KeywordName}
 
 89 Delete test case

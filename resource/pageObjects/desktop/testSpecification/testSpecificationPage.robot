@@ -508,6 +508,10 @@ Resequence Step Button
     click element  xpath=//tr[@id="step_row_2"]//img[@title="Delete step"]
     unselect frame
     select frame  mainframe
+    wait until page contains  Yes
+    click button  Yes
+    unselect frame
+    select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
     page should not contain  ${xpathStepRow2}
