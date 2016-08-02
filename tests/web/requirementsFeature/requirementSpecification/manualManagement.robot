@@ -22,8 +22,26 @@ ${dokumentID1}                  newdokument40
 ${title1}                       newtitle40
 ${dokumentID2}                  newdokument41
 ${title2}                       newtitle41
-${dokumentID3}                   newdokumentid44
-${title3}                        newtitle44
+${dokumentID3}                  newdokumentid44
+${title3}                       newtitle44
+${dokumentID4}                  newdokumentid127
+${title4}                       newtitle127
+${dokumentID5}                  newdokumentid127_1
+${title5}                       newtitle127_1
+${dokumentID6}                  newdokumentid128
+${title6}                       newtitle128
+${dokumentID6_1}                newdokumentid128_1
+${title6_1}                     newtitle128_1
+${dokumentID7}                  newdokumentid129
+${title7}                       newtitle129
+${docID}                        filter_doc_id
+${inputTitle}                   filter_title
+${status}                       filter_status
+${type}                         filter_type
+${specType}                     filter_spec_type
+${statusValue}                  F
+${typeValue}                    1
+${specTypeValue}                2
 
 *** Test Cases ***
 
@@ -65,6 +83,29 @@ ${title3}                        newtitle44
     Delete More Than 1 Version Requirement ${dokumentID3} ${title3}
     Check Requirement Version ${dokumentID3} ${title3}
 
+127 Create New Requirement
+    [Tags]  127
+    Preconditions for tc127
+    Change Test Project and go to ${requirmSpecification} ${checkRequirmSpecification}
+    Choose Requirement Specification ${dokumentID4} ${title4}
+    Create Requirement Operations ${dokumentID5} ${title5}
+
+128 Filter Requirements
+    [Tags]  128
+    Preconditions for tc128
+    Input ${docID} Filter ${dokumentID6} Requirement Specification ${dokumentID6} ${title6}
+    Input ${inputTitle} Filter ${title6} Requirement Specification ${dokumentID6} ${title6}
+    ComboBox ${status} Filter ${statusValue} Requirement Specification ${dokumentID6_1} ${title6_1}
+    ComboBox ${type} Filter ${typeValue} Requirement Specification ${dokumentID6_1} ${title6_1}
+    ComboBox ${specType} Filter ${specTypeValue} Requirement Specification ${dokumentID6} ${title6}
+
+129 Delete the latest version of Requirement
+    [Tags]  129
+    Preconditions for tc129
+    Change Test Project and go to ${requirmSpecification} ${checkRequirmSpecification}
+    Select More Than 1 Version Requirement ${dokumentID7} ${title7}
+    Delete More Than 1 Version Requirement ${dokumentID7} ${title7}
+
 *** Keywords ***
 
 Preconditions for tc40
@@ -79,3 +120,20 @@ Preconditions for tc41
     Create Requirement Operations ${dokumentID2} ${title2}
     Choose Requirement Specification ${dokumentID2} ${title2}
     Create Requirement Operations ${dokumentID2} ${title2}
+
+Preconditions for tc127
+    Change Test Project and go to ${requirmSpecification} ${checkRequirmSpecification}
+    Create New Requirement Specification (type URS) ${dokumentID4} ${title4}
+
+Preconditions for tc128
+    Change Test Project and go to ${requirmSpecification} ${checkRequirmSpecification}
+    Create New Requirement Specification (type URS) ${dokumentID6} ${title6}
+    Choose Requirement Specification ${dokumentID6} ${title6}
+    Create Requirement Operations ${dokumentID6_1} ${title6_1}
+
+Preconditions for tc129
+    Change Test Project and go to ${requirmSpecification} ${checkRequirmSpecification}
+    Create New Requirement Specification (type URS) ${dokumentID7} ${title7}
+    Choose Requirement Specification ${dokumentID7} ${title7}
+    Create Requirement Operations ${dokumentID7} ${title7}
+    Create New Version Of Requirement ${dokumentID7} ${title7}

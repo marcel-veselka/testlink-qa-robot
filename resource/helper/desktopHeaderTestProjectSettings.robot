@@ -104,7 +104,7 @@ Execute Test ${testCaseName}
     executeTestsPage.Execute Test Case
 
 Edit Requirement Operations ${dokumentID} ${title}
-    Choose Requirement Operation to Edit Requirement ${dokumentID} ${title}
+    Requirement Operation to Edit Requirement ${dokumentID} ${title}
     Leave Document ID and Title blank
     Warning Message appears DocID
     Leave Document ID blank, fill in Title ${title}

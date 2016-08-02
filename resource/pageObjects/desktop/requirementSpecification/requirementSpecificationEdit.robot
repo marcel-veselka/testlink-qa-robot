@@ -34,7 +34,9 @@ ${elementNewRevision}           new_revision
 ${elementNewButton}             new_version
 ${elementPrintFriendly}         printerFriendly
 ${elementDeleteSRS}             deleteSRS
+${buttonDoUpdateTree}           doUpdateTree
 ${blank}
+${buttonResetFilters}           btn_reset_filters
 
 *** Keywords ***
 
@@ -93,6 +95,8 @@ Create Requirement Operations ${dokumentID} ${title}
     select frame  mainframe
     wait until page contains element  treeframe
     select frame  treeframe
+    wait until page contains element  ${elementExpandTree}
+    click element  ${elementExpandTree}
     wait until page contains  ${dokumentID}:${title}
     unselect frame
 
@@ -168,7 +172,7 @@ Warning Message appears Title
     click button    OK
     unselect frame
 
-Choose Requirement Operation to Edit Requirement ${dokumentID} ${title}
+Choose Requirement Operation ${dokumentID} ${title}
     select frame  mainframe
     wait until page contains element  treeframe
     select frame  treeframe
@@ -183,11 +187,22 @@ Choose Requirement Operation to Edit Requirement ${dokumentID} ${title}
     wait until page contains element  ${xpathActions}
     click element  ${xpathActions}
     wait until page contains element  ${elementEditReq}
+    unselect frame
+
+Edit Requirement Operation
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    wait until page contains element  ${elementEditReq}
     click button  ${elementEditReq}
     wait until page contains element  ${elementCreateReq}
     wait until page contains element  ${elementReqStatus}
     wait until page contains element  ${elementReqType}
     unselect frame
+
+Requirement Operation to Edit Requirement ${dokumentID} ${title}
+    Choose Requirement Operation ${dokumentID} ${title}
+    Edit Requirement Operation
 
 Create Test Case From Requirement ${dokumentID} ${title}
     select frame  mainframe
@@ -260,7 +275,6 @@ Select More Than 1 Version Requirement ${dokumentID} ${title}
     wait until page contains element  ${elementExpandTree}
     wait until page contains element  ${elementCollapseTree}
     click element  ${elementExpandTree}
-    #sleep  2
     wait until page contains element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     wait until keyword succeeds  1min  0  double click element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     unselect frame
@@ -296,7 +310,6 @@ Check Requirement Version ${dokumentID} ${title}
     wait until page contains element  ${elementExpandTree}
     wait until page contains element  ${elementCollapseTree}
     click element  ${elementExpandTree}
-    #sleep  2
     wait until page contains element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     wait until keyword succeeds  1min  0  double click element  xpath=//a[span[text()="${dokumentID}:${title}"]]
     unselect frame
@@ -305,3 +318,50 @@ Check Requirement Version ${dokumentID} ${title}
     select frame  workframe
     wait until page contains element  xpath=//td[starts-with(text(), 'Version') and contains(text(), '1 revision')]
     unselect frame
+
+Input ${Input} Filter ${Filter} Requirement Specification ${dokumentID} ${title}
+    select frame  mainframe
+    wait until page contains element  treeframe
+    select frame  treeframe
+    wait until page contains element  filter_doc_id
+    wait until page contains element  filter_title
+    wait until page contains element  ${buttonDoUpdateTree}
+    wait until page contains element  ${buttonResetFilters}
+    input text  ${Input}  ${Filter}
+    click element  ${buttonDoUpdateTree}
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  treeframe
+    select frame  treeframe
+    wait until page contains element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
+    page should contain element  xpath=//ul[li[contains(., "${dokumentID}:${title}")]]//a[contains(., "${dokumentID}:${title}")]
+    click element  ${buttonResetFilters}
+    unselect frame
+
+ComboBox ${Type} Filter ${Value} Requirement Specification ${dokumentID} ${title}
+    select frame  mainframe
+    wait until page contains element  treeframe
+    select frame  treeframe
+    wait until page contains element  filter_status
+    wait until page contains element  filter_type
+    wait until page contains element  filter_spec_type
+    wait until page contains element  ${buttonDoUpdateTree}
+    wait until page contains element  ${elementExpandTree}
+    wait until page contains element  ${buttonResetFilters}
+    select from list by value  ${Type}  ${Value}
+    click element  ${buttonDoUpdateTree}
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  treeframe
+    select frame  treeframe
+    wait until page contains element  ${elementExpandTree}
+    click element  ${elementExpandTree}
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  treeframe
+    select frame  treeframe
+    wait until page contains element  xpath=//span[contains(text(),"${dokumentID}:${title}")]
+    page should contain element  xpath=//span[contains(text(),"${dokumentID}:${title}")]
+    click element  ${buttonResetFilters}
+    unselect frame
+
