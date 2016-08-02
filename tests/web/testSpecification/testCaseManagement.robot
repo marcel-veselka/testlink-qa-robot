@@ -74,7 +74,7 @@ ${newText}                          NewStepAction
     Delete Test Case ${testCaseName3}
     Select test case ${testCaseName4} node and click action button
     Delete Test Case ${testCaseName4}
-    Select test case ${testCaseName4} node
+    Select test case ${testCaseName5} node
     Delete Test Step
 
 ###  Test case operations: Print, Create a new version, Deactivate this version, ###
@@ -83,11 +83,11 @@ ${newText}                          NewStepAction
 
     Preconditions for tc90
     Change Test Project and go to ${testSpecification} ${checkTestSpecification}
-    Create New Sibling ${testCaseName6} For ${testCaseName5}
-    Check All Actions Buttons For Test Case ${testCaseName6}
-    Add Test Case ${testCaseName6} To the Test Plan ${TestPlanName}
-    Execute Test ${testCaseName6}
-    Show Execution History ${testCaseName6}
+    Create New Sibling ${testCaseName7} For ${testCaseName6}
+    Check All Actions Buttons For Test Case ${testCaseName7}
+    Add Test Case ${testCaseName7} To the Test Plan ${TestPlanName}
+    Execute Test ${testCaseName7}
+    Show Execution History ${testCaseName7}
 
 *** Keywords ***
 
@@ -100,8 +100,8 @@ Preconditions for tc89
     Create test case ${testCaseName4} in ${testSuiteName}
     Create test case ${testCaseName5} in ${testSuiteName}
     Add Test Case ${testCaseName3} To the Test Plan ${TestPlanName}
-    Execute Test ${testCaseName4}
-    Keywords ${testCaseName3}
+    Execute Test ${testCaseName3}
+    Keywords ${testCaseName4}
 
 Preconditions for tc90
-    Create test case ${testCaseName5} in ${testSuiteName}
+    Create test case ${testCaseName6} in ${testSuiteName}

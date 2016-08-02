@@ -21,6 +21,7 @@ ${targetTC}                 targetTestCase
 
 *** Keywords ***
 I am here
+    wait until page contains element  titlebar
     select frame  titlebar
     wait until page contains element  ${indexPage}
     wait until page contains element  ${mySettings}
@@ -53,7 +54,9 @@ HeaderPage Go to ${link}
     unselect frame
 
 Choose test project from dropdown
+    wait until page contains element  titlebar
     select frame  titlebar
+    wait until page contains element  ${testProject}
     select from list by label  ${testProject}  ${newTestProjectPrefix}:${newTestProjectName}
     unselect frame
 
