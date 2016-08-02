@@ -63,8 +63,8 @@ ${newText}                          NewStepAction
     Leave fields blanked for TC and check control warning message
     Edit TC's ${testCaseName2} name, preconditions, keywords
     Edit Step ${newText} of Test Case ${testCaseName2}
-    #Use Resequence Step Button ${testCaseName}
-    #Delete Keyword ${KeywordName}
+    Use Resequence Step Button ${testCaseName}
+    Delete Keyword ${KeywordName}
 
 89 Delete test case
 
@@ -101,7 +101,7 @@ Preconditions for tc89
     Create test case ${testCaseName5} in ${testSuiteName}
     Add Test Case ${testCaseName3} To the Test Plan ${TestPlanName}
     Execute Test ${testCaseName4}
-    #Keywords ${testCaseName3}
+    Keywords ${testCaseName3}
 
 Preconditions for tc90
     Create test case ${testCaseName5} in ${testSuiteName}
