@@ -43,10 +43,9 @@ Delete New ${KeywordName}
     select frame  mainframe
     wait until page contains  ${KeywordName}
     page should contain  ${KeywordName}
-    wait until page contains element  xpath=//img[@title="Delete keyword?"]
     unselect frame
     select frame  mainframe
-    click element  xpath=//img[@title="Delete keyword?"]
+    click element  xpath=//tr[td//text()[contains(.,'${KeywordName}')]]/td[last()]
     unselect frame
     select frame  mainframe
     wait until page contains  Yes

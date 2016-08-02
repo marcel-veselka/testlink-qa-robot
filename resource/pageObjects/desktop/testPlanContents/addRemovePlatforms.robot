@@ -36,16 +36,13 @@ Check there is platform assigned
     unselect frame
 
 Add Platforms
-
     select frame  mainframe
     click element  xpath=//tr/td[2]/img[1]
     click button  ${elementDoAssignPlatforms}
     wait until page contains element  xpath=//*[@id="to_select_box"]/option[2]
     unselect frame
 
-
 Add single Platform
-
     select frame  mainframe
     wait until page contains element  xpath=//tr/td[2]/img[2]
     click element  xpath=//*[@id="from_select_box"]/option[1]

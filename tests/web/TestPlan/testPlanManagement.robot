@@ -69,7 +69,7 @@ ${PlatformName1}                Platform56
 56 Edit and Order Test Plan
     [Tags]  56
     Preconditions for tc56
-    Order By Test Case, Name, Build, Pltaform In Test Plan Management ${TestPlanName5} ${TestPlanName6}
+    Order By Test Case, Name, Build, Platform In Test Plan Management ${TestPlanName5} ${TestPlanName6}
     Make all Test Plan Active/Inactive ${TestPlanName5} ${TestPlanName6}
     ### This method contains several functions, which control leaving Test Plan name and description blank ###
     ### editing of Test Plan ###
@@ -93,7 +93,7 @@ Preconditions for tc56
     Create New Test Plan ${TestPlanName6}
     Create Build with name ${buildName}
     Create Platform ${PlatformName1}
-    Add Platform to Test Plan
+    Add single Platform to Test Plan
     Create test suite ${testSuiteName} in test project ${newTestProjectName}
     Create test case ${testCaseName} in ${testSuiteName}
     Add Test Case ${testCaseName} To the Test Plan ${TestPlanName5}
