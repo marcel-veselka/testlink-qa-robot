@@ -21,7 +21,7 @@ Suite Teardown  Run keywords    Delete test project  ${newTestProjectName}  ${ne
 ${LOGIN}                        renat.kulalov
 ${PASSWORD}                     renat123
 ${newTestProjectName}           TestPlanCreate
-${newTestProjectPrefix}         createTest
+${newTestProjectPrefix}         TestCreate
 ${newTestProjectDescription}    DesctiptioneOfTestProject
 ${testSuiteName}                testSuite56
 ${testCaseName}                 tc56

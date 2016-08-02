@@ -516,8 +516,13 @@ Resequence Step Button
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
+    wait until page contains element  ${buttonResequence}
     page should not contain  ${xpathStepRow2}
-    click element  ${buttonResequence}
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    click button  ${buttonResequence}
     unselect frame
     select frame  mainframe
     wait until page contains element  workframe
