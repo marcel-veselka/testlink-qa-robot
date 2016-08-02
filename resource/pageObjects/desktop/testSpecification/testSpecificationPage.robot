@@ -949,7 +949,7 @@ Check Black Arrow
     testSpecificationPage.Click on black arrow
     testSpecificationPage.Control black arrow
 
-Add TC to the Test Plan
+Add TC ${testCaseName1} to the Test Plan ${TestPlanName}
     testSpecificationPage.Select test case ${testCaseName1} node and click action button
     testSpecificationPage.Click On Add To Test Plans ${TestPlanName}
 

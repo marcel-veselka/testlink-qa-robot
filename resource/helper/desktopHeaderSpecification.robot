@@ -27,6 +27,10 @@ Add Test Suite to Test Plan
     Change Test Project and go to ${testSpecification} ${checkTestSpecification}
     testSpecificationPage.Add Test Cases to the Test Plan
 
+Test Case ${testCaseName1} Add To Test Plan ${TestPlanName}
+    Change Test Project and go to ${testSpecification} ${checkTestSpecification}
+    testSpecificationPage.Add TC ${testCaseName1} to the Test Plan ${TestPlanName}
+
 Create Test Suite
     [Tags]  tp86
     Change Test Project and go to ${testSpecification} ${checkTestSpecification}

@@ -28,7 +28,7 @@ before_script:
   - "cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys"
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - "today=$(date +%d.%m.%Y_%H:%M)"
+  - "today=$(date +%d.%m.%Y_%H.%M)"
   #- "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
 ###
   #- sudo apt-get install apache2
