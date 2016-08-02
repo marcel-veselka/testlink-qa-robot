@@ -68,6 +68,7 @@ Check Warning message
 Check new project exists
     [Arguments]  ${newTestProjectName}
     select frame  mainframe
+    wait until page contains element  ${xpathTable}
     element should contain  ${xpathTable}   ${newTestProjectName}
     unselect frame
 
