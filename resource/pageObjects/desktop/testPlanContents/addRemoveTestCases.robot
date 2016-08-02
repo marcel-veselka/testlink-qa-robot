@@ -4,35 +4,30 @@ Documentation  A resource file containing the application specific keywords
 ...            that create our own domain specific language. This resource
 ...            implements keywords for testing HTML version of the test
 ...            application.
+
 Library        Selenium2Library
 
 
 *** Variables ***
 
-${SERVER}        testlab.tesena.com/testlink
-${DELAY}         0
-${LOGIN URL}     http://${SERVER}/login.php
-${WELCOME URL}   http://${SERVER}/index.php?caller=login
-${ERROR URL}     http://${SERVER}/login.php
-${BROWSER}      ff
-
-
+${xpathInputDoAddRemove}    xpath=//input[@name="doAddRemove"]
+${elementTesterID}          testerID
 *** Keywords ***
+
 Check Page Add/Remove TC ${PlatformName}
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    wait until page contains element  xpath=//input[@name="doAddRemove"]
+    wait until page contains element  ${xpathInputDoAddRemove}
     wait until page contains element  xpath=//tbody[tr/td[contains(text(),"${PlatformName}")]]
-    wait until page contains element  testerID
+    wait until page contains element  ${elementTesterID}
     unselect frame
-
 
 Assign TC to user ${Username}
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
-    select from list by label  testerID  ${Username}
+    select from list by label  ${elementTesterID}  ${Username}
     unselect frame
 
 Assign TC to platform ${PlatformName}
@@ -40,7 +35,7 @@ Assign TC to platform ${PlatformName}
     wait until page contains element  workframe
     select frame  workframe
     click element  xpath=//tr[td[text()="${PlatformName}"]]//input[1]
-    click element  xpath=//input[@name="doAddRemove"]
+    click element  ${xpathInputDoAddRemove}
     unselect frame
 
 Check TC were Assigned
@@ -63,5 +58,28 @@ Unassign TC from ${PlatformName}
     wait until page contains element  workframe
     select frame  workframe
     click element  xpath=//tr[td[text()="${PlatformName}"]]//input[@type="checkbox"]
-    click element  xpath=//input[@name="doAddRemove"]
+    click element  ${xpathInputDoAddRemove}
+    unselect frame
+
+Assign to user ${Username} & platform ${PlatformName} TC
+    addRemoveTestCases.Show Test Cases
+    wait until keyword succeeds  1min  0  addRemoveTestCases.Check Page Add/Remove TC ${PlatformName}
+    addRemoveTestCases.Assign TC to user ${Username}
+    addRemoveTestCases.Assign TC to platform ${PlatformName}
+
+Unassign platform and its testCases ${PlatformName}
+    addRemoveTestCases.Show Test Cases
+    wait until keyword succeeds  1min  0  addRemoveTestCases.Check Page Add/Remove TC ${PlatformName}
+    addRemoveTestCases.Check TC were Assigned
+    addRemoveTestCases.Unassign TC from ${PlatformName}
+
+Assign All TC to Platform ${PlatformName}
+    select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
+    wait until page contains element  select_platform
+    wait until page contains element  xpath=//button[contains(text(),"adding")]
+    select from list by label  select_platform  ${PlatformName}
+    click element  xpath=//button[contains(text(),"adding")]
+    click element  ${xpathInputDoAddRemove}
     unselect frame

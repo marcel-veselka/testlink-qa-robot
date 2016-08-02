@@ -9,28 +9,23 @@ Library        Selenium2Library
 
 *** Variables ***
 
-${SERVER}        testlab.tesena.com/testlink
-${DELAY}         0
-${LOGIN URL}     http://${SERVER}/login.php
-${WELCOME URL}   http://${SERVER}/index.php?caller=login
-${ERROR URL}     http://${SERVER}/login.php
-${BROWSER}      ff
-
+${elementDoActionButton}        doActionButton
+${xpathInputActive}             xpath=//input[@name="active"]
 
 *** Keywords ***
+
 Wait until page contains all elements
     select frame  mainframe
-    wait until page contains element  name=active
-    wait until page contains element  name=doActionButton
+    wait until page contains element  active
+    wait until page contains element  ${elementDoActionButton}
     unselect frame
 
 Unselect Checkbox Availibility Active
     testProjectEdit.Wait until page contains all elements
     select frame  mainframe
-    checkbox should be selected  xpath=//input[@name="active"]
-    unselect checkbox  xpath=//input[@name="active"]
-    testProjectEdit.Click Save Button
+    checkbox should be selected  ${xpathInputActive}
+    unselect checkbox  ${xpathInputActive}
+    click element  ${elementDoActionButton}
     unselect frame
 
-Click Save Button
-    click element  name=doActionButton
+
