@@ -63,7 +63,7 @@ ${xpathStepRowImage}                    xpath=//*[@id="step_row_1"]/td[5]/img
 ${xpathStepRow2}                        xpath=//*[@id="step_row_2"]
 ${xpathStepRow1}                        xpath=//*[@id="step_row_1"]
 ${xpathDoToogleCF}                      xpath=//input[@id="doToggleCF"]
-${buttonResequence}                     resequence_steps
+${buttonResequence}                     xpath=//input[@id="resequence_steps"]
 ${xpathStepRow1}                        xpath=//tr[@id="step_row_1"]
 ${xpathStepRow2}                        xpath=//tr[@id="step_row_2"]
 ${xpathStepRow3}                        xpath=//tr[@id="step_row_3"]
@@ -508,6 +508,8 @@ Resequence Step Button
     click element  xpath=//tr[@id="step_row_2"]//img[@title="Delete step"]
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
+    select frame  workframe
     wait until page contains  Yes
     click button  Yes
     unselect frame

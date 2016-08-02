@@ -43,12 +43,12 @@ I am here in full
     unselect frame
 
 HeaderPage Go to ${link}
-    select frame  titlebar
+    #select frame  titlebar
     #wait until page contains element  ${indexPage}
     #click element  ${indexPage}
     #unselect frame
     wait until keyword succeeds  1min  0  headerPage.I am here
-    #select frame  titlebar
+    select frame  titlebar
     click element  ${link}
     unselect frame
 
