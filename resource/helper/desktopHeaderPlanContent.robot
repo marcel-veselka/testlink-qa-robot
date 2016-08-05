@@ -7,6 +7,7 @@ Resource  ../../resource/pageObjects/desktop/testPlanContents/addRemoveTestCases
 Resource  ../../resource/pageObjects/desktop/testPlanContents/assignTestCaseExecution.robot
 Resource  ../../resource/pageObjects/desktop/testPlanContents/updateLinkedTcVersion.robot
 Resource  ../../resource/pageObjects/desktop/testPlanContents/addRemovePlatforms.robot
+Resource  ../../resource/pageObjects/desktop/testPlanContents/setUrgentTests.robot
 
 *** Variables ***
 
@@ -84,3 +85,14 @@ Assign all test cases to ${PlatformName}
     Change Test Project and go to ${addRemoveTestCases} ${checkAddRemoveTestCases}
     addRemoveTestCases.Show Test Cases
     addRemoveTestCases.Assign All TC to Platform ${PlatformName}
+
+Search ${testSuiteName} By ${filter} From ${dropBox}
+    Change Test Project and go to ${setUrgentTests} ${setUrgentTests}
+    setUrgentTests.Select by Filter ${filter} from ${dropBox}
+    setUrgentTests.Check The Result ${testSuiteName} for Selection
+
+Set Test Suite ${testSuiteName} & Test Case Urgency
+    Change Test Project and go to ${setUrgentTests} ${setUrgentTests}
+    updateLinkedTcVersion.Select Test Suite From The Tree ${testSuiteName}
+    setUrgentTests.Set Urgency to Test Suite
+    setUrgentTests.Set Urgency to Test Case

@@ -10,8 +10,8 @@ Resource       ../../../resource/helper/desktopHeaderSpecification.robot
 
 Test Setup   Run keywords  Login and Create new Test Project ${newTestProjectName} ${newTestProjectPrefix}
 
-#Test Teardown  Run keywords    Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
-#...             AND             Close browser
+Test Teardown  Run keywords    Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
+...             AND             Close browser
 
 *** Variables ***
 
@@ -29,22 +29,26 @@ ${testCaseName2}                tc77
 ${testCaseName3}                tc77_1
 ${TestPlanName}                 testPlan78
 ${TestPlanName1}                testPlan77
+${TestPlanName2}                testPlan77_1
 ${TestPlanDescription}          DescriptionOfTestPlan
 ${PlatformName}                 Platform
+${PlatformName1}                Platform1
 ${buildName}                    buildName78
 ${buildName1}                   buildName77
 ${Username}                     renat.kulalov
 ${Username1}                    jan.pippal
 ${buildDescription}             DescriptionOfBuild
+${NoFilter}                     [Any]
 
 
 *** Test Cases ***
 
-#77 Set Urgent Test
-    #[Tags]  77
-    #Preconditions for tc77
-    #Change Test Project and go to ${setUrgentTests} ${setUrgentTests}
-
+77 Set Urgent Test
+    [Tags]  77
+    Preconditions for tc77
+    Search ${testSuiteName1} By ${PlatformName} From ${NoFilter}
+    Search ${testSuiteName2} By ${TestPlanName2} From ${TestPlanName1}
+    Set Test Suite ${testSuiteName2} & Test Case Urgency
 
 78 Update Linked TC version
     Preconditions for tc78
@@ -61,15 +65,17 @@ ${buildDescription}             DescriptionOfBuild
 
 Preconditions for tc77
     Create test suite ${testSuiteName1} in test project ${newTestProjectName}
-    Create test suite ${testSuiteName2} in test project ${newTestProjectName}
     Create test case ${testCaseName2} in ${testSuiteName1}
-    Create test case ${testCaseName3} in ${testSuiteName2}
     Create New Test Plan ${TestPlanName1}
     Create Platform ${PlatformName}
     Add single Platform to Test Plan
     Create Build with name ${buildName1}
-    Test Case ${testCaseName2} Add To Test Plan ${TestPlanName1}
-    Add TC ${testCaseName3} to platform ${PlatformName} users ${Username}
+    Add TC ${testCaseName2} to platform ${PlatformName} users ${Username}
+    Create test suite ${testSuiteName2} in test project ${newTestProjectName}
+    Create test case ${testCaseName3} in ${testSuiteName2}
+    Create New Test Plan ${TestPlanName2}
+    Create Platform ${PlatformName1}
+    Test Case ${testCaseName3} Add To Test Plan ${TestPlanName2}
 
 Preconditions for tc78
     Create test suite ${testSuiteName} in test project ${newTestProjectName}
