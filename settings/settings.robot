@@ -34,8 +34,9 @@ ${elementOptReq}                    optReq
 ${elementOptPriority}               optPriority
 ${elementOptAutomation}             optAutomation
 ${elementOptInventory}              optInventory
-${userManagement}                   xpath=//img[@title="User Management"]
+${userManagement}                   xpath=//img[@title="Users/Roles"]
 ${indexPage}                        xpath=//img[@title="logo"]
+${xpathTable}                   xpath=//table[@id="item_view"]
 
 *** Test Cases ***
 
@@ -57,6 +58,12 @@ Create TP
     select checkbox  ${elementOptReq}
     select checkbox  ${elementOptInventory}
     click button  doActionButton
+    unselect frame
+
+Check new project exists
+    select frame  mainframe
+    wait until page contains element  ${xpathTable}
+    element should contain  ${xpathTable}   ${newTestProjectName}
     unselect frame
 
 Create new user
