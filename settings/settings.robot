@@ -80,13 +80,19 @@ Create Renat new user
     click element  xpath=//input[@name="doCreate"]
     unselect frame
     select frame  mainframe
+    wait until page contains element  login
+    wait until page contains element  firstName
     wait until page contains element  lastName
+    wait until page contains element  emailAddress
     wait until page contains element  password
     wait until page contains element  rights_id
     wait until page contains element  locale
     wait until page contains element  authentication
     wait until page contains element  do_update
+    input text  login  renat.kulalov
+    input text  firstName  Renat
     input text  lastName  renat.kulalov
+    input text  emailAddress  renat.kulalov@tesena.com
     input text  password  renat123
     select from list by label  rights_id  admin
     select from list by label  locale  English (wide/UK)
@@ -109,19 +115,22 @@ Create Vojta new user
     click element  xpath=//input[@name="doCreate"]
     unselect frame
     select frame  mainframe
+    wait until page contains element  login
     wait until page contains element  firstName
-    wait until page contains element  emailAddress
     wait until page contains element  lastName
+    wait until page contains element  emailAddress
     wait until page contains element  password
     wait until page contains element  rights_id
     wait until page contains element  locale
     wait until page contains element  authentication
     wait until page contains element  do_update
+    input text  login  vojta.svoboda
     input text  firstName  karel
     input text  lastName  karel
     input text  password  vojta123
     input text  emailAddress  email@email.com
     select from list by label  rights_id  guest
+    select from list by label  authentication  Default(DB)
     select from list by label  locale  Czech
     select checkbox  user_is_active
     click element  do_update
@@ -141,20 +150,23 @@ Create Jan new user
     click element  xpath=//input[@name="doCreate"]
     unselect frame
     select frame  mainframe
+    wait until page contains element  login
     wait until page contains element  firstName
-    wait until page contains element  emailAddress
     wait until page contains element  lastName
+    wait until page contains element  emailAddress
     wait until page contains element  password
     wait until page contains element  rights_id
     wait until page contains element  locale
     wait until page contains element  authentication
     wait until page contains element  do_update
+    input text  login  jan.pippal
     input text  emailAddress  jan.pippal@tesena.com
     input text  firstName  Jan
     input text  lastName  Pippal
     input text  password  jan123
     select from list by label  rights_id  guest
     select from list by label  locale  Czech
+    select from list by label  authentication  Default(DB)
     select checkbox  user_is_active
     click element  do_update
     unselect frame
