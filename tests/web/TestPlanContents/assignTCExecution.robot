@@ -43,8 +43,8 @@ ${buildDescription}             DescriptionOfBuild
 
 ### Checking the fuctionality of Assign/ Unassign test case to a user feature ###
 74 Assign Test Case Execution
-    Add TC ${testCaseName} to platform ${PlatformName} users ${Username1}
-    Add TC ${testCaseName} to platform ${PlatformName1} users ${Username}
+    Add TC ${testCaseName} to platform ${PlatformName} users ${Username}
+    Add TC ${testCaseName} to platform ${PlatformName1} users ${Username1}
     Check Assigned TC to ${Username} and ${PlatformName}
     Check Assigned TC to ${Username1} and ${PlatformName1}
     Assign to another user ${Username} and ${PlatformName} ${Username1}

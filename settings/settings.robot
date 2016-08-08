@@ -234,7 +234,7 @@ Create Jan new user
     input text  firstName  Jan
     input text  lastName  Pippal
     input text  password  jan123
-    select from list by label  rights_id  guest
+    select from list by label  rights_id  admin
     select from list by label  locale  Czech
     select from list by label  authentication  Default(DB)
     select checkbox  user_is_active
