@@ -74,21 +74,26 @@ Create new user
     select frame  titlebar
     click element  ${userManagement}
     unselect frame
-    wait until page contains element  doCreate
-    click element  doCreate
+    select frame  mainframe
+    wait until page contains element  xpath=//span[contains(text(),"View Users")]
+    wait until page contains element  xpath=//input[@name="doCreate']
+    click element  xpath=//input[@name="doCreate']
+    unselect frame
+    select frame  mainframe
     wait until page contains element  lastName
-    input text  lastName  renat.kulalov
     wait until page contains element  password
-    input text  password  renat123
     wait until page contains element  rights_id
-    select from list by label  rights_id  admin
     wait until page contains element  locale
-    select from list by label  locale  English (wide/UK)
     wait until page contains element  authentication
+    wait until page contains element  do_update
+    input text  lastName  renat.kulalov
+    input text  password  renat123
+    select from list by label  rights_id  admin
+    select from list by label  locale  English (wide/UK)
     select from list by label  authentication  Default(DB)
     select checkbox  user_is_active
-    wait until page contains element  do_update
     click element  do_update
+    unselect frame
     close browser
 
 
