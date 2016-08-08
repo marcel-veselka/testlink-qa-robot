@@ -531,7 +531,6 @@ Resequence Step Button
     wait until page contains element  ${xpathStepRow2}
     page should contain element  ${xpathStepRow1}
     page should contain element  ${xpathStepRow2}
-    page should not contain element  ${xpathStepRow3}
     unselect frame
 
 Edit Step ${newText} of Test Case ${testCaseName}
