@@ -66,7 +66,7 @@ Check new project exists
     element should contain  ${xpathTable}   ${newTestProjectName}
     unselect frame
 
-Create new user Renat
+Create Renat new user
     select frame  titlebar
     wait until page contains element  ${indexPage}
     click element  ${indexPage}
@@ -94,39 +94,8 @@ Create new user Renat
     select checkbox  user_is_active
     click element  do_update
     unselect frame
-    close browser
 
-Create new user Renat
-    select frame  titlebar
-    wait until page contains element  ${indexPage}
-    click element  ${indexPage}
-    unselect frame
-    select frame  titlebar
-    click element  ${userManagement}
-    unselect frame
-    select frame  mainframe
-    wait until page contains element  xpath=//span[contains(text(),"View Users")]
-    wait until page contains element  xpath=//input[@name="doCreate"]
-    click element  xpath=//input[@name="doCreate"]
-    unselect frame
-    select frame  mainframe
-    wait until page contains element  lastName
-    wait until page contains element  password
-    wait until page contains element  rights_id
-    wait until page contains element  locale
-    wait until page contains element  authentication
-    wait until page contains element  do_update
-    input text  lastName  renat.kulalov
-    input text  password  renat123
-    select from list by label  rights_id  admin
-    select from list by label  locale  English (wide/UK)
-    select from list by label  authentication  Default(DB)
-    select checkbox  user_is_active
-    click element  do_update
-    unselect frame
-    close browser
-
-Create new user Vojta
+Create Vojta new user
     select frame  titlebar
     wait until page contains element  ${indexPage}
     click element  ${indexPage}
@@ -157,9 +126,8 @@ Create new user Vojta
     select checkbox  user_is_active
     click element  do_update
     unselect frame
-    close browser
 
-Create new user Jan
+Create Jan new user
     select frame  titlebar
     wait until page contains element  ${indexPage}
     click element  ${indexPage}
