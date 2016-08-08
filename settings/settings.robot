@@ -76,8 +76,8 @@ Create new user
     unselect frame
     select frame  mainframe
     wait until page contains element  xpath=//span[contains(text(),"View Users")]
-    wait until page contains element  xpath=//input[@name="doCreate']
-    click element  xpath=//input[@name="doCreate']
+    wait until page contains element  xpath=//input[@name="doCreate"]
+    click element  xpath=//input[@name="doCreate"]
     unselect frame
     select frame  mainframe
     wait until page contains element  lastName
