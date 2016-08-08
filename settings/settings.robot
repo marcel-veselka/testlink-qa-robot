@@ -49,14 +49,16 @@ Create TP
     wait until page contains element  ${elementTPProject}
     wait until page contains element  ${elementTCPrefix}
     wait until page contains element  ${elementOptReq}
+    wait until page contains element  doActionButton
     wait until page contains element  ${elementOptInventory}
+    wait until page contains  Test Project Management : Create a new project
     unselect frame
     select frame  mainframe
     input text  ${elementTPProject}  ${newTestProjectName}
     input text  ${elementTCPrefix}  ${newTestProjectPrefix}
     select checkbox  ${elementOptReq}
     select checkbox  ${elementOptInventory}
-    click button  Create
+    click button  doActionButton
     unselect frame
 
 Create new user
