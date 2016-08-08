@@ -13,29 +13,29 @@ Resource       ../resource/helper/desktopHeaderHelper.robot
 
 ${LOGIN}                            admin
 ${PASSWORD}                         admin
-${SERVER}               testlab.tesena.com/testlink
-${DELAY}                0
-${LOGIN URL}            http://${SERVER}/login.php
-${WELCOME URL}          http://${SERVER}/index.php?caller=login
-${ERROR URL}            http://${SERVER}/login.php
-${BROWSER}              ff
-${elementLogin}         login
-${loginSubmit}          login_submit
-${indexPage}            xpath=//img[@title="logo"]
-${elementPassword}      tl_password
-${css}                  css=div.messages_rounded
-${HOSTNAME}               home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
-${newTestProjectName}     tryit
-${newTestProjectPrefix}   tryit
-${elementCopyFromTP}            copy_from_tproject_id
-${elementTPProject}             tprojectName
-${elementTCPrefix}              tcasePrefix
-${elementOptReq}                optReq
-${elementOptPriority}           optPriority
-${elementOptAutomation}         optAutomation
-${elementOptInventory}          optInventory
-${userManagement}           xpath=//img[@title="User Management"]
-${indexPage}                xpath=//img[@title="logo"]
+${SERVER}                           testlab.tesena.com/testlink
+${DELAY}                            0
+${LOGIN URL}                        http://${SERVER}/login.php
+${WELCOME URL}                      http://${SERVER}/index.php?caller=login
+${ERROR URL}                        http://${SERVER}/login.php
+${BROWSER}                          ff
+${elementLogin}                     login
+${loginSubmit}                      login_submit
+${indexPage}                        xpath=//img[@title="logo"]
+${elementPassword}                  tl_password
+${css}                              css=div.messages_rounded
+${HOSTNAME}                         home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
+${newTestProjectName}               tryit
+${newTestProjectPrefix}             tryit
+${elementCopyFromTP}                copy_from_tproject_id
+${elementTPProject}                 tprojectName
+${elementTCPrefix}                  tcasePrefix
+${elementOptReq}                    optReq
+${elementOptPriority}               optPriority
+${elementOptAutomation}             optAutomation
+${elementOptInventory}              optInventory
+${userManagement}                   xpath=//img[@title="User Management"]
+${indexPage}                        xpath=//img[@title="logo"]
 
 *** Test Cases ***
 
@@ -51,7 +51,6 @@ Create TP
     wait until page contains element  ${elementOptReq}
     wait until page contains element  ${elementOptInventory}
     unselect frame
-    capture page screenshot
     select frame  mainframe
     input text  ${elementTPProject}  ${newTestProjectName}
     input text  ${elementTCPrefix}  ${newTestProjectPrefix}
@@ -59,24 +58,14 @@ Create TP
     select checkbox  ${elementOptInventory}
     click button  Create
     unselect frame
-    select frame  mainframe
-    sleep  2
-    capture page screenshot
-    unselect frame
 
 Create new user
     select frame  titlebar
     wait until page contains element  ${indexPage}
     click element  ${indexPage}
     unselect frame
-    select frame  mainframe
-    sleep  2
-    capture page screenshot
-    unselect frame
     select frame  titlebar
     click element  ${userManagement}
-    sleep  2
-    capture page screenshot
     unselect frame
     wait until page contains element  doCreate
     click element  doCreate
