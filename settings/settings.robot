@@ -101,6 +101,41 @@ Create Renat new user
     click element  do_update
     unselect frame
 
+Create tester new user
+    select frame  titlebar
+    wait until page contains element  ${indexPage}
+    click element  ${indexPage}
+    unselect frame
+    select frame  titlebar
+    click element  ${userManagement}
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  xpath=//span[contains(text(),"View Users")]
+    wait until page contains element  xpath=//input[@name="doCreate"]
+    click element  xpath=//input[@name="doCreate"]
+    unselect frame
+    select frame  mainframe
+    wait until page contains element  login
+    wait until page contains element  firstName
+    wait until page contains element  lastName
+    wait until page contains element  emailAddress
+    wait until page contains element  password
+    wait until page contains element  rights_id
+    wait until page contains element  locale
+    wait until page contains element  authentication
+    wait until page contains element  do_update
+    input text  login  tester
+    input text  firstName  tester
+    input text  lastName  tesena
+    input text  emailAddress  marcel.veselka@tesena.com
+    input text  password  marcel123
+    select from list by label  rights_id  leader
+    select from list by label  locale  English (wide/UK)
+    select from list by label  authentication  Default(DB)
+    select checkbox  user_is_active
+    click element  do_update
+    unselect frame
+
 Create Vojta new user
     select frame  titlebar
     wait until page contains element  ${indexPage}
