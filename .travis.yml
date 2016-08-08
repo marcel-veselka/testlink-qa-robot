@@ -31,47 +31,47 @@ before_script:
   - "today=$(date +%Y.%m.%d_%H.%M)"
   #- "find / -type f -perm /6000 -exec stat -c "%A %a %n" {} \"
 ###
-  #- sudo apt-get install apache2
-  #- sudo apt-get install php5 php-pear php5-mysql
-  #- sudo service apache2 restart
-  #- ls -l
+  - sudo apt-get install apache2
+  - sudo apt-get install php5 php-pear php5-mysql
+  - sudo service apache2 restart
+  - ls -l
 ###
 
 ###
-  #- cd /var/www
+  - cd /var/www
 ###
   #- ls -l
 ###
-  #- sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
-  #- cd testlink-code
-  #- sudo git checkout 1.9.14
+  - sudo git clone -b testlink_1_9 https://github.com/TestLinkOpenSourceTRMS/testlink-code.git
+  - cd testlink-code
+  - sudo git checkout 1.9.14
 ###
-  #- ls -l
+  # - ls -l
   #- cd ..
   #- ls -l
 ###
-  #- sed -e 's/\s\+/\n/g' ~/.ssh/key > ~/.ssh/key1
-  #- echo -----BEGIN RSA PRIVATE KEY----- > /home/travis/.ssh/id_rsa
-  #- cat ~/.ssh/key1 >> ~/.ssh/id_rsa
-  #- echo -----END RSA PRIVATE KEY----- >> /home/travis/.ssh/id_rsa
-  #- chmod 400 ~/.ssh/id_rsa
-  #- chmod 600 ~/.ssh/id_rsa
-  #- echo -e "Host testlab.tesena.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-  #- echo " StrictHostKeyChecking no" >> ~/.ssh/config
-  #- scp -v -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/travisconfigfile/config_db.inc.php /home/travis/config_db.inc.php
-  #- sudo cp /home/travis/config_db.inc.php /var/www/testlink-code/config_db.inc.php
-  #- ls -l
-  #- cd testlink-code
-  #- ls -l
+  - sed -e 's/\s\+/\n/g' ~/.ssh/key > ~/.ssh/key1
+  - echo -----BEGIN RSA PRIVATE KEY----- > /home/travis/.ssh/id_rsa
+  - cat ~/.ssh/key1 >> ~/.ssh/id_rsa
+  - echo -----END RSA PRIVATE KEY----- >> /home/travis/.ssh/id_rsa
+  - chmod 400 ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - echo -e "Host testlab.tesena.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - echo " StrictHostKeyChecking no" >> ~/.ssh/config
+  - scp -v -i ~/.ssh/id_rsa ubuntu@testlab.tesena.com:/home/ubuntu/travisconfigfile/config_db.inc.php /home/travis/config_db.inc.php
+  - sudo cp /home/travis/config_db.inc.php /var/www/testlink-code/config_db.inc.php
+  - ls -l
+  - cd testlink-code
+  - ls -l
 
-  #- sudo chown -R www-data:www-data ../testlink-code
+  - sudo chown -R www-data:www-data ../testlink-code
 
-  #- mysql -u root -e 'CREATE DATABASE testlink_qa CHARACTER SET utf8 COLLATE utf8_general_ci;';
-  #- mysql -u root testlink_qa < install/sql/mysql/testlink_create_tables.sql;
-  #- mysql -u root testlink_qa < install/sql/mysql/testlink_create_default_data.sql
-  #- ls -l
-  #- sudo rm -f -r install
-  #- cd ..
+  - mysql -u root -e 'CREATE DATABASE testlink_qa CHARACTER SET utf8 COLLATE utf8_general_ci;';
+  - mysql -u root testlink_qa < install/sql/mysql/testlink_create_tables.sql;
+  - mysql -u root testlink_qa < install/sql/mysql/testlink_create_default_data.sql
+  - ls -l
+  - sudo rm -f -r install
+  - cd ..
 ###
   #- sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
   #- sudo iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
@@ -133,15 +133,15 @@ before_script:
   #- sudo wget http://ipinfo.io/ip -qO -
 
 ###
-  #- sudo hostname -I > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
+  - sudo hostname -I > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
 ###
   #-sudo ifconfig eth0 | grep inet | awk '{ print $2 }' > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
   #- sudo wget http://ipinfo.io/ip -qO - > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
   #- sudo /sbin/ifconfig |grep -B1 "inet addr" |awk '{ if ( $1 == "inet" ) { print $2 } else if ( $2 == "Link" ) { printf "%s:" ,$1 } }' |awk -F: '{ print $1 ": " $3 }'
 
 ###
-  #- cd /home/travis/build/marcel-veselka/testlink-qa-robot
-  #- ls -l
+  - cd /home/travis/build/marcel-veselka/testlink-qa-robot
+  - ls -l
 ###
 
 
