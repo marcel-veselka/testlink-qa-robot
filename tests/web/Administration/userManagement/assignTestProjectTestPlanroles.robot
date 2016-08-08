@@ -23,6 +23,8 @@ Suite Teardown  Run keywords     HeaderPage Go to ${userManagement}
 
 ${LOGIN}                            renat.kulalov
 ${PASSWORD}                         renat123
+${TestPlanName}                     testPlan
+${TestPlanDescription}              Description
 ${user}                             vojta.svoboda
 ${fname}                            karel
 ${lname}                            karel
@@ -31,8 +33,7 @@ ${pass}                             vojta123
 ${role}                             novaRole
 ${newTestProjectName}               assignTestProject
 ${newTestProjectPrefix}             role
-${TestPlanName}                     testPlan
-${TestPlanDescription}              Description
+
 
 *** Test Cases ***
 
