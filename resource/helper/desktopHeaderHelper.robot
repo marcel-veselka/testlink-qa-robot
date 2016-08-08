@@ -8,7 +8,7 @@ Resource  ../../resource/pageObjects/desktop/headerPage.robot
 ${customFields}                 Define Custom Fields
 ${checkCustomField}             Custom fields
 ${issueTrackerName}             Issue Tracker Management
-${checkIssueTracker}            Issue Tracker
+${checkIssueTracker}            Create
 ${testProjectManagement}        Test Project Management
 ${assignUserRoles}              Assign User Roles
 ${checkAssignUserRoles}         User Management
