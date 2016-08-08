@@ -51,6 +51,8 @@ Assign TC to user ${Username}
     select frame  mainframe
     wait until page contains element  workframe
     select frame  workframe
+    wait until page contains element  ${elementTesterID}
+    click element  ${elementTesterID}
     select from list by label  ${elementTesterID}  ${Username}
     unselect frame
 
