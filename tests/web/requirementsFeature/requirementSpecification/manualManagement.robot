@@ -64,7 +64,7 @@ ${specTypeValue}                2
     Change Test Project and go to ${requirmSpecification} ${checkRequirmSpecification}
     Choose Requirement Specification ${dokumentID1} ${title1}
     Create Requirement Operations ${dokumentID1} ${title1}
-    ### This nethod is used to contol editing of requirement operations. It contains several nethods ###
+    ### This method is used to contol editing of requirement operations. It contains several methods ###
     ### that checks leave Document ID and Title blank, leaving Document ID blank, fill in Title ${title} ###
     ### filling in Document ID ${dokumentID}, leaving Title field blank. At the end it checks editing ###
     ### status and type of chosen requirement. All the changes are saved. ###
