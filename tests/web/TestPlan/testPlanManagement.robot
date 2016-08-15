@@ -67,7 +67,7 @@ ${PlatformName1}                Platform56
     Create Test Plan ${TestPlanName4} AS COPY Unselect all checkboxes ${TestPlanName3}
 
 56 Edit and Order Test Plan
-    [Tags]  56
+
     Preconditions for tc56
     Order By Test Case, Name, Build, Platform In Test Plan Management ${TestPlanName5} ${TestPlanName6}
     Make all Test Plan Active/Inactive ${TestPlanName5} ${TestPlanName6}

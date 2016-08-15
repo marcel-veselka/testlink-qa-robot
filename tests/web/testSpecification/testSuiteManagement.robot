@@ -53,7 +53,7 @@ ${buildDescription}                 DescriptionOfBuild
     Leave fileds blanked ${blank}, rename ${testSuiteName3} test suite ${testSuiteName2}
 
 82 Drag drop
-    [Tags]  check
+
     Preconditions for tc82
     Change Test Project and go to ${testSpecification} ${checkTestSpecification}
     wait until keyword succeeds  1min  0  testSpecificationPage.I am here

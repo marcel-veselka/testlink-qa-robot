@@ -59,7 +59,7 @@ ${specTypeValue}                2
     Check Test Specification ${title2}
 
 40 Modify requirement
-    [Tags]  40
+
     Preconditions for tc40
     Change Test Project and go to ${requirmSpecification} ${checkRequirmSpecification}
     Choose Requirement Specification ${dokumentID1} ${title1}
@@ -84,14 +84,14 @@ ${specTypeValue}                2
     Check Requirement Version ${dokumentID3} ${title3}
 
 127 Create New Requirement
-    [Tags]  127
+
     Preconditions for tc127
     Change Test Project and go to ${requirmSpecification} ${checkRequirmSpecification}
     Choose Requirement Specification ${dokumentID4} ${title4}
     Create Requirement Operations ${dokumentID5} ${title5}
 
 128 Filter Requirements
-    [Tags]  128
+
     Preconditions for tc128
     Input ${docID} Filter ${dokumentID6} Requirement Specification ${dokumentID6} ${title6}
     Input ${inputTitle} Filter ${title6} Requirement Specification ${dokumentID6} ${title6}
@@ -100,7 +100,7 @@ ${specTypeValue}                2
     ComboBox ${specType} Filter ${specTypeValue} Requirement Specification ${dokumentID6} ${title6}
 
 129 Delete the latest version of Requirement
-    [Tags]  129
+
     Preconditions for tc129
     Change Test Project and go to ${requirmSpecification} ${checkRequirmSpecification}
     Select More Than 1 Version Requirement ${dokumentID7} ${title7}

@@ -56,7 +56,7 @@ ${newText}                          NewStepAction
     Add Step after created first step
 
 87 Edit test case
-    [Tags]  check
+
     Preconditions for tc87
     Change Test Project and go to ${testSpecification} ${checkTestSpecification}
     Select test case ${testCaseName1} node and click action button

@@ -34,7 +34,7 @@ ${title1}                       newtitle48
     Check Assigned Requirements ${title}
 
 48 Relations between requirements and test cases
-    [Tags]  48
+
     Preconditions for tc48
     Change Test Project and go to ${assignRequirements} ${checkAssignRequirements}
     Select Test Suite ${title1}

@@ -44,7 +44,7 @@ ${NoFilter}                     [Any]
 *** Test Cases ***
 
 77 Set Urgent Test
-    [Tags]  77
+
     Preconditions for tc77
     Search ${testSuiteName1} By ${PlatformName} From ${NoFilter}
     Search ${testSuiteName2} By ${TestPlanName2} From ${TestPlanName1}

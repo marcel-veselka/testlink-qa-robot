@@ -53,7 +53,7 @@ ${TestPlanDescription}          DescriptionOfTestPlan
     Create ${buildName3} from existing ${buildName2}
 
 64 Edit Build
-    [Tags]  64
+
     Preconditions for tc64
     Change Test Project and go to ${buildReleases} ${checkBuildReleases}
     Select Build ${buildName4}

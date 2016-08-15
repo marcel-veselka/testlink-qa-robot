@@ -71,7 +71,7 @@ ${CONFIGURATION}  <!-- Template bugzillaxmlrpcInterface -->
     Postcondition for tc14
 
 107 Issue Tracker Management
-    [Tags]  check
+
     Create all possible types of Issue Tracker and check it
     Delete all created issue trackers
 
