@@ -62,7 +62,7 @@ HeaderPage Go to ${link}
     #wait until page contains element  ${indexPage}
     #click element  ${indexPage}
     #unselect frame
-    wait until keyword succeeds  1min  0  headerPage.I am here
+    headerPage.I am here
     select frame  titlebar
     click element  ${link}
     unselect frame
