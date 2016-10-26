@@ -5,13 +5,28 @@ Library        Selenium2Library
 
 *** Variables ***
 
+##${mySettings}               xpath=//img[@title="My Settings"]
+##${desktop}                  xpath=//img[@title="Desktop"]
+##${requirementSpec}          xpath=//img[@title="Requirements"]
+##${testSpec}                 xpath=//img[@title="Test Specification"]
+##${testExecution}            xpath=//img[@title="Test Execution"]
+##${testReports}              xpath=//img[@title="Test Reports"]
+##${userManagement}           xpath=//img[@title="Users/Roles"]
+##${events}                   xpath=//img[@title="Events"]
+##${indexPage}                xpath=//img[@title="logo"]
+##${testProject}              xpath=//select[@name="testproject"]
+##${logout}                   xpath=//img[@title="Logout"]
+##${searchTC}                 xpath=//img[@title="Search Test Case by ID"]
+##${targetTC}                 targetTestCase
+
+### Variables used for testalb.tesena.com/testlink ###
 ${mySettings}               xpath=//img[@title="My Settings"]
-${desktop}                  xpath=//img[@title="Desktop"]
-${requirementSpec}          xpath=//img[@title="Requirements"]
+${desktop}                  xpath=//img[@title="Project"]
+${requirementSpec}          xpath=//img[@title="Requirement Specification"]
 ${testSpec}                 xpath=//img[@title="Test Specification"]
 ${testExecution}            xpath=//img[@title="Test Execution"]
 ${testReports}              xpath=//img[@title="Test Reports"]
-${userManagement}           xpath=//img[@title="Users/Roles"]
+${userManagement}           xpath=//img[@title="User Management"]
 ${events}                   xpath=//img[@title="Events"]
 ${indexPage}                xpath=//img[@title="logo"]
 ${testProject}              xpath=//select[@name="testproject"]
@@ -19,20 +34,6 @@ ${logout}                   xpath=//img[@title="Logout"]
 ${searchTC}                 xpath=//img[@title="Search Test Case by ID"]
 ${targetTC}                 targetTestCase
 
-### Variables used for testalb.tesena.com/testlink ###
-##${mySettings}               xpath=//img[@title="My Settings"]
-##${desktop}                  xpath=//img[@title="Project"]
-##${requirementSpec}          xpath=//img[@title="Requirement Specification"]
-##${testSpec}                 xpath=//img[@title="Test Specification"]
-##${testExecution}            xpath=//img[@title="Test Execution"]
-##${testReports}              xpath=//img[@title="Test Reports"]
-##${userManagement}           xpath=//img[@title="User Management"]
-##${events}                   xpath=//img[@title="Events"]
-##${indexPage}                xpath=//img[@title="logo"]
-##${testProject}              xpath=//select[@name="testproject"]
-##${logout}                   xpath=//img[@title="Logout"]
-##${searchTC}                 xpath=//img[@title="Search Test Case by ID"]
-##${targetTC}                 targetTestCase
 *** Keywords ***
 I am here
     wait until page contains element  titlebar
@@ -71,6 +72,9 @@ Choose test project from dropdown
     wait until page contains element  titlebar
     select frame  titlebar
     wait until page contains element  ${testProject}
-    select from list by label  ${testProject}  ${newTestProjectPrefix}:${newTestProjectName}
+    click element  ${testProject}
+    wait until page contains  ${newTestProjectPrefix}:${newTestProjectName}
+    click element  //select/*[contains(text(),"${newTestProjectPrefix}:${newTestProjectName}")]
+    #select from list by label  ${testProject}  ${newTestProjectPrefix}:${newTestProjectName}
     unselect frame
 

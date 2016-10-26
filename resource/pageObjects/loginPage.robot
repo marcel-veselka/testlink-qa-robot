@@ -13,7 +13,7 @@ ${DELAY}                0
 ${LOGIN URL}            http://${SERVER}/login.php
 ${WELCOME URL}          http://${SERVER}/index.php?caller=login
 ${ERROR URL}            http://${SERVER}/login.php
-${BROWSER}              ff
+${BROWSER}              chrome
 ${elementLogin}         login
 ${loginSubmit}          login_submit
 ${indexPage}            xpath=//img[@title="logo"]
@@ -83,7 +83,7 @@ Check that warning about empty field appears
 
 
 Login as admin ${LOGIN} ${PASSWORD}
-    loginPage.Open Browser To Login Page TRAVIS
+    loginPage.Open Browser To Login Page
     loginPage.Wait until page contains all elements for login
     Fill credentials and submit ${LOGIN} ${PASSWORD}
 
@@ -95,4 +95,5 @@ Check there is no warning about login
     page should not contain  Try again! Wrong login name or password!
 
 Check there is a warning about login
+    wait until page contains  Try again! Wrong login name or password!
     page should contain  Try again! Wrong login name or password!
