@@ -83,7 +83,7 @@ Check that warning about empty field appears
 
 
 Login as admin ${LOGIN} ${PASSWORD}
-    loginPage.Open Browser To Login Page
+    loginPage.Open Browser To Login Page TRAVIS
     loginPage.Wait until page contains all elements for login
     Fill credentials and submit ${LOGIN} ${PASSWORD}
 

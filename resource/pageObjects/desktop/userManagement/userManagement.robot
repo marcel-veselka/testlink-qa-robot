@@ -159,7 +159,7 @@ Delete role ${role}
     userManagement.Click bookmark View roles
     select frame  mainframe
     wait until page contains element  xpath=//tr[contains(.,"${role}")]//img[@title="Delete role"]
-    click element  xpath=//tr[contains(.,"${role}")]//img[@title="Delete role"]
+    double click element  xpath=//tr[contains(.,"${role}")]//img[@title="Delete role"]
     wait until page contains  You are going to delete: ${role}
     wait until page contains  Yes
     click button  Yes
