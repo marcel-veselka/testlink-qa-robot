@@ -18,7 +18,7 @@ ${DELAY}                            0
 ${LOGIN URL}                        http://${SERVER}/login.php
 ${WELCOME URL}                      http://${SERVER}/index.php?caller=login
 ${ERROR URL}                        http://${SERVER}/login.php
-${BROWSER}                          ff
+${BROWSER}                          chrome
 ${elementLogin}                     login
 ${loginSubmit}                      login_submit
 ${indexPage}                        xpath=//img[@title="logo"]
