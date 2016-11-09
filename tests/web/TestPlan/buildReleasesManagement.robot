@@ -52,13 +52,13 @@ ${TestPlanDescription}          DescriptionOfTestPlan
     Go to index page and change testproject
     Create ${buildName3} from existing ${buildName2}
 
-64 Edit Build
+#64 Edit Build
 
-    Preconditions for tc64
-    Change Test Project and go to ${buildReleases} ${checkBuildReleases}
-    Select Build ${buildName4}
-    Edit Build Info and Save Changes ${buildName6}
-    Check if Build was created ${buildName6}
+    #Preconditions for tc64
+    #Change Test Project and go to ${buildReleases} ${checkBuildReleases}
+    #Select Build ${buildName4}
+    #Edit Build Info and Save Changes ${buildName6}
+    #Check if Build was created ${buildName6}
 
 66 Delete Build
 ### This Keyword contains differnet methods for choosing certain ###
