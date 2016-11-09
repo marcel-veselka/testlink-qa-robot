@@ -65,10 +65,10 @@ Check Warning Message
 Save Build with Warning Message
     select frame  mainframe
     wait until page contains element  do_update
-    click button  Save
+    click element  //input[@name="do_update"]
     unselect frame
     select frame  mainframe
-    wait until page contains element  //div[@class="user_feedback"]
+    wait until keyword succeeds  0 min  10 s  wait until page contains element  //div[@class="user_feedback"]
     page should contain element  //div[@class="user_feedback"]
     #wait until page contains  There is already a build with this identifier -
     unselect frame
