@@ -100,9 +100,12 @@ before_script:
   - sudo rm -f -r install
   - cd ..
   - sudo hostname -I
+
   - sudo ifconfig
   - sudo hostname -I > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
   - cat /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
+  - echo /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt | awk '{print $1;}' >> /home/travis/build/marcel-veselka/testlink-qa-robot/new.txt
+  - cat /home/travis/build/marcel-veselka/testlink-qa-robot/new.txt
 
   - cd $HOME
   - cd build/marcel-veselka/testlink-qa-robot
