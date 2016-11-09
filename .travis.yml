@@ -106,6 +106,9 @@ before_script:
   - cat /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt | awk '{print $1;}' > /home/travis/build/marcel-veselka/testlink-qa-robot/new.txt
   - cat /home/travis/build/marcel-veselka/testlink-qa-robot/new.txt
 
+  - sudo iptables -L
+  - sudo ufw status
+
   - cd $HOME
   - cd build/marcel-veselka/testlink-qa-robot
 
