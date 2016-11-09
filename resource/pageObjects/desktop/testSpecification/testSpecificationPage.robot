@@ -310,7 +310,7 @@ Copy Test Suite ${suite2}
     unselect frame
     select frame  mainframe
     select frame  workframe
-    wait until page contains
+    wait until page contains  Test Suite Operations
     wait until page contains element  ${elementMoveTSViewer}
     click element  ${elementMoveTSViewer}
     unselect frame
