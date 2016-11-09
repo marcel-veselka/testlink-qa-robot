@@ -72,8 +72,10 @@ before_script:
   - sudo hostname -I > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
 
 ### Install chromedriver ###
+  - cd $HOME
   - export CHROME_BIN=/usr/bin/google-chrome
   - export DISPLAY=:99.0
+  - sudo apt-get install xvfb
   - sh -e /etc/init.d/xvfb start
   - sudo apt-get update
   - sudo apt-get install -y libappindicator1 fonts-liberation
