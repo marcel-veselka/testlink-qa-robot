@@ -32,12 +32,12 @@ Open Browser To Login Page
 
 
 Open Browser To Login Page TRAVIS
-    #${TextFileContent}=    Get File  ip.txt
-    #Log    ${TextFileContent}
-    #${ip}=	Get Line  ${TextFileContent}	0
-    #${stripped}=	Strip String	${SPACE}${ip}${SPACE}
-    #open browser  http://${stripped}/testlink-code  chrome
-    open browser  http://172.17.0.1/testlink-code  chrome
+    ${TextFileContent}=    Get File  ip.txt
+    Log    ${TextFileContent}
+    ${ip}=	Get Line  ${TextFileContent}	0
+    ${stripped}=	Strip String	${SPACE}${ip}${SPACE}
+    open browser  http://${stripped}/testlink-code  chrome
+    #open browser  http://172.17.0.1/testlink-code  chrome
     Maximize Browser Window
     Set Selenium Speed  ${DELAY}
     Title Should Be  TestLink
@@ -84,7 +84,7 @@ Check that warning about empty field appears
 
 
 Login as admin ${LOGIN} ${PASSWORD}
-    loginPage.Open Browser To Login Page TRAVIS
+    loginPage.Open Browser To Login Page
     loginPage.Wait until page contains all elements for login
     Fill credentials and submit ${LOGIN} ${PASSWORD}
 
