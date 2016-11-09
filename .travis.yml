@@ -102,6 +102,7 @@ before_script:
   - sudo hostname -I
   - sudo ifconfig
   - sudo hostname -I > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
+  - echo /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
 
 script:
   #- "firefox --version"
