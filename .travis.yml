@@ -63,7 +63,7 @@ before_script:
   - ls -l
 
   - sudo chown -R www-data:www-data ../testlink-code
-  - sudo service mysql start
+  #- sudo service mysql start
   - mysql -u root -e 'CREATE DATABASE testlink_qa CHARACTER SET utf8 COLLATE utf8_general_ci;';
   - mysql -u root testlink_qa < install/sql/mysql/testlink_create_tables.sql;
   - mysql -u root testlink_qa < install/sql/mysql/testlink_create_default_data.sql
