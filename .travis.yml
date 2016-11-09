@@ -108,6 +108,7 @@ before_script:
 
   - sudo iptables -L
   - sudo ufw status
+  - sudo uwf allow 80
 
   - cd $HOME
   - cd build/marcel-veselka/testlink-qa-robot
