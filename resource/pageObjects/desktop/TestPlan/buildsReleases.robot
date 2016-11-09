@@ -100,9 +100,10 @@ Delete ${buildName} Build
 Add Release Date
     select frame  mainframe
     wait until page contains element  release_date
-    click element  xpath=//img[@title="Show Calender"]
-    wait until page contains  Today
-    click button  Today
+    #click element  xpath=//img[@title="Show Calender"]
+    #wait until page contains  Today
+    #click button  Today
+    input text  release_date  04/06/2016
     unselect frame
 
 Select Build ${buildName}

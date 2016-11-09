@@ -92,7 +92,6 @@ before_script:
   - ls -l
 
   - sudo chown -R www-data:www-data ../testlink-code
-  #- sudo service mysql start
   - mysql -u root -e 'CREATE DATABASE testlink_qa CHARACTER SET utf8 COLLATE utf8_general_ci;';
   - mysql -u root testlink_qa < install/sql/mysql/testlink_create_tables.sql;
   - mysql -u root testlink_qa < install/sql/mysql/testlink_create_default_data.sql
@@ -123,7 +122,7 @@ script:
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/Administration
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/HomepageUI
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/System
-  - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/TestPlan
+  - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/TestPlan/buildReleasesManagement.robot
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/testSpecification
 
 env:
