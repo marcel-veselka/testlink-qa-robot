@@ -32,11 +32,12 @@ Open Browser To Login Page
 
 
 Open Browser To Login Page TRAVIS
-    ${TextFileContent}=    Get File  ip.txt
-    Log    ${TextFileContent}
-    ${ip}=	Get Line  ${TextFileContent}	0
-    ${stripped}=	Strip String	${SPACE}${ip}${SPACE}
-    open browser  http://${stripped}/testlink-code  chrome
+    #${TextFileContent}=    Get File  ip.txt
+    #Log    ${TextFileContent}
+    #${ip}=	Get Line  ${TextFileContent}	0
+    #${stripped}=	Strip String	${SPACE}${ip}${SPACE}
+    #open browser  http://${stripped}/testlink-code  chrome
+    open browser  http://localhost/testlink-code  chrome
     Maximize Browser Window
     Set Selenium Speed  ${DELAY}
     Title Should Be  TestLink
