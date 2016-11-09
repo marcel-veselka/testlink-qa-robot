@@ -65,7 +65,7 @@ Check Warning Message
 Save Build with Warning Message
     select frame  mainframe
     wait until page contains element  do_update
-    click element  //input[@name="do_update"]
+    double click element  //input[@name="do_update"]
     unselect frame
     select frame  mainframe
     wait until keyword succeeds  0 min  10 s  wait until page contains element  //div[@class="user_feedback"]
