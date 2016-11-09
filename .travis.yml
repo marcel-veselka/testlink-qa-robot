@@ -20,6 +20,12 @@ install:
   #- gem install s3
   #- "if [[ ${BROWSER} == 'ie' ]]; then pip install ie_only_pkg; fi"
 
+before_install:
+  - cd $HOME
+  - export CHROME_BIN=/usr/bin/google-chrome
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+
 before_script:
 
   - "chmod 777 ~/.ssh/known_hosts"
@@ -73,10 +79,6 @@ before_script:
 
 ### Install chromedriver ###
   - cd $HOME
-  - export CHROME_BIN=/usr/bin/google-chrome
-  - export DISPLAY=:99.0
-  - sudo apt-get install xvfb
-  - sh -e /etc/init.d/xvfb start
   - sudo apt-get update
   - sudo apt-get install -y libappindicator1 fonts-liberation
   - sudo apt-get install libxss1 libappindicator1 libindicator7 libgconf2-4 libnss3-1d
