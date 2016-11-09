@@ -210,7 +210,7 @@ Create Test Case From Requirement ${dokumentID} ${title}
     select frame  treeframe
     #sleep  2
     wait until page contains element  xpath=//a[span[contains(text(), "${dokumentID}:${title} ")]]
-    wait until keyword succeeds  1min  0  double click element  xpath=//a[span[contains(text(), "${dokumentID}:${title} ")]]
+    wait until keyword succeeds  1min  0  click element  xpath=//a[span[contains(text(), "${dokumentID}:${title} ")]]
     unselect frame
     select frame  mainframe
     wait until page contains element  workframe

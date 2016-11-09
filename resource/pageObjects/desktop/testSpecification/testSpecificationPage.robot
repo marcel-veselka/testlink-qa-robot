@@ -714,7 +714,8 @@ Select test case ${testCaseName} node
     select frame  treeframe
     wait until page contains  ${testCaseName}
     wait until page contains element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName}")]/div/a
-    double click element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName}")]/div/a
+    click element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName}")]/div/a
+    #click element  xpath=//li//span[contains(text(),"${newTestProjectPrefix}:${testCaseName}")]
     unselect frame
 
 Generate new Sibling ${testCaseName2}

@@ -6,8 +6,8 @@ Resource       ../../../resource/helper/desktopHeaderTestProjectSettings.robot
 
 Test Setup  Run keywords       Login and Create new Test Project ${newTestProjectName} ${newTestProjectPrefix}
 
-Test Teardown  Run keywords    Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
-...             AND             Close browser
+#Test Teardown  Run keywords    Delete test project  ${newTestProjectName}  ${newTestProjectPrefix}
+#...             AND             Close browser
 *** Variables ***
 
 ${LOGIN}                        renat.kulalov

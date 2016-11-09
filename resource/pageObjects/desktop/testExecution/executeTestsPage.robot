@@ -57,7 +57,7 @@ Select ${testCaseName} test case node
     select frame  treeframe
     wait until page contains  ${testCaseName}
     wait until page contains element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName}")]/div/a
-    double click element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName}")]/div/a
+    click element  xpath=//ul/li/ul/li/ul/li[contains(.,"${testCaseName}")]/div/a
     unselect frame
 
 Execute Test Case Passed

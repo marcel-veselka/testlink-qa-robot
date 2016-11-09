@@ -46,11 +46,11 @@ Fill in the details of the Build ${buildName}
     select frame  mainframe
     wait until page contains element  ${elementBuildName}
     input text  ${elementBuildName}  ${buildName}
-    wait until page contains element  ${xpathTextEditor}
-    mouse down  ${xpathTextEditor}
-    mouse up  ${xpathTextEditor}
-    select frame  ${xpathTextEditor}
-    input text  xpath=//body  ${buildDescription}
+    #wait until page contains element  ${xpathTextEditor}
+    #mouse down  ${xpathTextEditor}
+    #mouse up  ${xpathTextEditor}
+    #select frame  ${xpathTextEditor}
+    #input text  xpath=//body  ${buildDescription}
     unselect frame
 
 Check Warning Message

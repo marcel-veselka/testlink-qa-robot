@@ -37,7 +37,7 @@ ${testCasesPerUser}             Test Cases created per User
 ${testPlanManagement}           Test Plan Management
 ${buildReleases}                Builds / Releases
 ${checkBuildReleases}           Build management
-${milestoneOverview}            Milestones
+${milestoneOverview}            Milestone Overview
 ${checkMilestoneOverview}       Milestones for
 ${executeTests}                 Execute Tests
 ${testCasesAssigned}            Test Cases Assigned to Me
