@@ -309,8 +309,9 @@ Copy Test Suite ${suite2}
     click element  ${elementImageActions}
     unselect frame
     select frame  mainframe
+    wait until page contains element  workframe
     select frame  workframe
-    wait until page contains  Test Suite Operations
+    wait until keyword succeeds  0 min  10 s  wait until page contains element  ${elementMoveTSViewer}
     wait until page contains element  ${elementMoveTSViewer}
     click element  ${elementMoveTSViewer}
     unselect frame
