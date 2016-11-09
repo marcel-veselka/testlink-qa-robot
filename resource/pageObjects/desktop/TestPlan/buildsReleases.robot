@@ -68,8 +68,8 @@ Save Build with Warning Message
     click button  Save
     unselect frame
     select frame  mainframe
-    sleep  2
-    wait until page contains  There is already a build with this identifier -
+    page should not contain  Create a new Build
+    #wait until page contains  There is already a build with this identifier -
     unselect frame
 
 Save Build
