@@ -37,7 +37,7 @@ Open Browser To Login Page TRAVIS
     #${ip}=	Get Line  ${TextFileContent}	0
     #${stripped}=	Strip String	${SPACE}${ip}${SPACE}
     #open browser  http://${TextFileContent}:8080/testlink-code  chrome
-    open browser  http://localhost:80/testlink-code  chrome
+    open browser  http://localhost:8080/testlink-code  chrome
     Maximize Browser Window
     Set Selenium Speed  ${DELAY}
     Title Should Be  TestLink
