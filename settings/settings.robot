@@ -41,7 +41,7 @@ ${xpathTable}                   xpath=//table[@id="item_view"]
 *** Test Cases ***
 
 Login as admin default
-    loginPage.Open Browser To Login Page TRAVIS
+    loginPage.Open Browser To Login Page
     wait until keyword succeeds  1min  0  loginPage.Wait until page contains all elements for login
     Fill credentials and submit ${LOGIN} ${PASSWORD}
 
