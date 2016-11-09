@@ -68,7 +68,8 @@ Save Build with Warning Message
     click button  Save
     unselect frame
     select frame  mainframe
-    page should not contain  Create a new Build
+    wait until page contains element  //div[@class="user_feedback"]
+    page should contain element  //div[@class="user_feedback"]
     #wait until page contains  There is already a build with this identifier -
     unselect frame
 
