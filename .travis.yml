@@ -30,6 +30,35 @@ before_install:
   - "today=$(date +%Y.%m.%d_%H.%M)"
 
 before_script:
+
+### Install chromedriver ###
+  - cd $HOME
+  - sudo apt-get update
+  - sudo apt-get install -y libappindicator1 fonts-liberation
+  - sudo apt-get install libxss1 libappindicator1 libindicator7 libgconf2-4 libnss3-1d
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  #- sudo dpkg -i google-chrome*.deb
+  - sudo dpkg -i google-chrome-stable_current_amd64.deb
+  - sudo apt-get install -f
+
+  - cd $HOME
+
+  - sudo apt-get install xvfb
+  - sudo apt-get install unzip
+
+  - wget -N http://chromedriver.storage.googleapis.com/2.25/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip
+  - chmod +x chromedriver
+
+  - mkdir -p $HOME/bin
+  - mv chromedriver $HOME/bin
+  - echo "export PATH=$PATH:$HOME/bin" >> $HOME/.bash_profile
+
+### Return to tests directory ###
+  - cd $HOME
+  - cd build/marcel-veselka/testlink-qa-robot
+
+
   - sudo apt-get install apache2
   - sudo apt-get install php5 php-pear php5-mysql
   - sudo service apache2 restart
@@ -70,34 +99,9 @@ before_script:
   - ls -l
   - sudo rm -f -r install
   - cd ..
+  - sudo hostname -I
+  - sudo ifconfig
   - sudo hostname -I > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
-
-### Install chromedriver ###
-  - cd $HOME
-  - sudo apt-get update
-  - sudo apt-get install -y libappindicator1 fonts-liberation
-  - sudo apt-get install libxss1 libappindicator1 libindicator7 libgconf2-4 libnss3-1d
-  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  #- sudo dpkg -i google-chrome*.deb
-  - sudo dpkg -i google-chrome-stable_current_amd64.deb
-  - sudo apt-get install -f
-
-  - cd $HOME
-
-  - sudo apt-get install xvfb
-  - sudo apt-get install unzip
-
-  - wget -N http://chromedriver.storage.googleapis.com/2.25/chromedriver_linux64.zip
-  - unzip chromedriver_linux64.zip
-  - chmod +x chromedriver
-
-  - mkdir -p $HOME/bin
-  - mv chromedriver $HOME/bin
-  - echo "export PATH=$PATH:$HOME/bin" >> $HOME/.bash_profile
-
-### Return to tests directory ###
-  - cd $HOME
-  - cd build/marcel-veselka/testlink-qa-robot
 
 script:
   #- "firefox --version"
