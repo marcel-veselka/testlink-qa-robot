@@ -32,13 +32,13 @@ Open Browser To Login Page
 
 
 Open Browser To Login Page TRAVIS
-    ${TextFileContent}=    Get File  new.txt
-    Log    ${TextFileContent}
+    #${TextFileContent}=    Get File  new.txt
+    #Log    ${TextFileContent}
     #Split To Lines  ${TextFileContent}
     #${TextFileContent}=  Get Lines Containing String   ${TextFileContent}  127.
-    ${ip}=	Get Line  ${TextFileContent}  0
-    ${stripped}=	Strip String	${SPACE}${ip}${SPACE}
-    open browser  http://127.0.0.1/testlink-code/login.php  chrome
+    #${ip}=	Get Line  ${TextFileContent}  0
+    #${stripped}=	Strip String	${SPACE}${ip}${SPACE}
+    open browser  http://localhost/testlink-code/login.php  chrome
     #open browser  http://${stripped}  chrome
     Maximize Browser Window
     Set Selenium Speed  ${DELAY}
