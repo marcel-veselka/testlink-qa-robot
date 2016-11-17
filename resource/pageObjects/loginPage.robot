@@ -39,7 +39,7 @@ Open Browser To Login Page TRAVIS
     ${ip}=	Get Line  ${TextFileContent}  0
     ${stripped}=	Strip String	${SPACE}${ip}${SPACE}
     #open browser  http://${stripped}/testlink-code/login.php  chrome
-    open browser  http://127.0.0.1  chrome
+    open browser  http://${stripped}  chrome
     Maximize Browser Window
     Set Selenium Speed  ${DELAY}
     Title Should Be  TestLink
