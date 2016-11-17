@@ -65,6 +65,8 @@ before_script:
   - sudo apt-get install mysql-server
   - ls -l
 
+
+
   - cd /var/www
 
   - ls -l
