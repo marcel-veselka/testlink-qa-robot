@@ -1,5 +1,5 @@
 *** Settings ***
-Resource  ../../resource/testlink.robot
+Library  Selenium2Library
 Library  OperatingSystem
 Library  String
 *** Variables ***
