@@ -32,7 +32,7 @@ Open Browser To Login Page
 
 
 Open Browser To Login Page TRAVIS
-    ${TextFileContent}=    Get File  ip.txt
+    ${TextFileContent}=    Get File  new.txt
     Log    ${TextFileContent}
     #Split To Lines  ${TextFileContent}
     #${TextFileContent}=  Get Lines Containing String   ${TextFileContent}  127.
