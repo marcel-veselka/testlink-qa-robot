@@ -67,7 +67,7 @@ before_script:
 
 
 
-  - cd /var/www
+  - cd /var/www/html
 
   - ls -l
 
