@@ -35,7 +35,7 @@ Open Browser To Login Page TRAVIS
     ${TextFileContent}=    Get File  ip.txt
     Log    ${TextFileContent}
     Split To Lines  ${TextFileContent}
-    ${ip}=	Get Line  ${TextFileContent}	1
+    ${ip}=	Get Line  ${TextFileContent}	2
     ${stripped}=	Strip String	${SPACE}${ip}${SPACE}
     open browser  http://${stripped}/testlink-code  chrome
     #open browser  http://127.0.0.1:80/testlink-code  chrome
