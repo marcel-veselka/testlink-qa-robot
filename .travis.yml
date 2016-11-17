@@ -104,7 +104,7 @@ before_script:
   - sudo ifconfig
   - sudo hostname -I > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
   - cat /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
-  - cat /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt | awk '{print $3;}' > /home/travis/build/marcel-veselka/testlink-qa-robot/new.txt
+  - cat /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt | awk '{print $2;}' > /home/travis/build/marcel-veselka/testlink-qa-robot/new.txt
   - cat /home/travis/build/marcel-veselka/testlink-qa-robot/new.txt
 
   - cd $HOME
