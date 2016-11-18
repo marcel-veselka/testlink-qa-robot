@@ -7,7 +7,7 @@ ${HOSTNAME}  home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
 ${BROWSER} =  internet explorer
 ${START_URL} =  http://skoda-recallactions-cdb.azurewebsites.net/000/en-GB
 ${REMOTE_URL} =  http://aleshkohen1:XbzpqLEskzeVjtCRNPdV@hub.browserstack.com/wd/hub
-${DESIRED_CAPABILITIES} =  name:WIN8 + IE10, platform:WIN8,browserName:internet explorer,version:10
+${DESIRED_CAPABILITIES} =  name:WIN8 + IE10, platform:WIN8,browserName:firefox,version:45
 *** Test Cases ***
 
 test
