@@ -104,6 +104,7 @@ before_script:
   - wget http://ipinfo.io/ip -qO -
   - wget http://ipinfo.io/ip -qO - > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
 
+
   #- sudo hostname -I
   #- sudo ifconfig
   #- sudo hostname -I > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
