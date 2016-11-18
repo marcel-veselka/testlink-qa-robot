@@ -103,7 +103,7 @@ before_script:
 
   - wget http://ipinfo.io/ip -qO -
   - wget http://ipinfo.io/ip -qO - > /home/travis/build/marcel-veselka/testlink-qa-robot/ip.txt
-  - iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+  - sudo iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
 
   #- sudo hostname -I
   #- sudo ifconfig
