@@ -240,8 +240,8 @@ Check Test Plan Is Active ${TestPlanName} ${TestPlanName1}
 
 Click On Bulb Icon ${TestPlanName} ${TestPlanName1}
     select frame  mainframe
-    #click element  xpath=//tr[td//text()[contains(.,'${TestPlanName}')]]/td[input[@title="Active (click to set inactive)"]]/input
-    click element  xpath=//tr[td//text()[contains(.,'${TestPlanName}')]]/td[input[@title="Active (click to set inactive)"]]
+    click element  xpath=//tr[td//text()[contains(.,'${TestPlanName}')]]/td[input[@title="Active (click to set inactive)"]]/input
+    #click element  xpath=//tr[td//text()[contains(.,'${TestPlanName}')]]/td[input[@title="Active (click to set inactive)"]]
     unselect frame
     select frame  mainframe
     wait until page contains element  xpath=//tr[td//text()[contains(.,'${TestPlanName}')]]/td[input[@title="Inactive (click to set active)"]]/input
