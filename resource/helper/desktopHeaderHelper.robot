@@ -38,6 +38,7 @@ ${testPlanManagement}           Test Plan Management
 ${buildReleases}                Builds / Releases
 ${checkBuildReleases}           Build management
 ${milestoneOverview}            Milestone Overview
+${milestoneOverviewTRAVIS}      Milestones
 ${checkMilestoneOverview}       Milestones for
 ${executeTests}                 Execute Tests
 ${testCasesAssigned}            Test Cases Assigned to Me
@@ -84,7 +85,7 @@ Check desktop links
     Go to and check ${testCasesPerUser} ${testCasesPerUser}
     Go to and check ${testPlanManagement} ${testPlanManagement}
     Go to and check ${buildReleases} ${checkBuildReleases}
-    Go to and check ${milestoneOverview} ${checkMilestoneOverview}
+    Go to and check ${milestoneOverviewTRAVIS} ${checkMilestoneOverview}
     Go to and check ${executeTests} ${executeTests}
     Go to and check ${testCasesAssigned} ${checkTestCasesAssigned}
     Go to and check ${testReportsMetrics} ${checkTestReportsMetrics}

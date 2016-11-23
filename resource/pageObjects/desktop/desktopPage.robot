@@ -38,6 +38,7 @@ ${testPlanManagement}           Test Plan Management
 ${buildReleases}                Builds / Releases
 ${checkBuildReleases}           Build management
 ${milestoneOverview}            Milestone Overview
+${milestoneOverviewTRAVIS}      Milestones
 ${checkMilestoneOverview}       Milestones for
 ${executeTests}                 Execute Tests
 ${testCasesAssigned}            Test Cases Assigned to Me

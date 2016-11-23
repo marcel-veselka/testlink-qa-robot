@@ -25,10 +25,9 @@ ${LOGIN1}                           lalala
 ${PASSWORD1}                        1534354
 ${LOGIN2}                           renat.kulalov
 ${PASSWORD2}
-### jfndlfjkd
-### flkd;fg;df
-*** Test Cases ***
 
+*** Test Cases ***
+### Z nejakych duvodu pada na travisu - Sasa, 23/11/16###
 97 Login
 
     Login as admin ${LOGIN1} ${PASSWORD1}
