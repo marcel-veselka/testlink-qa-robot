@@ -1,7 +1,7 @@
 language: python
 
 sudo: true
-dist: trusty
+#dist: trusty
 
 services:
   - mysql
