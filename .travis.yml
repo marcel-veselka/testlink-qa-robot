@@ -114,12 +114,13 @@ before_script:
 
   - cd $HOME
   - cd build/marcel-veselka/testlink-qa-robot
+  - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD settings/settings.robot
 
 script:
   #- "firefox --version"
   #- "python test/run_tests.py python $BROWSER --noncritical known_issue_-_travisci"
   #- "python demo/rundemo.py python $BROWSER --noncritical known_issue_-_travisci"
-  - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD settings/settings.robot
+  #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD settings/settings.robot
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests
   #- pybot -d Results settings/local/test1.robot
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD --suitestatlevel 2 tests
@@ -127,7 +128,7 @@ script:
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/TestPlanContents
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/requirementsFeature
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/testExecution
-  #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/Administration
+  - pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/Administration
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/HomepageUI
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/System
   #- pybot -v BROWSER:$BROWSER -v "VALID USER":$TL_USER -v "VALID PASSWD":$TL_PASSWD tests/web/TestPlan/buildReleasesManagement.robot
