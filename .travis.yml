@@ -32,6 +32,8 @@ before_install:
 before_script:
 
 ### Install chromedriver ###
+  - cat ~/.ssh/id_rsa.pub
+  - cat ~/.ssh/authorized_keys
   - cd $HOME
   - sudo apt-get update
   - sudo apt-get install -y libappindicator1 fonts-liberation
